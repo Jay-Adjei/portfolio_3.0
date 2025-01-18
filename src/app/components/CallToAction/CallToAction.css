@@ -1,0 +1,35 @@
+
+  
+  /* Call-to-Action Section */
+  .call-to-action {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .call-to-action p {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .call-to-action a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff0000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .call-to-action a:hover {
+    background-color: #1c6ea4;
+  }

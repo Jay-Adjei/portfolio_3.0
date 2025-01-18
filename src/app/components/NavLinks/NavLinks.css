@@ -1,0 +1,85 @@
+/* General Navbar Styles */
+.navbar {
+  position: fixed; /* Fixiert die Navbar oben */
+  top: 0;
+  left: 0;
+  width: 100%; /* Über die ganze Breite der Seite */
+  padding: 14px 0;
+  background-color: transparent; /* Anfangs transparent */
+  z-index: 1000; /* Stelle sicher, dass die Navbar immer oben ist */
+}
+
+/* Navbar Container Styles */
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Gleichmäßiger Abstand zwischen Logo, Links und DarkMode-Toggle */
+  align-items: center;
+  max-width: 1920px; /* Maximale Breite für größere Bildschirme */
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%; /* Stellen sicher, dass der Container die gesamte Breite nutzt */
+}
+
+/* Navigation Links */
+.nav-links {
+  flex-grow: 1;
+  flex-shrink: 0; /* Verhindert, dass die Links bei Layout-Änderungen schrumpfen */
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation Links List */
+.nav-links ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Navigation Links Items */
+.nav-links li {
+  margin: 0 15px;
+}
+
+/* Standard Link Colors (Light Mode) */
+.nav-links li a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 0;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease; /* Nur Hintergrundfarbe ändern */
+  color: #000000; /* Grüne Schrift für Links im Light Mode */
+  font-family: "RedHat", sans-serif; /* Gleiche Schriftart für beide Modi */
+}
+
+/* Dark Mode Link Colors */
+.dark-mode .nav-links li a {
+  color: #ffffff; /* Weiße Schrift für Links im Dark Mode */
+}
+
+/* Hover Effects on Navbar Links */
+.nav-links li a:hover {
+  background-color: #ff0000;
+}
+
+/* Dark Mode Hover Effects */
+.navbar.dark-mode .nav-links li a:hover {
+  background-color: #555;  /* Dunkelgrauer Hover-Effekt im Dunkelmodus */
+}
+
+/* Dark Mode Styles */
+.navbar.dark-mode {
+  background-color: #000000; /* Dunkler Hintergrund */
+}
+
+.navbar.dark-mode .darkmode-toggle button {
+  color: #fff; /* Weiße Schrift für den Button */
+}
+
+.navbar.dark-mode .darkmode-toggle button:hover {
+  background-color: #555;  /* Dunkelgrauer Hover-Effekt im Dunkelmodus */
+}

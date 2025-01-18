@@ -1,0 +1,64 @@
+
+
+/* Home Page Styles in Verbindung mit page.jsx direkt außen im Ordner also keine unter oOdner */
+.page.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #ffffff;
+  }
+  
+  /* Home Page Styles */
+.dark-mode .page.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background-color: #000000;
+}
+  .home-header {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 128px;
+    position: relative;
+  }
+  
+  .home-header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .home-header p {
+    font-size: 1.1rem;
+    color: #d9d9d9;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+ 
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .home-header h1 {
+      font-size: 2rem;
+    }
+  
+    .home-header p {
+      font-size: 1rem;
+    }
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

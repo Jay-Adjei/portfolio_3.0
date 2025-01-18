@@ -1,0 +1,209 @@
+/* -----------------------------------------------------------
+General Layout
+----------------------------------------------------------- */
+#filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px; /* Etwas Polsterung für bessere Benutzererfahrung */
+}
+
+.filter-container {
+  display: flex;
+  z-index: 10;
+  justify-content: center; /* Zentriert den Inhalt */
+  align-items: center;
+  flex-wrap: wrap; /* Ermöglicht Umbruch bei kleinerer Bildschirmbreite */
+  width: 100%;
+  max-width: 1080px;
+  padding-top: 230px;
+  gap: 20px;
+}
+
+#grid-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#view-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Buttons näher zusammen */
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.filtering,
+.PNL_options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Einheitlicher Abstand */
+}
+
+/* -----------------------------------------------------------
+Buttons
+----------------------------------------------------------- */
+/* -----------------------------------------------------------
+General Styles
+----------------------------------------------------------- */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section: Project Header Container */
+.section_project_header {
+  padding-bottom: 38px;
+  position: relative;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease; /* Schnelle Transition */
+}
+
+.dark-mode .section_project_header {
+  background-color: #000000;
+}
+
+/* Section: Project Hero Image */
+.project-hero1 {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  overflow: hidden; /* Verhindert, dass das Bild außerhalb des Containers sichtbar wird */
+  z-index: 1;
+}
+
+/* Section: Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff);
+  z-index: 999;
+  pointer-events: none;
+  transition: background 0.3s ease; /* Schnelle Transition für Hintergrund */
+}
+
+/* Section: Overlay Dark Mode */
+.dark-mode .overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000);
+  transition: background 0.3s ease; /* Sicherstellen, dass die Transition synchron ist */
+}
+
+/* Erzwingen des anfänglichen Zustands */
+body:not(.dark-mode) .overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff) !important;
+}
+
+body.dark-mode .overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000) !important;
+}
+
+/* -----------------------------------------------------------
+Button Styles
+----------------------------------------------------------- */
+.example-button {
+  background-color: #ffffff;
+  border: none; /* Keine unnötige Umrandung */
+  color: #f9f9f9;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.example-button img {
+  max-width: 26px; /* Größeres Icon */
+  max-height: 26px;
+}
+
+.example-button:hover {
+  background-color: #000000;
+  transform: scale(1.1); 
+}
+
+.example-button.active {
+  background-color: #000000;
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styles for Buttons */
+.dark-mode .example-button {
+  background-color: #000000; /* Schwarzer Hintergrund */
+  color: #ffffff; /* Weiße Schrift */
+}
+
+.dark-mode .example-button:hover {
+  background-color: #ffffff; /* Weißer Hintergrund bei Hover */
+  color: #000000; /* Schwarze Schrift bei Hover */
+}
+
+.dark-mode .example-button.active {
+  background-color: #ffffff; /* Weißer Hintergrund für aktive Buttons */
+  color: #000000; /* Schwarze Schrift für aktive Buttons */
+}
+
+
+/* -----------------------------------------------------------
+Filter Options // Titel der Dropdown boxen
+----------------------------------------------------------- */
+label {
+  font-size: 14px;
+  color: #000000;
+  font-family: "RedHat";
+}
+
+.dark-mode label {
+  color: #ffffff; /* Weiße Schriftfarbe im Dark Mode */
+}
+
+/* -----------------------------------------------------------
+Formularelemente
+----------------------------------------------------------- */
+select, input, textarea {
+  font-family: "RedHat", sans-serif; /* Schriftart setzen */
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ffffff; /* Weißer Rand */
+  background-color: #000000; /* Schwarzer Hintergrund */
+  color: #ffffff; /* Weißer Text */
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+  border-color: #ffffff; /* Weißer Rand beim Fokus */
+  outline: none;
+  font-family: "RedHat", Arial;
+}
+
+select {
+  -webkit-appearance: none; /* Entfernt natives Styling auf Webkit-Browsern */
+  -moz-appearance: none; /* Entfernt natives Styling auf Firefox */
+  appearance: none; /* Entfernt natives Styling allgemein */
+  font-family: "RedHat", Arial; /* Schriftart für den gesamten select-Tag */
+  background-color: #000000; /* Schwarzer Hintergrund für das Dropdown */
+  color: #ffffff; /* Weißer Text */
+  border-color: #ffffff; /* Weißer Rand */
+}
+
+select option {
+  font-family: "RedHat", Arial; /* Schriftart auf Optionen anwenden */
+  background-color: #000000; /* Schwarzer Hintergrund für Optionen */
+  color: #ffffff; /* Weißer Text für Optionen */
+  border-color: #ffffff; /* Weißer Rand */
+}
+
+select::-webkit-search-cancel-button {
+  -webkit-appearance: none; /* Entfernt das Standard-Such-Icon bei Webkit-Browsern */
+}

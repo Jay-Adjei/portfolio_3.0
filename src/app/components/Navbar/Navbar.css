@@ -1,0 +1,69 @@
+/* General Navbar Styles */
+.navbar {
+  position: fixed; /* Fixiert die Navbar oben */
+  top: 0;
+  left: 0;
+  width: 100%; /* Über die ganze Breite der Seite */
+  padding: 14px 0;
+  background-color: transparent; /* Anfangs transparent */
+  z-index: 1000; /* Stelle sicher, dass die Navbar immer oben ist */
+}
+
+/* Sticky Navbar Styles (wenn gescrollt) */
+.navbar.sticky {
+  background-color: rgb(255, 255, 255); /* Hintergrundfarbe wird weiß, wenn gescrollt wird */
+}
+
+/* Dark Mode Styles for Navbar */
+.navbar.sticky.dark-mode {
+  background-color: #000000; /* Dunkler Hintergrund im Dark Mode */
+}
+
+/* No Transition for Dark Mode Toggle */
+.navbar.no-transition {
+  position: fixed; /* Navbar bleibt oben */
+  top: 0;
+  left: 0;
+  width: 100%; /* Über die ganze Breite der Seite */
+  padding: 14px 0;
+  background-color: rgba(255, 0, 0, 0);
+  z-index: 1000; /* Sicherstellen, dass die Navbar immer oben ist */
+}
+
+.dark-mode .navbar.no-transition {
+  position: fixed; /* Navbar bleibt oben */
+  top: 0;
+  left: 0;
+  width: 100%; /* Über die ganze Breite der Seite */
+  padding: 14px 0;
+  background-color: rgba(255, 217, 0, 0);
+  z-index: 1000; /* Sicherstellen, dass die Navbar immer oben ist */
+}
+
+/* Navbar Container Styles */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar Logo */
+.logo img {
+  width: 100%;  /* Logo passt sich der Breite an */
+  max-width: 64px;  /* Maximale Breite des Logos */
+  height: auto;  /* Automatische Höhe, um das Seitenverhältnis beizubehalten */
+  object-fit: contain; /* Verhindert, dass das Logo verzerrt wird */
+  filter: none;  /* Kein Filter für das Logo im Light Mode */
+  min-width: 40px;  /* Minimale Breite des Logos (damit es nicht zu klein wird) */
+}
+
+/* Media Query für sehr kleine Fenstergrößen */
+@media screen and (max-width: 400px) {
+  .logo img {
+    min-width: 40px;  /* Setzt eine Mindestbreite für das Logo */
+    max-width: 40px;  /* Setzt eine feste maximale Breite */
+  }
+}
