@@ -72,21 +72,43 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
 <h2 id="about-the-project">About The Project</h2>
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" /><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />Award-Winning Responsive Portfolio. My Self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
+Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
 
-Here's why:
-* Innovative Card Design Projects
-  - Showcases your work with visually striking card designs, each offering a unique perspective and style.
-* Dynamic Header & Navigation Menu
-  - Features an animated header and menu for a modern, engaging user experience.
-* Integrated Gallery & Lightbox
-* Dark/Light mode
-* Holographic Card Design
-  - Utilizes holographic effects to create a visually appealing and futuristic look for your project cards.
-* Responsive Design
-  - Fully optimized for various devices, including mobile, tablet, and PC, ensuring a consistent experience across Windows, macOS, and Linux.
+---
 
-I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue (Enhancement Tag).
+### Key Features
+- **Innovative Card Designs**  
+  Showcases your work with visually striking card designs, each offering a unique perspective and style.
+
+- **Dynamic Header & Navigation Menu**  
+  Features an animated header and menu for a modern, engaging user experience.
+
+- **Integrated Gallery & Lightbox**  
+  Seamless viewing experience with an elegant, responsive gallery.
+
+- **Dark/Light Mode**  
+  Optimized for both bright and dim environments to enhance usability.
+
+- **Holographic Card Design**  
+  Utilizes holographic effects for a futuristic and visually appealing look.
+
+- **Responsive Design**  
+  Fully optimized for various devices, including mobile, tablet, and PC, ensuring consistent performance across platforms like Windows, macOS, and Linux.
+
+---
+
+### Future Plans  
+I'll be adding more in the near future. Potential updates include:  
+- Advanced animations and effects.  
+- More customization options.  
+- Additional themes for better personalization.
+
+---
+
+### Contributing  
+You may suggest changes by forking this repo and creating a pull request or opening an issue (Enhancement Tag).
 
 <p align="right">
   <a href="#readme-top">
