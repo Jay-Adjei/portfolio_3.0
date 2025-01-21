@@ -125,7 +125,7 @@ Here are the key technologies, languages, and tools used in this project:
     <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js-FF0000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=000000">
   </li>
   <li>
-    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-FF0000?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=000000">
+    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-FF0000?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=ffffff">
   </li>
   <li>
     <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3-FF0000?style=for-the-badge&logo=css3&logoColor=white&labelColor=000000">
