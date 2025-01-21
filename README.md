@@ -91,7 +91,7 @@ I'll be adding more in the near future. You may also suggest changes by forking 
 
 <p align="right">
   <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -108,7 +108,7 @@ Here are some images showcasing the project:
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -135,7 +135,7 @@ Here are the key technologies, languages, and tools used in this project:
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -169,7 +169,7 @@ Here are the key technologies, languages, and tools used in this project:
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -185,7 +185,7 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -207,7 +207,7 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -222,7 +222,7 @@ Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -240,7 +240,7 @@ We would like to acknowledge and give credit to the following resources that hav
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
@@ -268,6 +268,6 @@ We would like to acknowledge and give credit to the following resources that hav
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
