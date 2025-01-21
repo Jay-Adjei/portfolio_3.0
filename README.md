@@ -55,15 +55,15 @@
 <details>
   <summary><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#getting-started-with-the-installation">Getting Started with the Installation</a></li>
-    <li><a href="https://github.com/GylanSalih/Website-Portfolio/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-    <li><a href="#contact">Contact</a></li>
+<li><a href="#about-the-project">About The Project</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#built-with">Built With</a></li>
+<li><a href="#getting-started-with-the-installation">Getting Started with the Installation</a></li>
+<li><a href="#changelogmd--roadmap">Changelog.md & Roadmap</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
+<li><a href="#contact--support">Contact & Support</a></li>
   </ol>
 </details>
 
