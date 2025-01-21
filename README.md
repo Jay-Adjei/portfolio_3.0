@@ -73,7 +73,7 @@
 <span>
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
-Mission: **Award-Winning** Responsive Portfolio. My self-coded and crafted website, made with passion for the **#OpenSource** community. Free to use and customize. It's still in **Don’t miss out—updates are made daily!**
+**Award-Winning**
   
 &nbsp;  <!-- Leerraum zwischen den Abschnitten -->
 
