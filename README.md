@@ -73,7 +73,7 @@
 <span>
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
-</span> Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
+Mission: **Award-Winning** Responsive Portfolio. My self-coded and crafted website, made with passion for the **#OpenSource** community. Free to use and customize. It's still in **Don’t miss out—updates are made daily!**
 &nbsp;  <!-- Leerraum zwischen den Abschnitten -->
 
 ### Key Features
@@ -107,8 +107,7 @@ I'll be adding more in the near future. Potential updates include:
 
 <h2 id="Gallery"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery</span></h2>
 
-Here are some images showcasing the project:
-
+<p align="center">Here are some images showcasing the project:</p>
 
 
 | Animated & Beautiful Grid                                    | Filters                                                      | Dark-Mode                                                    |
