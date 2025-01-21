@@ -91,7 +91,7 @@ I'll be adding more in the near future. You may also suggest changes by forking 
 
 <p align="right">
   <a href="#readme-top">
-    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
