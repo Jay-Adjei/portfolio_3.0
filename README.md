@@ -70,16 +70,11 @@
 
 
 <!-- ABOUT THE PROJECT -->
-<div style="display: flex; align-items: center; gap: 10px;">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
   <h2 id="about-the-project" style="margin: 0;">About The Project</h2>
-</div>
 
-<div style="display: flex; align-items: center; gap: 5px;">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
-</div>
-
 Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
 
 ---
