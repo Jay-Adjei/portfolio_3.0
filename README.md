@@ -223,7 +223,6 @@ Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
 We would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
-* [Vanilla-tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
 * [Simeydotme Pokemon Card CSS](https://github.com/simeydotme/pokemon-cards-css)
 * [CodeGrid Youtube Channel](https://www.youtube.com/@codegrid)
 
@@ -235,13 +234,28 @@ We would like to acknowledge and give credit to the following resources that hav
 </p>
 
 
-
-
 <!-- CONTACT -->
-## Contact:
+## Contact & Support
 
-*  Follow Gylan: [GitHub](https://github.com/gylansalih)
-*  [Website](www.gylansalih.com)
+<p>Feel free to reach out to me through the following channels:</p>
+
+<div align="center">
+  <a href="https://github.com/gylansalih" target="_blank">
+    <img src="https://img.shields.io/badge/-GitHub-blue?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+  </a>
+  <a href="https://www.gylansalih.com" target="_blank">
+    <img src="https://img.shields.io/badge/Website-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website Badge">
+  </a>
+  <br>
+  <br>
+  <p>✨ If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! ✨</p>
+  <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
+    <img src="https://img.shields.io/github/stars/GylanSalih/Website-Portfolio?style=social&label=Star&maxAge=3600" alt="Star this project" />
+  </a>
+  <br>
+  <br>
+  <img src="https://www.example.com/path-to-your-image.jpg" alt="Portfolio Image" width="300">
+</div>
 
 
 <p align="right">
