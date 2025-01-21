@@ -133,7 +133,7 @@ Here are some images showcasing the project:
 </p>
 
 <!-- BUILT WITH -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /><h2 id="built-with">Built With</h2>
+<h2 id="built-with"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Built With</span></h2>
 
 Here are the key technologies, languages, and tools used in this project:
 
@@ -160,7 +160,7 @@ Here are the key technologies, languages, and tools used in this project:
 </p>
 
 <!-- GETTING STARTED -->
-## Getting Started with the Installation
+<h2 id="getting-started"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Getting Started with the Installation</span></h2>
 
 <p>To clone and run this application, you'll need <a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> (which includes <a href="http://npmjs.com">npm</a>) installed on your computer. Follow these steps:</p>
 
