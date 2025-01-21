@@ -119,33 +119,19 @@ Here are the key technologies, languages, and tools used in this project:
 
 <ul>
   <li>
-    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React%20CSS-FF0000?style=for-the-badge&logo=react&logoColor=black&labelColor=ffffff">
+    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React%20CSS-000000?style=for-the-badge&logo=react&logoColor=000000&labelColor=FF0000">
   </li>
   <li>
-    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js%20CSS-FF0000?style=for-the-badge&logo=nextdotjs&logoColor=black&labelColor=ffffff">
+    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js%20CSS-000000?style=for-the-badge&logo=nextdotjs&logoColor=000000&labelColor=FF0000">
   </li>
   <li>
-    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-FF0000?style=for-the-badge&logo=tailwindcss&logoColor=black&labelColor=ffffff">
+    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=000000&labelColor=FF0000">
   </li>
   <li>
-    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3%20CSS-FF0000?style=for-the-badge&logo=css3&logoColor=black&labelColor=ffffff">
+    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3%20CSS-000000?style=for-the-badge&logo=css3&logoColor=000000&labelColor=FF0000">
   </li>
 </ul>
 
-<ul>
-  <li>
-    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React%20CSS-FF0000?style=for-the-badge&logo=react&logoColor=000000&labelColor=FF0000">
-  </li>
-  <li>
-    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js%20CSS-FF0000?style=for-the-badge&logo=nextdotjs&logoColor=000000&labelColor=FF0000">
-  </li>
-  <li>
-    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-FF0000?style=for-the-badge&logo=tailwindcss&logoColor=000000&labelColor=FF0000">
-  </li>
-  <li>
-    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3%20CSS-FF0000?style=for-the-badge&logo=css3&logoColor=000000&labelColor=FF0000">
-  </li>
-</ul>
 
 
 
