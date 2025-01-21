@@ -197,9 +197,8 @@ Here are the key technologies, languages, and tools used in this project:
 
 
 <!-- Changelog.md & Roadmap -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="changelogmd--roadmap">Changelog.md & Roadmap</h2>
-
+<h2 id="contributing"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span></h2>
+<h2 id="changelogmd--roadmap"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap</span></h2>
 
 See the [open issues](https://github.com/GylanSalih/Website-Portfolio/issues) for a full list of proposed features (and known issues).
 
