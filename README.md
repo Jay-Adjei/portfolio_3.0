@@ -25,11 +25,6 @@
 [license-url]: https://github.com/GylanSalih/Website-Portfolio/blob/main/LICENSE
 
 
-<div style="display: inline-flex; align-items: center; background-color: #000000; color: #ffffff; border-radius: 25px; padding: 5px 10px;">
-  <span style="margin-right: 10px;">Back to top</span>
-  <img src="https://img.shields.io/badge/-Upptime-000000?style=for-the-badge&logo=upptime&logoColor=ffffff" alt="Back to top" style="height: 20px;">
-</div>
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
