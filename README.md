@@ -128,7 +128,6 @@ Here are the key technologies, languages, and tools used in this project:
   </a>
 </p>
 
-
 <!-- GETTING STARTED -->
 ## Getting Started with the Installation
 
@@ -143,9 +142,13 @@ Here are the key technologies, languages, and tools used in this project:
   </li>
   <li><strong>Install dependencies:</strong>
     <pre><code>npm install</code></pre>
+    <p>or</p>
+    <pre><code>yarn install</code></pre>
   </li>
-  <li><strong>Run the website with Live Server (More updates soon):</strong>
+  <li><strong>Run the website:</strong>
     <pre><code>npm start</code></pre>
+    <p>or</p>
+    <pre><code>yarn start</code></pre>
   </li>
 </ol>
 
