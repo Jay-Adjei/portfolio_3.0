@@ -117,13 +117,10 @@ Here are some images showcasing the project:
 
 Here are the key technologies, languages, and tools used in this project:
 
-
-
-* <img alt="Static Badge" src="https://img.shields.io/badge/-HTML5-brightgreen?style=for-the-badge&logo=html5&logoColor=white&logoSize=auto&labelColor=%2371100f%20&color=black">
-* <img alt="Static Badge" src="https://img.shields.io/badge/-CSS3-brightgreen?style=for-the-badge&logo=css3&logoColor=white&logoSize=auto&labelColor=%2371100f%20&color=black">
-* <img alt="Static Badge" src="https://img.shields.io/badge/-JavaScript-brightgreen?style=for-the-badge&logo=javascript&logoColor=white&logoSize=auto&labelColor=%2371100f%20&color=black">
-* <img alt="Static Badge" src="https://img.shields.io/badge/-Node.js-brightgreen?style=for-the-badge&logo=nodedotjs&logoColor=white&logoSize=auto&labelColor=%2371100f%20&color=black">
-* <img alt="Static Badge" src="https://img.shields.io/badge/-sass-brightgreen?style=for-the-badge&logo=sass&logoColor=white&logoSize=auto&labelColor=%2371100f%20&color=black">
+* <img alt="React Badge" src="https://img.shields.io/badge/-React-brightgreen?style=for-the-badge&logo=react&logoColor=white&labelColor=%2371100f&color=black">
+* <img alt="Next.js Badge" src="https://img.shields.io/badge/-Next.js-brightgreen?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=%2371100f&color=black">
+* <img alt="Tailwind CSS Badge" src="https://img.shields.io/badge/-Tailwind%20CSS-brightgreen?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=%2371100f&color=black">
+* <img alt="CSS3 Badge" src="https://img.shields.io/badge/-CSS3-brightgreen?style=for-the-badge&logo=css3&logoColor=white&labelColor=%2371100f&color=black">
 
 <p align="right">
   <a href="#readme-top">
