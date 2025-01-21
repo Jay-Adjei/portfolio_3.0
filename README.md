@@ -116,7 +116,7 @@ I'll be adding more in the near future. Potential updates include:
 </p>
 
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /><h2 id="Gallery">Gallery</h2>
+<h2 id="Gallery"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery</span></h2>
 
 Here are some images showcasing the project:
 
