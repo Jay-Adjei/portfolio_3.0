@@ -116,8 +116,7 @@ I'll be adding more in the near future. Potential updates include:
 </p>
 
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="gallery">Gallery</h2>
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery
 
 Here are some images showcasing the project:
 
@@ -129,7 +128,7 @@ Here are some images showcasing the project:
 
 <p align="right">
   <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+    <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
   </a>
 </p>
 
