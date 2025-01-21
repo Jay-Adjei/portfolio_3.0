@@ -74,8 +74,7 @@
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
 </span> Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
-
----
+&nbsp;  <!-- Leerraum zwischen den Abschnitten -->
 
 ### Key Features
 - **Innovative Card Designs**  
@@ -96,7 +95,7 @@
 - **Responsive Design**  
   Fully optimized for various devices, including mobile, tablet, and PC, ensuring consistent performance across platforms like Windows, macOS, and Linux.
 
----
+&nbsp;
 
 ### Future Plans  
 I'll be adding more in the near future. Potential updates include:  
@@ -104,11 +103,6 @@ I'll be adding more in the near future. Potential updates include:
 - More customization options.  
 - Additional themes for better personalization.
 
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
 
 
 <h2 id="Gallery"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery</span></h2>
