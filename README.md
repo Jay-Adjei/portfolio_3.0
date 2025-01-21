@@ -103,7 +103,7 @@ I'll be adding more in the near future. Potential updates include:
 - More customization options.  
 - Additional themes for better personalization.
 
-
+&nbsp;
 
 <h2 id="Gallery"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery</span></h2>
 
