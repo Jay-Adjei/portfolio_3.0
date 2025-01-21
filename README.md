@@ -117,10 +117,20 @@ Here are some images showcasing the project:
 
 Here are the key technologies, languages, and tools used in this project:
 
-* <img alt="React Badge" src="https://img.shields.io/badge/-React-brightgreen?style=for-the-badge&logo=react&logoColor=white&labelColor=%2371100f&color=black">
-* <img alt="Next.js Badge" src="https://img.shields.io/badge/-Next.js-brightgreen?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=%2371100f&color=black">
-* <img alt="Tailwind CSS Badge" src="https://img.shields.io/badge/-Tailwind%20CSS-brightgreen?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=%2371100f&color=black">
-* <img alt="CSS3 Badge" src="https://img.shields.io/badge/-CSS3-brightgreen?style=for-the-badge&logo=css3&logoColor=white&labelColor=%2371100f&color=black">
+<ul>
+  <li>
+    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React-FF0000?style=for-the-badge&logo=react&logoColor=white&labelColor=000000">
+  </li>
+  <li>
+    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js-FF0000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=000000">
+  </li>
+  <li>
+    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-FF0000?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=000000">
+  </li>
+  <li>
+    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3-FF0000?style=for-the-badge&logo=css3&logoColor=white&labelColor=000000">
+  </li>
+</ul>
 
 <p align="right">
   <a href="#readme-top">
