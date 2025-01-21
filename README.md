@@ -254,7 +254,7 @@ We would like to acknowledge and give credit to the following resources that hav
   </a>
   <br>
   <br>
-  <img src="https://www.example.com/path-to-your-image.jpg" alt="Portfolio Image" width="300">
+    <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo">
 </div>
 
 
