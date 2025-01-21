@@ -34,7 +34,7 @@
 
 
 <h3 align="center">
-  Check out my other repository showcasing the latest build: 
+ Portify Portfolio Made with Love <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />
   <a href="https://github.com/GylanSalih/Portfolio-NextJs">Portfolio-NextJs</a>
 </h3>
 
