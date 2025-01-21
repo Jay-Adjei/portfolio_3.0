@@ -249,14 +249,16 @@ We would like to acknowledge and give credit to the following resources that hav
 
 <div align="center">
   <a href="https://github.com/gylansalih" target="_blank">
-    <img src="https://img.shields.io/badge/-GitHub-brightred?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+    <img src="https://custom-icon-badges.demolab.com/badge/-GitHub-000000?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=FF0000" alt="GitHub Badge">
   </a>
   <a href="https://www.gylansalih.com" target="_blank">
-    <img src="https://img.shields.io/badge/Website-brightred?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website Badge">
+    <img src="https://custom-icon-badges.demolab.com/badge/Website-000000?style=for-the-badge&logo=googlechrome&logoColor=ffffff&labelColor=FF0000" alt="Website Badge">
   </a>
   <br><br>
     <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo">
   <br><br>
+</div>
+
 
   <p>✨ If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! ✨</p>
   <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
