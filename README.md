@@ -139,25 +139,28 @@ Here are the key technologies, languages, and tools used in this project:
 </p>
 
 <!-- GETTING STARTED -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Getting Started with the Installation
+## Getting Started with the Installation
 
 <p>To clone and run this application, you'll need <a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> (which includes <a href="http://npmjs.com">npm</a>) installed on your computer. Follow these steps:</p>
 
-<ul>
-  <li>
-    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React-00000F?style=for-the-badge&logo=react&logoColor=white&labelColor=000000">
+<ol>
+  <li><strong>Clone the repository:</strong>
+    <pre><code>git clone https://github.com/GylanSalih/Website-Portfolio</code></pre>
   </li>
-  <li>
-    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js-00000F?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=000000">
+  <li><strong>Navigate into the repository:</strong>
+    <pre><code>cd Website-Portfolio</code></pre>
   </li>
-  <li>
-    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-00000F?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=000000">
+  <li><strong>Install dependencies:</strong>
+    <pre><code>npm install</code></pre>
+    <p>or</p>
+    <pre><code>yarn install</code></pre>
   </li>
-  <li>
-    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3-00000F?style=for-the-badge&logo=css3&logoColor=white&labelColor=000000">
+  <li><strong>Run the website:</strong>
+    <pre><code>npm start</code></pre>
+    <p>or</p>
+    <pre><code>yarn start</code></pre>
   </li>
-</ul>
-
+</ol>
 
 > **Note**
 > If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
