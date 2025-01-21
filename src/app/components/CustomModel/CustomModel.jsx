@@ -68,7 +68,7 @@ export default function CustomModel() {
 }
 
 function Model() {
-  const { scene } = useGLTF('/assets/models/AkiraBike/unicorn-gundam-vs-zaku.glb');
+  const { scene } = useGLTF('/assets/models/AkiraBike/akirabike.glb');
   scene.scale.set(0.02, 0.02, 0.02);
   scene.position.set(0, -2, 0);
   scene.rotation.set(0, Math.PI / 2, 0);

@@ -1,4 +1,4 @@
-'use client'; // Füge diese Zeile hinzu, um die Komponente als Client-Komponente zu kennzeichnen.
+'use client';
 
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
@@ -12,48 +12,65 @@ import './styles/globals.css';
 import './styles/viewsinglecard.css';
 
 export default function Layout({ children, enablePreloader = false }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Initialize with false
+
   const [isAppLoaded, setIsAppLoaded] = useState(false);
 
+  // Initial setup for Dark Mode (only in the client)
   useEffect(() => {
-    // Lade den Dark Mode Zustand aus dem localStorage
-    const darkMode = localStorage.getItem('darkMode') === 'true';
-    setIsDarkMode(darkMode);
-    if (darkMode) {
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-    }
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      const darkMode = savedMode ? savedMode === 'true' : true; // Default to true (dark mode)
+      setIsDarkMode(darkMode);
 
-    // Simuliere den Ladeprozess, um den Preloader anzuzeigen
-    if (!isAppLoaded) {
-      setTimeout(() => setIsAppLoaded(true), 5000); // 5 Sekunden warten, um den Preloader anzuzeigen
+      // Apply dark mode class to the root element
+      if (darkMode) {
+        document.documentElement.classList.add('dark-mode');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+      }
     }
-  }, [isAppLoaded]);
+  }, []); // Empty dependency array ensures this runs once on mount
 
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => {
       const newState = !prev;
-      localStorage.setItem('darkMode', newState);
+
+      // Store the updated dark mode value in localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('darkMode', newState.toString());
+        // Add or remove the dark-mode class from the root element
+        if (newState) {
+          document.documentElement.classList.add('dark-mode');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+        }
+      }
       return newState;
     });
   };
 
+  // Handle Preloader logic
+  useEffect(() => {
+    if (enablePreloader) {
+      setTimeout(() => setIsAppLoaded(true), 5000);
+    } else {
+      setIsAppLoaded(true); // Directly set app as loaded if no preloader
+    }
+  }, [enablePreloader]);
+
   return (
     <html lang="de">
       <body className={isDarkMode ? 'dark-mode' : ''}>
-        {/* Zeige den Preloader, wenn die Seite noch nicht vollständig geladen ist */}
-        {enablePreloader && !isAppLoaded && <Preload onLoaded={() => setIsAppLoaded(true)} />}
-
-        {/* Cursor und Navbar immer anzeigen */}
+        {/* Show preloader if enabled and app is not loaded */}
+        {enablePreloader && <Preload enablePreloader={enablePreloader} />}
         <Cursor />
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
 
-        {/* Der Rest des Seiteninhalts */}
+        {/* Main content */}
         <main>{children}</main>
+        {/* Footer always displayed */}
 
-        {/* Footer wird immer angezeigt */}
-        <Footer />
       </body>
     </html>
   );

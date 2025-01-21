@@ -1,0 +1,115 @@
+
+/* Sound Settings */
+
+/* Sound Icon Container */
+.sound-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .sound-wave {
+    width: 24px; /* Angepasst an 4 Bars */
+    height: 20px; /* Maximalhöhe angepasst */
+    display: flex;
+    justify-content: space-evenly; /* Gleichmäßige Verteilung */
+    align-items: center;
+    right: 25px;
+    margin-left: -270px;
+  }
+  
+  /* Animierter Zustand */
+  .sound-wave.active .bar {
+    animation: sound 3s ease-in-out infinite; /* Animation mit smooth Übergang */
+  }
+  
+  /* Sound Bars Styling */
+  .bar {
+    display: block;
+    width: 1px; /* Breite erhöht, damit sie sichtbarer sind */
+    margin-right: 0; /* Abstand durch Flexbox */
+    height: 10px; /* Ausgangshöhe */
+    background: var(--light-mode);
+    transform-origin: center; /* Skalierung von der Mitte */
+    transition: background-color 0.3s, color 0.3s;
+    transition: height 0.3s ease-in-out;
+    gap: 0.3rem;
+    opacity: 0.9; /* Leicht transparent */
+  }
+  
+  .dark-mode .bar {
+    background: var(--dark-mode);
+  } 
+  
+  /* Keyframes for Sound Animation */
+  @keyframes sound {
+    0%, 100% {
+      transform: scaleY(1); /* Ausgangshöhe */
+    }
+    50% {
+      transform: scaleY(2); /* Maximale Höhe (Stretch nach oben und unten) */
+    }
+  }
+  
+  /* Bar-Specific Animation Durations */
+  .bar:nth-child(1) {
+    animation-duration: 1.3s;
+    animation-delay: 0s;
+  }
+  .bar:nth-child(2) {
+    animation-duration: 1.2s;
+    animation-delay: 0.1s;
+  }
+  .bar:nth-child(3) {
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+  }
+  .bar:nth-child(4) {
+    animation-duration: 1.6s;
+    animation-delay: 0.3s;
+  }
+  
+  /* Hover Effect: When Audio Button is Hovered */
+  .sound-icon:hover .bar {
+    animation-play-state: paused; /* Animation pausieren bei Hover */
+    transform: scaleY(1.2); /* Leichtes Wachstum */
+  }
+  
+  /* Active State Styling */
+  .sound-icon.active {
+    filter: brightness(1.2); /* Heller für bessere Sichtbarkeit */
+  }
+  
+  /* Disabled State Styling */
+  .sound-icon.disabled .sound-wave .bar {
+    opacity: 0.3;
+    transform: scaleY(0.5); /* Minimale Höhe */
+    animation: pulse 1.5s ease-in-out infinite; /* Leichte Pulsbewegung */
+  }
+  
+  /* Keyframes for Disabled Pulse Animation */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scaleY(0.5);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scaleY(0.6);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .sound-wave {
+      width: 20px;
+      height: 16px;
+    }
+    .bar {
+      width: 0.8px;
+      margin-right: 2px;
+    }
+  }
+  

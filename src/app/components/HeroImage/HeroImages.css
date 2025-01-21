@@ -1,0 +1,46 @@
+/* General Styles */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section: Project Header Container */
+.section_project_header {
+    padding-bottom: 38px;
+    position: relative;
+    background-color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .section_project_header {
+    background-color: #000000;
+}
+
+/* Section: Project Hero Image */
+.project-hero1 {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    overflow: hidden; /* Prevents the image from being visible outside the container */
+    z-index: 1;
+}
+
+/* Section: Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.3); /* Light mode opacity */
+    z-index: 999;
+    pointer-events: none;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+}
+
+/* Section: Overlay Dark Mode */
+.dark-mode .overlay {
+    background-color: rgba(0, 0, 0, 0.582); /* Dark mode opacity */
+}

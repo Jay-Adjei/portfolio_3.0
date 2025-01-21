@@ -1,73 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Preload.css';
+'use client';
 
-// Funktion zum Vorab-Laden von Bildern
-const preloadImages = (images) => {
-  return Promise.all(
-    images.map((src) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-    })
-  );
-};
+import { useState, useEffect } from 'react';
+import './preload.css'; // Import the custom styles for the spinner
 
-const Preload = ({ onLoaded, enablePreloader = false }) => {
+const Preload = ({ enablePreloader = false, onLoaded }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (!enablePreloader) {
-      // Wenn der Preloader deaktiviert ist, setze sofort den Zustand auf 'geladen'
-      setIsLoaded(true);
-      return;
-    }
+    if (enablePreloader) {
+      const preloadLinks = ['/home', '/portfolio', '/about', '/testing', '/portfolio/project'];
 
-    // Wenn der Preloader aktiviert ist, lade die Bilder
-    const images = [
-      "/src/assets/img/reduced_images/New3.jpeg",
-      "/src/assets/gifs/RedSamurai.gif",
-      "/src/assets/gifs/Dragon.gif",
-      "/src/assets/gifs/natureworld.gif",
-      "/src/assets/img/reduced_images/New5.jpeg",
-      "/src/assets/img/reduced_images/New6.jpeg",
-    ];
-
-    // Vorab-Laden der Bilder
-    preloadImages(images)
-      .then(() => {
-        console.log("Alle Bilder wurden vorab geladen.");
-      })
-      .catch((err) => {
-        console.error("Fehler beim Vorab-Laden der Bilder:", err);
+      // Manually trigger fetch for these links to force them to load in the background
+      preloadLinks.forEach((link) => {
+        window.fetch(link) // Manually fetch the page in the background
+          .then((res) => {
+            console.log(`Fetched: ${link}`, res);
+          })
+          .catch((err) => {
+            console.error(`Error fetching: ${link}`, err);
+          });
       });
 
-    // Setze eine Verzögerung von 5 Sekunden, bevor der Preloader verschwindet
-    const timeout = setTimeout(() => {
-      setIsLoaded(true);  // Dieser Zustand stellt sicher, dass der Preloader nach 5 Sekunden verschwindet
-    }, 1000); // 5 Sekunden
+      // Simulate a loading time or preloading logic
+      const timeout = setTimeout(() => {
+        setIsLoaded(true);
+        if (typeof onLoaded === 'function') {
+          onLoaded(); // Notify parent when loading is complete
+        }
+      }, 5000); // Adjust the timeout as needed
 
-    // Bereinigung, um den Timeout beim Verlassen der Komponente zu löschen
-    return () => clearTimeout(timeout);
-  }, [enablePreloader]);
-
-  useEffect(() => {
-    if (isLoaded) {
-      onLoaded();  // Wenn der Zustand auf 'geladen' gesetzt wird, rufe den Callback auf
+      // Cleanup timeout when the component unmounts
+      return () => clearTimeout(timeout);
+    } else {
+      setIsLoaded(true); // Set as loaded directly if no preloader
     }
-  }, [isLoaded, onLoaded]);
+  }, [enablePreloader, onLoaded]);
 
+  // Render the spinner if the app is not loaded yet
   if (!isLoaded) {
     return (
       <div className="loading-animation">
-        <div className="spinner"></div> {/* Ladeanimation */}
+        <div className="spinner"></div> {/* Use custom spinner from CSS */}
       </div>
     );
   }
 
-  return null; // Wenn der Preloader nicht mehr benötigt wird, rendere nichts mehr
+  return null; // Return null when loading is finished
 };
 
 export default Preload;

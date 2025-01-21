@@ -13,7 +13,7 @@ General Styles
   padding-bottom: 38px;
   position: relative;
   background-color: #ffffff;
-  transition: background-color 0.3s ease; /* Schnelle Transition */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode .section_project_header {
@@ -40,20 +40,10 @@ General Styles
   background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff);
   z-index: 999;
   pointer-events: none;
-  transition: background 0.3s ease; /* Schnelle Transition für Hintergrund */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Section: Overlay Dark Mode */
 .dark-mode .overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000);
-  transition: background 0.3s ease; /* Sicherstellen, dass die Transition synchron ist */
-}
-
-/* Erzwingen des anfänglichen Zustands */
-body:not(.dark-mode) .overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff) !important;
-}
-
-body.dark-mode .overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000) !important;
-}
+  transition: background-color 0.3s, color 0.3s;}

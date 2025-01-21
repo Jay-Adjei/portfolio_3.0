@@ -2,7 +2,7 @@
 
 /* Home Page Styles in Verbindung mit page.jsx direkt außen im Ordner also keine unter oOdner */
 .page.home-page {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 50px 20px;
     background-color: #ffffff;
@@ -10,7 +10,7 @@
   
   /* Home Page Styles */
 .dark-mode .page.home-page {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 50px 20px;
   background-color: #000000;

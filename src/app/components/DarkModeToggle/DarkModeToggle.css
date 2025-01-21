@@ -1,104 +1,135 @@
-/*------------------------------------------------------------*/
-/* Dark Mode CSS Start                                       */
-/*-----------------------------------------------------------*/
 
-/* Dark Mode Toggle Styles */
-.dark-mode-toggle {
-  cursor: pointer; /* Standard-Cursor */
-  font-family: "RedHat", sans-serif; /* Einheitliche Schriftart */
-  position: fixed;
-  right: 125px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transform: translateY(-50%);
-  z-index: 999;
-  top: 6px;
-}
-
-.darkmode-toggle button {
-  background-color: #000000; /* Schwarzer Hintergrund */
-  color: #ffffff; /* Weiße Schrift */
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  text-transform: uppercase;
-  font-family: "RedHat", sans-serif;
-  transition: background-color 0.3s, color 0.3s; /* Übergangseffekte für Hover */
-}
-
-.darkmode-toggle button:hover {
-  background-color: #ff0000; /* Weißer Hintergrund bei Hover */
-  color: #000000; /* Schwarze Schrift bei Hover */
-}
-
-.darkmode-toggle button:active {
-  background-color: #ffffff; /* Weißer Hintergrund bei Aktivierung */
-  color: #000000; /* Schwarze Schrift bei Aktivierung */
-}
-
-/* Media Queries für unterschiedliche Bildschirmgrößen */
-@media screen and (max-width: 991px) {
-  .dark-mode-toggle {
-    font-size: 24px;
-    right: 119px;
-  }
-}
-
-@media screen and (max-width: 771px) {
-  .dark-mode-toggle {
-    font-size: 25px;
-    right: 103px;
-    top: 3px;
-  }
-}
-
-.lottie-container {
-  position: absolute;
-  top: 10px; /* Abstand von oben */
-  right: 10px; /* Abstand von rechts */
-  z-index: 9999;
-  width: 40px; /* Feste Größe der Lottie-Animation */
-  height: 40px; /* Feste Größe der Lottie-Animation */
+/* Darkmode-Toggle */
+.darkmode-toggle {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 1101; /* Höher als alles andere */
 }
 
-#lottieLight, #lottieDark {
-  width: 30px; /* Setze eine feste Breite */
-  height: 30px; /* Setze eine feste Höhe */
-  transition: opacity 0.3s ease;
+.svg-icon {
+  position: absolute;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.lottie-light {
-  display: block;
+.dark-mode-icon {
+  fill: #fff;
+  transition: fill 0.3s ease;
 }
 
-.lottie-dark {
-  display: none;
+.light-mode-icon {
+  fill: #000;
+  transition: fill 0.3s ease;
 }
 
-@media screen and (max-width: 771px) {
-  #lottieLight {
-    width: 36px;
-    height: 48px;
+.darkmode-toggle:hover .svg-icon {
+  transform: scale(1.1);
+  fill: #f39c12;
+}
+
+.dark-mode .darkmode-toggle .svg-icon {
+  fill: #fff;
+}
+
+.light-mode .darkmode-toggle .svg-icon {
+  fill: #000;
+}
+
+.dark-mode .dark-mode-icon {
+  fill: #fff;
+}
+
+.light-mode .light-mode-icon {
+  fill: #000;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background-color: transparent;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo img {
+  max-width: 64px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+  min-width: 40px;
+}
+
+.navbar.dark-mode {
+  background-color: #000000;
+}
+
+.dark-mode .nav-links li a {
+  color: #ffffff;
+}
+
+.nav-links li a:hover {
+  background-color: #ff0000;
+}
+
+.navbar.dark-mode .nav-links li a:hover {
+  background-color: #555;
+}
+
+
+
+/* Media Query für sehr kleine Fenstergrößen */
+@media screen and (max-width: 480px) {
+  .darkmode-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    margin-right: 62px;
+    margin-top: -17px;
   }
-
-  #lottieDark {
-    width: 28px;
-    height: 48px;
-  }
 }
 
-@media screen and (max-width: 991px) {
-  #lottieLight, #lottieDark {
-    width: 37px;
-    height: 54px;
-  }
-}
-
-/*------------------------------------------------------------*/
-/* Dark Mode und Light Mode Schriftarten und Layout-Änderungen */
-/*------------------------------------------------------------*/

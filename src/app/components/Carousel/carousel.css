@@ -7,7 +7,7 @@
 .carousel-wrapper {
     padding-top: 150px;
     width: 100%;
-    height: 85vh;
+    height: 35vh;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
   }
@@ -122,15 +122,16 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--light-mode);
     font-weight: 500;
-  }
-  
-  /* Dark Mode Subtitle */
-  .dark-mode .subtitle-slider {
-    color: var(--white);
     font-family: "RedHat";
   }
+  
+
+  .dark-mode .subtitle-slider {
+    color: var(--dark-mode);
+  }
+  
   
   /* Title Styling */
   .title-slider {
@@ -138,9 +139,13 @@
     font-size: 5rem;
     font-weight: 700;
     margin: 0;
-    color: #fff;
+    color: #000000;
     text-transform: uppercase;
     line-height: 1.2;
+  }
+
+  .dark-mode .title-slider {
+    color: var(--dark-mode);
   }
   
   /* Responsive Title */
@@ -151,15 +156,11 @@
     }
   }
   
-  /* Dark Mode Title */
-  .dark-mode .title-slider {
-    color: var(--white);
-  }
   
   /* Description Styling */
   .description-slider {
     font-size: 1.125rem;
-    color: var(--black);
+    color: var(--light-mode);
     line-height: 1.6;
     margin: 1rem auto;
     text-align: center;
@@ -176,7 +177,7 @@
   
   /* Dark Mode Description */
   .dark-mode .description-slider {
-    color: var(--white);
+    color: var(--dark-mode);
   }
   
   /* Background Text Oni im hintergrund */
@@ -189,13 +190,13 @@
     font-size: 8rem;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.13);
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
     z-index: 0;
   }
-  
+
   /* Dark Mode Background Text */
   .dark-mode .background-text-slider {
-    -webkit-text-stroke: 2px rgba(194, 167, 167, 0.116);
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
   }
   
   

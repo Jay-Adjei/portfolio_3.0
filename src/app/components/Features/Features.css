@@ -1,0 +1,254 @@
+/* General container */
+.featurecontainer {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1250px;
+}
+
+/* Features section */
+.features-section {
+    background-color: var(--dark-mode);
+    padding-bottom: 52px;
+}
+
+.dark-mode .features-section {
+    background-color: var(--light-mode);
+    padding-bottom: 52px;
+}
+
+/* Intro section */
+.intro {
+    padding: 32px;
+}
+
+/* Intro text */
+.intro-text {
+    font-size: 1.25rem;
+    color: #DFDFF0;
+}
+
+/* Intro description */
+.intro-description {
+    font-size: 1.25rem;
+    color: rgba(223, 223, 242, 0.5);
+    max-width: 400px;
+}
+
+/*------------------------------------------------------*/
+.grid-largecontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: start;
+    padding-bottom: 25px;
+}
+
+/* Große Karte (links) */
+.card-large {
+    grid-column: span 2; /* Die große Karte nimmt beide Spalten ein */
+    grid-row: span 2; /* Die große Karte nimmt beide Zeilen ein */
+    max-width: 100%;
+    height: 75vh;
+    border-radius: 0.375rem;
+}
+
+
+/*------------------------------------------------------*/
+/* Zusätzliche Anpassungen an der grid-container-Eigenschaft */
+.grid-featurecontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Die Spalten bleiben gleich */
+    grid-template-rows: auto auto; /* Die Zeilenhöhe passt sich an den Inhalt an */
+    gap: 20px;
+    /* Falls nötig: Platz für die Karten optimieren */
+    align-items: start; /* Die Karten bleiben an der oberen Kante des Containers */
+}
+
+
+
+/* Lange Karte (links) */
+.card-long {
+    grid-column: span 1;
+    grid-row: span 2;
+    max-height: 750px;
+    max-width: 620px;
+    border-color: rgb(255 255 255 / 0.2);
+    border-style: solid;
+    border-radius: 0.375rem;
+    border-width: 1px;
+}
+
+/* Kleine Karte (unter der langen Karte) */
+.card-small {
+    grid-column: span 1; /* Einspaltig */
+    grid-row: span 1; /* Einzeilig */
+    max-height: 400px; /* Neue Höhe */
+    height: auto; /* Stellt sicher, dass die Karten flexibel sind */
+    border-color: rgb(255 255 255 / 0.2);
+    border-style: solid;
+    border-radius: 0.375rem;
+    border-width: 1px;
+}
+
+/* Medium Karte (unter der kleinen Karte) */
+.card-medium {
+    grid-column: span 1; /* Einspaltig */
+    grid-row: span 1; /* Einzeilig */
+    max-height: 400px; /* Neue Höhe */
+    height: auto; /* Stellt sicher, dass die Karten flexibel sind */
+    border-color: rgb(255 255 255 / 0.2);
+    border-style: solid;
+    border-radius: 0.375rem;
+    border-width: 1px;
+}
+
+.card-small, .card-medium {
+    height: auto;
+    max-height: 359px;
+    max-width: 611px;
+    position: relative; /* Ensure relative positioning for content centering */
+}
+/* Optional: If you need a fixed aspect ratio for other cards */
+.card-large, .card-long {
+    position: relative;
+    height: auto; /* Flexible height */
+}
+
+/*------------------------------------------------------*/
+
+/*------------------------------------------------------*/
+/* Special grid container */
+.grid-special-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: auto;
+    padding-top: 25px;
+}
+
+/* Extra kleine Karte 1 */
+.card-xsmall {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Extra kleine Karte 2 */
+.card-xsmall2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+/*------------------------------------------------------*/
+.card-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Updated transition for smooth scaling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Card video */
+.card-video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.375rem; /* Ensures rounded corners if needed */
+}
+
+.card-wrapper:hover {
+    transform: scale(0.95); /* Verkleinert die Karte */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon-btn {
+    position: absolute;
+    bottom: 10px; /* Place the button 10px from the bottom */
+    right: 10px; /* Place the button 10px from the right */
+    display: inline-flex;
+    gap: 5px;
+    padding: 10px 20px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+.coming-soon-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Radial gradient effect for the button */
+.radial-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* für content in den video karten*/
+.card-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	color: #fff;
+	text-align: left;
+	z-index: 1;
+	max-width: 100%;
+	height: 100%;
+}
+
+
+.card-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 10px;
+	font-size: 26px;
+    text-transform: uppercase; /* Capitalize all text */
+    font-family: "RedHat", sans-serif; /* Gleiche Schriftart für beide Modi */
+}
+
+/* Standardstil */
+.card-description {
+    color: rgba(255, 255, 255, 0.733);
+    margin-bottom: 15px;
+    font-family: "RedHat", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-right: 0; /* Standardmäßig kein Padding */
+}
+
+/* Einstellungen für Bildschirme mit mindestens 950px Breite */
+@media (min-width: 950px) {
+    .card-description {
+        padding-right: 272px; /* Nur bei 950px oder breiter */
+    }
+}

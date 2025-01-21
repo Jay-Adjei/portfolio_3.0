@@ -1,35 +1,139 @@
+.cta-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.58), rgb(0, 0, 0)), url("/assets/img/LandingBG/OniGirl4.jpg") no-repeat center center/cover;
+  background-size: auto, cover;
+  background-size: cover;
+  border-radius: 25px;
+  z-index: -1;
+}
 
-  
-  /* Call-to-Action Section */
-  .call-to-action {
-    text-align: center;
-    margin-bottom: 40px;
+.cta-container {
+  background-color: green;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 25px;
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(50px);
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  max-width: 1088px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure the image stays within the bounds */
+}
+
+.cta-content {
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  z-index: 20;
+  color: white;
+  font-family: "RedHat", sans-serif;
+  max-width: 90%; /* Ensures content doesn't overflow */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: flex-start; /* Align content to the top */
+  margin-right: 60px;
+}
+
+.cta-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-main-text {
+  font-size: 48px;
+  display: block;
+}
+
+.cta-sub-text {
+  display: block;
+  color: #b80000;
+  padding-right: 545px;
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.cta-description {
+  font-size: 16px;
+  margin-top: -5px;
+  color: #d1d5db;
+  padding-right: 474px;
+}
+
+.cta-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.cta-image:hover {
+  transform: scale(1.02); /* Scales the image by 1.05 */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .cta-container {
+    padding: 1rem; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Full width */
+    flex-direction: column; /* Stack elements vertically */
   }
-  
-  .call-to-action h2 {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 20px;
+
+  .cta-content {
+    padding: 1px;
+    margin-right: 0px;
   }
-  
-  .call-to-action p {
-    font-size: 1.1rem;
-    color: #34495e;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
+
+  .cta-heading {
+    font-size: 1.75rem; /* Slightly smaller font size */
   }
-  
-  .call-to-action a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #ff0000;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+
+  .cta-description {
+    font-size: 16px;
   }
-  
-  .call-to-action a:hover {
-    background-color: #1c6ea4;
+
+  .cta-image {
+    width: 100%; /* Full width image */
+    height: auto; /* Let height scale with width */
+    max-height: 250px; /* Set a max height */
+    object-fit: cover;
+    position: relative;
+    top: auto;
+    right: auto;
+    border-radius: 25px;
+    margin-bottom: 22px;
   }
+
+  .cta-sub-text {
+    padding-right: 0; /* Remove right padding */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cta-heading {
+    font-size: 1.5rem; /* Adjust font size for even smaller screens */
+  }
+
+  .cta-description {
+    font-size: 1rem;
+    padding-right: 0px;
+  }
+}

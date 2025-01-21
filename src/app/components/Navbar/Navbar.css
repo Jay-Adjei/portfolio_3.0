@@ -1,46 +1,39 @@
+
 /* General Navbar Styles */
 .navbar {
-  position: fixed; /* Fixiert die Navbar oben */
-  top: 0;
-  left: 0;
-  width: 100%; /* Über die ganze Breite der Seite */
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
   padding: 14px 0;
-  background-color: transparent; /* Anfangs transparent */
-  z-index: 1000; /* Stelle sicher, dass die Navbar immer oben ist */
+  background-color: transparent;
+  z-index: 1000;
+  opacity: 1;
+  border-radius: .8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Transition Styles */
+  transition: 
+    background-color 0.1s ease, /* Switch BG Color Navbar transition */
+    border-radius 0.3s ease, 
+    box-shadow 0.3s ease;
 }
 
-/* Sticky Navbar Styles (wenn gescrollt) */
+
+/* Sticky Navbar Styles (when scrolled) */
 .navbar.sticky {
-  background-color: rgb(255, 255, 255); /* Hintergrundfarbe wird weiß, wenn gescrollt wird */
+  background-color: rgb(255, 255, 255);  /* White background when sticky */
+  border-radius: .8rem;
 }
 
-/* Dark Mode Styles for Navbar */
+/* Sticky Dark Mode Navbar */
 .navbar.sticky.dark-mode {
-  background-color: #000000; /* Dunkler Hintergrund im Dark Mode */
+  background-color: black;
+  color: white;
 }
 
-/* No Transition for Dark Mode Toggle */
-.navbar.no-transition {
-  position: fixed; /* Navbar bleibt oben */
-  top: 0;
-  left: 0;
-  width: 100%; /* Über die ganze Breite der Seite */
-  padding: 14px 0;
-  background-color: rgba(255, 0, 0, 0);
-  z-index: 1000; /* Sicherstellen, dass die Navbar immer oben ist */
-}
-
-.dark-mode .navbar.no-transition {
-  position: fixed; /* Navbar bleibt oben */
-  top: 0;
-  left: 0;
-  width: 100%; /* Über die ganze Breite der Seite */
-  padding: 14px 0;
-  background-color: rgba(255, 217, 0, 0);
-  z-index: 1000; /* Sicherstellen, dass die Navbar immer oben ist */
-}
-
-/* Navbar Container Styles */
+/* Navbar Container */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -48,22 +41,36 @@
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 20px;
+  transition: padding 0.3s ease;  /* Smooth padding for responsiveness */
 }
 
-/* Navbar Logo */
-.logo img {
-  width: 100%;  /* Logo passt sich der Breite an */
-  max-width: 64px;  /* Maximale Breite des Logos */
-  height: auto;  /* Automatische Höhe, um das Seitenverhältnis beizubehalten */
-  object-fit: contain; /* Verhindert, dass das Logo verzerrt wird */
-  filter: none;  /* Kein Filter für das Logo im Light Mode */
-  min-width: 40px;  /* Minimale Breite des Logos (damit es nicht zu klein wird) */
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 16px;
 }
 
-/* Media Query für sehr kleine Fenstergrößen */
-@media screen and (max-width: 400px) {
-  .logo img {
-    min-width: 40px;  /* Setzt eine Mindestbreite für das Logo */
-    max-width: 40px;  /* Setzt eine feste maximale Breite */
-  }
+.navbar-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #003366;
+  text-decoration: none;
 }
+
+.navbar-link:hover {
+  border-bottom: 2px solid #003366;
+}
+
+/* Navbar Button */
+.navbar-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e0f0ff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+

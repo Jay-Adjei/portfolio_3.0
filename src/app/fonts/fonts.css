@@ -7,7 +7,7 @@
 /* -------------------Avant Garde Font START--------------------------*/
 
 @font-face {
-  font-family: "Geist Sans";
+  font-family: "GeistSans";
   src: url("GeistVF.woff") format("woff");
   font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
   font-style: normal;

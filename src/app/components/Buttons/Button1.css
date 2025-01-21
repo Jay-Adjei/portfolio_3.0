@@ -1,0 +1,132 @@
+
+  /* General Setting */
+  .cta-button {
+	background-color: transparent;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin-right: 0px;
+	padding-left: 2px;
+	transition: background-color 0.3s, transform 0.3s ease;
+	right: 0%;
+	position: absolute;
+	bottom: 0px;
+}
+  .cta-button:hover {
+    color: #333;
+    transform: scale(1.1); /* Scale the button on hover */
+  }
+  
+  .cta-button svg {
+    position: relative; /* Allow for z-index */
+    z-index: 100; /* Standard z-index */
+  }
+  
+  .cls-1 {
+    fill: none;
+    stroke: #ffffff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  /* Hover effect for the SVG */
+  .cta-button:hover .cls-1 {
+    fill: #000000; /* Add fill color on hover */
+    stroke: #ffffff;
+  }
+  
+  .cls-2 {
+    fill: #ffffff;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-width: 0.925px;
+    position: relative; /* Allow for z-index */
+    z-index: 10; /* Ensure small circles stay on top */
+  }
+  
+  /* Hover effect for the small circles */
+  .cta-button:hover .cls-2 {
+    fill: #ffffff; /* Keep fill on hover */
+    stroke: #ffffff;
+  }
+  
+  .cta-text {
+    font-family: 'RedHat', sans-serif;
+    font-size: 18px;
+    fill: #fff;
+    text-anchor: middle;
+  }
+  
+  .cta-text:hover {
+    fill: #ffffff;
+  }
+  
+  /* Media Queries for Button Styling */
+  @media screen and (max-width: 768px) {
+    .cta-button {
+      width: 100%; /* Full width button */
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .cta-button {
+      font-size: 0.875rem; /* Adjust font size for buttons */
+      padding: 0.75rem 1.5rem; /* Smaller padding for smaller screens */
+    }
+  }
+  
+
+
+
+
+
+
+/* Button Style für features Large Image */
+.button-style-feature-project .cta-button {
+	background-color: transparent;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s ease;
+	right: -108%;
+	position: relative;
+	bottom: -509px;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .button-style-feature-project .cta-button {
+        background-color: transparent;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s ease;
+        right: -55%;
+        position: relative;
+        bottom: -14px;
+    }
+  }
+
+
+  /* Base button styles */
+.button1-base {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button1-base:hover {
+    background-color: #666;
+  }
+  
+ 
+  .button-style-1 .cta-button {
+    background-color: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 0px;
+    padding-left: 2px;
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transitions */
+  }
+
+
+  
