@@ -94,7 +94,8 @@ I'll be adding more in the near future. You may also suggest changes by forking 
 </p>
 
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Gallery
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="gallery">Gallery</h2>
 
 Here are some images showcasing the project:
 
@@ -111,7 +112,8 @@ Here are some images showcasing the project:
 </p>
 
 <!-- BUILT WITH -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> <h2 id="built-with">Built With</h2>
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="built-with">Built With</h2>
 
 Here are the key technologies, languages, and tools used in this project:
 
@@ -175,7 +177,9 @@ Here are the key technologies, languages, and tools used in this project:
 
 
 <!-- Changelog.md & Roadmap -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="changelogmd--roadmap">Changelog.md & Roadmap</h2>
+
 
 See the [open issues](https://github.com/GylanSalih/Website-Portfolio/issues) for a full list of proposed features (and known issues).
 
@@ -189,7 +193,8 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
 
 
 <!-- CONTRIBUTING -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="contributing">Contributing</h2>
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -214,7 +219,8 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- LICENSE -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="license">License</h2>
 
 Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
@@ -228,7 +234,8 @@ Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
 
 <!-- ACKNOWLEDGMENTS -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Acknowledgments
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="acknowledgments">Acknowledgments</h2>
 
 We would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
@@ -243,7 +250,8 @@ We would like to acknowledge and give credit to the following resources that hav
 </p>
 
 <!-- CONTACT -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contact & Support
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="contact--support">Contact & Support</h2>
 
 <div align="center">
   <a href="https://github.com/gylansalih" target="_blank">
