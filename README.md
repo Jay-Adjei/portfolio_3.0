@@ -68,8 +68,31 @@
 </details>
 
 
+<!-- ABOUT THE PROJECT -->
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
+<h2 id="about-the-project">About The Project</h2>
 
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" /><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />Award-Winning Responsive Portfolio. My Self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
 
+Here's why:
+* Innovative Card Design Projects
+  - Showcases your work with visually striking card designs, each offering a unique perspective and style.
+* Dynamic Header & Navigation Menu
+  - Features an animated header and menu for a modern, engaging user experience.
+* Integrated Gallery & Lightbox
+* Dark/Light mode
+* Holographic Card Design
+  - Utilizes holographic effects to create a visually appealing and futuristic look for your project cards.
+* Responsive Design
+  - Fully optimized for various devices, including mobile, tablet, and PC, ensuring a consistent experience across Windows, macOS, and Linux.
+
+I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue (Enhancement Tag).
+
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
 
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
@@ -142,7 +165,7 @@ Here are the key technologies, languages, and tools used in this project:
 </ol>
 
 > **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use node from the command prompt.
 
 
 <p align="right">
@@ -180,9 +203,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
 
@@ -200,7 +223,7 @@ Don't forget to give the project a star! Thanks again!
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
 <h2 id="license">License</h2>
 
-Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
+Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
 
 <p align="right">
   <a href="#readme-top">
