@@ -69,48 +69,7 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-  <h2 id="about-the-project" style="margin: 0;">About The Project</h2>
 
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
-Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize.
-
----
-
-### Key Features
-- **Innovative Card Designs**  
-  Showcases your work with visually striking card designs, each offering a unique perspective and style.
-
-- **Dynamic Header & Navigation Menu**  
-  Features an animated header and menu for a modern, engaging user experience.
-
-- **Integrated Gallery & Lightbox**  
-  Seamless viewing experience with an elegant, responsive gallery.
-
-- **Dark/Light Mode**  
-  Optimized for both bright and dim environments to enhance usability.
-
-- **Holographic Card Design**  
-  Utilizes holographic effects for a futuristic and visually appealing look.
-
-- **Responsive Design**  
-  Fully optimized for various devices, including mobile, tablet, and PC, ensuring consistent performance across platforms like Windows, macOS, and Linux.
-
----
-
-### Future Plans  
-I'll be adding more in the near future. Potential updates include:  
-- Advanced animations and effects.  
-- More customization options.  
-- Additional themes for better personalization.
-
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
 
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
