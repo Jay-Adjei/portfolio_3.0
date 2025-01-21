@@ -68,10 +68,7 @@
 </details>
 
 
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-  <h2 id="about-the-project" style="margin: 0;">About The Project</h2>
-</div>
+<h2 id="about-the-project"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> About The Project</span></h2>
 
 <div style="display: flex; align-items: center; gap: 5px;">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="25" height="25" />
@@ -237,8 +234,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- LICENSE -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="license">License</h2>
+<h2 id="license"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span></h2>
 
 Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
 
@@ -252,8 +248,7 @@ Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
 
 
 <!-- ACKNOWLEDGMENTS -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="acknowledgments">Acknowledgments</h2>
+<h2 id="acknowledgments"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Acknowledgments</span></h2>
 
 We would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
@@ -268,8 +263,7 @@ We would like to acknowledge and give credit to the following resources that hav
 </p>
 
 <!-- CONTACT -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="contact--support">Contact & Support</h2>
+<h2 id="contact--support"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contact & Support</span></h2>
 
 <div align="center">
   <a href="https://github.com/gylansalih" target="_blank">
