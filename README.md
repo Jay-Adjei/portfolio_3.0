@@ -133,8 +133,7 @@ Here are some images showcasing the project:
 </p>
 
 <!-- BUILT WITH -->
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />
-<h2 id="built-with">Built With</h2>
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /><h2 id="built-with">Built With</h2>
 
 Here are the key technologies, languages, and tools used in this project:
 
