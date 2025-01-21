@@ -45,7 +45,7 @@
     <br />
     <a href="https://www.gylansalih.com/">View Demo</a>
     ·
-    <a href="https://github.com/GylanSalih/Website-Portfolio/blob/main/CHANGELOG.md"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />Changelog.md & Roadmap</a>
+    <a href="https://github.com/GylanSalih/Website-Portfolio/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a>
     .
     <a href="https://github.com/GylanSalih/Website-Portfolio/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
