@@ -132,21 +132,6 @@ Here are the key technologies, languages, and tools used in this project:
   </li>
 </ul>
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-  <div>
-    <img alt="React Badge" title="React" src="https://custom-icon-badges.demolab.com/badge/-React%20CSS-000000?style=for-the-badge&logo=react&logoColor=ffffff&labelColor=FF0000">
-  </div>
-  <div>
-    <img alt="Next.js Badge" title="Next.js" src="https://custom-icon-badges.demolab.com/badge/-Next.js%20CSS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff&labelColor=FF0000">
-  </div>
-  <div>
-    <img alt="Tailwind CSS Badge" title="Tailwind CSS" src="https://custom-icon-badges.demolab.com/badge/-Tailwind%20CSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=ffffff&labelColor=FF0000">
-  </div>
-  <div>
-    <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3%20CSS-000000?style=for-the-badge&logo=css3&logoColor=ffffff&labelColor=FF0000">
-  </div>
-</div>
-
 
 <p align="right">
   <a href="#readme-top">
