@@ -244,13 +244,11 @@ We would like to acknowledge and give credit to the following resources that hav
     <img src="https://img.shields.io/badge/Website-brightred?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website Badge">
   </a>
   <br><br>
-
-  <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo" width="300">
+    <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo">
   <br><br>
 
   <p>✨ If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! ✨</p>
   <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
-    <img src="https://img.shields.io/github/stars/GylanSalih/Website-Portfolio?style=social&label=Star&maxAge=3600" alt="Star this project" />
   </a>
 </div>
 
