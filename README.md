@@ -265,7 +265,7 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
 <!-- LICENSE -->
 <h2 id="license"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span></h2>
 
-Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
+Distributed under the MIT license. See LICENSE.txt for more information.
 
 <p align="right">
   <a href="#readme-top">
@@ -279,7 +279,7 @@ Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
 <!-- ACKNOWLEDGMENTS -->
 <h2 id="acknowledgments"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Acknowledgments</span></h2>
 
-We would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
+I would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
 * [Simeydotme Pokemon Card CSS](https://github.com/simeydotme/pokemon-cards-css)
 * [CodeGrid Youtube Channel](https://www.youtube.com/@codegrid)
@@ -307,7 +307,7 @@ We would like to acknowledge and give credit to the following resources that hav
 </div>
 
 
-  <p>✨ If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! ✨</p>
+  <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat%20with%20Smiling%20Eyes.png" alt="Grinning Cat with Smiling Eyes" width="25" height="25" /></p>
   <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
   </a>
 </div>
