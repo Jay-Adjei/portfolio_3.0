@@ -261,15 +261,6 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
   </a>
 </p>
 
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
-
-
-
-
 
 <!-- LICENSE -->
 <h2 id="license"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span></h2>
