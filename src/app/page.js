@@ -1,6 +1,6 @@
 // src/Pages/Home/Home.jsx
 import React from 'react';
-import Carousel from './Components/Carousel/Carousel';  // Correct relative import
+import Carousel from './components/Carousel/Carousel';  // Correct relative import
 import Skills from "./components/Skills/Skills";
 import CallToAction from './components/CallToAction/CallToAction';
 import AboutMe from "./components/AboutMe/AboutMe";
