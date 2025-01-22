@@ -279,10 +279,10 @@ I welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, im
    Go to the original repository and click on `New Pull Request`. Make sure your pull request has a detailed description of your changes.
 
 ### Contribution Guidelines
-- **Follow the Code Style:** Ensure your code follows the repository’s style guide.
-- **Write Clear Commit Messages:** Use concise and descriptive commit messages.
-- **Test Your Changes:** Verify that your changes work as expected.
-- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.
+- Follow the Code Style: Ensure your code follows the repository’s style guide.
+- Write Clear Commit Messages: Use concise and descriptive commit messages.
+- Test Your Changes: Verify that your changes work as expected.
+- Be Respectful: When reviewing or discussing code, always be respectful and considerate of others.
 
 ### Need Help?
 If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. I'm here to help! 💬
