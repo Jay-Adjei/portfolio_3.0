@@ -37,18 +37,18 @@
  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> Portify Portfolio Made with Love
 </h3>
 
-  <p align="center">
-   Welcome! i Would appreciate if you Star my Repository <3
+<p align="center">
+   Welcome! I would appreciate if you Star my Repository <3
     <br />
     <br />
     <a href="https://www.gylansalih.com/">View Demo</a>
     ·
-    <a href="https://github.com/GylanSalih/Website-Portfolio/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a>
-    .
-    <a href="https://github.com/GylanSalih/Website-Portfolio/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/GylanSalih/NextJS-Portify/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a>
     ·
-    <a href="https://github.com/GylanSalih/Website-Portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    <a href="https://github.com/GylanSalih/NextJS-Portify/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/GylanSalih/NextJS-Portify/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+</p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
