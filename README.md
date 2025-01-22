@@ -233,10 +233,12 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 
 </details>
 
+<details>
+  <summary>Need Help?</summary>
+  
+  If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
 
-
-### Need Help?
-If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
+</details>
 
 
 
