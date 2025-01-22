@@ -11,18 +11,18 @@
 </div>
 
 <!-- Badges Shields -->
-[contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/Website-Portfolio?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
-[forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/Website-Portfolio?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
-[stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/Website-Portfolio?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
-[issues-shield]: https://custom-icon-badges.demolab.com/github/issues/GylanSalih/Website-Portfolio?color=FF0000&logo=issue-opened&label=Issues&logoColor=white&labelColor=000000&style=for-the-badge
-[license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/Website-Portfolio?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
+[contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/NextJS-Portify?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
+[forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/NextJS-Portify?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
+[stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/NextJS-Portify?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
+[issues-shield]: https://custom-icon-badges.demolab.com/github/issues/GylanSalih/NextJS-Portify?color=FF0000&logo=issue-opened&label=Issues&logoColor=white&labelColor=000000&style=for-the-badge
+[license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/NextJS-Portify?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
 
 <!-- Badges Links -->
-[contributors-url]: https://github.com/GylanSalih/Website-Portfolio/graphs/contributors
-[forks-url]: https://github.com/GylanSalih/Website-Portfolio/network/members
-[stars-url]: https://github.com/GylanSalih/Website-Portfolio/stargazers
-[issues-url]: https://github.com/GylanSalih/Website-Portfolio/issues
-[license-url]: https://github.com/GylanSalih/Website-Portfolio/blob/main/LICENSE
+[contributors-url]: https://github.com/GylanSalih/NextJS-Portify/graphs/contributors
+[forks-url]: https://github.com/GylanSalih/NextJS-Portify/network/members
+[stars-url]: https://github.com/GylanSalih/NextJS-Portify/stargazers
+[issues-url]: https://github.com/GylanSalih/NextJS-Portify/issues
+[license-url]: https://github.com/GylanSalih/NextJS-Portify/blob/main/LICENSE
 
 
 <!-- PROJECT LOGO -->
@@ -37,18 +37,18 @@
  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> Portify Portfolio Made with Love
 </h3>
 
-  <p align="center">
-   Welcome! i Would appreciate if you Star my Repository <3
+<p align="center">
+   Welcome! I would appreciate if you Star my Repository <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />
     <br />
     <br />
     <a href="https://www.gylansalih.com/">View Demo</a>
     ·
-    <a href="https://github.com/GylanSalih/Website-Portfolio/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a>
-    .
-    <a href="https://github.com/GylanSalih/Website-Portfolio/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/GylanSalih/NextJS-Portify/blob/main/CHANGELOG.md">Changelog.md & Roadmap</a>
     ·
-    <a href="https://github.com/GylanSalih/Website-Portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    <a href="https://github.com/GylanSalih/NextJS-Portify/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/GylanSalih/NextJS-Portify/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+</p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -184,9 +184,71 @@ Here are the key technologies, languages, and tools used in this project:
 
 
 
+<!-- Contributing -->
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
+
+We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
+
+### How to Contribute
+
+1. **Fork the Repository**  
+   Click on the `Fork` button at the top-right corner of this repository to create your copy.
+
+2. **Clone Your Fork**  
+   ```bash
+   git clone https://github.com/<your-username>/NextJS-Portify.git
+   cd NextJS-Portify
+   ```
+
+3. **Create a Branch**  
+   Create a new branch for your feature or bug fix.  
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. **Make Changes**  
+   Implement your changes and commit them with a descriptive message.  
+   ```bash
+   git add .
+   git commit -m "Add: Description of the changes"
+   ```
+
+5. **Push Changes**  
+   Push your changes to your forked repository.  
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Open a Pull Request**  
+   Go to the original repository and click on `New Pull Request`. Ensure your pull request has a detailed description of your changes.
+
+
+<details>
+  <summary>Contribution Guidelines</summary>
+
+- **Follow the Code Style:** Ensure your code follows the repository’s style guide.  
+- **Write Clear Commit Messages:** Use concise and descriptive commit messages.  
+- **Test Your Changes:** Verify that your changes work as expected.  
+- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.  
+
+</details>
+
+<details>
+  <summary>Need Help?</summary>
+  
+  If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
+
+</details>
+
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
+
+
 
 <!-- Changelog.md & Roadmap -->
-<h2 id="contributing"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span></h2>
 <h2 id="changelogmd--roadmap"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap</span></h2>
 
 See the [open issues](https://github.com/GylanSalih/Website-Portfolio/issues) for a full list of proposed features (and known issues).
@@ -200,35 +262,10 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
 </p>
 
 
-<!-- CONTRIBUTING -->
-<h2 id="contributing"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span></h2>
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
-4. Push to the Branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
-
-
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
-
-
-
-
-
 <!-- LICENSE -->
 <h2 id="license"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span></h2>
 
-Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
+Distributed under the MIT license. See LICENSE.txt for more information.
 
 <p align="right">
   <a href="#readme-top">
@@ -242,7 +279,7 @@ Distributed under the GPL-3.0 license. See LICENSE.txt for more information.
 <!-- ACKNOWLEDGMENTS -->
 <h2 id="acknowledgments"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Acknowledgments</span></h2>
 
-We would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
+I would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
 * [Simeydotme Pokemon Card CSS](https://github.com/simeydotme/pokemon-cards-css)
 * [CodeGrid Youtube Channel](https://www.youtube.com/@codegrid)
@@ -270,7 +307,7 @@ We would like to acknowledge and give credit to the following resources that hav
 </div>
 
 
-  <p>✨ If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! ✨</p>
+  <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat%20with%20Smiling%20Eyes.png" alt="Grinning Cat with Smiling Eyes" width="25" height="25" /></p>
   <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
   </a>
 </div>
