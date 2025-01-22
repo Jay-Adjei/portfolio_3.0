@@ -182,9 +182,8 @@ Here are the key technologies, languages, and tools used in this project:
   </a>
 </p>
 
-Hier ist der gesamte Beitrag in einem einzigen Markdown-Codeblock:  
 
-```markdown
+
 <!-- Contributing -->
 ## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
 
