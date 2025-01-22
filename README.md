@@ -225,10 +225,12 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 
 <details>
   <summary>Contribution Guidelines</summary>
-- Follow the Code Style: Ensure your code follows the repository’s style guide.  
-- Write Clear Commit Messages: Use concise and descriptive commit messages.  
-- Test Your Changes: Verify that your changes work as expected.  
-- Be Respectful: When reviewing or discussing code, always be respectful and considerate of others.  
+
+- **Follow the Code Style:** Ensure your code follows the repository’s style guide.  
+- **Write Clear Commit Messages:** Use concise and descriptive commit messages.  
+- **Test Your Changes:** Verify that your changes work as expected.  
+- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.  
+
 </details>
 
 
