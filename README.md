@@ -11,18 +11,18 @@
 </div>
 
 <!-- Badges Shields -->
-[contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/Website-Portfolio?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
-[forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/Website-Portfolio?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
-[stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/Website-Portfolio?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
-[issues-shield]: https://custom-icon-badges.demolab.com/github/issues/GylanSalih/Website-Portfolio?color=FF0000&logo=issue-opened&label=Issues&logoColor=white&labelColor=000000&style=for-the-badge
-[license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/Website-Portfolio?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
+[contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/NextJS-Portify?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
+[forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/NextJS-Portify?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
+[stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/NextJS-Portify?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
+[issues-shield]: https://custom-icon-badges.demolab.com/github/issues/GylanSalih/NextJS-Portify?color=FF0000&logo=issue-opened&label=Issues&logoColor=white&labelColor=000000&style=for-the-badge
+[license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/NextJS-Portify?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
 
 <!-- Badges Links -->
-[contributors-url]: https://github.com/GylanSalih/Website-Portfolio/graphs/contributors
-[forks-url]: https://github.com/GylanSalih/Website-Portfolio/network/members
-[stars-url]: https://github.com/GylanSalih/Website-Portfolio/stargazers
-[issues-url]: https://github.com/GylanSalih/Website-Portfolio/issues
-[license-url]: https://github.com/GylanSalih/Website-Portfolio/blob/main/LICENSE
+[contributors-url]: https://github.com/GylanSalih/NextJS-Portify/graphs/contributors
+[forks-url]: https://github.com/GylanSalih/NextJS-Portify/network/members
+[stars-url]: https://github.com/GylanSalih/NextJS-Portify/stargazers
+[issues-url]: https://github.com/GylanSalih/NextJS-Portify/issues
+[license-url]: https://github.com/GylanSalih/NextJS-Portify/blob/main/LICENSE
 
 
 <!-- PROJECT LOGO -->
