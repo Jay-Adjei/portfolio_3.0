@@ -232,10 +232,13 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
 
 
+
+
+
 <!-- Contributing -->
 ## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
-Thank you for your interest in contributing! 💖
-We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
+Thank you for your interest in contributing! 💖  
+I welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
 
 ### How to Contribute
 
@@ -268,7 +271,7 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
    ```
 
 6. **Open a Pull Request**  
-   Go to the original repository and click on `New Pull Request`. Ensure your pull request has a detailed description of your changes.
+   Go to the original repository and click on `New Pull Request`. Make sure your pull request has a detailed description of your changes.
 
 ### Contribution Guidelines
 - **Follow the Code Style:** Ensure your code follows the repository’s style guide.
@@ -277,9 +280,15 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 - **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.
 
 ### Need Help?
-If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
+If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. I'm here to help! 💬
 
-Thank you for your interest in contributing! 💖
+
+
+
+
+
+
+
 
 <!-- Changelog.md & Roadmap -->
 <h2 id="changelogmd--roadmap"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap</span></h2>
