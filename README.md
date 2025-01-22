@@ -182,11 +182,107 @@ Here are the key technologies, languages, and tools used in this project:
   </a>
 </p>
 
+Hier ist der gesamte Beitrag in einem einzigen Markdown-Codeblock:  
+
+```markdown
+<!-- Contributing -->
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
+
+We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
+
+### How to Contribute
+
+1. **Fork the Repository**  
+   Click on the `Fork` button at the top-right corner of this repository to create your copy.
+
+2. **Clone Your Fork**  
+   ```bash
+   git clone https://github.com/<your-username>/NextJS-Portify.git
+   cd NextJS-Portify
+   ```
+
+3. **Create a Branch**  
+   Create a new branch for your feature or bug fix.  
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. **Make Changes**  
+   Implement your changes and commit them with a descriptive message.  
+   ```bash
+   git add .
+   git commit -m "Add: Description of the changes"
+   ```
+
+5. **Push Changes**  
+   Push your changes to your forked repository.  
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Open a Pull Request**  
+   Go to the original repository and click on `New Pull Request`. Ensure your pull request has a detailed description of your changes.
+
+### Contribution Guidelines
+- **Follow the Code Style:** Ensure your code follows the repository’s style guide.
+- **Write Clear Commit Messages:** Use concise and descriptive commit messages.
+- **Test Your Changes:** Verify that your changes work as expected.
+- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.
+
+### Need Help?
+If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
 
 
+<!-- Contributing -->
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
+Thank you for your interest in contributing! 💖
+We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
+
+### How to Contribute
+
+1. **Fork the Repository**  
+   Click on the `Fork` button at the top-right corner of this repository to create your copy.
+
+2. **Clone Your Fork**  
+   ```bash
+   git clone https://github.com/<your-username>/NextJS-Portify.git
+   cd NextJS-Portify
+   ```
+
+3. **Create a Branch**  
+   Create a new branch for your feature or bug fix.  
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. **Make Changes**  
+   Implement your changes and commit them with a descriptive message.  
+   ```bash
+   git add .
+   git commit -m "Add: Description of the changes"
+   ```
+
+5. **Push Changes**  
+   Push your changes to your forked repository.  
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Open a Pull Request**  
+   Go to the original repository and click on `New Pull Request`. Ensure your pull request has a detailed description of your changes.
+
+### Contribution Guidelines
+- **Follow the Code Style:** Ensure your code follows the repository’s style guide.
+- **Write Clear Commit Messages:** Use concise and descriptive commit messages.
+- **Test Your Changes:** Verify that your changes work as expected.
+- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.
+
+### Need Help?
+If you're stuck or need guidance, feel free to [open an issue](https://github.com/GylanSalih/NextJS-Portify/issues/new) or start a discussion in the repository. We're here to help! 💬
+
+Thank you for your interest in contributing! 💖
 
 <!-- Changelog.md & Roadmap -->
-<h2 id="contributing"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span></h2>
 <h2 id="changelogmd--roadmap"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap</span></h2>
 
 See the [open issues](https://github.com/GylanSalih/Website-Portfolio/issues) for a full list of proposed features (and known issues).
