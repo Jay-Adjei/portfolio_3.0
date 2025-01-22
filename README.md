@@ -38,7 +38,7 @@
 </h3>
 
 <p align="center">
-   Welcome! I would appreciate if you Star my Repository <3
+   Welcome! I would appreciate if you Star my Repository <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />
     <br />
     <br />
     <a href="https://www.gylansalih.com/">View Demo</a>
