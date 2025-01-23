@@ -54,8 +54,8 @@ const CallToAction = () => {
           <span className="cta-sub-text">Just Click on the Button to Contact me</span>
         </h2>
         <p className="cta-description">
-          I'm actively seeking new challenges in the field of Informatics. No matter the direction—whether it's development, support, or innovation—I’m ready to dive in. 
-          If you like what I do, why wait? Let's connect, and I'll bring my skills to your team!
+          I&apos;m actively seeking new challenges in the field of Informatics. No matter the direction—whether it&apos;s development, support, or innovation—I’m ready to dive in. 
+          If you like what I do, why wait? Let&apos;s connect, and I&apos;ll bring my skills to your team!
         </p>
         <Button1  href="mailto:Gylan.Salih@outlook.de">
         Contact Me

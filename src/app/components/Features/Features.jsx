@@ -46,13 +46,11 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
 
 
-
-
         <div className="grid-featurecontainer">
           <Card
             src="assets/videos/video3.mp4"
             title="AI-Powered Mood-Based Music Recommendation"
-            description="Recommend songs based on the user's mood using AI and sentiment analysis."
+            description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
             className="card-long"
             buttonClass="button-style-1"
             buttonHref="/project2"
