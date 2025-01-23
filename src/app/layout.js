@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Cursor from './components/Cursor/Cursor';
+import Mouse from './components/Mouse/Mouse';
 import Preload from './components/Preload/Preload';
 import './styles/aboutme-page.css';
 import './fonts/fonts.css';
@@ -66,7 +66,7 @@ export default function Layout({ children, enablePreloader = false }) {
         {enablePreloader && <Preload enablePreloader={enablePreloader} />}
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
 
-        <Cursor />
+        <Mouse />
         {/* Main content */}
         <main>{children}</main>
         {/* Footer always displayed */}

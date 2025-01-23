@@ -1,12 +1,6 @@
-@media (hover: none) or (pointer: coarse) {
-    .cursor, .cursor-follower {
-      display: none;
-    }
-  }
-  
-  .cursor {
-    position: fixed;
-    background-color: #ffffff;
+.cursor {
+  position: fixed;
+  background-color: #ffffff;
     width: 6px;
     height: 6px;
     border-radius: 100%;
@@ -26,6 +20,12 @@
     transform: translate(-50%, -50%) scale(2);
   }
   
+  @media (hover: none) or (pointer: coarse) {
+      .cursor, .cursor-follower {
+        display: none;
+      }
+    }
+    
   .cursor.hovered {
     opacity: 0.08;
   }
