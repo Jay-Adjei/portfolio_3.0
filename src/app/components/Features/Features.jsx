@@ -31,7 +31,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
         <div className="grid-largecontainer">
           <Card
-            src="assets/videos/video2.mp4"
+            src="/assets/videos/video2.mp4"
             title="Interactive 3D Portfolio"
             description="Create a 3D portfolio where users can navigate and explore projects with interactive visuals."
             className="card-large"
@@ -48,7 +48,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
         <div className="grid-featurecontainer">
           <Card
-            src="assets/videos/video3.mp4"
+            src="/assets/videos/video3.mp4"
             title="AI-Powered Mood-Based Music Recommendation"
             description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
             className="card-long"
@@ -56,7 +56,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
             buttonHref="/project2"
           />
           <Card
-            src="assets/videos/video6.mp4"
+            src="/assets/videos/video6.mp4"
             title="Interactive Data Visualization Dashboard"
             description="Develop a branching narrative game where choices affect the outcome."
             className="card-medium"
@@ -64,7 +64,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
             buttonHref="/portfolio"
           />
            <Card
-            src="assets/videos/video7.mp4"
+            src="/assets/videos/video7.mp4"
             title="Augmented Reality (AR) Shopping App"
             description="Let users try products in AR before purchasing, such as furniture or clothes."
             className="card-small"
@@ -80,22 +80,22 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
   
         <div className="grid-special-container">
           <Card
-            src="assets/videos/video8.mp4"
+            src="/assets/videos/video8.mp4"
             title="Virtual Fitness Coach"
             description="Offer personalized workout plans with video tutorials and AI form correction."
             className="card-xsmall"
             buttonClass="button-style-1"
             buttonHref="/project5"
           />
-            <Card
-            src="assets/videos/gif.gif"
+          <Card
+            src="/assets/videos/gif.gif"  // Verwende den absoluten Pfad mit einem führenden Slash
             title="Blockchain-Based Voting System"
             description="Build a decentralized voting system using blockchain for transparency."
             className="card-xsmall2"
             buttonClass="button-style-1"
             buttonHref="/project6"
             isGif={true}  // Pass this to indicate it's a GIF
-            />
+          />
         </div>
       </div>
 
