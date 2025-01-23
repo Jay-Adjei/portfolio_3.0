@@ -87,13 +87,13 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
             buttonHref="/project5"
           />
           <Card
-            src="/assets/videos/video8.mp4"  // Verwende den absoluten Pfad mit einem führenden Slash
-            title="Blockchain-Based Voting System"
-            description="Build a decentralized voting system using blockchain for transparency."
-            className="card-xsmall2"
-            buttonClass="button-style-1"
-            buttonHref="/project6"
-            isGif={true}  // Pass this to indicate it's a GIF
+            src="/assets/gifs/japanworld.gif"
+            title="Your Title"
+            description="Your Description"
+            className="card-video"
+            buttonClass="button-style-feature-project"
+            buttonHref="/project1"
+            isGif={true}
           />
         </div>
       </div>
