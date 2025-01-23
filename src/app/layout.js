@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Cursor from './components/Cursor/Cursor';
+import MouseCursor from './components/MouseCursor/MouseCursor';
 import Preload from './components/Preload/Preload';
 import './styles/aboutme-page.css';
 import './fonts/fonts.css';
