@@ -28,12 +28,11 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
 
 
-
         <div className="grid-largecontainer">
           <Card
-            src="/assets/videos/video2.mp4"
+            src="/assets/videos/video8.mp4"
             title="Interactive 3D Portfolio"
-            description="Create a 3D portfolio where users can navigate and explore projects with interactive visuals."
+            description="Offer personalized workout plans with video tutorials and AI form correction."
             className="card-large"
             buttonClass="button-style-feature-project"
             buttonHref="/project1"
