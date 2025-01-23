@@ -8,7 +8,7 @@ const skillsList = [
   { title: "CSS3", icon: "/assets/icons/skills/css.png" },
   { title: "JavaScript", icon: "/assets/icons/skills/js.png" },
   { title: "React", icon: "/assets/icons/skills/react.png" },
-  { title: "React", icon: "/assets/icons/skills/nextjs.svg" },
+  { title: "React", icon: "/assets/videos/feature-2.mp4" },
 ];
 
 
