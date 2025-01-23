@@ -1,5 +1,3 @@
-// src/app/components/Cursor/Cursor.jsx
-
 'use client';  // Direktive, um diese Datei nur auf der Client-Seite auszuführen
 
 import React, { useEffect, useState } from "react";

@@ -17,7 +17,6 @@ const Home = () => {
       <Features />
       <Skills />
       <CallToAction />
-
     </div>
   );
 };
