@@ -47,7 +47,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
         <div className="grid-featurecontainer">
           <Card
-            src="/assets/videos/video3.mp4"
+            src="/assets/videos/video8.mp4"
             title="AI-Powered Mood-Based Music Recommendation"
             description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
             className="card-long"
@@ -87,7 +87,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
             buttonHref="/project5"
           />
           <Card
-            src="/assets/videos/gif.gif"  // Verwende den absoluten Pfad mit einem führenden Slash
+            src="/assets/videos/video8.mp4"  // Verwende den absoluten Pfad mit einem führenden Slash
             title="Blockchain-Based Voting System"
             description="Build a decentralized voting system using blockchain for transparency."
             className="card-xsmall2"
