@@ -1,4 +1,9 @@
 
+|￣￣￣￣￣￣￣￣|
+|               |
+|    Portify    |  
+|               |  
+￣￣￣￣￣￣￣￣￣
 Achievements
 
     Understood and implemented the Pokémon repository from simeydotme
@@ -9,19 +14,24 @@ Achievements
 
 Current Problems
 
-    Looking to install a Pokémon holo effect instead of the normal glare but need more experience.
-    Too static—needs more effects and ambiance.
-    Extrem Laggy portfolio -> Perfomance Update needed!!
-        Organize img files -> Reduce Size
-        chrome grid not working -> reason = Dark-mode / Custom cursor script // SOLVED
+-x
+-y
+-z
 
 Changelog
-Beta / Release = 1.0 (After 100 Updates)
+Beta / Still in Work
 
 Lookbook:
 Updates / Fixes:
 
-0.0.16 - Latest Updates
+0.0.17 - Latest Updates
+
+    Converted the portfolio to React after researching and finding that Next.js provides better functionality and performance for the project.
+    Next.js was chosen for its server-side rendering and routing capabilities, which align well with the project's needs.
+    Found the syntax of Next.js familiar and enjoyable, drawing parallels to my experience with Unity C#—the structure and flow are quite similar, which makes it easier and more fun to work with.
+    Protocol updates are coming soon, including improved performance and new features.
+
+0.0.16 - Previous Updates
 
     Started working on the portfolio again :)
     Cleaning up some CSS and grouping using #regio and #endregio (learned from C#).
