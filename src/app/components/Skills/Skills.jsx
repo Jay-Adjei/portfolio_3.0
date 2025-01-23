@@ -11,6 +11,7 @@ const skillsList = [
   { title: "React", icon: "/assets/icons/skills/nextjs.svg" },
 ];
 
+
 const Skills = () => {
   return (
     <section className="skills-section">
