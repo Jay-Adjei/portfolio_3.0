@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import './preload.css'; // Import the custom styles for the spinner
+import './Preload.css'; // Import the custom styles for the spinner
 
 const Preload = ({ enablePreloader = false, onLoaded }) => {
   const [isLoaded, setIsLoaded] = useState(false);
