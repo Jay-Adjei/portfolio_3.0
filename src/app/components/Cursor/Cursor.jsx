@@ -3,7 +3,7 @@
 'use client';  // Direktive, um diese Datei nur auf der Client-Seite auszuführen
 
 import React, { useEffect, useState } from "react";
-import styles from './Cursor.css';
+import './Cursor.css';
 
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
