@@ -64,7 +64,7 @@ export default function Layout({ children, enablePreloader = false }) {
       <body className={isDarkMode ? 'dark-mode' : ''}>
         {/* Show preloader if enabled and app is not loaded */}
         {enablePreloader && <Preload enablePreloader={enablePreloader} />}
-        <Cursor />
+        <MouseCursor />
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
 
         {/* Main content */}
