@@ -12,12 +12,6 @@ const skillsList = [
 ];
 
 const Skills = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true); // Nur auf dem Client setzen
-  }, []);
-
   return (
     <section className="skills-section">
       <div className="skills-container">
@@ -25,14 +19,12 @@ const Skills = () => {
         <div className="skills-grid">
           {skillsList.map((skill, index) => (
             <div key={index} className="skill-item">
-              {/* Nur auf dem Client das Bild laden */}
-              {isClient && (
-                <img
-                  src={skill.icon}
-                  alt={skill.title}
-                  className="skill-icon"
-                />
-              )}
+              <img
+                src={skill.icon}
+                alt={skill.title}
+                className="skill-icon"
+                loading="lazy" // Lazy loading für Bilder
+              />
               <p className="skill-title">{skill.title}</p>
             </div>
           ))}
