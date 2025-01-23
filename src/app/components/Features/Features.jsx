@@ -47,7 +47,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
 
         <div className="grid-featurecontainer">
           <Card
-            src="/assets/videos/video8.mp4"
+            src="/assets/videos/feature-2.mp4"
             title="AI-Powered Mood-Based Music Recommendation"
             description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
             className="card-long"
@@ -63,7 +63,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
             buttonHref="/portfolio"
           />
            <Card
-            src="/assets/videos/video7.mp4"
+            src="/assets/videos/Video3.mp4"
             title="Augmented Reality (AR) Shopping App"
             description="Let users try products in AR before purchasing, such as furniture or clothes."
             className="card-small"
@@ -79,7 +79,7 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
   
         <div className="grid-special-container">
           <Card
-            src="/assets/videos/video8.mp4"
+            src="/assets/videos/Video2.mp4"
             title="Virtual Fitness Coach"
             description="Offer personalized workout plans with video tutorials and AI form correction."
             className="card-xsmall"
