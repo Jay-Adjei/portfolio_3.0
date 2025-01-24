@@ -1,5 +1,5 @@
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />  My Repositories</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />1. Preparing the VPS</h2></summary>
 
 
   - **Update and Install Dependencies:**
