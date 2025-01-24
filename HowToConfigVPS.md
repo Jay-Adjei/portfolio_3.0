@@ -1,3 +1,17 @@
+# VPS Setup for Next.js (React) Application
+
+## Prerequisites
+
+- A VPS with Ubuntu 24
+- Node.js (at least version 18.x)
+- PM2 for process management
+- Apache as a Reverse Proxy (optional, if you want to use a custom domain)
+- Git for version control
+- `npm` (or `yarn`)
+
+## Step-by-Step Guide
+
+
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 1. Preparing the VPS</h2></summary>
 
@@ -238,7 +252,7 @@ If you'd like to use GitHub webhooks to automatically update the repository, you
 
 
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 17. Manually Update the Repository</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 7. Manually Update the Repository</h2></summary>
 
 If you want to manually update the repository, follow these steps:
 
