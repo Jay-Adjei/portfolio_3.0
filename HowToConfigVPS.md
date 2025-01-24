@@ -79,6 +79,17 @@
   pm2 save
   ```
 
+    
+- **Clone the Git Repository:**
+  ```bash
+  pm2 start npm --name "nextjs-app" -- run dev
+  ```
+
+- **Navigate to the project directory:**
+  ```bash
+  pm2 save
+  ```
+
 </details>
 
 <details>
