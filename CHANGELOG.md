@@ -1,10 +1,8 @@
-
-|￣￣￣￣￣￣￣￣|
-|               |
-|    Portify    |  
-|               |  
-￣￣￣￣￣￣￣￣￣
-Achievements
+***********************
+*                     *
+*    P O R T I F Y    *
+*                     *
+***********************
 
     Understood and implemented the Pokémon repository from simeydotme
     implementation of sass
