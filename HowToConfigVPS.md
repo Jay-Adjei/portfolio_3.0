@@ -13,10 +13,9 @@
 
 ## Step-by-Step Guide
 
-### 1. Preparing the VPS
 
 <details>
-<summary>Click to expand</summary>
+<summary>### 1. Preparing the VPS</summary>
 
 - **Update and Install Dependencies:**
 
