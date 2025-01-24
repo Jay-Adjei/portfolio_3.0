@@ -13,7 +13,7 @@ const Portfolio = () => {
 
   // Beispielhafte Kartendaten
   const cardsData = [
-    { imgSrc: "/assets/img/LandingBG/OniBoy2.jpg", link: "portfolio/project", category: "Coding", rarity: "rare holo v1" },
+    { imgSrc: "/assets/img/Gifs/pain-gif.gif", link: "portfolio/project", category: "Coding", rarity: "rare holo v1" },
     { imgSrc: "/assets/img/LandingBG/OniGirl8.jpg", link: "portfolio/project2", category: "Design", rarity: "rare holo v1" },
     { imgSrc: "/assets/img/LandingBG/OniBoy4.jpg", link: "/page3", category: "Design", rarity: "rare holo v1" },
     { imgSrc: "/assets/img/LandingBG/OniGirl6.jpg", link: "/portfolio/SingleCard", category: "Coding", rarity: "rare holo v1" },

@@ -85,6 +85,8 @@
   object-position: center; /* Bild wird zentriert */
 }
 
+
+
 /* Handy View */
 @media (max-width: 480px) {
   .card__effects,
