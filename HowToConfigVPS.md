@@ -1,6 +1,8 @@
-# VPS Setup for Next.js (React) Application
+Got it! Here's the updated guide without underlines for the prerequisites:
 
-## Overview of the Steps for Setting Up a VPS for a Next.js (React) Project
+---
+
+# Overview VPS Setup for Next.js (React) Application
 
 This guide walks you through the steps to set up a Next.js project on an Ubuntu VPS. The steps include:
 
@@ -22,9 +24,8 @@ This guide walks you through the steps to set up a Next.js project on an Ubuntu 
 - Apache as a Reverse Proxy (optional, if you want to use a custom domain)
 - Git for version control
 - `npm` (or `yarn`)
-- 
-## Step-by-Step Guide
 
+## Step-by-Step Guide
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 1. Preparing the VP</summary>
 
