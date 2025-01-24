@@ -1,6 +1,3 @@
-Got it! You want the section titles themselves to be expandable. Here's how you can modify the structure so that clicking on the title of a section expands it, instead of showing detailed content. 
-
-### Example Markdown with Expandable Titles:
 
 ```markdown
 # VPS Setup for Next.js (React) Application
@@ -16,8 +13,10 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
 
 ## Step-by-Step Guide
 
-### <details>
-<summary>1. Preparing the VPS</summary>
+### 1. Preparing the VPS
+
+<details>
+<summary>Click to expand</summary>
 
 - **Update and Install Dependencies:**
 
@@ -49,8 +48,10 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
 
 </details>
 
-### <details>
-<summary>2. Clone the Project and Install Dependencies</summary>
+### 2. Clone the Project and Install Dependencies
+
+<details>
+<summary>Click to expand</summary>
 
 - **Clone the Git Repository:**
 
@@ -72,8 +73,10 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
 
 </details>
 
-### <details>
-<summary>3. Start the Next.js Application</summary>
+### 3. Start the Next.js Application
+
+<details>
+<summary>Click to expand</summary>
 
 - **Start with PM2:**
 
@@ -89,8 +92,10 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
 
 </details>
 
-### <details>
-<summary>4. (Optional) Configure Apache as a Reverse Proxy</summary>
+### 4. (Optional) Configure Apache as a Reverse Proxy
+
+<details>
+<summary>Click to expand</summary>
 
 - **Install Apache:**
 
@@ -149,19 +154,29 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
   ```apache
   <IfModule mod_ssl.c>
   <VirtualHost *:443>
+    # Replace with your actual domain
+    # ServerName and ServerAlias
     ServerName yourdomain.com
     ServerAlias www.yourdomain.com
 
+    # Replace with your Next.js app's directory
+    # DocumentRoot
     DocumentRoot /var/www/NextJS-Portify
 
+    # Use the correct paths for your SSL certificate and private key
+    # SSL configuration
     SSLEngine on
-    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem
-    Include /etc/letsencrypt/options-ssl-apache.conf
+    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem  # Certificate path
+    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem  # Private key path
+    Include /etc/letsencrypt/options-ssl-apache.conf  # SSL config from Let's Encrypt
 
+    # Proxy requests to your Next.js app running on port 3001
+    # Reverse Proxy
     ProxyPass / http://127.0.0.1:3001/
     ProxyPassReverse / http://127.0.0.1:3001/
 
+    # Logs for errors and access
+    # Error and access logs
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
   </VirtualHost>
@@ -177,8 +192,10 @@ Got it! You want the section titles themselves to be expandable. Here's how you 
 
 </details>
 
-### <details>
-<summary>5. Automate Updates with Cron (Optional)</summary>
+### 5. Automate Updates with Cron (Optional)
+
+<details>
+<summary>Click to expand</summary>
 
 To ensure that the Git repository is automatically updated, you can set up a cron job to run `git pull` every 10 minutes:
 
@@ -194,8 +211,10 @@ Add the following line to update every 10 minutes:
 
 </details>
 
-### <details>
-<summary>6. GitHub Webhook (Optional)</summary>
+### 6. GitHub Webhook (Optional)
+
+<details>
+<summary>Click to expand</summary>
 
 If you'd like to use GitHub webhooks to automatically update the repository, you need to set up an Express server to listen for `POST` requests.
 
@@ -241,8 +260,10 @@ If you'd like to use GitHub webhooks to automatically update the repository, you
 
 </details>
 
-### <details>
-<summary>7. Manually Update the Repository</summary>
+### 7. Manually Update the Repository
+
+<details>
+<summary>Click to expand</summary>
 
 If you want to manually update the repository, follow these steps:
 
@@ -272,10 +293,3 @@ If you want to manually update the repository, follow these steps:
 
 </details>
 ```
-
-### How It Works:
-- Each section title (like `1. Preparing the VPS`, `2. Clone the Project and Install Dependencies`, etc.) is wrapped in a `<details>` tag.
-- The content of each section is wrapped in `<summary>` and the details content is placed below.
-- When the section title (inside `<summary>`) is clicked, the content expands below it.
-
-This method works perfectly for GitHub READMEs and will allow users to expand and collapse sections as they desire.
