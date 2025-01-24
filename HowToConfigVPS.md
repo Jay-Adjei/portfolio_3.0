@@ -1,3 +1,5 @@
+Got it! You want the section titles themselves to be expandable. Here's how you can modify the structure so that clicking on the title of a section expands it, instead of showing detailed content. 
+
 ### Example Markdown with Expandable Titles:
 
 ```markdown
@@ -270,3 +272,10 @@ If you want to manually update the repository, follow these steps:
 
 </details>
 ```
+
+### How It Works:
+- Each section title (like `1. Preparing the VPS`, `2. Clone the Project and Install Dependencies`, etc.) is wrapped in a `<details>` tag.
+- The content of each section is wrapped in `<summary>` and the details content is placed below.
+- When the section title (inside `<summary>`) is clicked, the content expands below it.
+
+This method works perfectly for GitHub READMEs and will allow users to expand and collapse sections as they desire.
