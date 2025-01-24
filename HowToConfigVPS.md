@@ -94,13 +94,8 @@
 
 
 
-
-Here's an updated section with instructions on how to create an SSL certificate using Certbot and ensure its lifetime is properly handled:
-
----
-
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 2. Clone the Project and Install Dependencies</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 4. Clone the Project and Install Dependencies</h2></summary>
 
 - **Clone your Git repository**:
   
@@ -115,15 +110,15 @@ Here's an updated section with instructions on how to create an SSL certificate 
   npm install
   ```
 
-
-
-
-
-
 </details>
 
+
+
+
+
+
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 3. Create SSL Certificate Using Certbot (Let's Encrypt)</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 5. Create SSL Certificate Using Certbot (Let's Encrypt)</h2></summary>
 
 To create an SSL certificate for your domain using Certbot, follow these steps:
 
@@ -201,7 +196,7 @@ To create an SSL certificate for your domain using Certbot, follow these steps:
 
 
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 4. Configure Apache as a Reverse Proxy (Optional)</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 6. Configure Apache as a Reverse Proxy (Optional)</h2></summary>
 
 - **Install Apache:**
 
@@ -301,7 +296,7 @@ To create an SSL certificate for your domain using Certbot, follow these steps:
 
 
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 5. Automate Updates with Cron (Optional)</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 7. Automate Updates with Cron (Optional)</h2></summary>
 
 To ensure that the Git repository is automatically updated, you can set up a cron job to run `git pull` every 10 minutes:
 
@@ -319,7 +314,7 @@ Add the following line to update every 10 minutes:
 
 
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 6. GitHub Webhook (Optional)</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 8. GitHub Webhook (Optional)</h2></summary>
 
 
 If you'd like to use GitHub webhooks to automatically update the repository, you need to set up an Express server to listen for `POST` requests.
@@ -367,7 +362,7 @@ If you'd like to use GitHub webhooks to automatically update the repository, you
 
 
 <details>
-  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 7. Manually Update the Repository</h2></summary>
+  <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 9. Manually Update the Repository</h2></summary>
 
 If you want to manually update the repository, follow these steps:
 
