@@ -155,10 +155,10 @@ Here are the key technologies, languages, and tools used in this project:
 
 <ol>
   <li><strong>Clone the repository:</strong>
-    <pre><code>git clone https://github.com/GylanSalih/Website-Portfolio</code></pre>
+    <pre><code>git clone https://github.com/GylanSalih/NextJS-Portify/</code></pre>
   </li>
   <li><strong>Navigate into the repository:</strong>
-    <pre><code>cd Website-Portfolio</code></pre>
+    <pre><code>cd NextJS-Portify</code></pre>
   </li>
   <li><strong>Install dependencies:</strong>
     <pre><code>npm install</code></pre>
