@@ -1,6 +1,6 @@
 # Overview VPS Setup for Next.js (React) Application
 
-This guide walks you through the steps to set up a Next.js project on an Ubuntu VPS. The steps include:
+### This guide walks you through the steps to set up a Next.js project on an Ubuntu VPS. The steps include:
 
 1. **Preparing the VPS**: Installing necessary dependencies (Node.js, PM2, Git) and setting up the development environment.
 2. **Cloning the Project**: Downloading the Git repository and installing dependencies for the Next.js project.
