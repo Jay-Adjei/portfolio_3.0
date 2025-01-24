@@ -12,7 +12,6 @@
 ## Step-by-Step Guide
 
 <details>
-  <summary><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 1. Preparing the VPS</summary>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 1. Preparing the VP</summary>
 
   - **Update and Install Dependencies:**
@@ -76,6 +75,12 @@
   ```bash
   pm2 start npm --name "nextjs-app" -- run dev
   ```
+  - **Update and Install Dependencies:**
+  
+  ```bash
+  pm2 start npm --name "nextjs-app" -- run dev
+  ```
+  - **Update and Install Dependencies:**
 
 - **Save PM2 processes (so they restart after a reboot):**
 
