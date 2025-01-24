@@ -74,8 +74,8 @@ const SingleCard = () => {
           </div>
 
           <div className="project_hero_blurb_container">
-            <h1 className="heading-1">My First Project</h1>
             <h4 className="heading-4">2024</h4>
+            <h1 className="heading-1">My First Project</h1>
             <p className="bio-paragraph">{projectTexts.heroParagraph}</p>
           </div>
         </div>

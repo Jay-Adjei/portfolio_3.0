@@ -55,22 +55,52 @@
     width: 100%;
     z-index: 2;
   }
-  
-  @media screen and (max-width: 991px) {
-    .project-hero_container {
-      align-items: center;
-      flex-direction: column;
-      padding-top: 20vw;
+
+  .project_hero_blurb_container .heading-1 {
       text-align: center;
+      width: 100%;
+      font-size: 3.9rem;
+      font-family: "Orbitron";
+      letter-spacing: -.04em;
+      line-height: 84%;
+      text-transform: uppercase;
+      color: #b7ab98;
     }
-  }
   
-  @media screen and (max-width: 767px) {
-    .project-hero_container {
-      padding-top: 30vw;
+
+    .project_hero_blurb_container .heading-4 {
+
+      border-radius: 8px;
+      font-size: 29px;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      font-size: 20px;
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      text-transform: none;
+      color: #CCCCCC; /* Hellgrauer Text für Lesbarkeit */
+      margin: 0 auto;
+      max-width: 800px;
+      background-color: transparent; /* Kein Hintergrund für nahtlosen Look */
     }
-  }
   
+  /* für die beschreibung */
+    .project_hero_blurb_container .bio-paragraph {
+      text-align: center;
+      width: 100%;
+      font-size: 20px;
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      text-transform: none;
+      color: #CCCCCC; /* Hellgrauer Text für Lesbarkeit */
+      margin: 0 auto;
+      max-width: 800px;
+      background-color: transparent; /* Kein Hintergrund für nahtlosen Look */
+    }
+    
   /* Project Hero Poster */
   .project_hero_poster {
     border-radius: 8px;
@@ -100,41 +130,32 @@
     letter-spacing: 1.4px;
   }
   
-  @media screen and (max-width: 991px) {
-    .project_hero_blurb_container {
-      margin-left: 0;
-    }
+
+
+  
+  /* Einzelne Karte Bild */
+  .card-grid2 {
+    display: flex;
+    width: 55%;
+    height: 550px;
+    border-radius: var(--radius);
   }
-  
-  @media screen and (max-width: 701px) {
-    .project_hero_blurb_container {
-      width: 87%;
-    }
-  }
-  
-  .heading-4 {
-    margin-top: 14px;
-    margin-bottom: 31px;
-  }
-  
-  
-  @media screen and (max-width: 479px) {
-    .heading-1 {
-      font-size: 28px;
-      line-height: 30px;
-    }
-  }
-  
+
   .heading-2 {
-    font-family: Quicksand, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 7px;
-    line-height: 55px;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-    justify-content: center;
+    border-radius: 8px;
+    font-size: 29px;
+    padding: 10px;
     text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-transform: none;
+    color: #CCCCCC; /* Hellgrauer Text für Lesbarkeit */
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: transparent; /* Kein Hintergrund für nahtlosen Look */
   }
 
 
@@ -189,21 +210,40 @@
     text-align: center;
   }
   
-  .cast_block {
+ 
+  .cast_block h5 {
     border-radius: 8px;
-    flex: 0 0 auto;
-    margin: 10px;
+    font-size: 29px;
     padding: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-transform: none;
+    color: #CCCCCC; /* Hellgrauer Text für Lesbarkeit */
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: transparent; /* Kein Hintergrund für nahtlosen Look */
   }
-  
-  .smalldescription {
+
+
+  .smalldescription h5 {
     border-radius: 8px;
-    flex: 1 1 100%;
-    margin: 10px;
+    font-size: 29px;
     padding: 10px;
-    font-family: 'AvantGarde', sans-serif;
-    font-weight: 400;
-    letter-spacing: 1.4px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-transform: none;
+    color: #CCCCCC; /* Hellgrauer Text für Lesbarkeit */
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: transparent; /* Kein Hintergrund für nahtlosen Look */
   }
   
   .Cast-Names {
@@ -299,7 +339,7 @@
     overflow: hidden;
   }
   
-  @media (max-width: 771px) {
+  @media (max-width: 480px) {
     .gallery {
       gap: 10px; /* Optional: Reduziere den Abstand zwischen den Bildern */
       align-items: unset; /* Zentriert die Galerie vertikal */
@@ -313,8 +353,14 @@
     }
   
     .gallery img {
+      display: block;
       width: 100%;
-      height: auto; /* Höhe automatisch anpassen */
+      height: 101%;
+      box-sizing: border-box;
+      border-radius: 15px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      min-height: 275px;
     }
   }
   
@@ -427,11 +473,72 @@
   /*----------------------------------------------------------*/
   
 
-/* Einzelne Karte */
+
+  /*------------------------------------------------------------*/
+  /* Responsive Css      Start                                 */
+  /*----------------------------------------------------------*/
+/* Container für die gesamte Box */
+@media screen and (max-width: 480px) {
   .card-grid2 {
-    display: flex;
-    width: 55%;
-    height: 550px;
-    border-radius: var(--radius);
+      display: flex;
+      /* flex-direction: column; */
+      /* justify-content: center; */
+      width: 100%;
+      height: 425px;
+      border-radius: var(--radius);
+    }
   }
 
+
+/* Titel des Projektes */
+@media screen and (max-width: 480px) {
+  .heading-1 {
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    width: 100%; /* Text über die gesamte Breite */
+    margin-bottom: 10px; /* Abstand nach unten */
+  }
+}
+
+/* Tag des Projektes */
+@media screen and (max-width: 480px) {
+  .heading-4 {
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    width: 100%; /* Text über die gesamte Breite */
+    margin-bottom: 10px; /* Abstand nach unten */
+  }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+  .project-hero_container {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project_hero_blurb_container {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 32px;
+  }
+}
+
+
+
+
+  /*------------------------------------------------------------*/
+  /* Responsive Css      ENDE                                  */
+  /*----------------------------------------------------------*/
+  

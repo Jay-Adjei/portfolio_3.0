@@ -82,12 +82,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: 1.2;
-  font-weight: bold;
+  font-family: "RedHat";
+  text-align: center;
 }
 
 h1 {
   font-size: 3.5em;
   margin-bottom: 0.5em;
+  font-family: "NotoSansJP";
 }
 
 h2 {
@@ -120,11 +122,9 @@ Absätze und Text
 ---------------------------------------------------------- */
 
 p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #ffffff;
-  margin-bottom: 1em;
+  text-align: center;
   font-weight: 400;
+  font-family: "RedHat";
 }
 
 strong {

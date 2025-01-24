@@ -12,12 +12,38 @@ const Carousel = () => {
   const [endY, setEndY] = useState(null);
 
   const slides = [
-    { id: 1, img: '/assets/img/LandingBG/OniBoy4.jpg', subtitle: 'Gylan Salih', description: 'Explore my journey through code and creativity. Here, I showcase my projects, each project made with passion, dedication & Love.' },
-    { id: 2, img: '/assets/img/LandingBG/OniGirl10.jpg', subtitle: 'Gylan Salih', description: 'Explore my journey through code and creativity. Here, I showcase my projects, each project made with passion, dedication & Love.' },
-    { id: 3, img: '/assets/img/LandingBG/OniBoy2_copy.jpg', subtitle: 'Gylan Salih', description: 'Explore my journey through code and creativity. Here, I showcase my projects, each project made with passion, dedication & Love.' },
-    { id: 4, img: '/assets/img/LandingBG/OniGirl13.jpg', subtitle: 'Gylan Salih', description: 'Explore my journey through code and creativity. Here, I showcase my projects, each project made with passion, dedication & Love.' },
-    { id: 5, img: '/assets/img/LandingBG/OniBoy4.jpg', subtitle: 'Gylan Salih', description: 'Explore my journey through code and creativity. Here, I showcase my projects, each project made with passion, dedication & Love.' },
+    { 
+      id: 1, 
+      img: '/assets/img/LandingBG/OniBoy4.jpg', 
+      subtitle: 'Designed to redefine the boundaries of modern creativity', 
+      description: 'This project showcases a unique approach to pushing creative boundaries with innovative ideas and execution.' 
+    },
+    { 
+      id: 2, 
+      img: '/assets/img/LandingBG/OniGirl10.jpg', 
+      subtitle: 'A blend of aesthetics and functionality executed with precision', 
+      description: 'Combining beautiful design with seamless functionality, this project emphasizes precision and detail.' 
+    },
+    { 
+      id: 3, 
+      img: '/assets/img/LandingBG/OniBoy2_copy.jpg', 
+      subtitle: 'Where technology meets creativity, turning visions into reality', 
+      description: 'Bridging the gap between technology and artistry, this project transforms concepts into tangible results.' 
+    },
+    { 
+      id: 4, 
+      img: '/assets/img/LandingBG/OniGirl13.jpg', 
+      subtitle: 'User-focused, innovative, and crafted with attention to detail', 
+      description: 'Centered around user needs, this project integrates innovation and meticulous craftsmanship.' 
+    },
+    { 
+      id: 5, 
+      img: '/assets/img/LandingBG/OniBoy4.jpg', 
+      subtitle: 'A project that seamlessly merges design and technology', 
+      description: 'Highlighting the harmony between cutting-edge design and technological sophistication, this project stands out.' 
+    },
   ];
+  
 
   const autoplayInterval = 5000; // Interval in milliseconds
 
@@ -94,11 +120,11 @@ const Carousel = () => {
               />
               <div className="text-overlay">
                 <div className="text-content-slider">
-                  <p className="subtitle-slider">{slide.subtitle}</p>
                   <h1 className="title-slider">Portfolio</h1>
+                  <p className="subtitle-slider">{slide.subtitle}</p>
                   <p className="description-slider">{slide.description}</p>
                 </div>
-                <p className="background-text-slider">ONI</p>
+                <p className="background-text-slider">Welcome</p>
               </div>
             </div>
           </div>

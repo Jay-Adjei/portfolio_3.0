@@ -29,7 +29,43 @@
 
 @font-face {
   font-family: "Quicksand";
-  src: url("Quicksand-SemiBold.ttf") format("woff");
+  src: url("Quicksand-SemiBold.ttf") format("truetype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvantGarde";
+  src: url("AVGARDN_light.ttf") format("truetype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvantGardeBold";
+  src: url("AVGARDD_bold.ttf") format("truetype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans_regular";
+  src: url("NunitoSans_regular.ttf") format("truetype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans_thin";
+  src: url("NunitoSans_thin.ttf") format("truetype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("Orbitron.ttf") format("truetype");
   font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
   font-style: normal;
 }

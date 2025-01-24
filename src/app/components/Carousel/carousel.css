@@ -25,7 +25,17 @@
     opacity: 0;
     top: 0;
     left: 0;
-    transition: opacity 1s ease-in-out;
+  }
+
+  @media (max-width: 480px){
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 65%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
   }
   
   /* Active Slide */
@@ -95,12 +105,12 @@
   
   /* Text Content for Slider */
   .text-content-slider {
-    width: 68%;
-    padding: 4rem;
-    position: relative;
-    z-index: 2;
-    text-align: left;
-    color: var(--black);
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    /* position: absolute; */
+    display: grid;
+    width: 100%;
   }
   
   /* Dark Mode Text Content */
@@ -109,22 +119,27 @@
   }
   
   /* Responsive Text Content */
-  @media screen and (max-width: 771px) {
+  @media screen and (max-width: 480px) {
     .text-content-slider {
       padding: 2rem;
       text-align: center;
+      justify-content: center;
+      /* position: absolute; */
+      display: grid;
     }
   }
   
   /* Subtitle Styling */
   .subtitle-slider {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    font-family: "Orbitron";
+    letter-spacing: -.04em;
+    line-height: 84%;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    color: #b7ab98;
     color: var(--light-mode);
-    font-weight: 500;
-    font-family: "RedHat";
   }
   
 
@@ -132,29 +147,61 @@
     color: var(--dark-mode);
   }
   
+    /* Responsive Title */
+    @media screen and (max-width: 480px) {
+      .subtitle-slider{
+          border-radius: 8px;
+          padding: 10px;
+          text-align: center;
+          width: 100%;
+          font-size: 20px;
+          font-family: "Orbitron", sans-serif;
+          letter-spacing: 0.5px;
+          line-height: 1.6;
+          text-transform: none;
+          color: #CCCCCC;
+          margin: 0 auto;
+          max-width: 800px;
+          background-color: transparent;
+        }
+      }
   
   /* Title Styling */
   .title-slider {
-    font-family: "RedHat";
-    font-size: 5rem;
-    font-weight: 700;
-    margin: 0;
-    color: #000000;
-    text-transform: uppercase;
-    line-height: 1.2;
-  }
+      text-align: center;
+      width: 100%;
+      font-size: 3.9rem;
+      font-family: "Orbitron";
+      letter-spacing: -.04em;
+      line-height: 84%;
+      text-transform: uppercase;
+      color: #b7ab98;
+    }
+
 
   .dark-mode .title-slider {
     color: var(--dark-mode);
   }
   
   /* Responsive Title */
-  @media screen and (max-width: 901px) {
-    .title-slider {
-      font-size: 4rem;
-      line-height: 1.1;
+  @media screen and (max-width: 480px) {
+    .title-slider{
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        font-family: "Orbitron", sans-serif;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+        text-transform: none;
+        color: #CCCCCC;
+        margin: 0 auto;
+        max-width: 800px;
+        background-color: transparent;
+      }
     }
-  }
+  
   
   
   /* Description Styling */
@@ -183,15 +230,31 @@
   /* Background Text Oni im hintergrund */
   .background-text-slider {
     position: absolute;
-    bottom: -132px;
-    left: 10%;
+    bottom: -16px;
+    left: 18%;
     transform: translateX(-50%);
     font-family: "RedHat";
-    font-size: 8rem;
+    font-size: 7rem;
     font-weight: 700;
-    color: transparent;
+    color: #0000000d;
     -webkit-text-stroke: 2px rgb(0, 0, 0);
     z-index: 0;
+  }
+
+  
+  @media (max-width: 480px){
+    .background-text-slider {
+      position: absolute;
+      bottom: -31px;
+      left: 23%;
+      transform: translateX(-50%);
+      font-family: "RedHat";
+      font-size: 6rem;
+      font-weight: 700;
+      color: #0000000a;
+      -webkit-text-stroke: 2px rgb(0, 0, 0);
+      z-index: 0;
+    }
   }
 
   /* Dark Mode Background Text */
@@ -222,13 +285,13 @@
   /* Responsive Navigation Position */
   @media screen and (max-width: 1024px) {
     .carousel-wrapper .navigation {
-      bottom: 15px;
+      bottom: 105px;
     }
   }
   
   @media screen and (max-width: 600px) {
     .carousel-wrapper .navigation {
-      bottom: 10px;
+      bottom: 343px;
     }
   }
   
