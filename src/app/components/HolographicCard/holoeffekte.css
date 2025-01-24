@@ -80,9 +80,21 @@
   width: 100%;
   object-fit: cover;
   position: relative;
-  min-height: 500px;
+  min-height: 500px;  /* Standardhöhe */
   transform: none;
+  object-position: center; /* Bild wird zentriert */
 }
+
+/* Handy View */
+@media (max-width: 480px) {
+  .card__effects,
+  .card_images {
+    min-height: 212px; /* Höhe für mobile Geräte */
+  }
+}
+
+
+
 
 /* -------------------- Hover Text Block -------------------- */
 .project-hover-block {

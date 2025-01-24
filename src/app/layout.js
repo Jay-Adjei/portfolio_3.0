@@ -7,7 +7,6 @@ import Mouse from './components/Mouse/Mouse';
 import Preload from './components/Preload/Preload';
 import './styles/aboutme-page.css';
 import './fonts/fonts.css';
-import './styles/cardgrid.css';
 import './styles/globals.css';
 import './styles/viewsinglecard.css';
 

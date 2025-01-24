@@ -24,6 +24,12 @@ Updates / Fixes:
 
 0.0.17 - Latest Updates
 
+    Deactive Mobile/Tablet Card hover effect
+    tryed first steps with responsive settings for header Mobile View
+    Portfolio page button layout responsive settings
+
+0.0.17 - Previous Updates
+
     Converted the portfolio to React after researching and finding that Next.js provides better functionality and performance for the project.
     Next.js was chosen for its server-side rendering and routing capabilities, which align well with the project's needs.
     Found the syntax of Next.js familiar and enjoyable, drawing parallels to my experience with Unity C#—the structure and flow are quite similar, which makes it easier and more fun to work with.

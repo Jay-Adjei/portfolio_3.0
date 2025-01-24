@@ -207,3 +207,179 @@ select option {
 select::-webkit-search-cancel-button {
   -webkit-appearance: none; /* Entfernt das Standard-Such-Icon bei Webkit-Browsern */
 }
+
+
+/* -----------------------------------------------------------
+Card Grid Layout Filter Setting
+----------------------------------------------------------- */
+
+
+
+/* -------------------- CARDS GRID CSS BEGINNT AB HIER ----------- */
+.main-grid {
+  max-width: 100%;
+  padding: 29px;
+  z-index: 6;
+  position: relative;
+  margin: 0px 0 450px;
+  background-color: rgb(255, 255, 255);
+}
+
+.dark-mode .main-grid{
+  max-width: 100%;
+  padding: 29px;
+  z-index: 6;
+  position: relative;
+  margin: 0px 0 450px;
+  background-color: rgb(0, 0, 0);
+}
+/* Mobile View (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .main-grid {
+    max-width: 100%;
+    padding: 0px;
+  }
+}
+
+/* Card-grid container */
+.card-grid {
+display: grid;
+grid-column-gap: 14px;
+grid-row-gap: 14px;
+margin: auto;
+gap: 16px;
+margin-top: 20px;
+border-radius: 12px;
+padding: 16px;
+}
+
+
+.card-grid.layout-1 {
+  grid-template-columns: repeat(4, 1fr);
+  width: 65%;
+  height: 100%;
+}
+
+.card-grid.layout-2 {
+  grid-template-columns: repeat(5, 1fr);
+  width: 80%;
+}
+
+.card-grid.layout-3 {
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+}
+
+/* Tablet View (max-width: 1024px) */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .card-grid.layout-1 {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 25px;
+  }
+
+  .card-grid.layout-2 {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 25px;
+  }
+
+  .card-grid.layout-3 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 85%;
+    padding: 25px;
+  }
+}
+
+/* Handy View (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .card-grid.layout-1 {
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    min-width: 433px;
+    width: 100%;
+    position: relative;
+  }
+
+  .card-grid.layout-2 {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    width: 100%;
+    position: relative;
+  }
+
+  .card-grid.layout-3 {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    min-height: 139px; /* Höhe für Layout 3 */
+  }
+}
+
+
+
+
+
+
+
+/* -----------------------------------------------------------
+Mobile Responsive Anpassungen
+----------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    padding-top: 130px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  #view-section {
+    flex-direction: initial; /* Buttons untereinander auf kleinen Bildschirmen */
+    gap: 10px;
+    max-width: 100%; /* Die Buttons nutzen den gesamten Platz */
+  }
+
+  /* Anpassen der Größe der Buttons auf mobilen Geräten */
+  .example-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px; /* Größeres Icon */
+  }
+
+  .filtering, .PNL_options {
+    gap: 8px; /* Weniger Abstand zwischen den Formularfeldern */
+  }
+
+  /* Anpassung der Größe der Eingabefelder */
+  select, input, textarea {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  /* Hero-Bild anpassen, um es gut in kleinere Bildschirme zu integrieren */
+  .project-hero1 {
+    height: 350px; /* Das Bild wird auf mobilen Geräten kleiner */
+  }
+
+  /* Overlay für mobile Geräte anpassen */
+  .overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff);
+    height: 350px; /* Höhe des Overlays an das Hero-Bild anpassen */
+  }
+
+  /* Allgemeine Verbesserung der Darstellung */
+  .section_project_header {
+    padding-bottom: 20px; /* Weniger Padding */
+  }
+
+  /* Verbesserung der Darstellung der Filter-Optionen */
+  label {
+    font-size: 16px; /* Kleinere Schrift für Labels */
+  }
+
+  select {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto; /* Hero-Image auf kleinen Geräten flexibel machen */
+  }
+}

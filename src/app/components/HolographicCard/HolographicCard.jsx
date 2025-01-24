@@ -18,6 +18,7 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
   useEffect(() => {
     const card = cardRef.current;
     let requestId;
+    let isMobileOrTablet = window.innerWidth < 1024; // Überprüfen, ob das Gerät mobil oder Tablet ist
 
     // Funktion zur Speicherung der initialen Styles
     const initialStyles = new WeakMap();
@@ -40,6 +41,8 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
 
     // Funktion zur Mausbewegung mit requestAnimationFrame für bessere Performance
     const OrientCard = (e) => {
+      if (isMobileOrTablet) return; // Wenn auf einem mobilen Gerät, nichts tun
+
       cancelAnimationFrame(requestId);
       requestId = requestAnimationFrame(() => {
         const rect = card.getBoundingClientRect();
@@ -63,9 +66,8 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
           transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
         });
 
-        // gsap am anfang start einsetzen
         gsap.to(card, {
-          duration: 0.3, // Verlangsamte Animation für die Rotation
+          duration: 0.3,
           transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
           '--mx': `${50 - Ydeg * 2}%`,
           '--my': `${50 + Xdeg * 2}%`,
@@ -76,21 +78,21 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
           '--o': initialStyles.get(card).o,
           '--galaxybg': initialStyles.get(card).galaxybg,
           ease: 'power4.out',
-          zIndex: 999, // z-index auf 9999 setzen, damit die Karte oben bleibt
-          position: 'relative', // Position relativ setzen
+          zIndex: 999,
+          position: 'relative',
         });
 
         const shine = card.querySelector('.card__shine');
         const glare = card.querySelector('.card__glare');
         gsap.to(shine, {
-          duration: 2.0, // Verlangsamte Animation für den Glanz
+          duration: 2.0,
           delay: 0.1,
           backgroundPosition: `${50 - (mvX / rect.width) * 100}% ${50 + (mvY / rect.height) * 100}%`,
           ease: 'power2.out',
         });
 
         gsap.to(glare, {
-          duration: 2.0, // Verlangsamte Animation für den Glanz
+          duration: 2.0,
           delay: 0.1,
           backgroundPosition: `${50 - (mvX / rect.width) * 50}% ${50 + (mvY / rect.height) * 50}%`,
           ease: 'power2.out',
@@ -100,19 +102,19 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
 
     // Funktion zum Zurücksetzen der Transformation bei Mausverlassen
     const handleMouseLeave = () => {
-      cancelAnimationFrame(requestId); // Animationen abbrechen, wenn Maus die Karte verlässt
-      gsap.killTweensOf(card); // Alle Tween-Animationen stoppen
-    
-      // gsap am ende
+      if (isMobileOrTablet) return; // Wenn auf einem mobilen Gerät, nichts tun
+
+      cancelAnimationFrame(requestId);
+      gsap.killTweensOf(card);
+
       gsap.to(card, {
         duration: 0.6,
-        zIndex: 1, // z-index auf 9999 setzen, damit die Karte oben bleibt
-        position: 'relative', // Position relativ setzen
+        zIndex: 1,
+        position: 'relative',
         transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
         ease: 'power3.out',
       });
-    
-      // Zurücksetzen der CSS-Variablen auf ihre ursprünglichen Werte
+
       setStyleVars({
         '--mx': '0%',
         '--my': '0%',
@@ -121,7 +123,7 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         '--hyp': '0',
         transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
       });
-    
+
       const shine = card.querySelector('.card__shine');
       const glare = card.querySelector('.card__glare');
       if (shine) {
@@ -139,20 +141,24 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         });
       }
     };
-    
+
     // Initial Styles speichern und Event Listener hinzufügen
     if (card) {
       saveInitialStyles(card);
-      card.addEventListener('mousemove', OrientCard);
-      card.addEventListener('mouseleave', handleMouseLeave);
+      if (!isMobileOrTablet) {
+        card.addEventListener('mousemove', OrientCard);
+        card.addEventListener('mouseleave', handleMouseLeave);
+      }
     }
 
     return () => {
       if (card) {
-        card.removeEventListener('mousemove', OrientCard);
-        card.removeEventListener('mouseleave', handleMouseLeave);
+        if (!isMobileOrTablet) {
+          card.removeEventListener('mousemove', OrientCard);
+          card.removeEventListener('mouseleave', handleMouseLeave);
+        }
       }
-      cancelAnimationFrame(requestId); // Cleanup
+      cancelAnimationFrame(requestId);
     };
   }, []);
 
@@ -163,8 +169,8 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         data-rarity={rarity}
         data-category={category}
         style={{
-          ...styleVars, // Dynamische CSS-Variablen anwenden
-          transition: 'transform 0.0s ease', // Kein Übergang, aber trotzdem da lassen
+          ...styleVars,
+          transition: 'transform 0.0s ease',
         }}
       >
         <div className="card__effects">
@@ -181,7 +187,7 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         </div>
       </div>
     </div>
-  );  
+  );
 };
 
 export default HolographicCard;

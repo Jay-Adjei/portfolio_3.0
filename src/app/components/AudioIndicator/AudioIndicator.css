@@ -104,8 +104,11 @@
   /* Responsiveness */
   @media (max-width: 600px) {
     .sound-wave {
-      width: 20px;
-      height: 16px;
+      width: 26px;
+      height: 25px;
+      right: 119px;
+      position: absolute;
+      top: 11px;
     }
     .bar {
       width: 0.8px;
