@@ -5,10 +5,11 @@
 1. **Preparing the VPS**: Installing necessary dependencies (Node.js, PM2, Git) and setting up the development environment.
 2. **Cloning the Project**: Downloading the Git repository and installing dependencies for the Next.js project.
 3. **Starting the Application**: Running the Next.js project using PM2 for process management.
-4. **Optional Apache Reverse Proxy Configuration**: Setting up Apache to serve the Next.js project via a custom domain.
-5. **Automating Updates with Cron**: Automatically fetching Git updates and restarting the application at regular intervals.
-6. **GitHub Webhook (Optional)**: Setting up a GitHub webhook to automatically update the repository when changes occur.
-7. **Manual Updates**: Steps for manually pulling repository updates and restarting the application.
+4. **Creating SSL Certificate Using Certbot**: Setting up SSL certificates for your custom domain using Certbot (Let's Encrypt).
+5. **Optional Apache Reverse Proxy Configuration**: Setting up Apache to serve the Next.js project via a custom domain.
+6. **Automating Updates with Cron**: Automatically fetching Git updates and restarting the application at regular intervals.
+7. **GitHub Webhook (Optional)**: Setting up a GitHub webhook to automatically update the repository when changes occur.
+8. **Manual Updates**: Steps for manually pulling repository updates and restarting the application.
 
 ### Prerequisites
 
@@ -18,7 +19,7 @@
 - Apache as a Reverse Proxy (optional, if you want to use a custom domain)
 - Git for version control
 - `npm` (or `yarn`)
-
+- Certbot for SSL certificate generation (if using HTTPS)
 
 # Step-by-Step Guide
 
@@ -100,8 +101,8 @@
 - **Clone your Git repository**:
   
   ```bash
-  git clone https://github.com/yourusername/your-nextjs-project.git
-  cd your-nextjs-project
+  git clone https://github.com/GylanSalih/NextJS-Portify.git
+  cd NextJS-Portify
   ```
 
 - **Install dependencies**:
