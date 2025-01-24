@@ -293,7 +293,6 @@ padding: 16px;
 @media screen and (max-width: 480px) {
   .card-grid.layout-1 {
     grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
-    min-width: 433px;
     width: 100%;
     position: relative;
   }
