@@ -94,7 +94,7 @@
 - **Create an Apache site configuration:**
 
   ```bash
-  sudo nano /etc/apache2/sites-available/yourdomain.com.conf
+  sudo nano /etc/apache2/sites-available/000-default.conf
   ```
 
   Example configuration:
@@ -124,6 +124,45 @@
       SSLCertificateKeyFile /path/to/private.key
   </VirtualHost>
   ```
+
+  ```bash
+  sudo nano /etc/apache2/sites-available/000-default-le-ssl.conf
+  ```
+
+  Example configuration:
+
+  ```apache
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    # Replace with your actual domain
+    # ServerName and ServerAlias
+    ServerName yourdomain.com
+    ServerAlias www.yourdomain.com
+
+    # Replace with your Next.js app's directory
+    # DocumentRoot
+    DocumentRoot /var/www/NextJS-Portify
+
+    # Use the correct paths for your SSL certificate and private key
+    # SSL configuration
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem  # Certificate path
+    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem  # Private key path
+    Include /etc/letsencrypt/options-ssl-apache.conf  # SSL config from Let's Encrypt
+
+    # Proxy requests to your Next.js app running on port 3001
+    # Reverse Proxy
+    ProxyPass / http://127.0.0.1:3001/
+    ProxyPassReverse / http://127.0.0.1:3001/
+
+    # Logs for errors and access
+    # Error and access logs
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+</IfModule>
+  ```
+
 
 - **Enable the site and restart Apache:**
 
