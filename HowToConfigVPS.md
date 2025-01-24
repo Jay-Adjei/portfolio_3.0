@@ -48,20 +48,18 @@
 
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" />  2. Clone the Project and Install Dependencies</h2></summary>
+  
 - **Clone the Git Repository:**
-
   ```bash
   git clone https://github.com/yourusername/yourrepo.git /var/www/NextJS-Portify
   ```
 
 - **Navigate to the project directory:**
-
   ```bash
   cd /var/www/NextJS-Portify
   ```
 
 - **Install the dependencies:**
-
   ```bash
   npm install
   ```
