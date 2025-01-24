@@ -1,5 +1,4 @@
 
-```markdown
 # VPS Setup for Next.js (React) Application
 
 ## Prerequisites
