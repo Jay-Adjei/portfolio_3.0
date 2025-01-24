@@ -1,5 +1,19 @@
 # VPS Setup for Next.js (React) Application
 
+## Overview of the Steps for Setting Up a VPS for a Next.js (React) Project
+
+This guide walks you through the steps to set up a Next.js project on an Ubuntu VPS. The steps include:
+
+1. **Preparing the VPS**: Installing necessary dependencies (Node.js, PM2, Git) and setting up the development environment.
+2. **Cloning the Project**: Downloading the Git repository and installing dependencies for the Next.js project.
+3. **Starting the Application**: Running the Next.js project using PM2 for process management.
+4. **Optional Apache Reverse Proxy Configuration**: Setting up Apache to serve the Next.js project via a custom domain.
+5. **Automating Updates with Cron**: Automatically fetching Git updates and restarting the application at regular intervals.
+6. **GitHub Webhook (Optional)**: Setting up a GitHub webhook to automatically update the repository when changes occur.
+7. **Manual Updates**: Steps for manually pulling repository updates and restarting the application.
+
+---
+
 ## Prerequisites
 
 - A VPS with Ubuntu 24
@@ -8,7 +22,7 @@
 - Apache as a Reverse Proxy (optional, if you want to use a custom domain)
 - Git for version control
 - `npm` (or `yarn`)
-
+- 
 ## Step-by-Step Guide
 
 <details>
@@ -83,14 +97,6 @@
 
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 4. (Optional) Configure Apache as a Reverse Proxy</h2></summary>
-
-  <p><strong>Description:</strong></p>
-  <p>In this section, we configure Apache to act as a reverse proxy for a Next.js application. A reverse proxy forwards requests from clients to another server (in this case, a Next.js app running locally). We also set up SSL to ensure secure HTTPS communication.</p>
-
-  <p><strong>Install Apache:</strong></p>
-  <p>We install Apache, the web server that will act as the reverse proxy.</p>
-  <pre><code>sudo apt install apache2</code></pre>
-
 
 - **Install Apache:**
 
