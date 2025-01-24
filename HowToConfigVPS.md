@@ -33,7 +33,7 @@
     sudo apt install git curl build-essential
     ```
 
-  - **Install Node.js:**
+  - **Install Node.js (npm is installed automatically with Node.js):**
   
     To install Node.js (the best way is using `nvm`):
   
