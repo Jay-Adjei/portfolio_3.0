@@ -84,12 +84,12 @@
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 4. (Optional) Configure Apache as a Reverse Proxy</h2></summary>
 
-    <p><strong>Description:</strong></p>
-    <p>In this section, we configure Apache to act as a reverse proxy for a Next.js application. A reverse proxy forwards requests from clients to another server (in this case, a Next.js app running locally). We also set up SSL to ensure secure HTTPS communication.</p>
+  <p><strong>Description:</strong></p>
+  <p>In this section, we configure Apache to act as a reverse proxy for a Next.js application. A reverse proxy forwards requests from clients to another server (in this case, a Next.js app running locally). We also set up SSL to ensure secure HTTPS communication.</p>
 
-    <p><strong>Install Apache:</strong></p>
-    <p>We install Apache, the web server that will act as the reverse proxy.</p>
-    <pre><code>sudo apt install apache2</code></pre>
+  <p><strong>Install Apache:</strong></p>
+  <p>We install Apache, the web server that will act as the reverse proxy.</p>
+  <pre><code>sudo apt install apache2</code></pre>
 
 
 - **Install Apache:**
