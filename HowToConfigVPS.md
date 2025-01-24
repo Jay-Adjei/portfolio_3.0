@@ -68,24 +68,13 @@
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 3. Start the Next.js Application
 </h2></summary>
-  
-  - **Start with PM2:**
+
+- **Start with PM2:**
   ```bash
   pm2 start npm --name "nextjs-app" -- run dev
   ```
 
 - **Save PM2 processes (so they restart after a reboot):**
-  ```bash
-  pm2 save
-  ```
-
-    
-- **Clone the Git Repository:**
-  ```bash
-  pm2 start npm --name "nextjs-app" -- run dev
-  ```
-
-- **Navigate to the project directory:**
   ```bash
   pm2 save
   ```
