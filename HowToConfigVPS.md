@@ -10,8 +10,6 @@
 6. **GitHub Webhook (Optional)**: Setting up a GitHub webhook to automatically update the repository when changes occur.
 7. **Manual Updates**: Steps for manually pulling repository updates and restarting the application.
 
----
-
 ### Prerequisites
 
 - A VPS with Ubuntu 24
@@ -22,7 +20,8 @@
 - `npm` (or `yarn`)
 
 
-## Step-by-Step Guide
+# Step-by-Step Guide
+
 <details>
   <summary><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> 1. Preparing the VP</summary>
 
