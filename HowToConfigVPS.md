@@ -1,3 +1,5 @@
+
+```markdown
 # VPS Setup for Next.js (React) Application
 
 ## Prerequisites
@@ -12,6 +14,9 @@
 ## Step-by-Step Guide
 
 ### 1. Preparing the VPS
+
+<details>
+<summary>Click to expand</summary>
 
 - **Update and Install Dependencies:**
 
@@ -41,7 +46,12 @@
   sudo apt install git
   ```
 
+</details>
+
 ### 2. Clone the Project and Install Dependencies
+
+<details>
+<summary>Click to expand</summary>
 
 - **Clone the Git Repository:**
 
@@ -61,7 +71,12 @@
   npm install
   ```
 
+</details>
+
 ### 3. Start the Next.js Application
+
+<details>
+<summary>Click to expand</summary>
 
 - **Start with PM2:**
 
@@ -75,7 +90,12 @@
   pm2 save
   ```
 
+</details>
+
 ### 4. (Optional) Configure Apache as a Reverse Proxy
+
+<details>
+<summary>Click to expand</summary>
 
 - **Install Apache:**
 
@@ -163,7 +183,6 @@
   </IfModule>
   ```
 
-
 - **Enable the site and restart Apache:**
 
   ```bash
@@ -171,7 +190,12 @@
   sudo systemctl restart apache2
   ```
 
+</details>
+
 ### 5. Automate Updates with Cron (Optional)
+
+<details>
+<summary>Click to expand</summary>
 
 To ensure that the Git repository is automatically updated, you can set up a cron job to run `git pull` every 10 minutes:
 
@@ -185,7 +209,12 @@ Add the following line to update every 10 minutes:
 */10 * * * * cd /var/www/NextJS-Portify && git pull origin main && pm2 restart nextjs-app
 ```
 
+</details>
+
 ### 6. GitHub Webhook (Optional)
+
+<details>
+<summary>Click to expand</summary>
 
 If you'd like to use GitHub webhooks to automatically update the repository, you need to set up an Express server to listen for `POST` requests.
 
@@ -229,7 +258,12 @@ If you'd like to use GitHub webhooks to automatically update the repository, you
 
   - Add the URL of your webhook server (`http://your-server-ip:8080/deploy`) in the Webhook settings on GitHub.
 
+</details>
+
 ### 7. Manually Update the Repository
+
+<details>
+<summary>Click to expand</summary>
 
 If you want to manually update the repository, follow these steps:
 
@@ -256,3 +290,6 @@ If you want to manually update the repository, follow these steps:
    ```bash
    pm2 restart nextjs-app
    ```
+
+</details>
+```
