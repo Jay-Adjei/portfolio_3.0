@@ -132,8 +132,8 @@
   Example configuration:
 
   ```apache
-<IfModule mod_ssl.c>
-<VirtualHost *:443>
+  <IfModule mod_ssl.c>
+  <VirtualHost *:443>
     # Replace with your actual domain
     # ServerName and ServerAlias
     ServerName yourdomain.com
@@ -159,8 +159,8 @@
     # Error and access logs
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-</IfModule>
+  </VirtualHost>
+  </IfModule>
   ```
 
 
