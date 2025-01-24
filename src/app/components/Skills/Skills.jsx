@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react';
 import './skill.css';
 
 const skillsList = [
-  { title: "HTML5", icon: "/assets/icons/skills/html.png" },
-  { title: "CSS3", icon: "/assets/icons/skills/css.png" },
-  { title: "JavaScript", icon: "/assets/icons/skills/js.png" },
-  { title: "React", icon: "/assets/icons/skills/react.png" },
-  { title: "React", icon: "/assets/icons/skills/mega.jpg" },
+  { title: "HTML5", icon: "/assets/img/skills/html.png" },
+  { title: "CSS3", icon: "/assets/img/skills/css.png" },
+  { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+  { title: "React", icon: "/assets/img/skills/react.png" },
+  { title: "React", icon: "/assets/img/skills/mega.jpg" },
+  { title: "React", icon: "/assets/img/skills/mega.jpg" }
 ];
 
 
