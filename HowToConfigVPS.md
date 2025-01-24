@@ -1,3 +1,4 @@
+### Example Markdown with Expandable Titles:
 
 ```markdown
 # VPS Setup for Next.js (React) Application
@@ -13,10 +14,8 @@
 
 ## Step-by-Step Guide
 
-### 1. Preparing the VPS
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>1. Preparing the VPS</summary>
 
 - **Update and Install Dependencies:**
 
@@ -48,10 +47,8 @@
 
 </details>
 
-### 2. Clone the Project and Install Dependencies
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>2. Clone the Project and Install Dependencies</summary>
 
 - **Clone the Git Repository:**
 
@@ -73,10 +70,8 @@
 
 </details>
 
-### 3. Start the Next.js Application
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>3. Start the Next.js Application</summary>
 
 - **Start with PM2:**
 
@@ -92,10 +87,8 @@
 
 </details>
 
-### 4. (Optional) Configure Apache as a Reverse Proxy
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>4. (Optional) Configure Apache as a Reverse Proxy</summary>
 
 - **Install Apache:**
 
@@ -154,29 +147,19 @@
   ```apache
   <IfModule mod_ssl.c>
   <VirtualHost *:443>
-    # Replace with your actual domain
-    # ServerName and ServerAlias
     ServerName yourdomain.com
     ServerAlias www.yourdomain.com
 
-    # Replace with your Next.js app's directory
-    # DocumentRoot
     DocumentRoot /var/www/NextJS-Portify
 
-    # Use the correct paths for your SSL certificate and private key
-    # SSL configuration
     SSLEngine on
-    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem  # Certificate path
-    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem  # Private key path
-    Include /etc/letsencrypt/options-ssl-apache.conf  # SSL config from Let's Encrypt
+    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem
+    Include /etc/letsencrypt/options-ssl-apache.conf
 
-    # Proxy requests to your Next.js app running on port 3001
-    # Reverse Proxy
     ProxyPass / http://127.0.0.1:3001/
     ProxyPassReverse / http://127.0.0.1:3001/
 
-    # Logs for errors and access
-    # Error and access logs
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
   </VirtualHost>
@@ -192,10 +175,8 @@
 
 </details>
 
-### 5. Automate Updates with Cron (Optional)
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>5. Automate Updates with Cron (Optional)</summary>
 
 To ensure that the Git repository is automatically updated, you can set up a cron job to run `git pull` every 10 minutes:
 
@@ -211,10 +192,8 @@ Add the following line to update every 10 minutes:
 
 </details>
 
-### 6. GitHub Webhook (Optional)
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>6. GitHub Webhook (Optional)</summary>
 
 If you'd like to use GitHub webhooks to automatically update the repository, you need to set up an Express server to listen for `POST` requests.
 
@@ -260,10 +239,8 @@ If you'd like to use GitHub webhooks to automatically update the repository, you
 
 </details>
 
-### 7. Manually Update the Repository
-
-<details>
-<summary>Click to expand</summary>
+### <details>
+<summary>7. Manually Update the Repository</summary>
 
 If you want to manually update the repository, follow these steps:
 
