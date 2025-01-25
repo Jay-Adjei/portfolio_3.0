@@ -3,7 +3,8 @@
 *    P O R T I F Y    *
 *                     *
 ***********************
-Changelog
+
+# Changelog & Documentation
 Beta / Still in Work
 
 Current Problems:
@@ -16,7 +17,7 @@ Current Problems:
 Lookbook:
 Updates / Fixes:
 
-0.0.17 - Latest Updates
+0.0.18 - Latest Updates
 
 • Deactivated the mobile/tablet card hover effect  
 • Started working on responsive settings for the header in mobile view  
