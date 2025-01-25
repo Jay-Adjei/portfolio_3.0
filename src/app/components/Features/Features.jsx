@@ -62,7 +62,7 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
             <circle className="cls-2" cx="193.06" cy="3.98" r=".9"/>
             <circle className="cls-2" cx="4.1" cy="45.87" r=".9"/>
             <circle className="cls-2" cx="4.1" cy="42.28" r=".9"/>
-            <text className="custombutton1-text" x="50%" y="50%" dy="0.35em" text-anchor="middle" alignment-baseline="middle">
+            <text className="custombutton1-text" x="50%" y="50%" dy="0.35em" textAnchor="middle" alignmentBaseline="middle">
           View Project
           </text>
           </svg>
