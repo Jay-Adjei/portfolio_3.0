@@ -1,5 +1,4 @@
-'use client';  // Add this line at the top of your component
-
+'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import './CallToAction.css';
@@ -18,13 +17,14 @@ const CallToAction = () => {
       });
     }, { threshold: 0.5 });
 
-    const currentRef = ctaRef.current;
+    const currentRef = ctaRef.current; // Aktuellen Wert in einer Variablen speichern
+
     if (currentRef) {
       observer.observe(currentRef);
     }
 
     return () => {
-      if (currentRef) {
+      if (currentRef) { // Sicherstellen, dass auf die lokale Variable zugegriffen wird
         observer.unobserve(currentRef);
       }
     };
@@ -43,8 +43,8 @@ const CallToAction = () => {
   }, [isVisible]);
 
   return (
-    <div 
-      className="cta-container" 
+    <div
+      className="cta-container"
       ref={ctaRef}
     >
       <div className="cta-bg-image" />
@@ -55,12 +55,10 @@ const CallToAction = () => {
           <span className="cta-sub-text">Just Click on the Button to Contact me</span>
         </h2>
         <p className="cta-description">
-          I&apos;m actively seeking new challenges in the field of Informatics. No matter the direction—whether it&apos;s development, support, or innovation—I’m ready to dive in. 
+          I&apos;m actively seeking new challenges in the field of Informatics. No matter the direction—whether it&apos;s development, support, or innovation—I’m ready to dive in.
           If you like what I do, why wait? Let&apos;s connect, and I&apos;ll bring my skills to your team!
         </p>
-        <Button1 href="mailto:Gylan.Salih@outlook.de">
-          Contact Me
-        </Button1>
+        <Button1 href="mailto:Gylan.Salih@outlook.de">Contact Me</Button1>
       </div>
     </div>
   );
