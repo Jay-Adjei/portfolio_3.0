@@ -1,30 +1,28 @@
-'use client';
+"use client";
 
 import React from 'react';
 import './Features.css';
-import Button1 from '../../components/Buttons/Button1';
 
-const Card = ({ src, title, description, className, buttonClass, buttonHref, isGif }) => {
+const Card = ({ src, title, description, className, buttonHref, isGif }) => {
   const handleMouseEnter = (event) => {
     const wrapper = event.currentTarget;
     const video = wrapper.querySelector('video');
     if (video) {
       video.play().catch((e) => {
         console.error('Error playing video:', e);
-        // Optional: Benutzerfreundliche Fehlermeldung anzeigen
       });
     }
-    wrapper.style.transform = 'scale(0.95)'; // Skaliert die Karte
+    wrapper.style.transform = 'scale(0.95)';
   };
 
   const handleMouseLeave = (event) => {
     const wrapper = event.currentTarget;
     const video = wrapper.querySelector('video');
     if (video) {
-      video.pause(); // Pausiert das Video
-      video.currentTime = 0; // Setzt das Video zurück
+      video.pause();
+      video.currentTime = 0;
     }
-    wrapper.style.transform = ''; // Entfernt die Skalierung
+    wrapper.style.transform = '';
   };
 
   return (
@@ -47,7 +45,28 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
       <div className="card-content">
         <h1 className="card-title">{title}</h1>
         {description && <p className="card-description">{description}</p>}
-        <Button1 className={buttonClass} href={buttonHref} />
+        
+        {/* Custom SVG Button */}
+        <a href={buttonHref} className="custombutton1">
+          <svg
+            id="Ebene_3"
+            data-name="Ebene 3"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200 50"
+            width="160"
+            height="50"
+          >
+            <polygon className="cls-1" points="12.12 .2 0 12.32 0 49.5 187.88 49.5 200 37.38 200 .2 12.12 .2"/>
+            <circle className="cls-2" cx="196.48" cy="3.98" r=".9"/>
+            <circle className="cls-2" cx="196.48" cy="7.52" r=".9"/>
+            <circle className="cls-2" cx="193.06" cy="3.98" r=".9"/>
+            <circle className="cls-2" cx="4.1" cy="45.87" r=".9"/>
+            <circle className="cls-2" cx="4.1" cy="42.28" r=".9"/>
+            <text className="custombutton1-text" x="50%" y="50%" dy="0.35em" text-anchor="middle" alignment-baseline="middle">
+          View Project
+          </text>
+          </svg>
+        </a>
       </div>
     </div>
   );
@@ -64,7 +83,6 @@ const Features = () => {
                         title="Raijin"
                         description="Offer personalized workout plans with video tutorials and AI form correction."
                         className="card-large"
-                        buttonClass="buttonfeaturelarge"
                         buttonHref="/project1"
                     />
                 </div>
@@ -74,7 +92,6 @@ const Features = () => {
                         title="Nyx"
                         description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
                         className="card-long"
-                        buttonClass="buttonfeaturelong"
                         buttonHref="/project2"
                     />
                     <Card
@@ -82,7 +99,6 @@ const Features = () => {
                         title="Kitsune"
                         description="Develop a branching narrative game where choices affect the outcome."
                         className="card-medium"
-                        buttonClass="buttonfeaturesmall"
                         buttonHref="/portfolio"
                     />
                     <Card
@@ -90,7 +106,6 @@ const Features = () => {
                         title="Oblivion"
                         description="Let users try products in AR before purchasing, such as furniture or clothes."
                         className="card-small"
-                        buttonClass="buttonfeaturesmall"
                         buttonHref="/project4"
                     />
                 </div>
@@ -100,7 +115,6 @@ const Features = () => {
                         title="Anubis"
                         description="Offer personalized workout plans with video tutorials and AI form correction."
                         className="card-xsmall"
-                        buttonClass="buttonfeaturesmall"
                         buttonHref="/project5"
                     />
                     <Card
@@ -108,7 +122,6 @@ const Features = () => {
                         title="Arcadia"
                         description="Your Description"
                         className="card-video"
-                        buttonClass="buttonfeaturesmall"
                         buttonHref="/project1"
                         isGif={true}
                     />

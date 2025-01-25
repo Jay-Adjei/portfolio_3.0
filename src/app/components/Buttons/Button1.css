@@ -1,230 +1,87 @@
+/* General Setting */
+.cta-button {
+  margin-top: auto; /* Drückt den Button nach unten */
+  align-self: flex-end; /* Positioniert den Button nach rechts */
+  background-color: transparent;
+  padding: 0; /* Kein Padding innerhalb des Buttons */
+  margin: 0; /* Kein zusätzlicher Abstand */
+  position: relative; /* Sicherstellen, dass keine absolute Positionierung verwendet wird */
+}
 
-  /* General Setting */
+
+.cta-button:hover {
+  transform: scale(1.1);
+}
+
+.cta-button svg {
+  position: relative;
+  z-index: 100; /* Stellt sicher, dass SVGs korrekt dargestellt werden */
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hover effect for the SVG */
+.cta-button:hover .cls-1 {
+  fill: #000000; /* Füllfarbe beim Hover */
+  stroke: #ffffff;
+}
+
+.cls-2 {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  stroke-width: 0.925px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hover effect for the small circles */
+.cta-button:hover .cls-2 {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.cta-text {
+  font-family: 'RedHat', sans-serif;
+  font-size: 18px;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.cta-text:hover {
+  fill: #ffffff;
+}
+
+
+
+ /* Responsive css start */
+
+
+ /* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
   .cta-button {
-	background-color: transparent;
-	padding: 10px 20px;
-	cursor: pointer;
-	margin-right: 0px;
-	padding-left: 2px;
-	transition: background-color 0.3s, transform 0.3s ease;
-	right: 0%;
-	position: absolute;
-	bottom: 0px;
-}
-  .cta-button:hover {
-    color: #333;
-    transform: scale(1.1); /* Scale the button on hover */
+      width: auto; /* Sicherstellen, dass die Breite anpassbar bleibt */
+      padding: 8px 16px; /* Leicht reduzierte Padding-Werte */
+      bottom: 8px; /* Abstand an kleinere Screens anpassen */
+      right: 8px;
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .cta-button {
+      font-size: 0.875rem; /* Kleinere Schriftgröße */
+      padding: 6px 12px; /* Kleinere Padding-Werte */
+      bottom: 5px; /* Abstand weiter anpassen */
+      right: 5px;
+  }
+
   .cta-button svg {
-    position: relative; /* Allow for z-index */
-    z-index: 100; /* Standard z-index */
-  }
-  
-  .cls-1 {
-    fill: none;
-    stroke: #ffffff;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  
-  /* Hover effect for the SVG */
-  .cta-button:hover .cls-1 {
-    fill: #000000; /* Add fill color on hover */
-    stroke: #ffffff;
-  }
-  
-  .cls-2 {
-    fill: #ffffff;
-    stroke: #ffffff;
-    stroke-miterlimit: 10;
-    stroke-width: 0.925px;
-    position: relative; /* Allow for z-index */
-    z-index: 10; /* Ensure small circles stay on top */
-  }
-  
-  /* Hover effect for the small circles */
-  .cta-button:hover .cls-2 {
-    fill: #ffffff; /* Keep fill on hover */
-    stroke: #ffffff;
-  }
-  
-  .cta-text {
-    font-family: 'RedHat', sans-serif;
-    font-size: 18px;
-    fill: #fff;
-    text-anchor: middle;
-  }
-  
-  .cta-text:hover {
-    fill: #ffffff;
-  }
-  
-  /* Media Queries for Button Styling */
-  @media screen and (max-width: 768px) {
-    .cta-button {
-      width: 100%; /* Full width button */
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .cta-button {
-      font-size: 0.875rem; /* Adjust font size for buttons */
-      padding: 0.75rem 1.5rem; /* Smaller padding for smaller screens */
-    }
-  }
-  
-
-
-
-
-
-
-/* Button Style für features Large Image */
-.button-style-feature-project .cta-button {
-	background-color: transparent;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s ease;
-	right: -108%;
-	position: relative;
-	bottom: -509px;
-}
-
-
-  @media screen and (max-width: 768px) {
-    .button-style-feature-project .cta-button {
-        background-color: transparent;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s ease;
-        right: -55%;
-        position: relative;
-        bottom: -14px;
-    }
-  }
-
-
-  /* Base button styles */
-.button1-base {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button1-base:hover {
-    background-color: #666;
-  }
-  
-
-
-
-
-
-
-
-/* Standard Button-Style für Karten */
-.buttonfeaturesmall .cta-button {
-	background-color: transparent;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s ease;
-	position: absolute;
-	bottom: 6px;
-	right: -192px;
-	z-index: 9999;
-	padding: 6px 14px;
-}
-/* Für SVG-Größe */
-.buttonfeaturesmall .cta-svg {
-  width: 500px;  /* Default width */
-  height: 42px;  /* Default height */
-}
-
-/* Mobile-Ansicht (bis 480px) */
-@media (max-width: 480px) {
-  .buttonfeaturesmall .cta-button {
-    padding: 6px 10px;
-    right: -136px;
-    top: 140px;
-  }
-
-  .buttonfeaturesmall .cta-svg {
-    width: 250px;  /* Kleinere Breite für mobile Geräte */
-    height: 28px;
-  }
-}
-
-
-/* ------------------------*/
-
-
-
-/* Standard Button-Style für Karten */
-.buttonfeaturelarge .cta-button {
-	background-color: transparent;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s ease;
-	position: absolute;
-	bottom: 10px;
-	right: -788px;
-	z-index: 9999;
-	padding: 6px 14px;
-}
-
-/* Für SVG-Größe */
-.buttonfeaturelarge .cta-svg {
-  width: 500px;  /* Default width */
-  height: 42px;  /* Default height */
-}
-
-/* Mobile-Ansicht (bis 480px) */
-@media (max-width: 480px) {
-  .buttonfeaturelarge .cta-button {
-    padding: 6px 10px;
-    right: -121px;
-    top: 140px;
-  }
-
-  .buttonfeaturelarge .cta-svg {
-    width: 250px;  /* Kleinere Breite für mobile Geräte */
-    height: 28px;
-    }
-}
-
-
-/* ---------------------- */
-
-
-/* Standard Button-Style für Karten */
-.buttonfeaturelong .cta-button {
-	background-color: transparent;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s ease;
-	position: absolute;
-	bottom: 8px;
-	right: -164px;
-	z-index: 9999;
-	padding: 6px 14px;
-}
-
-/* Für SVG-Größe */
-.buttonfeaturelong .cta-svg {
-  width: 500px;  /* Default width */
-  height: 42px;  /* Default height */
-}
-
-/* Mobile-Ansicht (bis 480px) */
-@media (max-width: 480px) {
-  .buttonfeaturelong .cta-button {
-    padding: 6px 10px;
-    right: -135px;
-    top: 138px;
-  }
-
-  .buttonfeaturelong .cta-svg {
-    width: 250px;  /* Kleinere Breite für mobile Geräte */
-    height: 28px;
+      width: 80%; /* SVGs skalieren bei kleineren Geräten */
+      height: auto; /* Seitenverhältnis beibehalten */
   }
 }

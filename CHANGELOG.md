@@ -3,37 +3,41 @@
 *    P O R T I F Y    *
 *                     *
 ***********************
-
-    Understood and implemented the Pokémon repository from simeydotme
-    implementation of sass
-    [ ]
-        [ ]
-        [ ]
-
-Current Problems
-
--x
--y
--z
-
 Changelog
 Beta / Still in Work
 
+Current Problems:
+[ ]
+[ ]
+[ ]
+
+--------------------------
+
 Lookbook:
 Updates / Fixes:
+Got it! Here's the version with bullet points:
+
+---
 
 0.0.17 - Latest Updates
 
-    Deactive Mobile/Tablet Card hover effect
-    tryed first steps with responsive settings for header Mobile View
-    Portfolio page button layout responsive settings
+• Deactivated the mobile/tablet card hover effect  
+• Started working on responsive settings for the header in mobile view  
+• Adjusted the portfolio page button layout for better responsiveness  
+• Made the features section responsive and customized the button design  
+• Currently working on a 3D carousel and menu hover design to enhance interactivity and improve the UI/UX experience  
+• Refined the code structure, but there’s still more to be done  
+• Created a GitHub repository for archiving and sharing purposes
 
 0.0.17 - Previous Updates
 
-    Converted the portfolio to React after researching and finding that Next.js provides better functionality and performance for the project.
-    Next.js was chosen for its server-side rendering and routing capabilities, which align well with the project's needs.
-    Found the syntax of Next.js familiar and enjoyable, drawing parallels to my experience with Unity C#—the structure and flow are quite similar, which makes it easier and more fun to work with.
-    Protocol updates are coming soon, including improved performance and new features.
+• Developed the audio indicator, dark mode toggle with SVG animation, and a hamburger menu (design improvements to follow)  
+• Built the features component  
+• Converted the portfolio to React after research revealed that Next.js offers better functionality and performance for the project  
+• Selected Next.js for its server-side rendering and routing capabilities, which align with the project’s needs  
+• Found the syntax of Next.js familiar and enjoyable, with similarities to my experience with Unity C#—its structure and flow make it easier and more fun to work with  
+• Expect protocol updates soon, including improved performance and new features
+
 
 0.0.16 - Previous Updates
 

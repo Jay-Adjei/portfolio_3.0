@@ -15,8 +15,8 @@ const Home = () => {
       <AboutMe />
       <Carousel />
       <Features />
-      <Skills />
       <CallToAction />
+      <Skills />
     </div>
   );
 };
