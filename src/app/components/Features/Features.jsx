@@ -9,48 +9,50 @@ const Card = ({ src, title, description, className, buttonClass, buttonHref, isG
     const wrapper = event.currentTarget;
     const video = wrapper.querySelector('video');
     if (video) {
-        video.play(); // Startet das Video
+      video.play().catch((e) => {
+        console.error('Error playing video:', e);
+        // Optional: Benutzerfreundliche Fehlermeldung anzeigen
+      });
     }
     wrapper.style.transform = 'scale(0.95)'; // Skaliert die Karte
-};
+  };
 
-const handleMouseLeave = (event) => {
+  const handleMouseLeave = (event) => {
     const wrapper = event.currentTarget;
     const video = wrapper.querySelector('video');
     if (video) {
       video.pause(); // Pausiert das Video
-      setTimeout(() => {
-          video.currentTime = 0; // Setzt den Abspielstand zurück
-      }, 50); // Kurze Verzögerung, um sicherzustellen, dass das Video wirklich gestoppt ist
-  }
+      video.currentTime = 0; // Setzt das Video zurück
+    }
     wrapper.style.transform = ''; // Entfernt die Skalierung
-};
+  };
 
   return (
     <div 
-        className={`card-wrapper ${className}`} 
-        onMouseEnter={handleMouseEnter} 
-        onMouseLeave={handleMouseLeave}
+      className={`card-wrapper ${className}`} 
+      onMouseEnter={handleMouseEnter} 
+      onMouseLeave={handleMouseLeave}
     >
-        {isGif ? (
-            <img src={src} alt={title} className="card-video" />
-        ) : (
-          <video
-            src={src}
-            loop
-            muted
-            className="card-video"
-            onError={(e) => console.error('Error loading video:', e)}
-          />
-        )}
-        <div className="card-content">
-            <h1 className="card-title">{title}</h1>
-            {description && <p className="card-description">{description}</p>}
-            <Button1 className={buttonClass} href={buttonHref} />
-        </div>
+      {isGif ? (
+        <img src={src} alt={title} className="card-video" />
+      ) : (
+        <video
+          src={src}
+          loop
+          muted
+          className="card-video"
+          onError={(e) => console.error('Error loading video:', e)}
+        />
+      )}
+      <div className="card-content">
+        <h1 className="card-title">{title}</h1>
+        {description && <p className="card-description">{description}</p>}
+        <Button1 className={buttonClass} href={buttonHref} />
+      </div>
     </div>
   );
 };
+
 
 const Features = () => {
     return (
