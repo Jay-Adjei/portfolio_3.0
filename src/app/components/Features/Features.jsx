@@ -18,9 +18,11 @@ const handleMouseLeave = (event) => {
     const wrapper = event.currentTarget;
     const video = wrapper.querySelector('video');
     if (video) {
-        video.pause(); // Pausiert das Video
-        video.currentTime = 0;
-    }
+      video.pause(); // Pausiert das Video
+      setTimeout(() => {
+          video.currentTime = 0; // Setzt den Abspielstand zurück
+      }, 50); // Kurze Verzögerung, um sicherzustellen, dass das Video wirklich gestoppt ist
+  }
     wrapper.style.transform = ''; // Entfernt die Skalierung
 };
 
@@ -33,7 +35,13 @@ const handleMouseLeave = (event) => {
         {isGif ? (
             <img src={src} alt={title} className="card-video" />
         ) : (
-            <video src={src} loop muted className="card-video" />
+          <video
+            src={src}
+            loop
+            muted
+            className="card-video"
+            onError={(e) => console.error('Error loading video:', e)}
+          />
         )}
         <div className="card-content">
             <h1 className="card-title">{title}</h1>
