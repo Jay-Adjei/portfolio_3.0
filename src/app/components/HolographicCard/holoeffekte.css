@@ -31,7 +31,6 @@
     transform: none; /* Tilt-Effekt für mobile Geräte deaktivieren */
   }
 }
-
 /* -------------------- Holographische Karte -------------------- */
 .holographic * {
   width: 100%;
