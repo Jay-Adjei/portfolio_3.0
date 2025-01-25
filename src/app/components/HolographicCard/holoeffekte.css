@@ -1,18 +1,14 @@
 /* -------------------- Root Variablen -------------------- */
 :root {
-  --primary: rgb(66, 219, 240);
-  --link-hover: rgb(224, 241, 255);
-  --galaxy: url("/img/galaxy.jpg");
-  --trainerbg: url("/img/trainerbg.jpg");
-  --Vmaxbg: url("/img/vmaxbg.jpg");
-  --Vstar: url("/img/stylish.png");
-  --rainbow: url("/img/rainbow.jpg");
-  --illusion: url("/img/illusion.png");
-  --glitter: url("/img/glitter.png");
-  --metal: url("/img/metal.png");
-  --illusion2: url("/img/illusion2.png");
-  --birthday2: url("/img/151/birthday-holo-dank.webp");
-  --cosmosbg: url("/img/cosmos.png");
+  --galaxy: url("/assets/img/holographic_foil/galaxy.jpg");
+  --trainerbg: url("/assets/img/holographic_foil/151/birthday-holo-dank.webp");
+  --Vmaxbg: url("/assets/img/holographic_foil/vmaxbg.jpg");
+  --Vstar: url("/assets/img/holographic_foil/151/noise-top.webp");
+  --rainbow: url("/assets/img/holographic_foil/rainbow.jpg");
+  --illusion: url("/assets/img/holographic_foil/galaxy-source.png");
+  --glitter: url("/assets/img/holographic_foil/glitter.png");
+  --metal: url("/assets/assets/img/holographic_foil/holographic_foil/metal.png");
+  --illusion2: url("/assets/img/holographic_foil/illusion2.png");
 }
 
 /* -------------------- Card Grundstil -------------------- */
@@ -81,11 +77,8 @@
   object-fit: cover;
   position: relative;
   min-height: 500px;  /* Standardhöhe */
-  transform: none;
   object-position: center; /* Bild wird zentriert */
 }
-
-
 
 /* Handy View */
 @media (max-width: 480px) {
@@ -94,9 +87,6 @@
     min-height: 212px; /* Höhe für mobile Geräte */
   }
 }
-
-
-
 
 /* -------------------- Hover Text Block -------------------- */
 .project-hover-block {
@@ -157,7 +147,7 @@
 
 /* -------------------- Card Schimmer Effekte -------------------- */
 .card__shine {
-  --grain: url("/img/grain.webp");
+  --grain: url("/assets/img/holographic_foil/grain.webp");
   --space: 6%;
   --angle: 133deg;
   --imgsize: 500px;
@@ -211,23 +201,23 @@
 /* -- FOIL SETTINGS BEGIN HERE ------ */
 /* ----------------------------------- */
 
-/* Shared Settings for Effects */
+/* Gemeinsame Übergänge für Effekte */
 .card__shine,
 .card__glare {
   will-change: transform, opacity, background-image, background-size,
     background-position, background-blend-mode, filter;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Vereinheitlichte Übergänge */
 }
 
-/* Hover Effects for Shine and Glare */
+/* Hover Effekte für Shine und Glare */
 .holographic:hover .card__shine,
 .holographic:hover .card__glare {
   will-change: transform, opacity;
 }
 
-/* Glare Effect */
+/* Glare-Effekt */
 .card__glare {
-  transform: translateZ(1.4px); /* 3D Effect */
+  transform: translateZ(1.4px); /* 3D-Effekt */
   background: radial-gradient(
     farthest-corner circle at var(--mx) var(--my),
     rgba(255, 255, 255, 0.8) 10%,
@@ -238,7 +228,7 @@
   opacity: var(--o);
 }
 
-/* Vmax Glare Variant */
+/* Vmax Glare Variante */
 .card__glare.vmax {
   background: radial-gradient(
     farthest-corner circle at var(--mx) var(--my),
@@ -248,36 +238,43 @@
   );
 }
 
-/* Shine Effect */
+/* Shine-Effekt */
 .card__shine {
   display: grid;
   overflow: hidden;
   z-index: 3;
-  transform: translateZ(1px); /* 3D Layer */
+  transform: translateZ(1px); /* 3D-Ebene */
   background: transparent;
   mix-blend-mode: color-dodge;
-  filter: brightness(0.85) contrast(2.75) saturate(0.65);
   background-size: cover;
   background-position: center;
   opacity: var(--o);
-  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transformation */
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Vereinheitlichte Übergänge */
 }
 
-/* Shine Effect Layers */
+/* Shine-Effekt Ebenen */
 .card__shine:before {
   grid-area: 1 / 1;
-  transform: translateZ(1px); /* Enhance depth perception */
+  transform: translateZ(1px); /* Verbesserte Tiefenwirkung */
 }
 
 .card__shine:after {
   grid-area: 1 / 1;
-  transform: translateZ(1.2px); /* Slightly further for layering effect */
-  border-radius: var(--radius); /* Consistent corner radius */
+  transform: translateZ(1.2px); /* Etwas weiter für den Layering-Effekt */
+  border-radius: var(--radius); /* Konsistente Eckenradius */
 }
 
 /* ----------------------------------- */
 /* -- FOIL SETTINGS END HERE -------- */
 /* ----------------------------------- */
+
+
+
+
+
+
+
+
 
 
 

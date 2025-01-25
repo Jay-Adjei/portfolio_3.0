@@ -69,7 +69,7 @@ const SingleCard = () => {
             <HolographicCard
               imgSrc={imageSources.holographicCard}
               category="Coding"
-              rarity="radiant"
+              rarity="ShineBlitz"
             />
           </div>
 

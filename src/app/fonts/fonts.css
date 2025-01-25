@@ -69,3 +69,10 @@
   font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
   font-style: normal;
 }
+
+@font-face {
+  font-family: "CommandOverride";
+  src: url("CommandOverride.otf") format("opentype");
+  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}

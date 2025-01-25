@@ -85,17 +85,17 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         const shine = card.querySelector('.card__shine');
         const glare = card.querySelector('.card__glare');
         gsap.to(shine, {
-          duration: 2.0,
+          duration: 4.0,
           delay: 0.1,
           backgroundPosition: `${50 - (mvX / rect.width) * 100}% ${50 + (mvY / rect.height) * 100}%`,
-          ease: 'power2.out',
+          ease: 'linear',
         });
 
         gsap.to(glare, {
-          duration: 2.0,
+          duration: 4.0,
           delay: 0.1,
           backgroundPosition: `${50 - (mvX / rect.width) * 50}% ${50 + (mvY / rect.height) * 50}%`,
-          ease: 'power2.out',
+          ease: 'linear',
         });
       });
     };

@@ -44,6 +44,7 @@ const Button1 = ({ className, children, href }) => {
               viewBox="0 0 200 50"
               width="160"
               height="50"
+              className="cta-svg"
             >
               <polygon
                 className="cls-1"

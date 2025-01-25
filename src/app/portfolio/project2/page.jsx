@@ -51,8 +51,8 @@ const SingleCard = () => {
   };
 
   const imageSources = {
-    heroImage: '/assets/img/LandingBG/OniGirl11.jpg',
-    holographicCard: '/assets/img/LandingBG/OniGirl1.jpg',
+    heroImage: '/assets/img/LandingBG/OniBoy1.jpg',
+    holographicCard: '/assets/img/LandingBG/OniBoy4.jpg',
   };
 
   return (
@@ -69,7 +69,7 @@ const SingleCard = () => {
             <HolographicCard
               imgSrc={imageSources.holographicCard}
               category="Coding"
-              rarity="radiant"
+              rarity="ShineBlitz"
             />
           </div>
 
