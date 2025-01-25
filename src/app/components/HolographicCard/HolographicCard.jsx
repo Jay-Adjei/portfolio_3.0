@@ -14,67 +14,77 @@ const useHolographicEffect = (cardRef) => {
     transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
   });
 
-  const isMobileOrTablet = window.innerWidth < 1024;
+  const [isClient, setIsClient] = useState(false);
 
-  const handleMouseMove = useCallback((e) => {
-    if (isMobileOrTablet || !cardRef.current) return;
+  useEffect(() => {
+    // Ensure the code runs only in the browser
+    setIsClient(true);
+  }, []);
 
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const mvX = e.clientX - centerX;
-    const mvY = e.clientY - centerY;
+  const isMobileOrTablet = isClient && window.innerWidth < 1024;
 
-    const maxTilt = 15;
-    const Xdeg = Math.min(Math.max((-mvY / (rect.height / 2)) * maxTilt, -maxTilt), maxTilt);
-    const Ydeg = Math.min(Math.max((mvX / (rect.width / 2)) * maxTilt, -maxTilt), maxTilt);
-    const hyp = Math.min(Math.sqrt(mvX ** 2 + mvY ** 2) / 50, 1);
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (!isClient || isMobileOrTablet || !cardRef.current) return;
 
-    setStyleVars({
-      '--mx': `${50 - Ydeg * 2}%`,
-      '--my': `${50 + Xdeg * 2}%`,
-      '--posx': `${50 + Ydeg / 2 + Xdeg * 0.5}%`,
-      '--posy': `${50 + Xdeg / 2 + Ydeg / 2}%`,
-      '--hyp': `${hyp}`,
-      transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
-    });
+      const card = cardRef.current;
+      const rect = card.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const mvX = e.clientX - centerX;
+      const mvY = e.clientY - centerY;
 
-    gsap.to(card, {
-      duration: 0.3,
-      transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
-      '--mx': `${50 - Ydeg * 2}%`,
-      '--my': `${50 + Xdeg * 2}%`,
-      '--posx': `${50 + Ydeg / 2 + Xdeg * 0.5}%`,
-      '--posy': `${50 + Xdeg / 2 + Ydeg / 2}%`,
-      '--hyp': hyp,
-      ease: 'power4.out',
-      zIndex: 999,
-      position: 'relative',
-    });
+      const maxTilt = 15;
+      const Xdeg = Math.min(Math.max((-mvY / (rect.height / 2)) * maxTilt, -maxTilt), maxTilt);
+      const Ydeg = Math.min(Math.max((mvX / (rect.width / 2)) * maxTilt, -maxTilt), maxTilt);
+      const hyp = Math.min(Math.sqrt(mvX ** 2 + mvY ** 2) / 50, 1);
 
-    const shine = card.querySelector('.card__shine');
-    const glare = card.querySelector('.card__glare');
-    if (shine) {
-      gsap.to(shine, {
-        duration: 4.0,
-        delay: 0.1,
-        backgroundPosition: `${50 - (mvX / rect.width) * 100}% ${50 + (mvY / rect.height) * 100}%`,
-        ease: 'linear',
+      setStyleVars({
+        '--mx': `${50 - Ydeg * 2}%`,
+        '--my': `${50 + Xdeg * 2}%`,
+        '--posx': `${50 + Ydeg / 2 + Xdeg * 0.5}%`,
+        '--posy': `${50 + Xdeg / 2 + Ydeg / 2}%`,
+        '--hyp': `${hyp}`,
+        transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
       });
-    }
-    if (glare) {
-      gsap.to(glare, {
-        duration: 4.0,
-        delay: 0.1,
-        backgroundPosition: `${50 - (mvX / rect.width) * 50}% ${50 + (mvY / rect.height) * 50}%`,
-        ease: 'linear',
+
+      gsap.to(card, {
+        duration: 0.3,
+        transform: `rotateX(${Xdeg}deg) rotateY(${Ydeg}deg) scale(1.05)`,
+        '--mx': `${50 - Ydeg * 2}%`,
+        '--my': `${50 + Xdeg * 2}%`,
+        '--posx': `${50 + Ydeg / 2 + Xdeg * 0.5}%`,
+        '--posy': `${50 + Xdeg / 2 + Ydeg / 2}%`,
+        '--hyp': hyp,
+        ease: 'power4.out',
+        zIndex: 999,
+        position: 'relative',
       });
-    }
-  }, [isMobileOrTablet]);
+
+      const shine = card.querySelector('.card__shine');
+      const glare = card.querySelector('.card__glare');
+      if (shine) {
+        gsap.to(shine, {
+          duration: 4.0,
+          delay: 0.1,
+          backgroundPosition: `${50 - (mvX / rect.width) * 100}% ${50 + (mvY / rect.height) * 100}%`,
+          ease: 'linear',
+        });
+      }
+      if (glare) {
+        gsap.to(glare, {
+          duration: 4.0,
+          delay: 0.1,
+          backgroundPosition: `${50 - (mvX / rect.width) * 50}% ${50 + (mvY / rect.height) * 50}%`,
+          ease: 'linear',
+        });
+      }
+    },
+    [isClient, isMobileOrTablet]
+  );
 
   const handleMouseLeave = useCallback(() => {
-    if (isMobileOrTablet || !cardRef.current) return;
+    if (!isClient || isMobileOrTablet || !cardRef.current) return;
 
     const card = cardRef.current;
     gsap.to(card, {
@@ -110,24 +120,22 @@ const useHolographicEffect = (cardRef) => {
         ease: 'sine.out',
       });
     }
-  }, [isMobileOrTablet]);
+  }, [isClient, isMobileOrTablet]);
 
   useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
+    if (!isClient) return;
 
-    if (!isMobileOrTablet) {
-      card.addEventListener('mousemove', handleMouseMove);
-      card.addEventListener('mouseleave', handleMouseLeave);
-    }
+    const card = cardRef.current;
+    if (!card || isMobileOrTablet) return;
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      if (!isMobileOrTablet) {
-        card.removeEventListener('mousemove', handleMouseMove);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-      }
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [handleMouseMove, handleMouseLeave, isMobileOrTablet]);
+  }, [handleMouseMove, handleMouseLeave, isClient, isMobileOrTablet]);
 
   return styleVars;
 };
