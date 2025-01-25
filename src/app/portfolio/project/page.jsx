@@ -10,25 +10,26 @@ const SingleCard = () => {
 
   useEffect(() => {
     setIsClient(true);
-  
+
     if (typeof window !== 'undefined') {
-      import('@fancyapps/ui').then(({ Fancybox }) => {
-        Fancybox.bind("[data-fancybox='gallery']", {
-          infinite: false,
-          toolbar: true,
-          arrows: true,
-        });
-      });
-    }
-  
-    return () => {
-      if (typeof window !== 'undefined') {
         import('@fancyapps/ui').then(({ Fancybox }) => {
-          Fancybox.destroy();
+            Fancybox.bind("[data-fancybox='gallery']", {
+                infinite: false,
+                toolbar: true,
+                arrows: true,
+            });
         });
-      }
+    }
+
+    return () => {
+        if (typeof window !== 'undefined') {
+            import('@fancyapps/ui').then(({ Fancybox }) => {
+                Fancybox.destroy();
+            });
+        }
     };
-  }, [galleryImages]);
+}, []); // Entferne die Abhängigkeit von galleryImages
+
   
 
   // Restlicher Code bleibt unverändert...
