@@ -24,6 +24,7 @@ const SingleCard = () => {
     { title: 'Date', content: '31.05.2024' },
   ];
 
+  
   const galleryImages = [
     'New1.jpeg',
     'New2.jpeg',
