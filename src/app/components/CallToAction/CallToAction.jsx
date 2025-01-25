@@ -18,13 +18,14 @@ const CallToAction = () => {
       });
     }, { threshold: 0.5 });
 
-    if (ctaRef.current) {
-      observer.observe(ctaRef.current);
+    const currentRef = ctaRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ctaRef.current) {
-        observer.unobserve(ctaRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -57,9 +58,9 @@ const CallToAction = () => {
           I&apos;m actively seeking new challenges in the field of Informatics. No matter the direction—whether it&apos;s development, support, or innovation—I’m ready to dive in. 
           If you like what I do, why wait? Let&apos;s connect, and I&apos;ll bring my skills to your team!
         </p>
-        <Button1  href="mailto:Gylan.Salih@outlook.de">
-        Contact Me
-      </Button1>
+        <Button1 href="mailto:Gylan.Salih@outlook.de">
+          Contact Me
+        </Button1>
       </div>
     </div>
   );
