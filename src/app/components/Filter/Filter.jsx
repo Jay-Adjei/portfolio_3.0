@@ -26,6 +26,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange }) => {
     "normal",
     "rare ultra",
     "ShineBlitz",
+    "ShineBlitz2",
     "radiant",
     "rare holo",
     "rare holo vmax",

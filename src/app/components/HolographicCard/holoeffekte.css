@@ -9,6 +9,11 @@
   --glitter: url("/assets/img/holographic_foil/glitter.png");
   --metal: url("/assets/assets/img/holographic_foil/holographic_foil/metal.png");
   --illusion2: url("/assets/img/holographic_foil/illusion2.png");
+  --sparkles: url("/assets/img/holographic_foil/sparkles.gif");
+  --yugioh1: url("/assets/img/holographic_foil/cardyugioh.png");
+  --yugioh2: url("/assets/img/holographic_foil/yugioh1.gif");
+  --gold1: url("/assets/img/holographic_foil/gold1.gif");
+  --gold2: url("/assets/img/holographic_foil/gold2.gif");
 }
 
 /* -------------------- Card Grundstil -------------------- */
@@ -47,7 +52,7 @@
 .card.holographic {
   z-index: calc(var(--s) * 100);
   transform: translateZ(0.1px);
-  will-change: transform, visibility;
+  will-change: transform, visibility, opacity;
   position: relative;
   overflow: hidden;
   cursor: crosshair;
@@ -67,6 +72,11 @@
   transform: none;
 }
 
+
+
+
+
+
 /* -------------------- Card: Effekte und Bilder -------------------- */
 .card__effects,
 .card_images {
@@ -78,6 +88,11 @@
   min-height: 500px;  /* Standardhöhe */
   object-position: center; /* Bild wird zentriert */
 }
+
+
+
+
+
 
 /* Handy View */
 @media (max-width: 480px) {
@@ -211,7 +226,7 @@
 /* Hover Effekte für Shine und Glare */
 .holographic:hover .card__shine,
 .holographic:hover .card__glare {
-  will-change: transform, opacity;
+  will-change: transform, visibility, opacity;
 }
 
 /* Glare-Effekt */
@@ -266,6 +281,129 @@
 /* ----------------------------------- */
 /* -- FOIL SETTINGS END HERE -------- */
 /* ----------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- ShineBlitz ------------------------*/
+/* ShineBlitz im Normalzustand - unsichtbar, keine Effekte */
+.card[data-rarity="ShineBlitz2"] .card__shine,
+.card[data-rarity="ShineBlitz"] .card__shine:after {
+background-image: none;
+filter: none;
+background-blend-mode: normal;
+}
+
+/* ShineBlitz bei Hover - der Effekt wird sichtbar */
+.card[data-rarity="ShineBlitz2"]:hover .card__shine,
+.card[data-rarity="ShineBlitz2"]:hover .card__shine:after {
+--space: 5%;
+--angle: 133deg;
+--imgsize: 25% 20%;
+
+background-image:
+  var(--sparkles),
+  repeating-linear-gradient( 0deg, 
+  #a7a7a7 calc(var(--space)*1),  /* Chrome Silber */
+  #b0b0b0 calc(var(--space)*2), /* Helleres Silber */
+  #c0c0c0 calc(var(--space)*3), /* Chrome Farbe */
+  #d1d1d1 calc(var(--space)*4), 
+  #e1e1e1 calc(var(--space)*5), 
+  #f2f2f2 calc(var(--space)*6), 
+  #c0c0c0 calc(var(--space)*7) /* Rückkehr zu Chrome Silber */
+  ),
+  repeating-linear-gradient( 
+    var(--angle), 
+    #0e152e 0%, 
+    hsl(180, 10%, 60%) 3.8%, 
+    hsl(180, 29%, 66%) 4.5%, 
+    hsl(180, 10%, 60%) 5.2%, 
+    #0e152e 10% , 
+    #0e152e 12% 
+  ),
+  radial-gradient(
+    farthest-corner circle 
+    at var(--mx) var(--my),
+    rgba(0, 0, 0, .1) 12%, 
+    rgba(0, 0, 0, .15) 20%, 
+    rgba(0, 0, 0, .25) 120%
+  );
+
+background-blend-mode: difference, hue, hard-light;
+background-size: 100% 100%, 200% 700%, 300% 100%, 200% 100%;
+background-position: center, 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
+
+filter: brightness(calc((var(--hyp) * .5) + 0.5)) contrast(1.75) saturate(.75);
+}
+
+/* Weiterer Effekt mit Zusatz bei Hover */
+.card[data-rarity="ShineBlitz2"]:hover .card__shine:after {
+content: "";
+background-size: var(--imgsize), 200% 400%, 195% 100%, 200% 100%;
+filter: brightness(calc((var(--hyp) * .5) + 0.8)) contrast(1.25) saturate(1.75);
+mix-blend-mode: exclusion;
+}
+
+/* Glare-Effekt bei Hover */
+.card[data-rarity="ShineBlitz2"]:hover .card__glare {
+filter: brightness(0.9) contrast(1.5);
+
+background: radial-gradient(
+  farthest-corner circle 
+  at var(--mx) var(--my),
+  rgba(0, 0, 0, .1) 12%, 
+  rgba(0, 0, 0, .15) 20%, 
+  rgba(0, 0, 0, .25) 120%
+);
+
+opacity: calc(var(--o) * .66);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -528,7 +666,7 @@ opacity: calc(var(--o) * .66);
   transition: opacity 0.3s ease-in-out;
 
   background-image:
-      var(--Vstar),
+      var(--sparkles),
       repeating-linear-gradient( 0deg, 
         rgb(255, 119, 115) calc(var(--space)*1), 
         rgba(255,237,95,1) calc(var(--space)*2), 
