@@ -24,7 +24,7 @@ Updates / Fixes:
 • Made the features section responsive and customized the button design  
 • Currently working on a 3D carousel and menu hover design to enhance interactivity and improve the UI/UX experience  
 • Refined the code structure, but there’s still more to be done  
-• Created a GitHub repository for archiving and sharing purposes
+• Created a better GitHub repository for archiving and sharing purposes
 
 0.0.17 - Previous Updates
 
