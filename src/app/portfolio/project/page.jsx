@@ -1,20 +1,28 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
-import { Fancybox } from '@fancyapps/ui';
 import HolographicCard from '../../components/HolographicCard/HolographicCard';
 import HeroImage from '../../components/HeroImage/HeroImage';
 
 const SingleCard = () => {
-  useEffect(() => {
-    Fancybox.bind("[data-fancybox='gallery']", {
-      infinite: false,
-      toolbar: true,
-      arrows: true,
-    });
+  const [isClient, setIsClient] = useState(false);
 
-    return () => Fancybox.destroy();
+  useEffect(() => {
+    setIsClient(true); // Markiere die Komponente als client-seitig
+
+    if (typeof window !== 'undefined') {
+      // Dynamischer Import von Fancybox
+      import('@fancyapps/ui').then(({ Fancybox }) => {
+        Fancybox.bind("[data-fancybox='gallery']", {
+          infinite: false,
+          toolbar: true,
+          arrows: true,
+        });
+
+        return () => Fancybox.destroy();
+      });
+    }
   }, []);
 
   const projectDetails = [
@@ -24,7 +32,6 @@ const SingleCard = () => {
     { title: 'Date', content: '31.05.2024' },
   ];
 
-  
   const galleryImages = [
     'New1.jpeg',
     'New2.jpeg',
@@ -102,20 +109,22 @@ const SingleCard = () => {
       </div>
 
       {/* Gallery Section */}
-      <div className="gallery">
-        {galleryImages.map((image, index) => (
-          <a
-            key={index}
-            data-fancybox="gallery"
-            href={`/assets/img/reduced_images/${image}`}
-          >
-            <img
-              src={`/assets/img/reduced_images/${image}`}
-              alt={`Thumbnail ${index + 1}`}
-            />
-          </a>
-        ))}
-      </div>
+      {isClient && ( // Rendere die Galerie nur client-seitig
+        <div className="gallery">
+          {galleryImages.map((image, index) => (
+            <a
+              key={index}
+              data-fancybox="gallery"
+              href={`/assets/img/reduced_images/${image}`}
+            >
+              <img
+                src={`/assets/img/reduced_images/${image}`}
+                alt={`Thumbnail ${index + 1}`}
+              />
+            </a>
+          ))}
+        </div>
+      )}
     </>
   );
 };
