@@ -25,6 +25,7 @@ const SingleCard = () => {
     }
   }, []);
 
+  // Restlicher Code bleibt unverändert...
   const projectDetails = [
     { title: 'Topic', content: 'Coding' },
     { title: 'Inspiration', content: 'Behance' },

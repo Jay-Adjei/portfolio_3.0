@@ -9,22 +9,29 @@ const SingleCard = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Markiere die Komponente als client-seitig
-
+    setIsClient(true);
+  
     if (typeof window !== 'undefined') {
-      // Dynamischer Import von Fancybox
       import('@fancyapps/ui').then(({ Fancybox }) => {
         Fancybox.bind("[data-fancybox='gallery']", {
           infinite: false,
           toolbar: true,
           arrows: true,
         });
-
-        return () => Fancybox.destroy();
       });
     }
-  }, []);
+  
+    return () => {
+      if (typeof window !== 'undefined') {
+        import('@fancyapps/ui').then(({ Fancybox }) => {
+          Fancybox.destroy();
+        });
+      }
+    };
+  }, [galleryImages]);
+  
 
+  // Restlicher Code bleibt unverändert...
   const projectDetails = [
     { title: 'Topic', content: 'Coding' },
     { title: 'Inspiration', content: 'Behance' },
