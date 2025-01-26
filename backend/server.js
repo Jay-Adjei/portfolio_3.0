@@ -24,7 +24,6 @@ const pool = new Pool({
 app.use(express.json()); // Damit wir JSON-Daten empfangen können
 
 // API-Endpunkt für das Speichern eines Likes
-// API-Endpunkt für das Speichern eines Likes
 app.post('/like', async (req, res) => {
   const { sessionId } = req.body;
   console.log('Received sessionId:', sessionId);
@@ -57,12 +56,13 @@ app.post('/like', async (req, res) => {
 // API-Endpunkt für das Abrufen der Like-Anzahl
 app.get('/likes', async (req, res) => {
   const { sessionId } = req.query;
-  
+  console.log('Received sessionId:', sessionId);
+
   try {
     // Hole Gesamt-Likes und ob der aktuelle User geliked hat
-    const totalResult = await pool.query('SELECT COUNT(*) FROM likes');
+    const totalResult = await pool.query('SELECT COUNT(*) FROM Likes');
     const userResult = await pool.query(
-      'SELECT EXISTS(SELECT 1 FROM likes WHERE sessionId = $1) AS has_liked',
+      'SELECT EXISTS(SELECT 1 FROM Likes WHERE sessionId = $1) AS has_liked',
       [sessionId]
     );
     
@@ -72,31 +72,6 @@ app.get('/likes', async (req, res) => {
     });
   } catch (err) {
     console.error('Fehler:', err);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-
-
-// API-Endpunkt für das Abrufen der Like-Anzahl
-app.get('/likes', async (req, res) => {
-  const { sessionId } = req.query;
-  console.log('Received sessionId:', sessionId);
-
-  try {
-    // Holen der Anzahl der Likes aus der DB
-    const result = await pool.query(
-      'SELECT COUNT(*) FROM Likes WHERE sessionId = $1',
-      [sessionId]
-    );
-    
-    const likeCount = result.rows[0].count;
-    console.log('Like-Anzahl:', likeCount);
-
-    // Sende die Like-Anzahl als JSON zurück
-    res.json({ likeCount });
-  } catch (err) {
-    console.error('Fehler beim Abrufen der Like-Anzahl:', err);
     res.status(500).json({ error: err.message });
   }
 });
