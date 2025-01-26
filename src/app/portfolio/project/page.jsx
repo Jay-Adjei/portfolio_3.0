@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import HolographicCard from '../../components/HolographicCard/HolographicCard';
 import HeroImage from '../../components/HeroImage/HeroImage';
+import LikeButton from "../../components/LikeButton/LikeButton";
 
 const SingleCard = () => {
   const [isClient, setIsClient] = useState(false);
@@ -109,6 +110,7 @@ const SingleCard = () => {
               </div>
             ))}
             <div className="smalldescription">
+            <LikeButton />
               <h5>Description</h5>
               <p className="Cast Names">{projectTexts.description}</p>
             </div>

@@ -31,7 +31,8 @@
     "react-use": "^17.6.0",
     "three": "^0.172.0",
     "three-mesh-bvh": "^0.8.0",
-    "three-stdlib": "^2.35.7"
+    "three-stdlib": "^2.35.7",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^8",

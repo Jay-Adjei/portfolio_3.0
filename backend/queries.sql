@@ -1,0 +1,14 @@
+INSERT INTO Likes (sessionId) VALUES ('session123');
+
+SELECT * FROM Likes;
+SELECT * FROM Views;
+
+
+CREATE TABLE Likes (
+  id SERIAL PRIMARY KEY,
+  sessionId VARCHAR(255) NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+\d Likes
