@@ -55,7 +55,6 @@ app.post('/like', async (req, res) => {
 });
 
 // API-Endpunkt für das Abrufen der Like-Anzahl
-// Ändere den GET /likes Endpunkt
 app.get('/likes', async (req, res) => {
   const { sessionId } = req.query;
   
