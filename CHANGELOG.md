@@ -23,6 +23,7 @@ Updates / Fixes:
 handleMouseMove & handleMouseLeave: Functions properly defined to control 3D effects when moving the mouse or leaving the card.
 GSAP Animations: Shine and glare animations with delay and linear effect for smooth movement.
 Styling: styleVars dynamically passed to the card’s style attribute to update effects.
+• Added Guestbook Via Gisco
 
 
 

@@ -22,8 +22,8 @@ const NavLinks = ({ isDarkMode }) => {
           </Link>
         </li>
         <li>
-          <Link href="/testing" passHref>
-           Testing
+          <Link href="/guestbook" passHref>
+            Guestbook
           </Link>
         </li>
       </ul>
