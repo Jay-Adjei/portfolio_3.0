@@ -12,7 +12,7 @@ export default function Guestbook() {
     script.setAttribute("data-repo-id", "R_kgDONsIjJw");
     script.setAttribute("data-category", "General");
     script.setAttribute("data-category-id", "DIC_kwDONsIjJ84CmWBt");
-    script.setAttribute("data-mapping", "url");
+    script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "0");
@@ -23,6 +23,8 @@ export default function Guestbook() {
     script.setAttribute("crossorigin", "anonymous");
     document.getElementById("giscus-container").appendChild(script);
   }, []);
+
+
 
   return (
     <div 
