@@ -88,13 +88,16 @@ const HamburgerMenu = () => {
                 <Link href="/" onClick={handleLinkClick}>Home</Link>
               </li>
               <li ref={(el) => (navLinksRef.current[1] = el)}>
-                <Link href="/portfolio" onClick={handleLinkClick}>Portfolio</Link>
+                <Link href="/blog" onClick={handleLinkClick}>Blog</Link>
               </li>
               <li ref={(el) => (navLinksRef.current[2] = el)}>
-                <Link href="/about" onClick={handleLinkClick}>About</Link>
+                <Link href="/portfolio" onClick={handleLinkClick}>Portfolio</Link>
               </li>
               <li ref={(el) => (navLinksRef.current[3] = el)}>
-                <Link href="/testing" onClick={handleLinkClick}>Testing</Link>
+                <Link href="/about" onClick={handleLinkClick}>About</Link>
+              </li>
+              <li ref={(el) => (navLinksRef.current[4] = el)}>
+                <Link href="/guestbook" onClick={handleLinkClick}>Guestbook</Link>
               </li>
             </ul>
           </nav>

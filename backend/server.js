@@ -23,58 +23,113 @@ const pool = new Pool({
 
 app.use(express.json()); // Damit wir JSON-Daten empfangen können
 
-// API-Endpunkt für das Speichern eines Likes
-app.post('/like', async (req, res) => {
-  const { sessionId } = req.body;
-  console.log('Received sessionId:', sessionId);
+// ========================================================================
 
+// API-Endpunkt für das Speichern eines Views (POST)
+// Erhöht die View-Zahl
+app.post('/view', async (req, res) => {
+  const { postId } = req.body;  // postId sollte aus dem Body der Anfrage kommen
+  console.log('Received postId for views:', postId);  // Logge postId, um sicherzustellen, dass es korrekt ist
+  
   try {
-    // Überprüfen, ob der Benutzer bereits ein Like abgegeben hat
-    const existingLike = await pool.query(
-      'SELECT * FROM Likes WHERE sessionId = $1',
-      [sessionId]
+    // Führe das Update in der Datenbank aus
+    const result = await pool.query(
+      'UPDATE blog_stats SET views = views + 1 WHERE slug = $1 RETURNING views',
+      [postId]
     );
 
-    if (existingLike.rows.length > 0) {
-      return res.status(400).json({ message: 'You have already liked' }); // Fehler, wenn bereits geliked
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: 'Post not found' });
     }
 
-    // Wenn der Benutzer noch nicht geliked hat, Like speichern
-    const result = await pool.query(
-      'INSERT INTO Likes (sessionId) VALUES ($1) RETURNING *',
-      [sessionId]
-    );
-    console.log('Inserted row:', result.rows[0]);
-
-    res.json({ success: true, like: result.rows[0] });
+    console.log('Updated views:', result.rows[0].views);  // Logge das Resultat
+    res.json({ totalViews: result.rows[0].views });
   } catch (err) {
-    console.error('Fehler beim Einfügen von Like:', err);
+    console.error('Fehler beim Erhöhen der Views:', err);
     res.status(500).json({ error: err.message });
   }
 });
 
-// API-Endpunkt für das Abrufen der Like-Anzahl
-app.get('/likes', async (req, res) => {
-  const { sessionId } = req.query;
-  console.log('Received sessionId:', sessionId);
+
+// API-Endpunkt für das Abrufen der View-Anzahl (GET)
+app.get('/views', async (req, res) => {
+  const { postId } = req.query;
+  console.log('Received postId:', postId);
 
   try {
-    // Hole Gesamt-Likes und ob der aktuelle User geliked hat
-    const totalResult = await pool.query('SELECT COUNT(*) FROM Likes');
-    const userResult = await pool.query(
-      'SELECT EXISTS(SELECT 1 FROM Likes WHERE sessionId = $1) AS has_liked',
-      [sessionId]
+    // Hole die Gesamtzahl der Views für den Post
+    const result = await pool.query(
+      'SELECT views FROM blog_stats WHERE slug = $1',
+      [postId]
     );
-    
-    res.json({
-      totalLikes: Number(totalResult.rows[0].count),
-      hasLiked: userResult.rows[0].has_liked
-    });
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+
+    const totalViews = result.rows[0].views;
+
+    res.json({ totalViews });
   } catch (err) {
     console.error('Fehler:', err);
     res.status(500).json({ error: err.message });
   }
 });
+
+
+// API-Endpunkt für das Speichern eines Likes
+app.post('/like', async (req, res) => {
+  const { postId } = req.body;
+  console.log('Received postId:', postId);
+
+  try {
+    // Erhöhe die Anzahl der Likes für den gegebenen Beitrag
+    const result = await pool.query(
+      'UPDATE blog_stats SET likes = likes + 1 WHERE slug = $1 RETURNING *',
+      [postId]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: 'Post not found' }); // Fehler, wenn der Beitrag nicht existiert
+    }
+
+    // Hole die aktualisierte Gesamtzahl der Likes
+    const totalLikes = result.rows[0].likes;
+
+    res.json({ success: true, totalLikes });
+  } catch (err) {
+    console.error('Fehler beim Aktualisieren von Likes:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+// API-Endpunkt für das Abrufen der Like-Anzahl
+app.get('/likes', async (req, res) => {
+  const { postId } = req.query;
+  console.log('Received postId:', postId);
+
+  try {
+    // Hole die Gesamtzahl der Likes für den Post
+    const result = await pool.query(
+      'SELECT likes FROM blog_stats WHERE slug = $1',
+      [postId]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+
+    res.json({ totalLikes: result.rows[0].likes });
+  } catch (err) {
+    console.error('Fehler:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+
+// ========================================================================
 
 // Server starten
 app.listen(port, () => {

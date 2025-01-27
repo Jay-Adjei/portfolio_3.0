@@ -6,11 +6,10 @@ const AboutMe = () => {
     <section className="aboutMe">
       <div className="aboutMe-container">
         <h2 className="aboutMe-heading">Über mich</h2>
-        <p className="aboutMe-text">
-          Hallo, ich bin [Dein Name], ein leidenschaftlicher Entwickler mit
-          Fokus auf Frontend-Technologien. Ich liebe es, kreative Lösungen zu
-          entwickeln und dabei moderne Webtechnologien zu nutzen. In meiner
-          Freizeit experimentiere ich mit neuen Tools und arbeite an
+        <p className="aboutMe-text"> 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Molestias illo quae adipisci quibusdam, modi expedita quia quod assumenda facilis itaque exercitationem veritatis sit fuga at. 
+          Deserunt ab magni ratione praesentium?
           Open-Source-Projekten.
         </p>
       </div>
