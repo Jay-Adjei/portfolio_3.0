@@ -6,7 +6,7 @@ import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import HolographicCard from '../../components/HolographicCard/HolographicCard';
 import HeroImage from '../../components/HeroImage/HeroImage';
 import LikeButton from "../../components/LikeButton/LikeButton";
-import './portfoliopost.css';
+import styles from './portfoliopost.css';
 
 const SingleCard = () => {
   const params = useParams(); // Verwende useParams, um den Slug zu erhalten
