@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GylanSalih/Website-Portfolio/">
-    <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo">
+    <img src="https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/PortfolioGithubShowcase.png" alt="Logo">
   </a>
 
 
