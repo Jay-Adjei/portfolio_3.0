@@ -1,5 +1,5 @@
 # Ignore Backend folder till i manage the PostgerSQL problem
-.next/
+.backend/
 
 # Ignore node_modules
 node_modules/
