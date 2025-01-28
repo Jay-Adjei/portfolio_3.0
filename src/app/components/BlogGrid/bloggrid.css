@@ -3,6 +3,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 120px;
   }
   
   .blog-grid-header {
@@ -33,7 +34,7 @@
   }
   
   .post-card {
-    background: #0D0D0D;
+    background: #0f0f0f;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -112,6 +113,7 @@
     height: 32px;
     border-radius: 50%;
     border: 2px solid #63B3ED;
+    object-fit: cover;
   }
   
   .post-card-author-name {

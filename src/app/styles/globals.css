@@ -94,8 +94,12 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
-  margin-bottom: 0.4em;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #F5F5F5;
+  padding-bottom: 0.5rem;
+  font-family: "RedHat", sans-serif;
+  text-align: center;
 }
 
 h3 {

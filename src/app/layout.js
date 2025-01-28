@@ -68,7 +68,7 @@ export default function Layout({ children, enablePreloader = false }) {
         {/* Main content */}
         <main>{children}</main>
         {/* Footer always displayed */}
-
+        <Footer />
       </body>
     </html>
   );
