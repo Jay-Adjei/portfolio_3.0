@@ -1,75 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import styles from './LikeButton.css';
 
 const HEART_PATH = "M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z";
 
 export default function LikeButton() {
   const [hasLiked, setHasLiked] = useState(false);
-  const [totalLikes, setTotalLikes] = useState(0);
-  const [sessionId, setSessionId] = useState(null);
+  const [totalLikes, setTotalLikes] = useState(() => {
+    const storedLikes = localStorage.getItem('totalLikes');
+    return storedLikes ? parseInt(storedLikes, 10) : 0;
+  });
 
-  // Session ID initialisieren
   useEffect(() => {
-    const storedSessionId = localStorage.getItem('sessionId');
-    if (!storedSessionId) {
-      const newSessionId = uuidv4();
-      localStorage.setItem('sessionId', newSessionId);
-      setSessionId(newSessionId);
-    } else {
-      setSessionId(storedSessionId);
+    const storedHasLiked = localStorage.getItem('hasLiked');
+    if (storedHasLiked === 'true') {
+      setHasLiked(true);
     }
   }, []);
 
-  // Like-Status abrufen
-  useEffect(() => {
-    if (!sessionId) return;
-
-    const fetchLikeStatus = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:5000/likes?sessionId=${sessionId}`
-        );
-        const data = await response.json();
-        
-        setTotalLikes(data.totalLikes);
-        setHasLiked(data.hasLiked);
-      } catch (error) {
-        console.error('Fehler:', error);
-      }
-    };
-
-    fetchLikeStatus();
-  }, [sessionId]);
-
-  const handleLike = async () => {
+  const handleLike = () => {
     if (hasLiked) return;
 
-    try {
-      const response = await fetch('http://localhost:5000/like', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ sessionId }),
-      });
+    const newTotalLikes = totalLikes + 1;
+    setTotalLikes(newTotalLikes);
+    setHasLiked(true);
 
-      if (response.status === 409) {
-        const data = await response.json();
-        alert(data.error || 'Du hast bereits geliked!');
-        setHasLiked(true);
-        return;
-      }
-
-      if (!response.ok) throw new Error('Request failed');
-
-      const data = await response.json();
-      setTotalLikes(prev => prev + 1);
-      setHasLiked(true);
-    } catch (error) {
-      console.error('Fehler:', error);
-      alert('Like konnte nicht gespeichert werden');
-    }
+    localStorage.setItem('totalLikes', newTotalLikes);
+    localStorage.setItem('hasLiked', 'true');
   };
 
   return (

@@ -1,12 +1,12 @@
-# Ignore Backend folder till i manage the PostgerSQL problem
-.backend/
-/backend/
 
 # Ignore node_modules
 node_modules/
 
 # Ignore Next.js build output
 .next/
+
+# Ignore api folder
+/src/app/api/
 
 # Ignore Server Webhook
 .webhook-server.js
