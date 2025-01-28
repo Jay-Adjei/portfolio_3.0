@@ -1,137 +1,72 @@
-require('dotenv').config(); // Diese Zeile sorgt dafür, dass .env-Datei geladen wird
 const express = require('express');
-const cors = require('cors');
-const { Pool } = require('pg');
-require('dotenv').config();
-
+const fs = require('fs');
 const app = express();
-const port = 5000;
+const PORT = 3000;
 
-// CORS aktivieren
-app.use(cors({
-  origin: 'http://localhost:3000', // Erlaubt Anfragen nur von diesem Frontend-Port
-}));
+// Middleware to parse JSON
+app.use(express.json());
 
-// PostgreSQL-Verbindung mit Umgebungsvariablen
-const pool = new Pool({
-  user: process.env.DB_USER, 
-  host: process.env.DB_HOST, 
-  database: process.env.DB_DATABASE, 
-  password: process.env.DB_PASSWORD, 
-  port: process.env.DB_PORT, 
-});
+// Path to the JSON file
+const DATA_FILE = './blogData.json';
 
-app.use(express.json()); // Damit wir JSON-Daten empfangen können
-
-// ========================================================================
-
-// API-Endpunkt für das Speichern eines Views (POST)
-// Erhöht die View-Zahl
-app.post('/view', async (req, res) => {
-  const { postId } = req.body;  // postId sollte aus dem Body der Anfrage kommen
-  console.log('Received postId for views:', postId);  // Logge postId, um sicherzustellen, dass es korrekt ist
-  
-  try {
-    // Führe das Update in der Datenbank aus
-    const result = await pool.query(
-      'UPDATE blog_stats SET views = views + 1 WHERE slug = $1 RETURNING views',
-      [postId]
-    );
-
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Post not found' });
-    }
-
-    console.log('Updated views:', result.rows[0].views);  // Logge das Resultat
-    res.json({ totalViews: result.rows[0].views });
-  } catch (err) {
-    console.error('Fehler beim Erhöhen der Views:', err);
-    res.status(500).json({ error: err.message });
+// Utility function to read JSON data
+function readData() {
+  if (!fs.existsSync(DATA_FILE)) {
+    fs.writeFileSync(DATA_FILE, JSON.stringify([]));
   }
-});
+  const rawData = fs.readFileSync(DATA_FILE);
+  return JSON.parse(rawData);
+}
 
+// Utility function to write JSON data
+function writeData(data) {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+}
 
-// API-Endpunkt für das Abrufen der View-Anzahl (GET)
-app.get('/views', async (req, res) => {
-  const { postId } = req.query;
-  console.log('Received postId:', postId);
+// Get blog post data by slug
+app.get('/api/blog/:slug', (req, res) => {
+  const { slug } = req.params;
+  const data = readData();
+  const post = data.find((item) => item.slug === slug);
 
-  try {
-    // Hole die Gesamtzahl der Views für den Post
-    const result = await pool.query(
-      'SELECT views FROM blog_stats WHERE slug = $1',
-      [postId]
-    );
-
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Post not found' });
-    }
-
-    const totalViews = result.rows[0].views;
-
-    res.json({ totalViews });
-  } catch (err) {
-    console.error('Fehler:', err);
-    res.status(500).json({ error: err.message });
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' });
   }
+
+  res.json(post);
 });
 
+// Increment view count for a blog post
+app.post('/api/blog/:slug/view', (req, res) => {
+  const { slug } = req.params;
+  const data = readData();
+  const post = data.find((item) => item.slug === slug);
 
-// API-Endpunkt für das Speichern eines Likes
-app.post('/like', async (req, res) => {
-  const { postId } = req.body;
-  console.log('Received postId:', postId);
-
-  try {
-    // Erhöhe die Anzahl der Likes für den gegebenen Beitrag
-    const result = await pool.query(
-      'UPDATE blog_stats SET likes = likes + 1 WHERE slug = $1 RETURNING *',
-      [postId]
-    );
-
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Post not found' }); // Fehler, wenn der Beitrag nicht existiert
-    }
-
-    // Hole die aktualisierte Gesamtzahl der Likes
-    const totalLikes = result.rows[0].likes;
-
-    res.json({ success: true, totalLikes });
-  } catch (err) {
-    console.error('Fehler beim Aktualisieren von Likes:', err);
-    res.status(500).json({ error: err.message });
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' });
   }
+
+  post.views = (post.views || 0) + 1;
+  writeData(data);
+  res.json({ message: 'View count updated', views: post.views });
 });
 
+// Increment like count for a blog post
+app.post('/api/blog/:slug/like', (req, res) => {
+  const { slug } = req.params;
+  const data = readData();
+  const post = data.find((item) => item.slug === slug);
 
-// API-Endpunkt für das Abrufen der Like-Anzahl
-app.get('/likes', async (req, res) => {
-  const { postId } = req.query;
-  console.log('Received postId:', postId);
-
-  try {
-    // Hole die Gesamtzahl der Likes für den Post
-    const result = await pool.query(
-      'SELECT likes FROM blog_stats WHERE slug = $1',
-      [postId]
-    );
-
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Post not found' });
-    }
-
-    res.json({ totalLikes: result.rows[0].likes });
-  } catch (err) {
-    console.error('Fehler:', err);
-    res.status(500).json({ error: err.message });
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' });
   }
+
+  post.likes = (post.likes || 0) + 1;
+  writeData(data);
+  res.json({ message: 'Like count updated', likes: post.likes });
 });
 
-
-
-// ========================================================================
-
-// Server starten
-app.listen(port, () => {
-  console.log(`Server läuft auf http://localhost:${port}`);
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

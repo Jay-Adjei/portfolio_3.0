@@ -8,7 +8,7 @@
 Beta / Still in Work
 
 Current Problems:
-[ ]
+[ ] The challenge is integrating PostgreSQL to store and manage like and view counts, while ensuring data security and preventing multiple likes from the same user by utilizing a unique session ID. I'm currently learning APIs and PostgreSQL but am using JSON for now until I'm more experienced. I also have two folders, one called "backend." for this stuff :/
 [ ]
 [ ]
 
@@ -18,30 +18,16 @@ Lookbook:
 Updates / Fixes:
 
 0.0.19 - Latest Updates
+• Portfolio projects are now dynamically loaded based on the slug from the URL, eliminating the need for separate static pages. The data is centrally stored in a portfolio.json file, simplifying maintenance and expansion. With client-side rendering, static generation, and improved loading states and error handling, the user experience is optimized, and performance is enhanced.
+
+
+0.0.19 - Previous Updates
 
 • Holographic Card:
 handleMouseMove & handleMouseLeave: Functions properly defined to control 3D effects when moving the mouse or leaving the card.
 GSAP Animations: Shine and glare animations with delay and linear effect for smooth movement.
 Styling: styleVars dynamically passed to the card’s style attribute to update effects.
 • Added Guestbook Via Gisco
-• Trying to add PostgreSQL for database saving likes/view counter
-PostgreSQL Installation and Setup:
-    -PostgreSQL was installed on the local machine and integrated with VSCode.
-    -A connection to PostgreSQL was successfully established, and databases like "likes" and "views" were created.
-Creating Tables in PostgreSQL:
-    -Tables for Likes and Views were created in the PostgreSQL database, with appropriate columns (e.g., id, sessionId, createdAt).
-    -SQL commands for creating and checking the tables were successfully executed.
-Frontend Integration in React:
-    -A Like button was created in React, utilizing the useState hook to manage the "like" status and count.
-    -The button saves the like status and count in the browser’s localStorage.
-Connecting with PostgreSQL for Storage:
-    -The code was adjusted to store likes in the PostgreSQL database by inserting a session ID and the timestamp of the like into the Likes table.
-    -The like count is stored and updated via API endpoints or directly through SQL commands in the database.
-Security Measures (GitHub):
-    -Added the .env file to .gitignore to ensure sensitive data like passwords do not get pushed to the public GitHub repository.
-Npm Install uuid
-Added: Each user receives a unique UUID on their first visit, stored in localStorage and saved as sessionId in the database. A UNIQUE constraint prevents multiple likes from the same user.
-
 
 
 0.0.18 - Previous Updates

@@ -1,142 +1,36 @@
-// components/BlogPost.js
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import './blogpost.css';
 
-const posts = {
-  'slug1': {
-    title: "Blog Title 1",
-    subtitle: "My Progress of Learning Coding",
-    author: "Gylan Salih",
-    date: "January 26, 2025",
-    readTime: "5 min",
-    views: "2.4k",
-    likes: "128",
-    authorImage: "/assets/img/blog/author.jpg",
-    sections: [
-      { id: 'testing', title: 'Testing' },
-      { id: 'css-tips1', title: 'CSS Tips 1' },
-      { id: 'css-tips2', title: 'CSS Tips 2' },
-      // Add more sections as needed
-    ],
-    content: (
-      <div className="content">
-        <section id="testing">
-          <h2>Testing</h2>
-          <p>CSS is a powerful tool that can make your websites truly stand out...</p>
-          <ul className="list-technical">
-            <li className="list-item-technical">Use <code>flexbox</code> or <code>grid</code>...</li>
-          </ul>
-        </section>
-
-        <section id="css-tips1">
-          <h2>CSS Tips</h2>
-          <p>CSS is a powerful tool that can make your websites truly stand out...</p>
-          <ul className="list-technical">
-            <li className="list-item-technical">Use <code>flexbox</code> or <code>grid</code>...</li>
-          </ul>
-        </section>
-
-        {/* Add more sections as needed */}
-      </div>
-    )
-  },
-  'My-Progress-of-Learning-Coding': {
-    title: "Blog Title 2",
-    subtitle: "My Progress of Learning Coding",
-    author: "Gylan Salih",
-    date: "January 26, 2025",
-    readTime: "5 min",
-    views: "2.4k",
-    likes: "128",
-    authorImage: "/assets/img/blog/author.jpg",
-    sections: [
-      { id: 'testing', title: 'Testing' },
-      { id: 'css-tips1', title: 'CSS Tips 1' },
-      { id: 'css-tips2', title: 'CSS Tips 2' },
-      // Add more sections as needed
-    ],
-    content: (
-      <div className="content">
-        <section id="testing">
-          <h2>Testing</h2>
-          <p>CSS is a powerful tool that can make your websites truly stand out...</p>
-          <ul className="list-technical">
-            <li className="list-item-technical">Use <code>flexbox</code> or <code>grid</code>...</li>
-          </ul>
-        </section>
-
-        <section id="css-tips1">
-          <h2>CSS Tips</h2>
-          <p>CSS is a powerful tool that can make your websites truly stand out...</p>
-          <ul className="list-technical">
-            <li className="list-item-technical">Use <code>flexbox</code> or <code>grid</code>...</li>
-          </ul>
-        </section>
-
-        {/* Add more sections as needed */}
-      </div>
-    )
-  },
-  'Best-CSS-Tricks': {
-    title: "Blog Title 3",
-    subtitle: "Advanced Styling Techniques",
-    author: "Gylan Salih",
-    date: "February 1, 2025",
-    readTime: "8 min",
-    views: "1.8k",
-    likes: "95",
-    authorImage: "/assets/img/blog/author.jpg",
-    sections: [
-      { id: 'flexbox', title: 'Flexbox' },
-      { id: 'grid', title: 'CSS Grid' },
-    ],
-    content: (
-      <div className="content">
-        <section id="flexbox">
-          <h2>Flexbox Mastery</h2>
-          <p>Flexbox is a powerful layout tool...</p>
-        </section>
-        <section id="grid">
-          <h2>CSS Grid Systems</h2>
-          <p>CSS Grid takes layout to the next level...</p>
-        </section>
-      </div>
-    )
-  }
-};
-
 const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [activeSection, setActiveSection] = useState('');
+  const [likes, setLikes] = useState(1); // Initial Likes
+  const [views, setViews] = useState(1); // Initial Views
 
   useEffect(() => {
-    setPost(posts[slug] || posts['the-2025-starting']);
+    // Lade die JSON-Datei und finde den entsprechenden Post
+    const loadPostData = async () => {
+      const response = await fetch('/data/blogpost.json'); // daten abfragen für public json file
+      const posts = await response.json();  // daten abfrage abwarten für public json file
+      const selectedPost = posts.find((post) => post.slug === slug);
+      setPost(selectedPost || posts[0]); // Standardmäßig ersten Post wählen, falls der slug nicht gefunden wird
+    };
+
+    loadPostData();
   }, [slug]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('.content section');
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          current = section.id;
-        }
-      });
+    // Erhöhe die Views bei jedem Laden
+    setViews((prevViews) => prevViews + 1);
+  }, [slug]);
 
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [post]); // Re-run when post changes
+  const handleLike = () => {
+    setLikes((prevLikes) => prevLikes + 1);
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -148,7 +42,7 @@ const BlogPost = () => {
     }
   };
 
-  if (!post) return <div>Loading...</div>;
+  if (!post) return ;
 
   return (
     <div className="blog-post">
@@ -185,7 +79,7 @@ const BlogPost = () => {
                 <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
               </svg>
             </span>
-            <span className="stat-number">{post.views}</span>
+            <span className="stat-number">{views}</span>
           </div>
 
           <div className="stat-item">
@@ -194,14 +88,18 @@ const BlogPost = () => {
                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
               </svg>
             </span>
-            <span className="stat-number">{post.likes}</span>
+            <span className="stat-number">{likes}</span>
+            <button onClick={handleLike}>Like</button>
           </div>
         </div>
+        
       </header>
 
       <div className="main-content">
         <div className="content">
-          {post.content}
+          {post.content.map((section) => (
+            <section key={section.sectionId} id={section.sectionId} dangerouslySetInnerHTML={{ __html: section.content }} />
+          ))}
         </div>
 
         <aside className="table-of-contents">

@@ -8,7 +8,6 @@ import Preload from './components/Preload/Preload';
 import './styles/aboutme-page.css';
 import './fonts/fonts.css';
 import './styles/globals.css';
-import './styles/viewsinglecard.css';
 
 export default function Layout({ children, enablePreloader = false }) {
   const [isDarkMode, setIsDarkMode] = useState(false); // Initialize with false

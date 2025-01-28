@@ -1,0 +1,30 @@
+[
+    {
+      "slug": "oni-girl-coding",
+      "title": "My First Project",
+      "category": "Coding",
+      "year": 2024,
+      "heroImage": "/assets/img/LandingBG/OniBoy1.jpg",
+      "holographicCard": "/assets/img/LandingBG/OniBoy4.jpg",
+      "projectDetails": [
+        { "title": "Topic", "content": "Coding" },
+        { "title": "Inspiration", "content": "Behance" },
+        { "title": "Tags", "content": "HTML/CSS, JS" },
+        { "title": "Date", "content": "31.05.2024" }
+      ],
+      "projectTexts": {
+        "heroParagraph": "I created this website with great dedication...",
+        "description": "This website is a showcase of my passion for web development...  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur error earum, quod maxime perspiciatis repudiandae nihil vero explicabo officia architecto itaque doloremque ipsam alias porro distinctio doloribus. Dicta, earum dolorem."
+      },
+      "galleryImages": [
+        "New1.jpeg",
+        "New2.jpeg",
+        "New3.jpeg",
+        "New4.jpg",
+        "New5.jpeg"
+      ]
+    }
+  ]
+
+
+  

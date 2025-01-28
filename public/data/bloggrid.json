@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "slug": "slug1",
+      "title": "My progress of learning coding",
+      "excerpt": "My progress of learning coding...",
+      "image": "/assets/img/blog/blog3.png",
+      "author": "Gylan Salih",
+      "date": "January 26, 2025",
+      "readTime": "5 min",
+      "views": "2.4k",
+      "likes": "128"
+    },
+    {
+      "id": 2,
+      "slug": "My-Progress-of-Learning-Coding",
+      "title": "Advanced styling techniques",
+      "excerpt": "Advanced styling techniques...",
+      "image": "/assets/img/blog/blog1.png",
+      "author": "Gylan Salih",
+      "date": "January 24, 2025",
+      "readTime": "8 min",
+      "views": "1.8k",
+      "likes": "96"
+    },
+    {
+      "id": 3,
+      "slug": "Best-CSS-Tricks",
+      "title": "Advanced styling techniques",
+      "excerpt": "Advanced styling techniques...",
+      "image": "/assets/img/blog/blog2.png",
+      "author": "Gylan Salih",
+      "date": "January 24, 2025",
+      "readTime": "8 min",
+      "views": "1.8k",
+      "likes": "96"
+    }
+  ]
+  

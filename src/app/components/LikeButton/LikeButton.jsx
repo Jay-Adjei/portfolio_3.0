@@ -88,7 +88,7 @@ export default function LikeButton() {
           <path
             d={HEART_PATH}
             fill={hasLiked ? "red" : "transparent"}
-            stroke={hasLiked ? "red" : "black"}
+            stroke={hasLiked ? "red" : "red"}
             strokeWidth="1"
           />
         </svg>

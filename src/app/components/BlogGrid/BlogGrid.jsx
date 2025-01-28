@@ -1,48 +1,26 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import './bloggrid.css';
 
 const BlogGrid = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      slug: 'slug1',
-      title: "My progress of learning coding",
-      excerpt: "My progress of learning coding...",
-      image: "/assets/img/blog/meme.jpg",
-      author: "Gylan Salih",
-      date: "January 26, 2025",
-      readTime: "5 min",
-      views: "2.4k",
-      likes: "128"
-    },
-    {
-      id: 2,
-      slug: 'My-Progress-of-Learning-Coding',
-      title: "Advanced styling techniques",
-      excerpt: "Advanced styling techniques...",
-      image: "/assets/img/blog/meme.jpg",
-      author: "Gylan Salih",
-      date: "January 24, 2025",
-      readTime: "8 min",
-      views: "1.8k",
-      likes: "96"
-    },
-    {
-      id: 3,
-      slug: 'Best-CSS-Tricks',
-      title: "Advanced styling techniques",
-      excerpt: "Advanced styling techniques...",
-      image: "/assets/img/blog/author.jpg",
-      author: "Gylan Salih",
-      date: "January 24, 2025",
-      readTime: "8 min",
-      views: "1.8k",
-      likes: "96"
-    },
-    // Weitere Posts...
-  ];
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  // Lade die Daten aus der posts.json-Datei
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const response = await fetch('/data/bloggrid.json');
+        const data = await response.json();
+        setBlogPosts(data);  // Setze die Daten in den State
+      } catch (error) {
+        console.error('Error loading posts:', error);
+      }
+    };
+
+    loadPosts();
+  }, []);
 
   return (
     <div className="blog-grid-container">
@@ -75,7 +53,7 @@ const BlogGrid = () => {
                 <div className="post-card-footer">
                   <div className="post-card-author">
                     <img 
-                      src="/assets/img/blog/author.jpg" 
+                      src={post.authorImage || "/assets/img/blog/author.jpg"} 
                       alt={post.author} 
                       className="post-card-author-image" 
                     />
