@@ -12,6 +12,11 @@ Current Problems:
 [ ]
 [ ]
 
+
+Note for myself:
+[ ] git commit -m "Add backend folder to .gitignore"
+[ ]
+[ ]
 --------------------------
 
 Lookbook:
