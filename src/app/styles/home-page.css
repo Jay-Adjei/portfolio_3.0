@@ -5,7 +5,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 50px 20px;
-    background-color: #ffffff;
+    background-color: var(--dark-mode);
   }
   
   /* Home Page Styles */
@@ -13,7 +13,7 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 50px 20px;
-  background-color: #000000;
+  background-color: var(--light-mode);
 }
   .home-header {
     text-align: center;

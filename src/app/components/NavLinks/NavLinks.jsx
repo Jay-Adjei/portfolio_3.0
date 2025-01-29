@@ -31,6 +31,11 @@ const NavLinks = ({ isDarkMode }) => {
             Guestbook
           </Link>
         </li>
+        <li>
+          <Link href="/testing" passHref>
+            Testing Page
+          </Link>
+        </li>
       </ul>
     </nav>
   );

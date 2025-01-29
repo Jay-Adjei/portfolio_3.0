@@ -65,9 +65,11 @@ export default function Layout({ children, enablePreloader = false }) {
         <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
 
         <Mouse />
-        {/* Main content */}
+
+
         <main>{children}</main>
-        {/* Footer always displayed */}
+
+
         <Footer />
       </body>
     </html>

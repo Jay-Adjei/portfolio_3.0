@@ -1,0 +1,172 @@
+/* FeaturesInteractive.css */
+
+/* Grid Layouts unverändert lassen */
+.grid-smaller-containers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: 450px;
+    padding-top: 25px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.grid-smaller-containers2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: 450px;
+    padding-top: 25px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Original Spans beibehalten */
+.feature-card-1-4 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.feature-card-2-4,
+.feature-card-3-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.feature-card-small-nextoeachother-1-4,
+.feature-card-small-nextoeachother-2-4,
+.feature-card-small-nextoeachother-3-4,
+.feature-card-small-nextoeachother-4-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Interaktive Effekte hinzufügen */
+.feature-card-wrapper {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #2d2d2d;
+}
+
+.feature-card-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* Spezifische Effekte für jedes Card-Layout */
+/* Doppelspan-Card (feature-card-1-4) */
+.feature-card-1-4:hover {
+    .feature-card-image {
+        transform: scale(1.03) rotateZ(0.5deg);
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, 
+            rgba(0, 255, 136, 0.1) 0%, 
+            rgba(97, 218, 251, 0.2) 100%);
+    }
+}
+
+/* Einzelne Cards im 4er-Grid */
+.feature-card-small-nextoeachother-1-4 {
+    transition-delay: 0.1s;
+    
+    &:hover {
+        border-color: #00ff88;
+        
+        .feature-card-title {
+            color: #00ff88;
+        }
+    }
+}
+
+.feature-card-small-nextoeachother-2-4 {
+    .feature-card-description {
+        max-width: 0;
+        transition: max-width 0.8s ease;
+    }
+    
+    &:hover .feature-card-description {
+        max-width: 100%;
+    }
+}
+
+.feature-card-small-nextoeachother-3-4 {
+    &:hover .feature-card-image {
+        filter: hue-rotate(45deg) contrast(1.2);
+    }
+}
+
+.feature-card-small-nextoeachother-4-4 {
+    perspective: 1000px;
+    
+    .feature-card-content {
+        transform: translateZ(20px);
+        transition: transform 0.4s;
+    }
+    
+    &:hover .feature-card-content {
+        transform: translateZ(30px);
+    }
+}
+
+/* Gemeinsame Content-Styles */
+.feature-card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.feature-card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.feature-card-description {
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1280px) {
+    .grid-smaller-containers,
+    .grid-smaller-containers2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .feature-card-1-4 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-smaller-containers,
+    .grid-smaller-containers2 {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .feature-card-1-4 {
+        grid-column: span 1;
+    }
+    
+    .feature-card-image {
+        height: 200px;
+    }
+}

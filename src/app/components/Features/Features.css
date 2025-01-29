@@ -134,7 +134,7 @@
     grid-row: span 1;
 }
 
-/*------------------------------------------------------*/
+
 
 /* Card wrapper */
 .card-wrapper {
@@ -189,6 +189,10 @@
     font-family: "CommandOverride", sans-serif;
     text-align: left;
     letter-spacing: 1.1px;
+    -webkit-user-select: none; /* Für Webkit-basierte Browser (Chrome, Safari) */
+    -moz-user-select: none; /* Für Firefox */
+    -ms-user-select: none; /* Für ältere IE-Versionen */
+    user-select: none; /* Standard für moderne Browser */
 }
 
 /* Card description */
@@ -199,6 +203,10 @@
     line-height: 22px;
     text-align: left;
     margin-bottom: auto; /* Abstand zwischen Beschreibung und Button */
+    -webkit-user-select: none; /* Für Webkit-basierte Browser (Chrome, Safari) */
+    -moz-user-select: none; /* Für Firefox */
+    -ms-user-select: none; /* Für ältere IE-Versionen */
+    user-select: none; /* Standard für moderne Browser */
 }
 
 /*------------------------------------------------------*/

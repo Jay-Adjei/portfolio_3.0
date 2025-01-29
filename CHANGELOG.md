@@ -8,14 +8,16 @@
 Beta / Still in Work
 
 Current Problems:
-[ ] The challenge is integrating PostgreSQL to store and manage like and view counts, while ensuring data security and preventing multiple likes from the same user by utilizing a unique session ID. I'm currently learning APIs and PostgreSQL but am using JSON for now until I'm more experienced. I also have two folders, one called "backend." for this stuff :/
+[X] The challenge is integrating PostgreSQL to store and manage like and view counts, while ensuring data security and preventing multiple likes from the same user by utilizing a unique session ID. I'm currently learning APIs and PostgreSQL but am using JSON for now until I'm more experienced. I also have two folders, one called "backend." for this stuff :/
 [ ]
 [ ]
 
 
-Note for myself:
-[ ] git commit -m "Add backend folder to .gitignore"
-[ ]
+Note and Todos for myself:
+[X] git commit -m "Add backend folder to .gitignore"
+[X] Clean the Assets folder
+[ ] Oranize Css files + add Comments and split it in logical parts
+
 [ ]
 --------------------------
 
@@ -24,7 +26,10 @@ Updates / Fixes:
 
 0.0.19 - Latest Updates
 • Portfolio projects are now dynamically loaded based on the slug from the URL, eliminating the need for separate static pages. The data is centrally stored in a portfolio.json file, simplifying maintenance and expansion. With client-side rendering, static generation, and improved loading states and error handling, the user experience is optimized, and performance is enhanced.
-
+• Updated Favicon
+• Updated Skills View with tabs
+• Updated and cleaned Landing Page Carousel
+• Handbrake Software installed for Video Perfomance
 
 0.0.19 - Previous Updates
 

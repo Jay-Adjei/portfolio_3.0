@@ -1,19 +1,23 @@
 .footer {
-  background-color: #000; /* Schwarzer Hintergrund */
-  color: #fff; /* Weiße Schrift */
+  background-color: var(--dark-mode); 
+  color: #fff; 
   padding: 5rem 1rem 1.5rem;
-  position: relative; /* Für die Trennlinie */
+  position: relative; 
+}
+
+.dark-mode .footer {
+  background-color: var(--light-mode); 
 }
 
 .footer::before {
   content: '';
   position: absolute;
-  top: 3rem; /* Trennlinie 2rem vom oberen Rand des Footers entfernt */
+  top: 3rem; 
   left: 50%;
   transform: translateX(-50%);
-  width: 50%; /* Trennlinie auf 50% Breite */
+  width: 50%; 
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.1); /* Farbe der Trennlinie */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {

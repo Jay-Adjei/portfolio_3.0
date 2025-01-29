@@ -95,14 +95,14 @@ const Features = () => {
                         buttonHref="/project2"
                     />
                     <Card
-                        src="/assets/videos/video6.mp4"
+                        src="/assets/videos/video2.mp4"
                         title="Kitsune"
                         description="Develop a branching narrative game where choices affect the outcome."
                         className="card-medium"
                         buttonHref="/portfolio"
                     />
                     <Card
-                        src="/assets/videos/Video1.mp4"
+                        src="/assets/videos/Video8.mp4"
                         title="Oblivion"
                         description="Let users try products in AR before purchasing, such as furniture or clothes."
                         className="card-small"
@@ -121,11 +121,12 @@ const Features = () => {
                         src="/assets/gifs/japanworld.gif"
                         title="Arcadia"
                         description="Your Description"
-                        className="card-video"
+                        className="card-xsmall2"
                         buttonHref="/project1"
                         isGif={true}
                     />
                 </div>
+
             </div>
         </section>
     );

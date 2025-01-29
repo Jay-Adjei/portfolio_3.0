@@ -1,7 +1,33 @@
 [
     {
-      "slug": "slug1",
-      "title": "Blog Title 1",
+      "slug": "Best-CSS-Tricks",
+      "title": "Best-CSS-Tricks",
+      "subtitle": "In Progress",
+      "author": "Gylan Salih",
+      "date": "January 29, 2025",
+      "readTime": "1 min",
+      "views": "1k",
+      "likes": "1",
+      "authorImage": "/assets/img/blog/author.jpg",
+      "sections": [
+        { "id": "Text user-select", "title": "Text user-select" },
+        { "id": "css-tips1", "title": "CSS Tips 1" },
+        { "id": "css-tips2", "title": "CSS Tips 2" }
+      ],
+      "content": [
+        {
+          "sectionId": "Text user-select",
+          "content": "<h2>Testing</h2><p>CSS is a powerful tool...</p>"
+        },
+        {
+          "sectionId": "css-tips1",
+          "content": "<h2>CSS Tips</h2><p>Learn Flexbox...</p>"
+        }
+      ]
+    },
+    {
+      "slug": "My-Progress-of-Learning-Coding",
+      "title": "Blog Title 2",
       "subtitle": "My Progress of Learning Coding",
       "author": "Gylan Salih",
       "date": "January 26, 2025",
@@ -24,10 +50,11 @@
           "content": "<h2>CSS Tips</h2><p>Learn Flexbox...</p>"
         }
       ]
+      
     },
     {
-      "slug": "My-Progress-of-Learning-Coding",
-      "title": "Blog Title 2",
+      "slug": "slug1",
+      "title": "Blog Title 1",
       "subtitle": "My Progress of Learning Coding",
       "author": "Gylan Salih",
       "date": "January 26, 2025",

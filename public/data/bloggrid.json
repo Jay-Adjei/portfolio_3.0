@@ -1,15 +1,16 @@
+
 [
     {
       "id": 1,
-      "slug": "slug1",
-      "title": "My progress of learning coding",
-      "excerpt": "My progress of learning coding...",
+      "slug": "Best-CSS-Tricks",
+      "title": "Best-CSS-Tricks",
+      "excerpt": "xxxx...",
       "image": "/assets/img/blog/blog3.png",
       "author": "Gylan Salih",
-      "date": "January 26, 2025",
-      "readTime": "5 min",
-      "views": "2.4k",
-      "likes": "128"
+      "date": "January 29, 2025",
+      "readTime": "1 min",
+      "views": "1k",
+      "likes": "1"
     },
     {
       "id": 2,
@@ -25,15 +26,15 @@
     },
     {
       "id": 3,
-      "slug": "Best-CSS-Tricks",
-      "title": "Advanced styling techniques",
+      "slug": "Best-CSS-Tricks2",
+      "title": "Some of my Notes",
       "excerpt": "Advanced styling techniques...",
       "image": "/assets/img/blog/blog2.png",
       "author": "Gylan Salih",
-      "date": "January 24, 2025",
-      "readTime": "8 min",
-      "views": "1.8k",
-      "likes": "96"
+      "date": "January 29, 2025",
+      "readTime": "1 min",
+      "views": "1k",
+      "likes": "1"
     }
   ]
   

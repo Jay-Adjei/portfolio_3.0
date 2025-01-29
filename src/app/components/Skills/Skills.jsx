@@ -1,31 +1,78 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './skill.css';
 
-const skillsList = [
-  { title: "HTML5", icon: "/assets/img/skills/html.png" },
-  { title: "CSS3", icon: "/assets/img/skills/css.png" },
-  { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-  { title: "React", icon: "/assets/img/skills/react.png" },
-  { title: "React", icon: "/assets/img/skills/mega.jpg" },
-  { title: "React", icon: "/assets/img/skills/mega.jpg" }
-];
-
+const skillsData = {
+  coding: [
+    { title: "HTML5", icon: "/assets/img/skills/html.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "React", icon: "/assets/img/skills/react.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+  ],
+  software: [
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+  ],
+  tools: [
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+  ],
+  Design: [
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.png" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+  ]
+};
 
 const Skills = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const [activeTab, setActiveTab] = useState('coding');
+
   return (
     <section className="skills-section">
       <div className="skills-container">
         <h2 className="skills-title">Meine Fähigkeiten</h2>
+        
+        <div className="category-tabs">
+          {Object.keys(skillsData).map((category) => (
+            <button
+              key={category}
+              className={`tab-button ${activeTab === category ? 'active' : ''}`}
+              onClick={() => setActiveTab(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </div>
+
         <div className="skills-grid">
-          {skillsList.map((skill, index) => (
-            <div key={index} className="skill-item">
+          {skillsData[activeTab].map((skill, index) => (
+            <div 
+              key={index}
+              className="skill-item"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(-1)}
+            >
               <img
                 src={skill.icon}
                 alt={skill.title}
                 className="skill-icon"
-                loading="lazy" // Lazy loading für Bilder
+                loading="lazy"
+                style={{
+                  transform: hoveredIndex === index 
+                    ? 'scale(1.15) rotateZ(0deg)' 
+                    : 'scale(1) rotateZ(0deg)'
+                }}
               />
               <p className="skill-title">{skill.title}</p>
             </div>
