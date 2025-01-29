@@ -22,10 +22,7 @@
     overflow: hidden;
   }
   
-  /* Dark Mode Styling for Slider */
-  .dark-mode .carousel-wrapper {
-    background: rgb(0, 0, 0);
-  }
+
   
   /* Slide */
   .slide {

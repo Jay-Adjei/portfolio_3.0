@@ -54,8 +54,6 @@ const Carousel = () => {
     },
   ];
   
-  
-
   const autoplayInterval = 7500;
 
   const startAutoplay = () => {
