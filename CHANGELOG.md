@@ -30,6 +30,7 @@ Updates / Fixes:
 • Updated Skills View with tabs
 • Updated and cleaned Landing Page Carousel
 • Handbrake Software installed for Video Perfomance
+• Website is extremly slow trying to adjust perfomance
 
 0.0.19 - Previous Updates
 

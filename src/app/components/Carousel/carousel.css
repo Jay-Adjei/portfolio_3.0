@@ -16,14 +16,13 @@
 
 /* Sicherstellen, dass der Inhalt nicht den sichtbaren Bereich verlässt */
 .carousel-wrapper {
-    padding-top: 150px;
-    width: 100%;
-    height: 35vh;
-    overflow: hidden;
-  }
-  
+  position: relative; /* Stellt sicher, dass Slides im Wrapper bleiben */
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+}
 
-  
+
   /* Slide */
   .slide {
     position: absolute;

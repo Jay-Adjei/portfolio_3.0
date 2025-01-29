@@ -20,38 +20,6 @@ const Carousel = () => {
       subtitle: 'Designed to redefine the boundaries of modern creativity', 
       description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
     },
-    { 
-      id: 2, 
-      type: 'video', // Type: Video
-      src: '/assets/videos/Kenshin.mp4', 
-      title: 'Kitsune&apos;s Grace',
-      subtitle: 'A blend of aesthetics and functionality executed with precision',
-      description: 'Inspired by the elegance and adaptability of the Kitsune, this project balances aesthetic beauty and flawless functionality. Like the mythical fox, it adapts to every user&apos;s need with precision and grace.' 
-    },
-    { 
-      id: 3, 
-      type: 'video', // Type: Video
-      src: '/assets/videos/Furrie.mp4',
-      title: 'Shinto Spirit',
-      subtitle: 'Where technology meets creativity, turning visions into reality',
-      description: 'In this project, the spirit of Shinto guides our journey, blending technology with art to transform abstract ideas into reality. Every design detail is rooted in creativity and powered by technological innovation.' 
-    },
-    { 
-      id: 4, 
-      type: 'video', // Type: Video
-      src: '/assets/videos/Gate.mp4',
-      title: 'Kage&apos;s Craft',
-      subtitle: 'User-focused, innovative, and crafted with attention to detail',
-      description: 'With the stealth and craftsmanship of a shadow, this project is designed with user needs at its core. Every interaction, every detail, is meticulously crafted to offer an innovative and seamless experience.' 
-    },
-    { 
-      id: 5, 
-      type: 'video', // Type: Video
-      src: '/assets/videos/Sakura.mp4',
-      title: 'Raijin\'s Thunder',
-      subtitle: 'A project that seamlessly merges design and technology',
-      description: 'This project channels the energy of Raijin, combining raw creative power with advanced technology. It&apos;s where thunderous impact meets harmonious design, creating an experience that&apos;s as striking as it is functional.' 
-    },
   ];
   
   const autoplayInterval = 7500;

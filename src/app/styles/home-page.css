@@ -2,17 +2,14 @@
 
 /* Home Page Styles in Verbindung mit page.jsx direkt außen im Ordner also keine unter oOdner */
 .page.home-page {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 50px 20px;
-    background-color: var(--dark-mode);
-  }
-  
+  width: 100vw; /* Stellt sicher, dass die Seite die volle Bildschirmbreite einnimmt */
+  max-width: none; /* Hebt mögliche Einschränkungen auf */
+  margin: 0 auto;
+  background-color: var(--dark-mode);
+}
+
   /* Home Page Styles */
 .dark-mode .page.home-page {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 50px 20px;
   background-color: var(--light-mode);
 }
   .home-header {
