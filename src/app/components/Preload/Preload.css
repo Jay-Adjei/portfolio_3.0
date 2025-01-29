@@ -1,33 +1,208 @@
-.loading-animation {
+/* -----------------------------------------------------------
+Preloader
+---------------------------------------------------------- */
+.preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: #0a0a0a;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
+  z-index: 9999;
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s linear;
 }
 
-.loading-animation.loaded {
+.preloader.loaded {
   opacity: 0;
+  visibility: hidden;
+}
+
+/* -----------------------------------------------------------
+Kanji Overlay
+---------------------------------------------------------- */
+.kanji-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
 }
 
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+.kanji {
+  position: absolute;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  transform: rotate(-25deg);
+  color: rgba(0, 255, 255, 0.1);
+  text-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.2),
+    0 0 5px rgba(0, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(0, 255, 255, 0.15);
+}
+
+.kanji:nth-child(1) { left: 10%; top: 15%; }
+.kanji:nth-child(2) { right: 15%; top: 40%; }
+.kanji:nth-child(3) { left: 25%; bottom: 20%; }
+
+/* -----------------------------------------------------------
+Loader Core & Quantum Ring
+---------------------------------------------------------- */
+.loader-core {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.quantum-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  animation: ringRotate 8s linear infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.quantum-ring:nth-child(2) {
+  border-color: rgba(0, 255, 255, 0.1);
+}
+
+/* -----------------------------------------------------------
+Kanji Rotator
+---------------------------------------------------------- */
+.kanji-rotator {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  color: #00f3ff;
+  text-shadow: 
+    0 0 12px rgba(0, 243, 255, 0.3),
+    0 0 2px rgba(255,255,255,0.2);
+  opacity: 0.9;
+  animation: kanji-float 2s ease-in-out infinite;
+}
+
+.quantum-ring:nth-child(2) .kanji-rotator {
+  color: #a0f0ff;
+  text-shadow: 
+    0 0 12px rgba(160, 240, 255, 0.2),
+    0 0 4px rgba(0,243,255,0.1);
+}
+
+/* -----------------------------------------------------------
+Animationen
+---------------------------------------------------------- */
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes kanji-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* -----------------------------------------------------------
+Glow Effect
+---------------------------------------------------------- */
+.glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(0, 255, 255, 0) 70%
+  );
+  filter: blur(30px);
+  opacity: 0.6;
+}
+
+/* -----------------------------------------------------------
+Progress HUD
+---------------------------------------------------------- */
+.progress-hud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  color: #00ffea;
+  text-shadow: 0 0 25px rgba(0, 255, 234, 0.3);
+}
+
+.progress-percent {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #00ffea;
+  font-family: 'RedHat', monospace;
+  text-shadow: 0 0 25px rgba(0, 255, 234, 0.3);
+  margin: 15px 0;
+  letter-spacing: -0.05em;
+}
+
+/* -----------------------------------------------------------
+GIF Container
+---------------------------------------------------------- */
+.gif-container {
+  padding: 20px 0;
+}
+
+.hologram-gif {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 
+    0 0 30px rgba(0, 200, 200, 0.3),
+    0 0 15px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hologram-gif:hover {
+  transform: scale(1.05);
+}
+
+/* -----------------------------------------------------------
+Button
+---------------------------------------------------------- */
+.enter-portal {
+  position: relative;
+  padding: 1rem 2.5rem;
+  margin: 25px auto 0;
+  border: 1px solid #00a8ff;
+  color: #00d0ff;
+  background: rgba(0, 42, 66, 0.3);
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.enter-portal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enter-portal:hover {
+  background: rgba(0, 168, 255, 0.15);
+  box-shadow: 
+    0 0 20px rgba(0, 168, 255, 0.3),
+    0 0 10px rgba(0, 255, 255, 0.1);
 }

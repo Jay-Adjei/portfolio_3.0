@@ -20,6 +20,38 @@ const Carousel = () => {
       subtitle: 'Designed to redefine the boundaries of modern creativity', 
       description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
     },
+    { 
+      id: 2, 
+      type: 'image', // Type: Video
+      src: '/assets/img/LandingBG/OniGirl7.jpg', 
+      title: 'Raijin&apos;s Fury',
+      subtitle: 'Designed to redefine the boundaries of modern creativity', 
+      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+    },
+    { 
+      id: 3, 
+      type: 'image', // Type: Video
+      src: '/assets/img/LandingBG/OniGirl5.jpg', 
+      title: 'Raijin&apos;s Fury',
+      subtitle: 'Designed to redefine the boundaries of modern creativity', 
+      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+    },
+    { 
+      id: 4, 
+      type: 'image', // Type: Video
+      src: '/assets/img/LandingBG/OniGirl3.jpg', 
+      title: 'Raijin&apos;s Fury',
+      subtitle: 'Designed to redefine the boundaries of modern creativity', 
+      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+    },
+    { 
+      id: 5, 
+      type: 'image', // Type: Video
+      src: '/assets/img/LandingBG/OniGirl3.jpg', 
+      title: 'Raijin&apos;s Fury',
+      subtitle: 'Designed to redefine the boundaries of modern creativity', 
+      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+    },
   ];
   
   const autoplayInterval = 7500;

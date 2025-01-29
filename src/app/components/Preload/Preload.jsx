@@ -1,51 +1,82 @@
 'use client';
-
 import { useState, useEffect } from 'react';
-import './Preload.css'; // Import the custom styles for the spinner
+import './Preload.css';
 
-const Preload = ({ enablePreloader = false, onLoaded }) => {
+const Preload = ({ onLoaded }) => {
+  const [progress, setProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    if (enablePreloader) {
-      const preloadLinks = ['/home', '/portfolio', '/about', '/testing', '/portfolio/project'];
+    let current = 0;
+    const interval = setInterval(() => {
+      current += Math.random() * 3;
+      if (current >= 100) {
+        current = 100;
+        clearInterval(interval);
+        setTimeout(() => setIsLoaded(true), 300);
+      }
+      setProgress(Math.min(current, 100));
+    }, 30);
 
-      // Manually trigger fetch for these links to force them to load in the background
-      preloadLinks.forEach((link) => {
-        window.fetch(link) // Manually fetch the page in the background
-          .then((res) => {
-            console.log(`Fetched: ${link}`, res);
-          })
-          .catch((err) => {
-            console.error(`Error fetching: ${link}`, err);
-          });
-      });
+    return () => clearInterval(interval);
+  }, []);
 
-      // Simulate a loading time or preloading logic
-      const timeout = setTimeout(() => {
-        setIsLoaded(true);
-        if (typeof onLoaded === 'function') {
-          onLoaded(); // Notify parent when loading is complete
-        }
-      }, 5000); // Adjust the timeout as needed
+  const handleEnter = () => {
+    setIsVisible(false);
+    setTimeout(() => onLoaded?.(), 800);
+  };
 
-      // Cleanup timeout when the component unmounts
-      return () => clearTimeout(timeout);
-    } else {
-      setIsLoaded(true); // Set as loaded directly if no preloader
-    }
-  }, [enablePreloader, onLoaded]);
+  if (!isVisible) return null;
 
-  // Render the spinner if the app is not loaded yet
-  if (!isLoaded) {
-    return (
-      <div className="loading-animation">
-        <div className="spinner"></div> {/* Use custom spinner from CSS */}
+  return (
+    <div className={`preloader ${!isVisible ? 'loaded' : ''}`}>
+      <div className="kanji-overlay">
+        <div className="kanji">暴</div>
+        <div className="kanji">走</div>
+        <div className="kanji">族</div>
       </div>
-    );
-  }
 
-  return null; // Return null when loading is finished
+      <div className="loader-core">
+        <div className="glow-effect" />
+        
+        <div className="quantum-ring">
+          <div className="kanji-rotator">電</div>
+          <div className="kanji-rotator">光</div>
+          <div className="kanji-rotator">火</div>
+        </div>
+
+        <div className="quantum-ring" style={{ animationDelay: '-4s' }}>
+          <div className="kanji-rotator">疾</div>
+          <div className="kanji-rotator">風</div>
+          <div className="kanji-rotator">迅</div>
+        </div>
+
+        <div className="progress-hud">
+          <div className="progress-percent">
+            {Math.round(progress)}%
+          </div>
+          
+          <div className="gif-container">
+            <img
+              src="/assets/img/preload/gifpreload2.gif"
+              className="hologram-gif"
+              alt="loading"
+            />
+          </div>
+          
+          <button
+            className={`enter-portal ${isLoaded ? 'visible' : ''}`}
+            onClick={handleEnter}
+            disabled={!isLoaded}
+          >
+            <span className="japanese-text">起動</span>
+            <span className="english-text">Enter</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Preload;

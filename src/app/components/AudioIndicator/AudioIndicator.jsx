@@ -20,7 +20,7 @@ const AudioIndicator = ({ isAudioPlaying, toggleAudioIndicator }) => {
         <audio
           ref={audioElementRef}
           className="hidden"
-          src="/assets/audio/loop.mp3"
+          src="/assets/audio/mhinpang_sound.mp3"
           loop
         />
         <div className={`sound-wave ${isAudioPlaying ? 'active' : ''}`}>

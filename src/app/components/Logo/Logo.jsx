@@ -12,9 +12,11 @@ const Logo = ({ isDarkMode }) => {
     <div className="logo">
       <Link href="/" passHref>
         <img
-          src={logo}
-          alt={isDarkMode ? 'Dark Mode Logo' : 'Light Mode Logo'}
-        />
+        src={logo}
+        alt={isDarkMode ? 'Dark Mode Logo' : 'Light Mode Logo'}
+        width={64} 
+        height={64}
+      />
       </Link>
     </div>
   );

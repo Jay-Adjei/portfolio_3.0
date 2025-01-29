@@ -18,7 +18,7 @@
 .carousel-wrapper {
   position: relative; /* Stellt sicher, dass Slides im Wrapper bleiben */
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
 }
 
