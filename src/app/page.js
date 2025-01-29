@@ -16,7 +16,6 @@ const Home = () => {
     <div className="page home-page">
 
       <Carousel />
-      <AboutMe />
       <CompanyCarousel />
       <TextCarousel />
       <Features />
