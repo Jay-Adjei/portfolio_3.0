@@ -79,7 +79,7 @@ const Features = () => {
             <div className="featurecontainer">
                 <div className="grid-largecontainer">
                     <Card
-                        src="/assets/videos/video7.mp4"
+                        src="/assets/videos/Video7.mp4"
                         title="Raijin"
                         description="Offer personalized workout plans with video tutorials and AI form correction."
                         className="card-large"
@@ -95,7 +95,7 @@ const Features = () => {
                         buttonHref="/project2"
                     />
                     <Card
-                        src="/assets/videos/video2.mp4"
+                        src="/assets/videos/Video2.mp4"
                         title="Kitsune"
                         description="Develop a branching narrative game where choices affect the outcome."
                         className="card-medium"
