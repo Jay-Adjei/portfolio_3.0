@@ -1,26 +1,62 @@
 'use client';
 import { useState, useEffect } from 'react';
+import preloadAssets from "./preloadAssets";
 import './Preload.css';
 
 const Preload = ({ onLoaded }) => {
   const [progress, setProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [hoveredKanjiIndex, setHoveredKanjiIndex] = useState(-1);
 
-  useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      current += Math.random() * 3;
-      if (current >= 100) {
-        current = 100;
-        clearInterval(interval);
-        setTimeout(() => setIsLoaded(true), 300);
-      }
-      setProgress(Math.min(current, 100));
-    }, 30);
+  const kanjiData = [
+    { bg: '1技', inner: '1術', explanation: 'Technology/Skill' },
+    { bg: '2創', inner: '2造', explanation: 'Creation/Design' },
+    { bg: '3計', inner: '3算', explanation: 'Calculation/Algorithm' },
+    { bg: '4情', inner: '4報', explanation: 'Information/Data' },
+    { bg: '5構', inner: '5築', explanation: 'Structure/Architecture' },
+    { bg: '6開', inner: '6発', explanation: 'Development/Coding' }
+];
 
-    return () => clearInterval(interval);
-  }, []);
+
+useEffect(() => {
+  let loadedCount = 0;
+  const totalAssets = preloadAssets.length;
+
+  if (totalAssets === 0) {
+    setIsLoaded(true);
+    return;
+  }
+
+  const updateProgress = () => {
+    loadedCount++;
+    setProgress(Math.round((loadedCount / totalAssets) * 100));
+    if (loadedCount === totalAssets) {
+      setTimeout(() => setIsLoaded(true), 500);
+    }
+  };
+
+  preloadAssets.forEach((asset) => {
+    if (asset.type === "image" || asset.type === "video") {
+      const media = new Image();
+      media.src = asset.path;
+      media.onload = updateProgress;
+      media.onerror = () => {
+        console.error(`Fehler beim Laden von: ${asset.path}`);
+        updateProgress();
+      };
+    } else if (asset.type === "component" || asset.type === "page") {
+      asset.path()
+        .then(updateProgress)
+        .catch((error) => {
+          console.error(`Fehler beim Laden der Seite: ${asset.path}`, error);
+          updateProgress();
+        });
+    }
+  });
+  
+}, []);
+
 
   const handleEnter = () => {
     setIsVisible(false);
@@ -31,50 +67,65 @@ const Preload = ({ onLoaded }) => {
 
   return (
     <div className={`preloader ${!isVisible ? 'loaded' : ''}`}>
-      <div className="kanji-overlay">
-        <div className="kanji">暴</div>
-        <div className="kanji">走</div>
-        <div className="kanji">族</div>
+      <div className="kanji-background">
+        {kanjiData.map((kanji, index) => (
+          <div
+            key={index}
+            className={`kanji-bg-text ${hoveredKanjiIndex === index ? 'hovered-kanji' : ''}`}
+            onMouseEnter={() => setHoveredKanjiIndex(index)}
+            onMouseLeave={() => setHoveredKanjiIndex(-1)}
+          >
+            {kanji.bg}
+            <div className={`kanji-tooltip ${hoveredKanjiIndex === index ? 'visible' : ''}`}>
+              {kanji.explanation}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="progress-percent">
+        {Math.round(progress)}%
       </div>
 
       <div className="loader-core">
         <div className="glow-effect" />
         
         <div className="quantum-ring">
-          <div className="kanji-rotator">電</div>
-          <div className="kanji-rotator">光</div>
-          <div className="kanji-rotator">火</div>
+          {kanjiData.slice(0, 3).map((kanji, index) => (
+            <div
+              key={index}
+              className={`kanji-inner-circle-rotator ${hoveredKanjiIndex === index ? 'active-inner-kanji' : ''}`}
+            >
+              {kanji.inner}
+            </div>
+          ))}
         </div>
 
         <div className="quantum-ring" style={{ animationDelay: '-4s' }}>
-          <div className="kanji-rotator">疾</div>
-          <div className="kanji-rotator">風</div>
-          <div className="kanji-rotator">迅</div>
+          {kanjiData.slice(3, 6).map((kanji, index) => (
+            <div
+              key={index + 3}
+              className={`kanji-inner-circle-rotator ${hoveredKanjiIndex === index + 3 ? 'active-inner-kanji' : ''}`}
+            >
+              {kanji.inner}
+            </div>
+          ))}
         </div>
 
         <div className="progress-hud">
-          <div className="progress-percent">
-            {Math.round(progress)}%
-          </div>
-          
           <div className="gif-container">
             <img
-              src="/assets/img/preload/gifpreload2.gif"
+              src="/assets/img/logo/logo_white.png"
               className="hologram-gif"
               alt="loading"
             />
           </div>
-          
-          <button
-            className={`enter-portal ${isLoaded ? 'visible' : ''}`}
-            onClick={handleEnter}
-            disabled={!isLoaded}
-          >
-            <span className="japanese-text">起動</span>
-            <span className="english-text">Enter</span>
-          </button>
         </div>
       </div>
+
+      <button className={`enter-portal ${isLoaded ? "visible" : ""}`} onClick={handleEnter} disabled={!isLoaded}>
+        <span className="japanese-text">Enter 起動</span>
+      </button>
     </div>
   );
 };

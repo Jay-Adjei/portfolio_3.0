@@ -1,4 +1,9 @@
 /* -----------------------------------------------------------
+COLOR VARIABLES - MANGA STYLE
+---------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------
 Preloader
 ---------------------------------------------------------- */
 .preloader {
@@ -11,10 +16,12 @@ Preloader
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   z-index: 9999;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s linear;
+  overscroll-behavior: contain;
 }
 
 .preloader.loaded {
@@ -25,31 +32,51 @@ Preloader
 /* -----------------------------------------------------------
 Kanji Overlay
 ---------------------------------------------------------- */
-.kanji-overlay {
+.kanji-background {
   position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+ /* filter: drop-shadow(0 0 15px rgba(255,255,255,0.1)); */
 }
 
-.kanji {
+.kanji-bg-text {
   position: absolute;
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 8rem;
   font-weight: 900;
   transform: rotate(-25deg);
-  color: rgba(0, 255, 255, 0.1);
-  text-shadow: 
-    0 0 15px rgba(0, 255, 255, 0.2),
-    0 0 5px rgba(0, 255, 255, 0.1);
-  -webkit-text-stroke: 1px rgba(0, 255, 255, 0.15);
+  color: rgba(50, 50, 50, 0.15);
+  text-shadow: 0 0 15px rgba(50, 50, 50, 0.2), 0 0 5px rgba(50, 50, 50, 0.1);
+  -webkit-text-stroke: 0px;
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    filter 0.3s ease,
+    color 0.3s ease;
+  cursor: crosshair;
+  pointer-events: auto;
+  will-change: transform, filter;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.kanji:nth-child(1) { left: 10%; top: 15%; }
-.kanji:nth-child(2) { right: 15%; top: 40%; }
-.kanji:nth-child(3) { left: 25%; bottom: 20%; }
+/* Hover-Effekt */
+.kanji-bg-text:hover {
+  transform: rotate(0deg) scale(1.2);
+  -webkit-text-stroke: 0px;
+  z-index: 1;
+ /* filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.062)); */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+
+
+/* Positionen bleiben gleich */
+.kanji-bg-text:nth-child(1) { left: 8%; top: 15%; }
+.kanji-bg-text:nth-child(2) { left: 35%; top: 2%; }
+.kanji-bg-text:nth-child(3) { left: 25%; bottom: 20%; }
+.kanji-bg-text:nth-child(4) { right: 12%; top: 4%; }
+.kanji-bg-text:nth-child(5) { right: 25%; bottom: 50%; }
+.kanji-bg-text:nth-child(6) { right: 12%; bottom: 22%; }
 /* -----------------------------------------------------------
 Loader Core & Quantum Ring
 ---------------------------------------------------------- */
@@ -57,6 +84,7 @@ Loader Core & Quantum Ring
   position: relative;
   width: 320px;
   height: 320px;
+  margin: 0 auto;
 }
 
 .quantum-ring {
@@ -64,41 +92,53 @@ Loader Core & Quantum Ring
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px solid rgba(0, 255, 255, 0.15);
+  border: 1px solid #555;
   animation: ringRotate 8s linear infinite;
 }
 
 .quantum-ring:nth-child(2) {
-  border-color: rgba(0, 255, 255, 0.1);
+  border-color: rgba(80, 80, 80, 0.15);
 }
 
 /* -----------------------------------------------------------
 Kanji Rotator
 ---------------------------------------------------------- */
-.kanji-rotator {
+.kanji-inner-circle-rotator {
   position: absolute;
-  top: -20px;
   left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Noto Sans JP', sans-serif;
+  top: 50%;
+  font-family: 'CommandOverride', sans-serif;
   font-size: 1.6rem;
-  color: #00f3ff;
-  text-shadow: 
-    0 0 12px rgba(0, 243, 255, 0.3),
-    0 0 2px rgba(255,255,255,0.2);
+  color: #fff;
   opacity: 0.9;
-  animation: kanji-float 2s ease-in-out infinite;
+  animation: kanji-float 2s ease-in-out infinite, counter-rotate 8s linear infinite;
+  transition: all 0.3s ease;
 }
 
-.quantum-ring:nth-child(2) .kanji-rotator {
-  color: #a0f0ff;
-  text-shadow: 
-    0 0 12px rgba(160, 240, 255, 0.2),
-    0 0 4px rgba(0,243,255,0.1);
+
+/* Position each kanji at 120-degree intervals */
+.quantum-ring .kanji-inner-circle-rotator:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-160px);
 }
+.quantum-ring .kanji-inner-circle-rotator:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(-160px);
+}
+.quantum-ring .kanji-inner-circle-rotator:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(240deg) translateY(-160px);
+}
+
+/* Counter-rotate to keep kanji upright */
+@keyframes counter-rotate {
+  from { transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-160px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-160px) rotate(-360deg); }
+}
+
+.quantum-ring .kanji-inner-circle-rotator:nth-child(1) { --angle: 0deg; }
+.quantum-ring .kanji-inner-circle-rotator:nth-child(2) { --angle: 120deg; }
+.quantum-ring .kanji-inner-circle-rotator:nth-child(3) { --angle: 240deg; }
 
 /* -----------------------------------------------------------
-Animationen
+Animations
 ---------------------------------------------------------- */
 @keyframes ringRotate {
   from { transform: rotate(0deg); }
@@ -111,7 +151,7 @@ Animationen
 }
 
 /* -----------------------------------------------------------
-Glow Effect
+Glow Effect Logo area
 ---------------------------------------------------------- */
 .glow-effect {
   position: absolute;
@@ -120,12 +160,13 @@ Glow Effect
   border-radius: 50%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(0, 255, 255, 0.1) 0%,
-    rgba(0, 255, 255, 0) 70%
+    rgba(80, 80, 80, 0.15) 0%,
+    rgba(80, 80, 80, 0) 70%
   );
   filter: blur(30px);
   opacity: 0.6;
 }
+
 
 /* -----------------------------------------------------------
 Progress HUD
@@ -135,74 +176,138 @@ Progress HUD
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  color: #00ffea;
-  text-shadow: 0 0 25px rgba(0, 255, 234, 0.3);
+  color: #333;
+  text-shadow: 0 0 25px rgba(50, 50, 50, 0.5);
+  gap: 15px;
 }
 
 .progress-percent {
-  font-size: 3.5rem;
+  position: absolute;
+  left: 3%;
+  bottom: 1%;
+  font-size: 6rem;
   font-weight: 300;
-  color: #00ffea;
-  font-family: 'RedHat', monospace;
-  text-shadow: 0 0 25px rgba(0, 255, 234, 0.3);
-  margin: 15px 0;
+  color: #fff;
+  font-family: 'CommandOverride', sans-serif;
   letter-spacing: -0.05em;
+  z-index: 1;
+  text-shadow: 0 0 15px rgba(200, 200, 200, 0.4);
+  animation: percentage-glow 2s ease-in-out infinite;
+}
+
+@keyframes percentage-glow {
+  0%, 100% { 
+    opacity: 0.8; 
+    text-shadow: 0 0 15px #ffffff4d; 
+  }
+  50% { 
+    opacity: 0.9; 
+    text-shadow: 0 0 25px #ffffff80; 
+  }
 }
 
 /* -----------------------------------------------------------
 GIF Container
 ---------------------------------------------------------- */
 .gif-container {
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .hologram-gif {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(0, 255, 255, 0.1);
-  box-shadow: 
-    0 0 30px rgba(0, 200, 200, 0.3),
-    0 0 15px rgba(0, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	-o-object-fit: scale-down;
+	object-fit: scale-down;
+	transition: transform 0.3s ease;
 }
 
 .hologram-gif:hover {
   transform: scale(1.05);
 }
-
 /* -----------------------------------------------------------
-Button
+Button - Final Manga Style
 ---------------------------------------------------------- */
 .enter-portal {
-  position: relative;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
   padding: 1rem 2.5rem;
-  margin: 25px auto 0;
-  border: 1px solid #00a8ff;
-  color: #00d0ff;
-  background: rgba(0, 42, 66, 0.3);
+  border: 2px solid #333; /* Dunkelgrau statt Rot */
+  color: #333; /* Dunkelgrau statt Rot */
+  background: rgba(50, 50, 50, 0.15); /* Gedämpftes Grau */
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.8px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
   opacity: 0;
-  transform: translateY(20px);
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(50, 50, 50, 0.2); /* Grauer Schlagschatten */
 }
 
 .enter-portal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .enter-portal:hover {
-  background: rgba(0, 168, 255, 0.15);
+  background: rgba(80, 80, 80, 0.25); /* Helleres Grau */
+  border-color: #555; /* Mittelgrau */
+  color: #555; /* Mittelgrau */
   box-shadow: 
-    0 0 20px rgba(0, 168, 255, 0.3),
-    0 0 10px rgba(0, 255, 255, 0.1);
+    0 0 30px rgba(80, 80, 80, 0.4),
+    0 0 15px rgba(120, 120, 120, 0.3); /* Abstufungen von Grau */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Kanji Tooltip */
+.kanji-tooltip {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  -webkit-text-stroke: 0px;
+}
+
+.kanji-tooltip.visible {
+  opacity: 1;
+}
+
+
+/* Kanji Hover States */
+.kanji-bg-text.hovered-kanji {
+  color: #C70000;
+  transition: all 0.3s ease;
+}
+
+.kanji-inner-circle-rotator.active-inner-kanji {
+  color: #C70000;
+  text-shadow: 0 0 20px #C70000;
 }

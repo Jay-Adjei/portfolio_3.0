@@ -31,6 +31,7 @@ Updates / Fixes:
 • Updated and cleaned Landing Page Carousel
 • Handbrake Software installed for Video Perfomance
 • Website is extremly slow trying to adjust perfomance
+• Added Preload Design
 
 0.0.19 - Previous Updates
 
