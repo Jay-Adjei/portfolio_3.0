@@ -8,7 +8,7 @@
       "readTime": "1 min",
       "views": "1k",
       "likes": "1",
-      "authorImage": "/assets/img/blog/author.jpg",
+      "authorImage": "/assets/img/blog/author.webp",
       "sections": [
         { "id": "Text user-select", "title": "Text user-select" },
         { "id": "css-tips1", "title": "CSS Tips 1" },
@@ -34,7 +34,7 @@
       "readTime": "5 min",
       "views": "2.4k",
       "likes": "128",
-      "authorImage": "/assets/img/blog/author.jpg",
+      "authorImage": "/assets/img/blog/author.webp",
       "sections": [
         { "id": "testing", "title": "Testing" },
         { "id": "css-tips1", "title": "CSS Tips 1" },
@@ -61,7 +61,7 @@
       "readTime": "5 min",
       "views": "2.4k",
       "likes": "128",
-      "authorImage": "/assets/img/blog/author.jpg",
+      "authorImage": "/assets/img/blog/author.webp",
       "sections": [
         { "id": "testing", "title": "Testing" },
         { "id": "css-tips1", "title": "CSS Tips 1" },

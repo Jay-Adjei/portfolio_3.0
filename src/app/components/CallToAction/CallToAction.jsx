@@ -49,7 +49,7 @@ const CallToAction = () => {
     >
       <div className="cta-bg-image" />
       <div className="cta-content">
-        <img src="/assets/img/LandingBG/OniBoy1.jpg" className="cta-image" alt="Professional Opportunity" />
+        <img src="/assets/img/LandingBG/OniBoy1.webp" className="cta-image" alt="Professional Opportunity" />
         <h2 className="cta-heading">
           <span className="cta-main-text">Why not Now?</span>
           <span className="cta-sub-text">Just Click on the Button to Contact me</span>

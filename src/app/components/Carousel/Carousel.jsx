@@ -14,45 +14,22 @@ const Carousel = () => {
   const slides = [
     { 
       id: 1, 
-      type: 'video', // Type: Video
-      src: '/assets/videos/Cloudy2.mp4', 
-      title: 'Raijin&apos;s Fury',
-      subtitle: 'Designed to redefine the boundaries of modern creativity', 
-      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+      type: 'video', 
+      src: '/assets/videos/sea.mp4', 
+      title: "Raijin's Fury",  // Richtiges Apostroph
+      subtitle: "Designed to redefine the boundaries of modern creativity", 
+      description: "Like Raijin's thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality." 
     },
     { 
       id: 2, 
-      type: 'image', // Type: Video
-      src: '/assets/img/LandingBG/OniGirl7.jpg', 
-      title: 'Raijin&apos;s Fury',
-      subtitle: 'Designed to redefine the boundaries of modern creativity', 
-      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
-    },
-    { 
-      id: 3, 
-      type: 'image', // Type: Video
-      src: '/assets/img/LandingBG/OniGirl5.jpg', 
-      title: 'Raijin&apos;s Fury',
-      subtitle: 'Designed to redefine the boundaries of modern creativity', 
-      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
-    },
-    { 
-      id: 4, 
-      type: 'image', // Type: Video
-      src: '/assets/img/LandingBG/OniGirl3.jpg', 
-      title: 'Raijin&apos;s Fury',
-      subtitle: 'Designed to redefine the boundaries of modern creativity', 
-      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
-    },
-    { 
-      id: 5, 
-      type: 'image', // Type: Video
-      src: '/assets/img/LandingBG/OniGirl3.jpg', 
-      title: 'Raijin&apos;s Fury',
-      subtitle: 'Designed to redefine the boundaries of modern creativity', 
-      description: 'Like Raijin&apos;s thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality.' 
+      type: 'image',  
+      src: '/assets/img/LandingBG/Oniboy1.webp', 
+      title: "Raijin's Fury",  
+      subtitle: "Designed to redefine the boundaries of modern creativity", 
+      description: "Like Raijin's thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality." 
     },
   ];
+  
   
   const autoplayInterval = 7500;
 

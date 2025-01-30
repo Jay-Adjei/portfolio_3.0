@@ -5,32 +5,32 @@ import './skill.css';
 
 const skillsData = {
   coding: [
-    { title: "HTML5", icon: "/assets/img/skills/html.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-    { title: "React", icon: "/assets/img/skills/react.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "HTML5", icon: "/assets/img/skills/html.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
+    { title: "React", icon: "/assets/img/skills/react.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
   ],
   software: [
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
   ],
   tools: [
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
   ],
   Design: [
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
-    { title: "CSS3", icon: "/assets/img/skills/css.png" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.png" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
+    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
+    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
   ]
 };
 

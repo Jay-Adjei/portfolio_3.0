@@ -4,7 +4,7 @@
       "title": "My First Project",
       "category": "Coding",
       "year": 2024,
-      "heroImage": "/assets/img/LandingBG/OniBoy1.jpg",
+      "heroImage": "/assets/img/LandingBG/OniBoy1.webp",
       "holographicCard": "/assets/img/LandingBG/OniBoy4.jpg",
       "projectDetails": [
         { "title": "Topic", "content": "Coding" },

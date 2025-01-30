@@ -35,14 +35,22 @@ useEffect(() => {
       setTimeout(() => setIsLoaded(true), 500);
     }
   };
-
   preloadAssets.forEach((asset) => {
-    if (asset.type === "image" || asset.type === "video") {
-      const media = new Image();
-      media.src = asset.path;
-      media.onload = updateProgress;
-      media.onerror = () => {
-        console.error(`Fehler beim Laden von: ${asset.path}`);
+    if (asset.type === "image") {
+      const img = new Image();
+      img.src = asset.path;
+      img.onload = updateProgress;
+      img.onerror = () => {
+        console.error(`Fehler beim Laden von Bild: ${asset.path}`);
+        updateProgress();
+      };
+    } else if (asset.type === "video") {
+      const video = document.createElement("video");
+      video.src = asset.path;
+      video.preload = "auto"; // Automatisch vorladen
+      video.oncanplaythrough = updateProgress; // Fortschritt erst zählen, wenn Video abspielbar ist
+      video.onerror = () => {
+        console.error(`Fehler beim Laden von Video: ${asset.path}`);
         updateProgress();
       };
     } else if (asset.type === "component" || asset.type === "page") {
@@ -54,6 +62,7 @@ useEffect(() => {
         });
     }
   });
+  
   
 }, []);
 

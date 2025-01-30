@@ -35,7 +35,6 @@ const FeaturesInteractive = () => {
         <section className="features-section2">
             <div className="grid-smaller-containers">
                 <FeatureCard
-                    src="/assets/videos/video7.mp4"
                     title="Arcadia"
                     description="Interactive Platform"
                     className="feature-card-1-4"

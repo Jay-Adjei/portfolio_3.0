@@ -13,22 +13,53 @@
     },
     {
       "slug": "oni-girl-coding",
-      "imgSrc": "/assets/img/LandingBG/OniBoy4.jpg",
+      "imgSrc": "/assets/img/LandingBG/OniBoy4.webp",
       "category": "Coding",
       "rarity": "ShineBlitz2"
     },
     {
       "slug": "oni-girl-coding",
-      "imgSrc": "/assets/img/LandingBG/OniGirl6.jpg",
+      "imgSrc": "/assets/img/LandingBG/OniGirl6.webp",
       "category": "Coding",
       "rarity": "ShineBlitz2"
     },
     {
       "slug": "oni-girl-coding",
-      "imgSrc": "/assets/img/LandingBG/OniGirl6.jpg",
+      "imgSrc": "/assets/img/LandingBG/OniGirl6.webp",
+      "category": "Coding",
+      "rarity": "ShineBlitz2"
+    },
+    {
+      "slug": "oni-girl-coding",
+      "imgSrc": "/assets/img/LandingBG/OniGirl4.jpg",
+      "category": "Coding",
+      "rarity": "ShineBlitz"
+    },
+    {
+      "slug": "oni-girl-coding",
+      "imgSrc": "/assets/img/LandingBG/OniGirl8.jpg",
+      "category": "Design",
+      "rarity": "ShineBlitz2"
+    },
+    {
+      "slug": "oni-girl-coding",
+      "imgSrc": "/assets/img/LandingBG/OniBoy4.webp",
+      "category": "Coding",
+      "rarity": "ShineBlitz2"
+    },
+    {
+      "slug": "oni-girl-coding",
+      "imgSrc": "/assets/img/LandingBG/OniGirl6.webp",
+      "category": "Coding",
+      "rarity": "ShineBlitz2"
+    },
+    {
+      "slug": "oni-girl-coding",
+      "imgSrc": "/assets/img/LandingBG/OniGirl6.webp",
       "category": "Coding",
       "rarity": "ShineBlitz2"
     }
+
 
   ]
   
