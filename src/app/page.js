@@ -10,18 +10,17 @@ import TextCarousel from './components/TextCarousel/TextCarousel';
 // import CustomModel from "./components/CustomModel/CustomModel";
 import './styles/home-page.css';
 import FeaturesInteractive from './components/FeatureInteractive/FeaturesInteractive';
+import TestimonialsGrid from './components/TestimonialsGrid/TestimonialsGrid';
 
 const Home = () => {
   return (
     <div className="page home-page">
 
       <Carousel />
-      <AboutMe />
-      <CompanyCarousel />
-      <TextCarousel />
       <Features />
       <FeaturesInteractive/>
       <Skills />
+      <TestimonialsGrid/>
       <CallToAction />
     </div>
   );

@@ -1,66 +1,52 @@
 'use client';
-import React, { useRef, useEffect, useState } from 'react';
-import gsap from 'gsap';
+import React from 'react';
 import './CallToAction.css';
-import Button1 from '../../components/Buttons/Button1';
 
 const CallToAction = () => {
-  const ctaRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const currentRef = ctaRef.current; // Aktuellen Wert in einer Variablen speichern
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) { // Sicherstellen, dass auf die lokale Variable zugegriffen wird
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible && ctaRef.current) {
-      gsap.to(ctaRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.3,
-      });
-    }
-  }, [isVisible]);
-
   return (
-    <div
-      className="cta-container"
-      ref={ctaRef}
-    >
-      <div className="cta-bg-image" />
-      <div className="cta-content">
-        <img src="/assets/img/LandingBG/OniBoy1.webp" className="cta-image" alt="Professional Opportunity" />
-        <h2 className="cta-heading">
-          <span className="cta-main-text">Why not Now?</span>
-          <span className="cta-sub-text">Just Click on the Button to Contact me</span>
-        </h2>
-        <p className="cta-description">
-          I&apos;m actively seeking new challenges in the field of Informatics. No matter the direction—whether it&apos;s development, support, or innovation—I’m ready to dive in.
-          If you like what I do, why wait? Let&apos;s connect, and I&apos;ll bring my skills to your team!
-        </p>
-        <Button1 href="mailto:Gylan.Salih@outlook.de">Contact Me</Button1>
+    <section className="cta-section">
+      <div className="cta-container">
+        <div className="cta-content">
+          <div className="cta-text">
+            <h2 className="cta-heading">
+              <span className="cta-main">Why not Now?</span>
+              <span className="cta-sub">Let's Create Something Amazing</span>
+            </h2>
+          </div>
+
+
+
+          <div className="CallToAction-info-card">
+            <h5 className="CallToAction-info-label">Inspiration</h5>
+            <p className="CallToAction-info-text">hey</p>
+          </div>
+
+          <div className="cta-image-wrapper">
+            <img 
+              src="/assets/img/LandingBG/OniBoy1.webp" 
+              alt="Professional Opportunity" 
+              className="cta-image"
+            />
+          </div>
+
+          <div className="CallToAction-cta-wrapper">
+            <button
+              className="CallToAction-cta-button"
+              onClick={() => window.open("https://your-live-demo-link.com", "_blank", "noopener,noreferrer")}
+            >
+              Live-Demo ansehen
+            </button>
+            <button
+              className="CallToAction-cta-button"
+              onClick={() => window.open("https://github.com/your-repository", "_blank", "noopener,noreferrer")}
+            >
+              Zum GitHub-Repository
+            </button>
+          </div>
+          
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

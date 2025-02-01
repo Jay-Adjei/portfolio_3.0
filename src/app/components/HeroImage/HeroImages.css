@@ -9,12 +9,12 @@
 .section_project_header {
     padding-bottom: 38px;
     position: relative;
-    background-color: #ffffff;
+    background-color: var(--dark-mode);
     transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode .section_project_header {
-    background-color: #000000;
+    background-color: var(--light-mode);
 }
 
 /* Section: Project Hero Image */

@@ -24,16 +24,22 @@ Note and Todos for myself:
 Lookbook:
 Updates / Fixes:
 
-0.0.19 - Latest Updates
+0.0.21 - Latest Updates
+• Improved the Skills section design
+• Added a new Testimonials design
+• Added static numbers for Likes/Views in the Blog Single Card View
+• Added some icons for the Skills page – looking for a better solution to display stats, possibly using the WakaTime API, but not just images (not a priority for now)
+
+0.0.20 - Previous Updates
 • Portfolio projects are now dynamically loaded based on the slug from the URL, eliminating the need for separate static pages. The data is centrally stored in a portfolio.json file, simplifying maintenance and expansion. With client-side rendering, static generation, and improved loading states and error handling, the user experience is optimized, and performance is enhanced.
 • Updated Favicon
-• Updated Skills View with tabs
-• Updated and cleaned Landing Page Carousel
-• Handbrake Software installed for Video Perfomance
-• Website is extremly slow trying to adjust perfomance
-• Added Preload Design + Function to load Img, Videos, Components and Pages
-• Deleted unnecessary stuff in the src folder
-
+• Updated Skills view with tabs
+• Cleaned and improved Landing Page Carousel
+• Installed HandBrake software for video performance optimization
+• Website is extremely slow – working on performance improvements
+• Added Preload design and function to load images, videos, components, and pages in advance
+• Removed unnecessary files from the src folder
+• Working on an improved Single Card View
 
 0.0.19 - Previous Updates
 

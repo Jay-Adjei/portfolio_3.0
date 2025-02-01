@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
+    "@fancyapps/ui": "^5.0.23",
     "@react-spring/animated": "^9.7.5",
     "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^9.121.1",

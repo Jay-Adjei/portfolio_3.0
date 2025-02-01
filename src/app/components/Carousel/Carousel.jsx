@@ -23,7 +23,7 @@ const Carousel = () => {
     { 
       id: 2, 
       type: 'image',  
-      src: '/assets/img/LandingBG/Oniboy1.webp', 
+      src: '/assets/img/LandingBG/OniBoy1.webp', 
       title: "Raijin's Fury",  
       subtitle: "Designed to redefine the boundaries of modern creativity", 
       description: "Like Raijin's thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality." 
