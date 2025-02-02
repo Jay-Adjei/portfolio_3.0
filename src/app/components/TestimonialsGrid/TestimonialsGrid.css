@@ -18,7 +18,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 Karten pro Reihe */
   gap: 15px; /* Gleich wie Skills-Grid */
-  max-width: 1250px; /* Gleich wie Skills-Container */
+  max-width: 1275px; /* Gleich wie Skills-Container */
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
@@ -105,7 +105,7 @@
   font-size: 2.5em;
   position: absolute;
   right: -0.4em;
-  bottom: -0.6em;
+  bottom: -0.756em;
 }
 
 /*-------------------------------------------------------------*/
@@ -159,7 +159,6 @@
   --avatar-size: 50px;
   width: var(--avatar-size);
   height: var(--avatar-size);
-  border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
   transition: transform 0.3s ease;

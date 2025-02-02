@@ -3,8 +3,9 @@
   gap: 1.5rem;
   justify-content: center;
   margin-top: 2rem;
-  flex-direction: column; /* Buttons untereinander */
+  flex-direction: row; /* Buttons nebeneinander */
 }
+
 
 .CallToAction-cta-button {
   background: #1a1a1a;
@@ -28,14 +29,16 @@
   margin-bottom: 1rem;
 }
 
+
 .CallToAction-learning-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   max-width: 1250px;
   margin: 0 auto;
   padding: 0 2rem;
 }
+
 
 .CallToAction-learning-card {
   background: #1a1a1a;
@@ -133,7 +136,11 @@
 
 
 
-
+.cta-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 
 
@@ -149,9 +156,9 @@
 
 .cta-content {
   display: grid;
-  grid-template-columns: 1fr; /* Nur eine Spalte */
-  gap: 2rem; /* Gleichmäßiger Abstand zwischen Elementen */
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
   background: #1a1a1a;
   border: 1px solid #2d2d2d;
   border-radius: 12px;

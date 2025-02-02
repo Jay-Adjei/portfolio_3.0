@@ -2,38 +2,39 @@
   /* Skills CSS                                                */
   /*----------------------------------------------------------*/
   
-
-.skills-section {
-  padding: 6rem 0;
-  background: var(--dark-mode);
-}
-
-.dark-mode .skills-section {
-  padding: 6rem 0;
-  background: var(--light-mode);
-}
-
-.skills-container {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.skills-title {
-  font-size: 2.5rem;
-  text-align: center;
-  color: #00ff88;
-  margin-bottom: 4rem;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-}
-
-/* 4 Icons in a row */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  position: relative;
-}
+  .skills-section {
+    padding: 6rem 0;
+    background: var(--dark-mode);
+  }
+  
+  .dark-mode .skills-section {
+    padding: 6rem 0;
+    background: var(--light-mode);
+  }
+  
+  .skills-container {
+    max-width: 1275px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .skills-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #00ff88;
+    margin-bottom: 4rem;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+  }
+  
+  /* 4 Icons in a row */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    position: relative;
+  }
+  
+/* skills.css */
 
 .skill-item {
   background: #1a1a1a;
@@ -48,35 +49,44 @@
   overflow: hidden;
 }
 
-
-.skill-item::before {
-  content: '';
+.skill-item .gradient-border {
   position: absolute;
-  inset: 0;
-  border-radius: 12px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
   padding: 2px;
   background: linear-gradient(45deg, #00ff88, #61dafb);
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
-    linear-gradient(#000 0 0);
   mask: 
     linear-gradient(#000 0 0) content-box, 
     linear-gradient(#000 0 0);
-  -webkit-mask-composite: exclude;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
+.skill-item:hover .gradient-border {
+  opacity: 1;
+}
 
 .skill-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  box-shadow: 
+    0 12px 24px rgba(0,0,0,0.3),
+    0 0 40px rgba(96, 218, 251, 0.1);
 }
 
-.skill-item:hover::before {
-  opacity: 1;
-}
+
+
+
+
+
+
+
+
+
 
 .skill-icon {
   height: 90px;
@@ -105,21 +115,7 @@
   text-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
 }
 
-/* Hover Line Animation */
-.skill-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #00ff88, #61dafb);
-  transition: width 0.6s ease;
-}
 
-.skill-item:hover::after {
-  width: 100%;
-}
 
 /* Responsive Design */
 @media (max-width: 1280px) {

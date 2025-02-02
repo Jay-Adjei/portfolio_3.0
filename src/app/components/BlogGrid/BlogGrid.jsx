@@ -7,6 +7,8 @@ import './bloggrid.css';
 const BlogGrid = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTag, setSelectedTag] = useState('');
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -17,19 +19,64 @@ const BlogGrid = () => {
       } catch (error) {
         console.error('Error loading posts:', error);
       } finally {
-        setIsLoading(false); // Ladezustand beenden
+        setIsLoading(false);
       }
     };
 
     loadPosts();
   }, []);
 
+  // Alle eindeutigen Tags aus den Posts extrahieren
+  const uniqueTags = [...new Set(blogPosts.flatMap(post => post.tags || []))];
+
+  // Beiträge filtern anhand von Suchtext und ausgewähltem Tag
+  const filteredPosts = blogPosts.filter(post => {
+    const query = searchQuery.toLowerCase();
+    const matchesSearch =
+      post.title.toLowerCase().includes(query) ||
+      post.excerpt.toLowerCase().includes(query) ||
+      (post.tags && post.tags.some(tag => tag.toLowerCase().includes(query)));
+    
+    const matchesTag = selectedTag
+      ? post.tags && post.tags.some(tag => tag.toLowerCase() === selectedTag.toLowerCase())
+      : true;
+    
+    return matchesSearch && matchesTag;
+  });
+
   return (
     <div className="blog-grid-container">
       <header className="blog-grid-header">
         <h1 className="blog-grid-title">All Blog Posts</h1>
-        <p className="blog-grid-subtitle">Chronicles of my coding journey</p>
+        <p className="blog-grid-subtitle">Grateful for Your Time: Thanks for Reading!</p>
       </header>
+
+      {/* Suchfeld und Tag-Filter */}
+      <div className="search-filter-container">
+        <input
+          type="text"
+          placeholder="Search posts by title, excerpt or tags..."
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="search-input"
+        />
+        
+        <div className="tag-filter">
+          {uniqueTags.map(tag => (
+            <button 
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`tag-button ${selectedTag.toLowerCase() === tag.toLowerCase() ? 'active' : ''}`}
+            >
+              {tag}
+            </button>
+          ))}
+          {selectedTag && (
+            <button onClick={() => setSelectedTag('')} className="tag-button clear">
+              Clear Tags
+            </button>
+          )}
+        </div>
+      </div>
 
       <div className="blog-grid">
         {isLoading
@@ -43,7 +90,7 @@ const BlogGrid = () => {
                 </div>
               </div>
             ))
-          : blogPosts.map((post) => (
+          : filteredPosts.map((post) => (
               <article key={post.id} className="post-card">
                 <Link href={`/blog/${post.slug}`} className="post-card-link">
                   <div className="post-card-image-container">
@@ -53,20 +100,17 @@ const BlogGrid = () => {
                       className="post-card-image"
                     />
                   </div>
-
                   <div className="post-card-content">
                     <div className="post-card-meta">
                       <span className="post-card-date">{post.date}</span>
                       <span className="post-card-readtime">{post.readTime} read</span>
                     </div>
-
                     <h2 className="post-card-title">{post.title}</h2>
                     <p className="post-card-excerpt">{post.excerpt}</p>
-
                     <div className="post-card-footer">
                       <div className="post-card-author">
                         <img
-                          src={post.authorImage || '/assets/img/blog/author.jpg'}
+                          src={post.authorImage || '/assets/img/blog/author.webp'}
                           alt={post.author}
                           className="post-card-author-image"
                         />
@@ -74,7 +118,6 @@ const BlogGrid = () => {
                           <p className="post-card-author-name">{post.author}</p>
                         </div>
                       </div>
-
                       <div className="post-card-stats">
                         <div className="post-card-stat">
                           <EyeIcon />

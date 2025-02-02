@@ -4,8 +4,8 @@ import BlogPost from '../../components/BlogPost/BlogPost';
 // Statische Generierung
 export async function generateStaticParams() {
   return [
-    { slug: 'slug1' },
-    { slug: 'My-Progress-of-Learning-Coding' },
+    { slug: 'clean-code-nextjs-react-css' },
+    { slug: 'ui-ux-design-trends-2025' },
     { slug: 'Best-CSS-Tricks' },
     // Weitere slugs...
   ];

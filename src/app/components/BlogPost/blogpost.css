@@ -153,6 +153,7 @@ header {
   .author-info {
     flex-direction: column;
     padding: 1.25rem;
+    width: 100%;
   }
   
   .author-image {
@@ -169,7 +170,49 @@ header {
   .subtitle {
     font-size: 1rem;
   }
+
+  .blog-post header {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding-top: 85px;
+  }
+
+  .blog-post {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem;
+    background-color: var(--dark-mode);
+    color: #fff;
+  }
 }
+
+/* =============================== Tags #  =============================== */
+
+
+/* Tags Styling */
+.tags-container {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag:hover {
+  background-color: #c7d2fe;
+}
+
 
 /* =============================== Main Content =============================== */
 .main-content {
@@ -188,6 +231,7 @@ header {
 	border-radius: 8px;
 }
 
+/* Text im Blog */
 .content h2 {
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
@@ -216,7 +260,7 @@ header {
 .table-of-contents {
   width: 250px;
   position: sticky;
-  top: 10rem;
+  top: 2rem;
   left: 100%;
   align-self: flex-start;
 }
@@ -250,7 +294,7 @@ header {
 }
 
 .table-of-contents button.active {
-  color: #FFFFFF;
+  color: #fff !important;
 }
 
 
@@ -266,6 +310,7 @@ header {
   .table-of-contents {
     width: 100%;
     position: static;
+    display: none;
   }
   
   .content-grid {

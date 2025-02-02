@@ -1,40 +1,82 @@
 
 [
-    {
-      "id": 1,
-      "slug": "Best-CSS-Tricks",
-      "title": "Best-CSS-Tricks",
-      "excerpt": "xxxx...",
-      "image": "/assets/img/blog/blog3.webp",
-      "author": "Gylan Salih",
-      "date": "January 29, 2025",
-      "readTime": "1 min",
-      "views": "1k",
-      "likes": "1"
-    },
-    {
-      "id": 2,
-      "slug": "My-Progress-of-Learning-Coding",
-      "title": "Advanced styling techniques",
-      "excerpt": "Advanced styling techniques...",
-      "image": "/assets/img/blog/blog1.webp",
-      "author": "Gylan Salih",
-      "date": "January 24, 2025",
-      "readTime": "8 min",
-      "views": "1.8k",
-      "likes": "96"
-    },
-    {
-      "id": 3,
-      "slug": "Best-CSS-Tricks2",
-      "title": "Some of my Notes",
-      "excerpt": "Advanced styling techniques...",
-      "image": "/assets/img/blog/blog2.webp",
-      "author": "Gylan Salih",
-      "date": "January 29, 2025",
-      "readTime": "1 min",
-      "views": "1k",
-      "likes": "1"
-    }
-  ]
+  {
+    "id": 1,
+    "slug": "clean-code-nextjs-react-css",
+    "title": "The Importance of Clean Code in Next.js, React, and CSS",
+    "excerpt": "Writing clean and maintainable code is essential for scalable applications. Learn best practices for Next.js, React, and CSS.",
+    "image": "/assets/img/blog/blog4.webp",
+    "tags": ["Next.js"],
+    "author": "Gylan Salih",
+    "date": "February 2, 2025",
+    "readTime": "6 min",
+    "views": "3.2k",
+    "likes": "245"
+  },
+  {
+    "id": 2,
+    "slug": "ui-ux-design-trends-2025",
+    "title": "UI/UX Design Trends for 2025: What You Need to Know",
+    "excerpt": "The key design trends that will shape 2025, including minimalism, micro-interactions, dark mode, and personalized experiences.",
+    "image": "/assets/img/blog/blog5.webp",
+    "tags": ["Design"],
+    "author": "Gylan Salih",
+    "date": "February 2, 2025",
+    "readTime": "8 min",
+    "views": "4.5k",
+    "likes": "300"
+  },  
+  {
+    "id": 3,
+    "slug": "The-Best-Website-Designs",
+    "title": "The Best Website Designs: What Makes Them Stand Out",
+    "excerpt": "An exploration of the best web designs and the principles behind them...",
+    "image": "/assets/img/blog/blog6.webp",
+    "tags": ["Design"],
+    "author": "Gylan Salih",
+    "date": "January 29, 2025",
+    "readTime": "1 min",
+    "views": "1k",
+    "likes": "1"
+  },
+  {
+    "id": 4,
+    "slug": "clean-code-nextjs-react-css",
+    "title": "The Importance of Clean Code in Next.js, React, and CSS",
+    "excerpt": "Writing clean and maintainable code is essential for scalable applications. Learn best practices for Next.js, React, and CSS.",
+    "image": "/assets/img/blog/blog1.webp",
+    "tags": ["Next.js"],
+    "author": "Gylan Salih",
+    "date": "February 2, 2025",
+    "readTime": "6 min",
+    "views": "3.2k",
+    "likes": "245"
+  },
+  {
+    "id": 5,
+    "slug": "ui-ux-design-trends-2025",
+    "title": "UI/UX Design Trends for 2025: What You Need to Know",
+    "excerpt": "The key design trends that will shape 2025, including minimalism, micro-interactions, dark mode, and personalized experiences.",
+    "image": "/assets/img/blog/blog2.webp",
+    "tags": ["Next.js"],
+    "author": "Gylan Salih",
+    "date": "February 2, 2025",
+    "readTime": "8 min",
+    "views": "4.5k",
+    "likes": "300"
+  },  
+  {
+    "id": 6,
+    "slug": "The-Best-Website-Designs",
+    "title": "The Best Website Designs: What Makes Them Stand Out",
+    "excerpt": "An exploration of the best web designs and the principles behind them...",
+    "image": "/assets/img/blog/blog3.webp",
+    "tags": ["Design"],
+    "author": "Gylan Salih",
+    "date": "January 29, 2025",
+    "readTime": "1 min",
+    "views": "1k",
+    "likes": "1"
+  }
+]
   

@@ -7,13 +7,8 @@ import styles from "./About.css"; // Optional für allgemeine Stile
 
 export default function About() {
   return (
-    <div className={styles.aboutPage}>
-      <HeroImage
-        imageSrc="/assets/img/LandingBG/OniGirl3.jpg"
-        altText="Oni Girl Background"
-      />
+    <div className="aboutcssPage">
       <AboutMe />
-      <Skills />
       <Contact />
     </div>
   );

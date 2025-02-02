@@ -1,7 +1,9 @@
-.aboutPage {
+
+
+.aboutcssPage {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f9f9f9;
-    padding-top: 80px; /* Hier das Padding für den oberen Abstand anpassen */
+    background-color: var(--light-mode);
+    padding-top: 250px
   }
   

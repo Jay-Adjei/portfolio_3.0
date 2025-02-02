@@ -16,8 +16,7 @@ Current Problems:
 Note and Todos for myself:
 [X] git commit -m "Add backend folder to .gitignore"
 [X] Clean the Assets folder
-[ ] Oranize Css files + add Comments and split it in logical parts
-
+[X] Oranize Css files + add Comments and split it in logical parts
 [ ]
 --------------------------
 
@@ -40,6 +39,7 @@ Updates / Fixes:
 • Added Preload design and function to load images, videos, components, and pages in advance
 • Removed unnecessary files from the src folder
 • Working on an improved Single Card View
+• Added a search bar for BlogGrid and search functionality by tags (added tags in JSON). + Fixed minor BlogGrid performance issues.
 
 0.0.19 - Previous Updates
 

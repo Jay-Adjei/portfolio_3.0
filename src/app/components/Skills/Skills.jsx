@@ -62,6 +62,9 @@ const Skills = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(-1)}
             >
+              {/* Füge diesen Div hinzu */}
+              <div className="gradient-border"></div>
+              
               <img
                 src={skill.icon}
                 alt={skill.title}
