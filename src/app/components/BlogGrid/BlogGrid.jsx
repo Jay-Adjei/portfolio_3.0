@@ -9,25 +9,40 @@ const BlogGrid = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
+  const [sortOrder, setSortOrder] = useState('latest');
+  const [uniqueTags, setUniqueTags] = useState([]); // Tags hier speichern
 
   useEffect(() => {
     const loadPosts = async () => {
       try {
         const response = await fetch('/data/bloggrid.json');
         const data = await response.json();
-        setBlogPosts(data);
+
+        // Extrahiere die eindeutigen Tags nur einmal
+        const tags = [...new Set(data.flatMap(post => post.tags || []))];
+        setUniqueTags(tags);
+
+        const sortedPosts = data.sort((a, b) => {
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+  
+          if (sortOrder === 'latest') {
+            return dateB - dateA; // Neueste zuerst
+          } else {
+            return dateA - dateB; // Älteste zuerst
+          }
+        });
+
+        setBlogPosts(sortedPosts);
       } catch (error) {
         console.error('Error loading posts:', error);
       } finally {
         setIsLoading(false);
       }
     };
-
+  
     loadPosts();
-  }, []);
-
-  // Alle eindeutigen Tags aus den Posts extrahieren
-  const uniqueTags = [...new Set(blogPosts.flatMap(post => post.tags || []))];
+  }, [sortOrder]); // Sortierung nur nach der Änderung des sortOrder anpassen
 
   // Beiträge filtern anhand von Suchtext und ausgewähltem Tag
   const filteredPosts = blogPosts.filter(post => {
@@ -51,15 +66,28 @@ const BlogGrid = () => {
         <p className="blog-grid-subtitle">Grateful for Your Time: Thanks for Reading!</p>
       </header>
 
-      {/* Suchfeld und Tag-Filter */}
-      <div className="search-filter-container">
-        <input
-          type="text"
-          placeholder="Search posts by title, excerpt or tags..."
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-        />
-        
+     {/* Suchfeld und Filter */}
+      <div className="filters-container">
+        <div className="filters-top-row">
+
+        <select 
+            onChange={(e) => setSortOrder(e.target.value)} 
+            value={sortOrder}
+            className="sort-select"
+          >
+            <option value="latest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+
+          <input
+            type="text"
+            placeholder="Search posts..."
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          
+        </div>
+
         <div className="tag-filter">
           {uniqueTags.map(tag => (
             <button 
@@ -71,8 +99,11 @@ const BlogGrid = () => {
             </button>
           ))}
           {selectedTag && (
-            <button onClick={() => setSelectedTag('')} className="tag-button clear">
-              Clear Tags
+            <button 
+              onClick={() => setSelectedTag('')} 
+              className="tag-button clear-tags"
+            >
+              Clear Filter
             </button>
           )}
         </div>

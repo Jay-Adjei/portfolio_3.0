@@ -1,31 +1,37 @@
-/* Blog Grid Styles */
-.blog-grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    padding-top: 120px;
-  }
-  
-  .blog-grid-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .blog-grid-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(45deg, #FFFFFF, #0095ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-  }
-  
-  .blog-grid-subtitle {
-    color: #A0AEC0;
-    font-size: 1.1rem;
-  }
-  
+.blog-grid-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 1rem;
+  background: rgba(0, 28, 16, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-grid-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ffffff, #00e887);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.blog-grid-subtitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+  /* Blog Grid Styles */
+  .blog-grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-top: 120px;
+    }
+    
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
@@ -98,9 +104,11 @@
   
   .post-card-title {
     font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
     color: #FFFFFF;
     line-height: 1.4;
+    height: 85px;
+    padding-top: 5px;
   }
   
   .post-card-excerpt {
@@ -178,76 +186,101 @@
 /*=========================================================
 | Blog Filter Section   |
 =========================================================*/
+/* Filter Container */
+.filters-container {
+  margin-bottom: 3rem;
+}
 
+.filters-top-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 
-/*================== Searcj Style ==================*/
-
-/* Angepasstes Suchfeld, das wie dein Button aussieht */
+/* Suchfeld */
 .search-input {
+  flex: 1;
   background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 8px;
-  color: #fff;
+  border: 2px solid #2d2d2d;
+  border-radius: 50px;
   padding: 1rem 2rem;
+  color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
-  width: 100%;
 }
 
-/* Platzhalter anpassen */
-.search-input::placeholder {
-  color: #fff;
-  opacity: 0.7;
-}
-
-/* Fokusrahmen entfernen */
 .search-input:focus {
-  outline: none;            /* Entfernt den Standard-Fokusrahmen */
-  border: 1px solid #2d2d2d; /* Behalte die Border, um das Design beizubehalten */
-  box-shadow: none;          /* Entfernt jeden zusätzlichen Schatten */
-  transform: translateY(-3px);
-  color: #ffffff;
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  outline: none;
 }
 
-
-
-/*================== Button Style ==================*/
-
-.tag-filter {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.tag-button  {
+/* Sortier-Select */
+.sort-select {
   background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 8px;
-  color: #fff;
+  border: 2px solid #2d2d2d;
+  border-radius: 50px;
   padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  appearance: none;
+  min-width: 200px;
 }
 
-.tag-button:hover{
+.sort-select:hover {
+  border-color: #00ff88;
+}
+
+.sort-select:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+/* Tag Filter */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tag-button {
+  background: #1a1a1a;
+  border: 2px solid #2d2d2d;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.tag-button:hover {
   background: linear-gradient(45deg, #00ff88, #61dafb);
+  border-color: transparent;
   color: #0a0a0a;
-  transform: translateY(-3px);
-}
-
-.tag-button.clear {
-  background-color: transparent;
-  color: #ffffff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .tag-button.active {
   background: linear-gradient(45deg, #00ff88, #61dafb);
+  border-color: transparent;
   color: #0a0a0a;
-  transform: translateY(-3px);
+  font-weight: 600;
 }
 
+.clear-tags {
+  background: #ff4757;
+  border-color: #ff4757;
+  color: #fff;
+}
+
+.clear-tags:hover {
+  background: #ff6b81;
+  border-color: #ff6b81;
+  color: #fff;
+}
 
 /*=========================================================
 | Skeleton Styles: BlogGrid Loading Animations // Start   |

@@ -371,3 +371,37 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+
+
+.related-posts-grid {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+
+@media (max-width: 480px) {
+
+  .related-posts-grid {
+    width: 90%;
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+  }
+
+}

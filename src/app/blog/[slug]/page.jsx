@@ -6,7 +6,10 @@ export async function generateStaticParams() {
   return [
     { slug: 'clean-code-nextjs-react-css' },
     { slug: 'ui-ux-design-trends-2025' },
-    { slug: 'Best-CSS-Tricks' },
+    { slug: 'best-website-designs' },
+    { slug: 'mastering-tailwind-css' },
+    { slug: 'nextjs-performance-optimization' },
+    { slug: 'dark-mode-ui-design' },
     // Weitere slugs...
   ];
 }
