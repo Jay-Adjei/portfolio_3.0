@@ -10,7 +10,7 @@ const CallToAction = () => {
           <div className="cta-text">
             <h2 className="cta-heading">
               <span className="cta-main">Why not Now?</span>
-              <span className="cta-sub">Let's Create Something Amazing</span>
+              <span className="cta-sub">Let&#39;s Create Something Amazing</span>
             </h2>
           </div>
 
