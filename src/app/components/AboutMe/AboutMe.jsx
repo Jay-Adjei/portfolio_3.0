@@ -127,10 +127,10 @@ const AboutMe = () => {
           <div className="about-me-content-column">
           <h5>More Than Code</h5>
             <p className="about-me-intro">
-              Hello! You can call me Gylan Salih. I've always had a passion for development, but due to life circumstances, I never had the chance to fully dive into it. Now, I finally have the security and opportunity to dedicate myself entirely to something I've loved since I was young.
+              Hello! You can call me Gylan Salih. I&#39;ve always had a passion for development, but due to life circumstances, I never had the chance to fully dive into it. Now, I finally have the security and opportunity to dedicate myself entirely to something I&#39;ve loved since I was young.
 
-              I work as a developer, and after years of learning and experimenting, I'm now focusing on creating projects that push me to grow. 
-              I'm excited to have the chance to focus fully on development and to bring my ideas to life in a way I never could before.
+              I work as a developer, and after years of learning and experimenting, I&#39;m now focusing on creating projects that push me to grow. 
+              I&#39;m excited to have the chance to focus fully on development and to bring my ideas to life in a way I never could before.
             </p>
 
             <h5>My Personality</h5>
@@ -196,7 +196,7 @@ const AboutMe = () => {
                 <h3 className="about-me-timeline-title">Secondary School Certificate (FORQ)</h3>
                 <p className="about-me-timeline-description">
                   I spent many years working towards this due to life circumstances. But hey, if I made it, then you certainly can too.  
-                  Just don't give up—trust me!  
+                  Just don&#39;t give up—trust me!  
                 </p>
               </div>
             </div>
