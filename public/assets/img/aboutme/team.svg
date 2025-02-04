@@ -17,7 +17,7 @@
         
 
         .svg-fill-primary {
-            fill: #FFF;
+            fill: #37A987;
         }
 
         .svg-fill-secondary {
@@ -29,7 +29,7 @@
         }
 
         .svg-stroke-primary {
-            stroke: #FFF;
+            stroke: #37A987;
         }
 
         .svg-stroke-secondary {
