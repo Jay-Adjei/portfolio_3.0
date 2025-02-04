@@ -16,19 +16,20 @@ const Carousel = () => {
       id: 1, 
       type: 'video', 
       src: '/assets/videos/sea.mp4', 
-      title: "Raijin's Fury",  // Richtiges Apostroph
-      subtitle: "Designed to redefine the boundaries of modern creativity", 
-      description: "Like Raijin's thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality." 
+      title: "Welcome!",  
+      subtitle: "Thank you for your curiosity", 
+      description: "Hey, great to have you here! I'm currently working on the website, and I appreciate your interest. There's a lot to be done, but I'm excited for you to see the progress." 
     },
     { 
       id: 2, 
       type: 'image',  
       src: '/assets/img/LandingBG/OniBoy1.webp', 
-      title: "Raijin's Fury",  
-      subtitle: "Designed to redefine the boundaries of modern creativity", 
-      description: "Like Raijin's thunderous power, this project breaks boundaries with unmatched innovation. Harnessing creativity and technology, we craft bold, electrifying experiences that push the limits of design and functionality." 
+      title: "So much chaos?",  
+      subtitle: "Is this the final design?", 
+      description: "No! This site is a work in progress, and it's being crafted with love. Stay tuned for the exciting changes ahead, and follow me on GitHub to make sure you don't miss out!" 
     },
   ];
+  
   
   
   const autoplayInterval = 7500;

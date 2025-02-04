@@ -40,7 +40,7 @@ const Skills = () => {
   return (
     <section className="skills-section">
       <div className="skills-container">
-        <h2 className="skills-title">Meine Fähigkeiten</h2>
+        <h2 className="skills-title">My Skills</h2>
         
         <div className="category-tabs">
           {Object.keys(skillsData).map((category) => (

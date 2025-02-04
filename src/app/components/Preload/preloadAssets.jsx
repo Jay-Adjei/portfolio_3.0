@@ -18,7 +18,6 @@ const preloadAssets = [
   { type: "component", path: () => import("../../components/CallToAction/CallToAction.jsx") },
   { type: "component", path: () => import("../../components/Carousel/Carousel.jsx") },
   { type: "component", path: () => import("../../components/CompanyCarousel/CompanyCarousel.jsx") },
-  { type: "component", path: () => import("../../components/Contact/Contact.jsx") },
   { type: "component", path: () => import("../../components/DarkModeToggle/DarkModeToggle.jsx") },
   { type: "component", path: () => import("../../components/FeatureInteractive/FeaturesInteractive.jsx") },
   { type: "component", path: () => import("../../components/Features/Features.jsx") },

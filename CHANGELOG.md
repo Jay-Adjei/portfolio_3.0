@@ -30,6 +30,8 @@ Updates / Fixes:
 • Added some icons for the Skills page – looking for a better solution to display stats, possibly using the WakaTime API, but not just images (not a priority for now)
 • Added Related Posts in the single blog view.
 • Updated filter design and added an option to order blog posts by newest or oldest.
+• Created a better AboutMe Page
+
 
 0.0.20 - Previous Updates
 • Portfolio projects are now dynamically loaded based on the slug from the URL, eliminating the need for separate static pages. The data is centrally stored in a portfolio.json file, simplifying maintenance and expansion. With client-side rendering, static generation, and improved loading states and error handling, the user experience is optimized, and performance is enhanced.

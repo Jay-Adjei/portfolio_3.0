@@ -11,32 +11,31 @@
   }
   
   .sound-wave {
-    width: 24px; /* Angepasst an 4 Bars */
-    height: 20px; /* Maximalhöhe angepasst */
+    width: 24px;
+    height: 20px;
     display: flex;
-    justify-content: space-evenly; /* Gleichmäßige Verteilung */
+    justify-content: space-evenly;
     align-items: center;
-    right: 25px;
-    margin-left: -270px;
+    margin-left: -88px;
   }
   
   /* Animierter Zustand */
   .sound-wave.active .bar {
-    animation: sound 3s ease-in-out infinite; /* Animation mit smooth Übergang */
+    animation: sound 3s ease-in-out infinite;
   }
   
   /* Sound Bars Styling */
   .bar {
     display: block;
-    width: 1px; /* Breite erhöht, damit sie sichtbarer sind */
-    margin-right: 0; /* Abstand durch Flexbox */
-    height: 10px; /* Ausgangshöhe */
+    width: 1px; 
+    margin-right: 0; 
+    height: 10px; 
     background: var(--light-mode);
-    transform-origin: center; /* Skalierung von der Mitte */
+    transform-origin: center;
     transition: background-color 0.3s, color 0.3s;
     transition: height 0.3s ease-in-out;
     gap: 0.3rem;
-    opacity: 0.9; /* Leicht transparent */
+    opacity: 0.9;
   }
   
   .dark-mode .bar {
@@ -46,10 +45,10 @@
   /* Keyframes for Sound Animation */
   @keyframes sound {
     0%, 100% {
-      transform: scaleY(1); /* Ausgangshöhe */
+      transform: scaleY(1);
     }
     50% {
-      transform: scaleY(2); /* Maximale Höhe (Stretch nach oben und unten) */
+      transform: scaleY(2);
     }
   }
   
@@ -73,20 +72,20 @@
   
   /* Hover Effect: When Audio Button is Hovered */
   .sound-icon:hover .bar {
-    animation-play-state: paused; /* Animation pausieren bei Hover */
-    transform: scaleY(1.2); /* Leichtes Wachstum */
+    animation-play-state: paused; 
+    transform: scaleY(1.2);
   }
   
   /* Active State Styling */
   .sound-icon.active {
-    filter: brightness(1.2); /* Heller für bessere Sichtbarkeit */
+    filter: brightness(1.2); 
   }
   
   /* Disabled State Styling */
   .sound-icon.disabled .sound-wave .bar {
     opacity: 0.3;
-    transform: scaleY(0.5); /* Minimale Höhe */
-    animation: pulse 1.5s ease-in-out infinite; /* Leichte Pulsbewegung */
+    transform: scaleY(0.5); 
+    animation: pulse 1.5s ease-in-out infinite; 
   }
   
   /* Keyframes for Disabled Pulse Animation */

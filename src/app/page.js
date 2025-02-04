@@ -19,7 +19,6 @@ const Home = () => {
       <Carousel />
       <Features />
       <FeaturesInteractive/>
-      <Skills />
       <TestimonialsGrid/>
       <CallToAction />
     </div>

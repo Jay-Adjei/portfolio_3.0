@@ -118,7 +118,7 @@ const Features = () => {
                         buttonHref="/project5"
                     />
                     <Card
-                        src="/assets/gifs/japanworld.gif"
+                        src="/assets/gifs/Video2.mp4"
                         title="Arcadia"
                         description="Your Description"
                         className="card-xsmall2"
