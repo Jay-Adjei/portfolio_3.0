@@ -9,7 +9,7 @@ import './styles/aboutme-page.css';
 import './fonts/fonts.css';
 import './styles/globals.css';
 
-export default function Layout({ children, enablePreloader = false }) {
+export default function Layout({ children, enablePreloader = true }) {
   const [isDarkMode, setIsDarkMode] = useState(false); // Initialize with false
 
   const [isAppLoaded, setIsAppLoaded] = useState(false);
