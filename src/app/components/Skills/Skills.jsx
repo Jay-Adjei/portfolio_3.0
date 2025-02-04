@@ -16,7 +16,7 @@ const skillsData = {
     { title: "Apache", icon: "/assets/img/skills/Apache.webp" },
     { title: "Linux (SSH, VPS)", icon: "/assets/img/skills/Linux.webp" },
     { title: "Git", icon: "/assets/img/skills/Git.webp" },
-    { title: "GitHub", icon: "/assets/img/skills/github.webp" },
+    { title: "GitHub", icon: "/assets/img/skills/Github.webp" },
   ],
   tools: [
     { title: "Visual Studio Code", icon: "/assets/img/skills/VSC.webp" },
