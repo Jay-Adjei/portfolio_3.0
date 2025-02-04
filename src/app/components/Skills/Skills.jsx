@@ -15,8 +15,8 @@ const skillsData = {
   software: [
     { title: "Apache", icon: "/assets/img/skills/Apache.webp" },
     { title: "Linux (SSH, VPS)", icon: "/assets/img/skills/Linux.webp" },
-    { title: "Git", icon: "/assets/img/skills/gIT.webp" },
-    { title: "GitHub", icon: "/assets/img/skills/Github.webp" },
+    { title: "Git", icon: "/assets/img/skills/Git.webp" },
+    { title: "GitHub", icon: "/assets/img/skills/github.webp" },
   ],
   tools: [
     { title: "Visual Studio Code", icon: "/assets/img/skills/VSC.webp" },
@@ -26,7 +26,7 @@ const skillsData = {
   ],
   Design: [
     { title: "Blender", icon: "/assets/img/skills/Blenders.webp" },
-    { title: "WordPress", icon: "/assets/img/skills/Wordpress.webp" },
+    { title: "WordPress", icon: "/assets/img/skills/wordpress.webp" },
     { title: "Shopify", icon: "/assets/img/skills/Shopify.png" },
     { title: "OBS Studio", icon: "/assets/img/skills/js.webp" },
     { title: "Audacity", icon: "/assets/img/skills/Audacity.webp" },
