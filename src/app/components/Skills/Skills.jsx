@@ -13,7 +13,7 @@ const skillsData = {
     { title: "Next.js", icon: "/assets/img/skills/nextjs.svg" },
   ],
   software: [
-    { title: "Apache", icon: "/assets/img/skills/Apache.webp" },
+    { title: "Apache", icon: "/assets/img/skills/apache.webp" },
     { title: "Linux (SSH, VPS)", icon: "/assets/img/skills/Linux.webp" },
     { title: "Git", icon: "/assets/img/skills/Git.webp" },
     { title: "GitHub", icon: "/assets/img/skills/Github.webp" },
@@ -69,7 +69,6 @@ const Skills = () => {
                 src={skill.icon}
                 alt={skill.title}
                 className="skill-icon"
-                loading="lazy"
                 style={{
                   transform: hoveredIndex === index 
                     ? 'scale(1.15) rotateZ(0deg)' 
