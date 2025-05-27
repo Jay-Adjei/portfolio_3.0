@@ -138,31 +138,16 @@
 Profile-Information-(Steckbrief)
 ---------------------------------------------------------- */
 
-
-.about-me-profile-informations {
-	margin-top: 25px;
-	padding: 25px;
-	/* border-radius: 16px; */
-	/* background: rgba(255, 255, 255, 0.03); */
-	/* border: 1px solid rgba(255, 255, 255, 0.1); */
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 25px;
-	max-width: 1404px;
-	/* margin: 0 auto; */
-	/* padding: 0 2rem; */
+.project-info-container {
+  margin-top: 25px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1404px;
 }
 
-.about-me-profile-informations h3 {
-  color: #3ECF8E;
-  font-size: 1.5rem;
-  font-family: "RedHat", sans-serif;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-me-profile-informations ul {
+.project-info-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -171,8 +156,8 @@ Profile-Information-(Steckbrief)
   gap: 15px;
 }
 
-/* Styling of list items */
-.about-me-profile-informations li.profile-item {
+/* Styling der Listeneinträge */
+.project-info-item {
   position: relative;
   font-size: 0.95rem;
   font-family: "RedHat", sans-serif;
@@ -187,15 +172,14 @@ Profile-Information-(Steckbrief)
   gap: 10px;
 }
 
-/* Hover Effect */
-.about-me-profile-informations li.profile-item:hover {
+.project-info-item:hover {
   border-color: #3ECF8E;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
 
-/* Floating Label - aligned left */
-.about-me-profile-informations li.profile-item .profile-label {
+/* Floating Label - links oben */
+.project-info-label {
   position: absolute;
   top: -12px;
   left: 20px;
@@ -207,34 +191,26 @@ Profile-Information-(Steckbrief)
   white-space: nowrap;
 }
 
-/* The actual content */
-.about-me-profile-informations li.profile-item .profile-content {
-  display: block;
-}
-
-
-
-.portfolio-info-icon {
-  width: 35px;
-  height: 35px;
-  stroke: #3ECF8E;
-  display: block;
-  margin-left: 0;
-  margin-right: 10px;
-}
-
-
-.portfolio-info-row {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Abstand zwischen Icon und Text */
-}
-
-/* Optional: falls .profile-content noch Block ist, setze display inline */
-.profile-content {
+/* Inhalt Text */
+.project-info-text {
   display: inline-block;
 }
 
+.project-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.project-info-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #3ECF8E;
+  display: block;
+  flex-shrink: 0;
+  margin-right: 0px;
+  margin-left: 0px;
+}
 
 
 

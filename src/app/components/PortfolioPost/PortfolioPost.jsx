@@ -104,7 +104,7 @@ const SingleCard = () => {
                   </button>
                 </div>
 
-                
+
                 <div className="counter-item like-counter">
                   <span className="counter-label">Likes</span>
                   <button className="btn-like">
@@ -144,52 +144,54 @@ const SingleCard = () => {
 
 
 
-    {/* Informationen / Steckbrief über das Projekt */}
-        <div className="about-me-profile-informations">
-  <ul>
-    <li className="profile-item">
-      <span className="profile-label">Theme</span>
-      <div className="portfolio-info-row">
-        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="portfolio-info-icon" />
-        <span className="profile-content">{projectData.projectDetails.theme}</span>
-      </div>
-    </li>
-    
-    <li className="profile-item">
-      <span className="profile-label">Inspiration</span>
-      <div className="portfolio-info-row">
-        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="portfolio-info-icon" />
-        <span className="profile-content">{projectData.projectDetails.inspiration}</span>
+
+{/* Informationen / Steckbrief über das Projekt */}
+<div className="project-info-container">
+  <ul className="project-info-list">
+    <li className="project-info-item">
+      <span className="project-info-label">Theme</span>
+      <div className="project-info-row">
+        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="project-info-icon" />
+        <span className="project-info-text">{projectData.projectDetails.theme}</span>
       </div>
     </li>
 
-    <li className="profile-item">
-      <span className="profile-label">Tags</span>
-      <div className="portfolio-info-row">
-        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="portfolio-info-icon" />
-        <span className="profile-content">{projectData.projectDetails.tags}</span>
+    <li className="project-info-item">
+      <span className="project-info-label">Inspiration</span>
+      <div className="project-info-row">
+        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="project-info-icon" />
+        <span className="project-info-text">{projectData.projectDetails.inspiration}</span>
       </div>
     </li>
 
-    <li className="profile-item">
-      <span className="profile-label">Date</span>
-      <div className="portfolio-info-row">
-        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="portfolio-info-icon" />
-        <span className="profile-content">{projectData.projectDetails.date}</span>
+    <li className="project-info-item">
+      <span className="project-info-label">Tags</span>
+      <div className="project-info-row">
+        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="project-info-icon" />
+        <span className="project-info-text">{projectData.projectDetails.tags}</span>
       </div>
     </li>
 
-    <li className="profile-item">
-      <span className="profile-label">Leere Bubble</span>
-      <div className="portfolio-info-row">
-        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="portfolio-info-icon" />
-        <span className="profile-content">
+    <li className="project-info-item">
+      <span className="project-info-label">Date</span>
+      <div className="project-info-row">
+        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="project-info-icon" />
+        <span className="project-info-text">{projectData.projectDetails.date}</span>
+      </div>
+    </li>
+
+    <li className="project-info-item">
+      <span className="project-info-label">Future Feature</span>
+      <div className="project-info-row">
+        <img src="/assets/img/aboutme/code.svg" alt="Icon" className="project-info-icon" />
+        <span className="project-info-text">
           Coding successful things :D Maybe coming in the future, I hope.
         </span>
       </div>
     </li>
   </ul>
 </div>
+
 
 
 
