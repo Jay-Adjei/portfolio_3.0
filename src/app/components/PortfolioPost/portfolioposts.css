@@ -9,11 +9,12 @@
 }
 
 .portfolio-subheading {
-  font-size: 2.5rem;
+  font-size: 60px;
+  font-style: normal;
+  font-family: "BlenderProBold";
   text-align: center;
-  color: #00ff88;
+  color: #ffffff;
   margin-bottom: 3rem;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
   display: block;
   width: 100%;
 }
@@ -28,7 +29,7 @@
 
 
 
-.section_project_header {
+.slider_single-project_header {
   position: relative;
   padding: 8rem 0 6rem;
   background-position: 95% center;
@@ -44,7 +45,7 @@
 
 
 /* Stärkerer Schatten von links nach rechts */
-.section_project_header::before {
+.slider_single-project_header::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -53,18 +54,32 @@
   background: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent 100%);
 }
 
-/* Kein Overlay oder leer lassen */
-.section_project_header::after {
+/* Gradient Effekt vom slider zum Content */
+.slider_single-project_header::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  background: none;
+  height: 302px;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+  z-index: 1;
 }
 
-
-
+/* Aber da muss eine transition hin */
+/* Gradient Effekt vom slider zum Content // darkmode */
+.dark-mode .slider_single-project_header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 302px;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
+  z-index: 1;
+}
 
 
 .project-hero_container {
@@ -97,12 +112,14 @@
 }
 
 .portfolio-title {
-  font-size: 100px;
-  color: #fff;
-  line-height: 1.1;
-  text-align: left;
-  margin-bottom: 2rem;
-  position: relative;
+	font-size: 120px;
+	font-style: normal;
+	font-family: "BlenderProBold";
+	text-align: left;
+	color: #ffffff;
+	margin-bottom: 3rem;
+	display: block;
+	width: 100%;
 }
 
 .portfolio-excerpt {
@@ -114,7 +131,7 @@
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
-  .section_project_header::after {
+  .slider_single-project_header::after {
     background:
       linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
       linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
@@ -123,10 +140,6 @@
   
 
   .project-hero_container {
-    flex-direction: column;
-  }
-  
-  .portfolio-cta-wrapper {
     flex-direction: column;
   }
 }
@@ -144,7 +157,6 @@ Profile-Information-(Steckbrief)
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  max-width: 1404px;
 }
 
 .project-info-list {
@@ -164,7 +176,7 @@ Profile-Information-(Steckbrief)
   line-height: 1.6;
   padding: 20px 15px 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: #ffffff05;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   display: flex;
@@ -214,36 +226,27 @@ Profile-Information-(Steckbrief)
 
 
 
-
-
-
-
-
-
-/* Tech Stack Section */
+/* Gallery Text Area */
 /*----------------------------------------------------------*/
-.portfolio-tech-wrapper {
+.portfolio-gallery-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.portfolio-Gallery-title {
+color: #fff;
+  font-size: 60px;
+  font-style: normal;
+  font-family: "BlenderProBold";
+}
+
+.portfolio-Paragraph {
   color: #fff;
-  line-height: 1.6;
 }
 
-.portfolio-tech-card {
-  border: 1px solid #2d2d2d;
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.portfolio-tech-label {
-  color: #00ff88;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
 
-.portfolio-tech-list {
-  color: #fff;
-  font-size: 1.1rem;
-}
 
 /* Learning Process Grid */
 /*----------------------------------------------------------*/
@@ -297,8 +300,16 @@ Profile-Information-(Steckbrief)
   opacity: 1;
 }
 
+
+
+
+
+
+
+/*----------------------------------------------------------*/
 /* Like & View Counter Styles */
 /*----------------------------------------------------------*/
+
 .counters-wrapper {
   display: flex;
   gap: 1rem;
@@ -330,8 +341,8 @@ Profile-Information-(Steckbrief)
 /* Floating Label */
 .counter-label {
   position: absolute;
-  top: -12px;
-  left: 20px;
+  top: -16px;
+  left: 10px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
   color: #3ECF8E;
@@ -388,6 +399,169 @@ Profile-Information-(Steckbrief)
   font-family: "RedHat", sans-serif;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+  position: relative;
+  z-index: 1; /* höher als der Background */
+}
+
+
+
+
+
+.pattern {
+  position: relative; /* damit ::after relativ dazu positioniert */
+  overflow: hidden;    /* damit das Overlay bei Overflow clipped */
+}
+
+.pattern::after {
+  z-index: -10;
+  content: "";
+  position: absolute;
+  top: 50px; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: initial;
+  background-image: url('/assets/img/pattern/cross.svg');
+  background-position: top left .9%;
+  background-size: 5rem auto;
+  opacity: .3;
+  pointer-events: none;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ive-demo-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  justify-content: center;  /* horizontal zentrieren */
+}
+
+
+.ive-demo-item {
+  position: relative;
+  font-size: 0.95rem;
+  font-family: "RedHat", sans-serif;
+  line-height: 1.6;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 155px;
+}
+
+.ive-demo-item:hover {
+  border-color: #3ECF8E;
+  background: #3ecf8e1a;
+  transform: translateY(-3px);
+}
+
+.ive-demo-label {
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 10px;
+  color: #3ECF8E;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.btn-live-demo,
+.btn-github-repo {
+  padding: 16px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-live-demo:hover,
+.btn-github-repo:hover {
+  border-color: #3ECF8E;
+  transform: translateY(-3px);
+}
+
+/* Icon + Text Row */
+.ive-demo-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* SVG Icons */
+.icon-live-demo,
+.icon-github-repo {
+  width: 24px;
+  height: 24px;
+  color: #3ECF8E; /* grüner Farbton */
+  flex-shrink: 0;
+}
+
+/* Counter Text */
+.ive-demo-text {
+  font-size: 0.95rem;
+  font-family: "RedHat", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Gallery Styles */
 /*----------------------------------------------------------*/
 .gallery {
@@ -432,13 +606,6 @@ Profile-Information-(Steckbrief)
   }
 }
 
-/* Gallery Text Area */
-/*----------------------------------------------------------*/
-.portfolio-section-button {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
 
 /*------------------------------------------------------------*/
 /* Lightbox Fancybox2 Settings - START                         */
@@ -469,7 +636,6 @@ Profile-Information-(Steckbrief)
   margin: 0 auto;
   padding: 15px;
   box-sizing: border-box;
-  background-color: var(--light-mode);
   justify-content: center;
 }
 

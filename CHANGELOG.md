@@ -25,6 +25,8 @@ Updates / Fixes:
 
 
 0.0.22 - Latest Updates
+• Cleaned some stuff
+• Worked on the Project single page 
 • Restarted the project to improve it and add new features. Currently, managing everything is challenging due to school and life commitments.
 • Testimonials have been updated for a cleaner look but are still not fully functional.
 • Project single page view updated: like and view counters improved and a better information list added.

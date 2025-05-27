@@ -5,7 +5,6 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Mouse from './components/Mouse/Mouse';
 import Preload from './components/Preload/Preload';
-import './styles/aboutme-page.css';
 import './fonts/fonts.css';
 import './styles/globals.css';
 

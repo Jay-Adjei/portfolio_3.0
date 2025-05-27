@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from "next/link";
-import Filter from "../../components/Filter/Filter";
+import Filter from "../../components/Filter/Filter"; // btn css hier
 import HolographicCard from "../../components/HolographicCard/HolographicCard";
 import HeroImage from "../../components/HeroImage/HeroImage";
 
@@ -52,6 +52,9 @@ const Portfolio = () => {
   };
 
   return (
+
+    <div className='pattern'>
+
     <div>
       <HeroImage 
         imageSrc="/assets/img/LandingBG/OniGirl4.jpg" 
@@ -83,6 +86,8 @@ const Portfolio = () => {
           {isLoading ? "Loading..." : "Load More"}
         </button>
       )}
+    </div>
+
     </div>
   );
 };

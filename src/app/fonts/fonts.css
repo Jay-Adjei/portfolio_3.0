@@ -6,19 +6,6 @@
 
 /* -------------------Avant Garde Font START--------------------------*/
 
-@font-face {
-  font-family: "GeistSans";
-  src: url("GeistVF.woff") format("woff");
-  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NotoSansJP";
-  src: url("NotoSansJP-Regular.woff2") format("woff");
-  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
-  font-style: normal;
-}
 
 @font-face {
   font-family: "RedHat";
@@ -48,31 +35,33 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "NunitoSans_regular";
-  src: url("NunitoSans_regular.ttf") format("truetype");
-  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NunitoSans_thin";
-  src: url("NunitoSans_thin.ttf") format("truetype");
-  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: "Orbitron";
-  src: url("Orbitron.ttf") format("truetype");
-  font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
-  font-style: normal;
-}
 
 @font-face {
   font-family: "CommandOverride";
   src: url("CommandOverride.otf") format("opentype");
   font-weight: 400 900; /* Definiere die unterstützten Gewichtungen */
   font-style: normal;
+}
+
+/* -------------------BlenderPro Font START--------------------------*/
+
+@font-face {
+  font-family: "BlenderProMedium";
+  src: url("BlenderProMedium.ttf") format("truetype");
+  font-weight: 400; /* Definiere die unterstützten Gewichtungen */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BlenderProThin";
+  src: url("BlenderProThin.ttf") format("truetype");
+  font-weight: 400; /* Definiere die unterstützten Gewichtungen */
+  font-style: thin;
+}
+
+@font-face {
+  font-family: "BlenderProBold";
+  src: url("BlenderProBold.ttf") format("truetype");
+  font-weight: 400; /* Definiere die unterstützten Gewichtungen */
+  font-style: bold;
 }

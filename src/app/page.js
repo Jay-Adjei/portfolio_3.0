@@ -8,7 +8,7 @@ import Features from './components/Features/Features';
 import CompanyCarousel from './components/CompanyCarousel/CompanyCarousel.jsx';
 import TextCarousel from './components/TextCarousel/TextCarousel';
 // import CustomModel from "./components/CustomModel/CustomModel";
-import './styles/home-page.css';
+import './styles/home-page.css'; // nur für home
 import FeaturesInteractive from './components/FeatureInteractive/FeaturesInteractive';
 import TestimonialsGrid from './components/TestimonialsGrid/TestimonialsGrid';
 
@@ -18,6 +18,7 @@ const Home = () => {
 
       <Carousel />
       <Features />
+      {/* <CompanyCarousel /> */}
       <FeaturesInteractive/>
       <TestimonialsGrid/>
       <CallToAction />

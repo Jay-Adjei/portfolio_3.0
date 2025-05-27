@@ -5,12 +5,12 @@
 import './HeroImages.css'; 
 export default function HeroImage({ imageSrc, altText }) {
     return (
-      <div className="project-hero1">
-        <div className="overlay"></div>
+      <div className="ProjectGrid">
+        <div className="ProjectOverlay"></div>
         <img
           src={imageSrc}
           alt={altText}
-          className="hero-img"
+          className="ProjectHeroImg"
         />
       </div>
     );

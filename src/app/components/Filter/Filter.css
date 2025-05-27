@@ -316,26 +316,32 @@ Load more Button Filter.jsx
 ----------------------------------------------------------- */
 
 .load-more-btn {
-	position: relative;
-	bottom: 20px;
-	left: 48%;
-	transform: translateX(-50%);
-	background-color: white;
-	border-radius: 10px;
-	padding: 10px 20px;
-	color: black;
-	font-weight: bold;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	margin-top: 74px;
+  padding: 16px 20px;
+  background-color: #1a1a1a; /* dunkler Hintergrund, passend zum Style */
+  color: #fff;
+  cursor: pointer;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 74px;
+
+  /* zentrieren */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .load-more-btn:hover {
-  background-color: black;
-  color: white; 
-  border: 1px solid white;
-  margin-top: 74px;
+  background-color: transparent;
+  color: #3ECF8E;
+  border-color: #3ECF8E;
 }
+
 
 
 /* -----------------------------------------------------------

@@ -155,7 +155,7 @@
     text-align: center;
     width: 100%;
     font-size: 19px;
-    font-family: "Orbitron";
+    font-family: "BlenderProMedium";
     letter-spacing: -.04em;
     line-height: 84%;
     text-transform: uppercase;
@@ -176,7 +176,7 @@
           text-align: center;
           width: 100%;
           font-size: 20px;
-          font-family: "Orbitron", sans-serif;
+          font-family: "BlenderProMedium", sans-serif;
           letter-spacing: 0.5px;
           line-height: 1.6;
           text-transform: none;
@@ -193,7 +193,7 @@
       width: 100%;
       margin-bottom: 0em;
       font-size: 8rem;
-      font-family: "Orbitron";
+      font-family: "BlenderProMedium";
       letter-spacing: -.04em;
       line-height: 84%;
       text-transform: uppercase;
@@ -213,7 +213,7 @@
         text-align: center;
         width: 100%;
         font-size: 20px;
-        font-family: "Orbitron", sans-serif;
+        font-family: "BlenderProMedium", sans-serif;
         letter-spacing: 0.5px;
         line-height: 1.6;
         text-transform: none;
@@ -232,7 +232,7 @@
     color: var(--light-mode);
     line-height: 1.6;
     text-align: center;
-    font-family: "RedHat";
+    font-family: "BlenderProMedium";
   }
   
   /* Responsive Description */
