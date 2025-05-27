@@ -1,19 +1,12 @@
-
-
-
-
-
+/*------------------------------------------------------------*/
 /* SingleCard CSS im Skills-Stil */
 /*------------------------------------------------------------*/
-/* General Styles                                             */
+
+/* General Styles */
 /*----------------------------------------------------------*/
-
-
 .portfolio-section {
   padding: 4rem 0;
 }
-
-
 
 .portfolio-subheading {
   font-size: 2.5rem;
@@ -21,95 +14,69 @@
   color: #00ff88;
   margin-bottom: 3rem;
   text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-  display: block; /* Stellt sicher, dass es eine eigene Zeile bekommt */
-  width: 100%; /* Falls notwendig, um volle Breite einzunehmen */
+  display: block;
+  width: 100%;
 }
 
 .portfolio-fulltext {
   font-size: 24px;
-  max-width: 800px; /* Oder eine andere passende Breite */
-  margin: 0 auto; /* Zentriert den Block */
-  text-align: center; /* Falls du den Textinhalt auch mittig haben willst */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/*------------------------------------------------------------*/
-/* Project Hero Section      ab hier!!                                 */
-/*----------------------------------------------------------*/
 
 
-/* Overhauled Project Hero Section with Enhanced Overlays */
+
 .section_project_header {
   position: relative;
   padding: 8rem 0 6rem;
-  background-position: center;
+  background-position: 95% center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 88vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* von center zu flex-start */
+  align-items: center; /* vertikal zentriert, falls Text oben, hier flex-start */
   overflow: hidden;
+  padding-left: 4rem; /* etwas Abstand vom linken Rand */
 }
 
-/* Haupt-Overlay für Gesamtabdunklung */
+
+/* Stärkerer Schatten von links nach rechts */
 .section_project_header::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent 100%);
 }
 
-/* Rahmenverstärkung mit Multi-Layer Gradient Overlays */
+/* Kein Overlay oder leer lassen */
 .section_project_header::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 20%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 20%),
-    linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, transparent 15%, transparent 85%, rgba(0, 0, 0, 0.7) 100%);
+  background: none;
 }
 
-/* Content Container mit höherem z-index */
+
+
+
+
 .project-hero_container {
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0; /* kein zentrieren durch auto */
   padding: 0 2rem;
-  text-align: center;
-}
-
-/* Responsive Anpassungen */
-@media (max-width: 768px) {
-  .section_project_header::after {
-    background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
-      linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.6) 100%);
-  }
-  
-  .section_project_header {
-    min-height: 80vh;
-    padding: 4rem 0;
-  }
-}
-
-
-.project-hero_container {
-  max-width: 1200px;
-  padding: 0 2rem;
+  text-align: left; /* Text linksbündig */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start; /* Ausrichtung links oben */
   gap: 2.5rem;
-  position: relative;
   z-index: 1;
 }
 
@@ -127,14 +94,13 @@
   opacity: 0.8;
   display: inline-block;
   position: relative;
-  padding-left: 2.5rem;
 }
-
 
 .portfolio-title {
   font-size: 100px;
   color: #fff;
   line-height: 1.1;
+  text-align: left;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -143,86 +109,149 @@
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.25rem;
   line-height: 1.6;
+  text-align: left;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .section_project_header::after {
+    background:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
+      linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.6) 100%);
+  }
+  
+
+  .project-hero_container {
+    flex-direction: column;
+  }
+  
+  .portfolio-cta-wrapper {
+    flex-direction: column;
+  }
 }
 
 
-/*------------------------------------------------------------*/
-/* Project Hero Section      bis hier!!                                 */
-/*----------------------------------------------------------*/
 
 
-/*------------------------------------------------------------*/
-/* Project Details Grid                                       */
-/*----------------------------------------------------------*/
+/* -----------------------------------------------------------
+Profile-Information-(Steckbrief)
+---------------------------------------------------------- */
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 0 2rem;
+
+.about-me-profile-informations {
+	margin-top: 25px;
+	padding: 25px;
+	/* border-radius: 16px; */
+	/* background: rgba(255, 255, 255, 0.03); */
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 25px;
+	max-width: 1404px;
+	/* margin: 0 auto; */
+	/* padding: 0 2rem; */
 }
 
-.portfolio-info-card {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.about-me-profile-informations h3 {
+  color: #3ECF8E;
+  font-size: 1.5rem;
+  font-family: "RedHat", sans-serif;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-me-profile-informations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styling of list items */
+.about-me-profile-informations li.profile-item {
   position: relative;
-  overflow: hidden;
-}
-
-
-.portfolio-info-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none; /* Prevents interference with clicks */
-}
-
-
-.portfolio-info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-}
-
-.portfolio-info-card:hover::before {
-  opacity: 1;
-}
-
-.portfolio-info-label {
-  color: #00ff88;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.portfolio-info-text {
-  color: #fff;
+  font-size: 0.95rem;
+  font-family: "RedHat", sans-serif;
   line-height: 1.6;
+  padding: 20px 15px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/*------------------------------------------------------------*/
-/* Tech Stack Section                                         */
-/*----------------------------------------------------------*/
+/* Hover Effect */
+.about-me-profile-informations li.profile-item:hover {
+  border-color: #3ECF8E;
+  background: #3ecf8e1a;
+  transform: translateY(-3px);
+}
 
+/* Floating Label - aligned left */
+.about-me-profile-informations li.profile-item .profile-label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 10px;
+  color: #3ECF8E;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* The actual content */
+.about-me-profile-informations li.profile-item .profile-content {
+  display: block;
+}
+
+
+
+.portfolio-info-icon {
+  width: 35px;
+  height: 35px;
+  stroke: #3ECF8E;
+  display: block;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+
+.portfolio-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Abstand zwischen Icon und Text */
+}
+
+/* Optional: falls .profile-content noch Block ist, setze display inline */
+.profile-content {
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+/* Tech Stack Section */
+/*----------------------------------------------------------*/
 .portfolio-tech-wrapper {
   color: #fff;
   line-height: 1.6;
 }
 
 .portfolio-tech-card {
-  background: #1a1a1a;
   border: 1px solid #2d2d2d;
   border-radius: 12px;
   padding: 2rem;
@@ -240,16 +269,14 @@
   font-size: 1.1rem;
 }
 
-/*------------------------------------------------------------*/
-/* Learning Process Grid                                      */
+/* Learning Process Grid */
 /*----------------------------------------------------------*/
-
-
 .portfolio-learning-label {
   color: #00ff88;
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
+
 .portfolio-learning-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -265,11 +292,10 @@
   border-radius: 12px;
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;  /* Added */
-  overflow: hidden;    /* Added */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Add the same gradient border effect */
 .portfolio-learning-card::before {
   content: '';
   position: absolute;
@@ -286,7 +312,6 @@
   pointer-events: none;
 }
 
-/* Add hover effects */
 .portfolio-learning-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
@@ -296,81 +321,99 @@
   opacity: 1;
 }
 
-/*------------------------------------------------------------*/
-/* Button Styles                                              */
+/* Like & View Counter Styles */
 /*----------------------------------------------------------*/
-
-.portfolio-cta-wrapper {
+.counters-wrapper {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 1rem;
+  /* justify-content: center; */
   margin-top: 2rem;
 }
 
-.portfolio-cta-button {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
+.counter-item {
+  position: relative;
+  font-size: 0.95rem;
+  font-family: "RedHat", sans-serif;
+  line-height: 1.6;
   border-radius: 8px;
-  color: #fff;
-  padding: 1rem 2rem;
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
-}
-
-.portfolio-cta-button:hover {
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  color: #0a0a0a;
-  transform: translateY(-3px);
-}
-
-/*------------------------------------------------------------*/
-/* Like View Style                                            */
-/*----------------------------------------------------------*/
-
-.like-view-wrapper {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
+  flex-direction: column;
+  gap: 10px;
+  width: 100px;
 }
 
-.btn-like {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 8px;
-  color: #fff;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-like:hover {
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  color: #0a0a0a;
+.counter-item:hover {
+  border-color: #3ECF8E;
+  background: #3ecf8e1a;
   transform: translateY(-3px);
 }
 
+/* Floating Label */
+.counter-label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 10px;
+  color: #3ECF8E;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.btn-like,
 .btn-view {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 8px;
+  padding: 16px 20px;
   color: #fff;
-  padding: 1rem 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "RedHat", sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.btn-like:hover,
 .btn-view:hover {
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  color: #0a0a0a;
+  border-color: #3ECF8E;
   transform: translateY(-3px);
 }
 
+/* Icon + Text Row */
+.counter-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-/*------------------------------------------------------------*/
-/* Gallery Styles                                             */
+/* SVG Icons */
+.icon-like {
+  width: 24px;
+  height: 24px;
+  color: #3ECF8E; /* Herz grün */
+  flex-shrink: 0;
+}
+
+.icon-view {
+  width: 24px;
+  height: 24px;
+  color: #3ECF8E; /* Views grün */
+  flex-shrink: 0;
+}
+
+/* Counter Text */
+.counter-text {
+  font-size: 0.95rem;
+  font-family: "RedHat", sans-serif;
+}
+
+/* Gallery Styles */
 /*----------------------------------------------------------*/
-
 .gallery {
   max-width: 1250px;
   margin: 0 auto;
@@ -389,10 +432,8 @@
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-/*------------------------------------------------------------*/
-/* Responsive Design                                          */
+/* Responsive Design */
 /*----------------------------------------------------------*/
-
 @media (max-width: 1280px) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -413,62 +454,19 @@
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
-  
-  .project-hero_container {
-    flex-direction: column;
-  }
-  
-  .portfolio-cta-wrapper {
-    flex-direction: column;
-  }
 }
 
-
-
-
-/*------------------------------------------------------------*/
-/* Gallery Text Area                                         */
+/* Gallery Text Area */
 /*----------------------------------------------------------*/
-
-
-/* Hero Container Layout */
 .portfolio-section-button {
   max-width: 1250px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
 /*------------------------------------------------------------*/
-/* Lightbox Fancybox2 Settings      START                    */
-/*----------------------------------------------------------*/
+/* Lightbox Fancybox2 Settings - START                         */
+/*------------------------------------------------------------*/
 
 /* Stil für die Bilder in der Galerie, Größe der Bilder */
 .gallery a {
@@ -487,20 +485,17 @@
   object-fit: cover;
 }
 
-
-
-
+/* Dark Mode Gallery Anpassungen */
 .dark-mode .gallery {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 Spalten */
+  grid-template-columns: repeat(6, 1fr);
   gap: 15px;
   margin: 0 auto;
   padding: 15px;
   box-sizing: border-box;
   background-color: var(--light-mode);
-  justify-content: center; /* Falls notwendig */
+  justify-content: center;
 }
-
 
 @media (max-width: 480px) {
   .dark-mode .gallery {
@@ -512,22 +507,22 @@
   }
   
   .dark-mode .gallery a {
-    width: 100%; /* Passt sich dem Grid an */
-    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    width: 100%;
+    height: auto;
   }
 
   .dark-mode .gallery img {
     display: block;
     width: 100%;
-    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    height: auto;
     box-sizing: border-box;
     border-radius: 15px;
     object-fit: cover;
-    min-height: 250px; /* Einheitliche Bildhöhe */
+    min-height: 250px;
   }
 }
 
-
+/* Fancybox Image Style */
 .fancybox-image {
   margin: auto;
   display: block;
@@ -541,6 +536,7 @@
   border-radius: 14px;
 }
 
+/* Fancybox Thumbs Styles */
 .fancybox__thumbs.is-modern {
   --f-thumb-gap: 3px !important;
   --f-thumb-extra-gap: 0px !important;
@@ -557,6 +553,7 @@
   --f-thumb-outline-color: #ededed;
 }
 
+/* Fancybox Container Background */
 .fancybox__container {
   --fancybox-bg: rgb(255, 255, 255);
 }
@@ -565,26 +562,28 @@
   --fancybox-bg: rgb(0, 0, 0);
 }
 
-
-
+/* Dark Mode Toolbar */
 .dark-mode .fancybox__toolbar {
   color: #ffffff;
   text-shadow: var(--fancybox-toolbar-text-shadow, 1px 1px 1px rgba(255, 255, 255, 0.192));
   pointer-events: none;
 }
 
-
-.is-horizontal .f-carousel__nav .f-button.is-prev, .is-horizontal .f-carousel__nav .f-button.is-next, .is-horizontal .fancybox__nav .f-button.is-prev, .is-horizontal .fancybox__nav .f-button.is-next {
+/* Hide navigation buttons on horizontal layouts */
+.is-horizontal .f-carousel__nav .f-button.is-prev, 
+.is-horizontal .f-carousel__nav .f-button.is-next, 
+.is-horizontal .fancybox__nav .f-button.is-prev, 
+.is-horizontal .fancybox__nav .f-button.is-next {
   top: 50%;
   transform: translateY(-50%);
   display: none;
 }
 
+/* Hide captions */
 .fancybox__caption {
-display: none;
-
+  display: none;
 }
 
 /*------------------------------------------------------------*/
-/* Lightbox Fancybox2 Settings      ENDE                     */
-/*----------------------------------------------------------*/
+/* Lightbox Fancybox2 Settings - END                           */
+/*------------------------------------------------------------*/

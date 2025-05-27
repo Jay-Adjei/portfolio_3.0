@@ -118,12 +118,12 @@ const Features = () => {
                         buttonHref="/project5"
                     />
                     <Card
-                        src="/assets/gifs/Video2.mp4"
+                        src="/assets/videos/Video2.mp4"
                         title="Arcadia"
                         description="Your Description"
                         className="card-xsmall2"
                         buttonHref="/project1"
-                        isGif={true}
+                        // isGif={true}
                     />
                 </div>
 

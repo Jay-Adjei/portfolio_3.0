@@ -17,13 +17,20 @@ Note and Todos for myself:
 [X] git commit -m "Add backend folder to .gitignore"
 [X] Clean the Assets folder
 [X] Oranize Css files + add Comments and split it in logical parts
-[ ]
+[X] Find better Color Palette
 --------------------------
 
 Lookbook:
 Updates / Fixes:
 
-0.0.21 - Latest Updates
+
+0.0.22 - Latest Updates
+• Restarted the project to improve it and add new features. Currently, managing everything is challenging due to school and life commitments.
+• Testimonials have been updated for a cleaner look but are still not fully functional.
+• Project single page view updated: like and view counters improved and a better information list added.
+
+
+0.0.21 - Previous Updates
 • Improved the Skills section design
 • Added a new Testimonials design
 • Added static numbers for Likes/Views in the Blog Single Card View

@@ -1,226 +1,143 @@
-.CallToAction-cta-wrapper {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-  flex-direction: row; /* Buttons nebeneinander */
-}
-
-
-.CallToAction-cta-button {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 8px;
-  color: #fff;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.CallToAction-cta-button:hover {
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  color: #0a0a0a;
-  transform: translateY(-3px);
-}
-
-.CallToAction-learning-label {
-  color: #00ff88;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-
-.CallToAction-learning-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-
-.CallToAction-learning-card {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.CallToAction-learning-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.CallToAction-learning-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-}
-
-.CallToAction-learning-card:hover::before {
-  opacity: 1;
-}
-
-.CallToAction-info-text {
-  color: #fff;
-  line-height: 1.6;
-}
-
-.CallToAction-info-label {
-  color: #00ff88;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.CallToAction-info-card {
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.CallToAction-info-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.CallToAction-info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-}
-
-.CallToAction-info-card:hover::before {
-  opacity: 1;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cta-text-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-
-
+/* CallToAction.css */
 .cta-section {
-  padding: 6rem 0;
+  padding: 8rem 0;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .cta-container {
-  max-width: 1250px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: start;
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
-  border-radius: 12px;
-  padding: 4rem;
-  position: relative;
 }
 
-.cta-heading {
+.cta-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cta-title {
+  font-size: 4rem;
+  line-height: 1;
   margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
 }
 
-.cta-main {
+.cta-gradient-part {
+  background: linear-gradient(45deg, #00ff88 30%, #61dafb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: block;
-  font-size: 2.5rem;
-  color: #00ff88;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.cta-cyber-part {
+  display: block;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  font-weight: 700;
+}
+
+.cta-subtitle {
+  color: #a0a0a0;
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: end;
+}
+
+.cta-card {
+  background: rgba(16, 16, 16, 0.95);
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 60%);
+  animation: rotate-glow 20s linear infinite;
+}
+
+@keyframes rotate-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cyber-line {
+  width: 60px;
+  height: 2px;
+  background: #00ff88;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.card-title {
+  color: #fff;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-.cta-sub {
-  display: block;
-  font-size: 1.25rem;
-  color: #61dafb;
-  margin-bottom: 2rem;
-}
-
-.cta-description {
-  font-size: 1.1rem;
+.card-text {
   color: #d1d5db;
   line-height: 1.6;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.cta-button {
-  background: linear-gradient(45deg, #00ff88, #61dafb);
-  color: #0a0a0a !important;
+.tech-stack {
+  display: block;
+  color: #61dafb;
+  font-size: 0.9em;
+  margin-top: 1rem;
+}
+
+.cta-buttons {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 300px;
+}
+
+.neo-button {
+  position: relative;
+  padding: 1.5rem 2.5rem;
   border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
-}
-
-.cta-image-wrapper {
+  background: rgba(26, 26, 26, 0.8);
+  color: #00ff88;
+  font-weight: 600;
   border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease;
 }
 
-.cta-image-wrapper::before {
+.neo-button::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 12px;
+  border: 1px solid transparent;
+  border-radius: inherit;
   padding: 2px;
   background: linear-gradient(45deg, #00ff88, #61dafb);
   -webkit-mask: 
@@ -228,48 +145,81 @@
     linear-gradient(#000 0 0);
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-.cta-image-wrapper:hover::before {
+.neo-button:hover {
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.neo-button:hover::before {
   opacity: 1;
 }
 
-.cta-image {
+.button-aura {
+  position: absolute;
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.2), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.cta-image-wrapper:hover .cta-image {
-  transform: scale(1.03);
+.neo-button:hover .button-aura {
+  opacity: 0.3;
+}
+
+.cta-visual {
+  margin-top: 4rem;
+  position: relative;
+}
+
+.hologram-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transform: perspective(1000px) rotateX(5deg);
+  padding-bottom: 50px;
+  transition: transform 0.2s ease-out; /* <--- hinzufügen */
+  will-change: transform; /* für bessere GPU-Leistung */
+}
+
+.hologram-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%) contrast(110%) brightness(90%);
 }
 
 @media (max-width: 1024px) {
-  .cta-content {
+  .cta-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-    padding: 2rem;
   }
   
-  .cta-image-wrapper {
-    order: -1;
-    max-width: 80%;
-    margin: 0 auto;
+  .cta-buttons {
+    min-width: auto;
+  }
+  
+  .cta-title {
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .cta-section {
-    padding: 3rem 0;
+    padding: 6rem 0;
   }
   
-  .cta-main {
-    font-size: 2rem;
+  .cta-title {
+    font-size: 2.5rem;
   }
   
-  .cta-image-wrapper {
-    max-width: 100%;
+  .hologram-image {
+    height: 400px;
+  }
+  
+  .neo-button {
+    width: 100%;
   }
 }

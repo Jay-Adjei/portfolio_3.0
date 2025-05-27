@@ -1,12 +1,12 @@
 [
     {
       "slug": "oni-girl-coding1",
-      "title": "My First Project",
+      "title": "Erstes Projekt",
       "category": "Coding",
       "abovetitle": "Best-CSS-Tricks",
       "heroImage": "/assets/img/LandingBG/OniBoy1.webp",
-      "holographicCard": "/assets/img/LandingBG/OniBoy4.webp",
-      "backgroundImage": "/assets/img/LandingBG/OniBoy4.webp",
+      "holographicCard": "/assets/img/LandingBG/OniGirl3.jpg",
+      "backgroundImage": "/assets/img/LandingBG/OniGirl3.jpg",
       "projectDetails": {
         "theme": "Coding",
         "inspiration": "Behance",

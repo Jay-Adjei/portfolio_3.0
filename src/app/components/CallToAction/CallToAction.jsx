@@ -1,49 +1,74 @@
 'use client';
-import React from 'react';
+
+import React, { useState, useRef } from 'react';
 import './CallToAction.css';
 
 const CallToAction = () => {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const frameRequestRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (frameRequestRef.current) cancelAnimationFrame(frameRequestRef.current);
+  
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+  
+    frameRequestRef.current = requestAnimationFrame(() => {
+      const tiltX = ((rect.height / 2) - y) / 30; // Maus oben → positiv
+      const tiltY = (x - rect.width / 2) / 30;    // Maus rechts → positiv
+      setTilt({ x: tiltX, y: tiltY });
+    });
+  };
+  
+  
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+
   return (
     <section className="cta-section">
       <div className="cta-container">
         <div className="cta-content">
-          <div className="cta-text">
-            <h2 className="cta-heading">
-              <span className="cta-main">Why not Now?</span>
-              <span className="cta-sub">Let&#39;s Create Something Amazing</span>
+          <div className="cta-header">
+            <h2 className="cta-title">
+              <span className="cta-gradient-part">Crafting Digital</span>
+              <span className="cta-cyber-part">EXCELLENCE</span>
             </h2>
+            <p className="cta-subtitle">
+              Let's engineer your vision with pixel perfection
+            </p>
           </div>
 
-
-
-          <div className="CallToAction-info-card">
-            <h5 className="CallToAction-info-label">Inspiration</h5>
-            <p className="CallToAction-info-text">hey</p>
-          </div>
-
-          <div className="cta-image-wrapper">
-            <img 
-              src="/assets/img/LandingBG/OniBoy1.webp" 
-              alt="Professional Opportunity" 
-              className="cta-image"
-            />
-          </div>
-
-          <div className="CallToAction-cta-wrapper">
-            <button
-              className="CallToAction-cta-button"
-              onClick={() => window.open("https://your-live-demo-link.com", "_blank", "noopener,noreferrer")}
+          <div className="cta-visual">
+            <div
+              className="hologram-frame"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+              }}
             >
-              Live-Demo ansehen
-            </button>
-            <button
-              className="CallToAction-cta-button"
-              onClick={() => window.open("https://github.com/your-repository", "_blank", "noopener,noreferrer")}
-            >
-              Zum GitHub-Repository
-            </button>
+              <img
+                src="/assets/img/LandingBG/OniBoy1.webp"
+                alt="Code Interface"
+                className="hologram-image"
+              />
+              <div className="scanline-overlay"></div>
+            </div>
+
+            <div className="cta-buttons">
+              <button className="neo-button" onClick={() => window.open("#")}>
+                <span className="button-label">Live Demos</span>
+                <span className="button-aura"></span>
+              </button>
+              <button className="neo-button secondary" onClick={() => window.open("#")}>
+                <span className="button-label">GitHub Hub</span>
+                <span className="button-aura"></span>
+              </button>
+            </div>
           </div>
-          
         </div>
       </div>
     </section>
