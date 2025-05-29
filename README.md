@@ -112,7 +112,7 @@ I'll be adding more in the near future. Potential updates include:
 
 | 29.05.25                                                   | 29.05.25                                                     |  29.05.25                                                    |
 | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![Bild 4](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png) | ![Bild 5](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Blog_neu_Vrgleich.png?raw=true) | ![Bild 6](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png?raw=true) |
+| ![Bild 4](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png) | ![Bild 5](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Blog_neu_Vrgleich.png?raw=true) | ![Bild 6](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Home_neu_Vergleich.png) |
 
 
 | Animated & Beautiful Grid                                    | Filters                                                      | Dark-Mode                                                    |
