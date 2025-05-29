@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import './bloggrid.css';
 
@@ -10,7 +10,29 @@ const BlogGrid = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
   const [sortOrder, setSortOrder] = useState('latest');
-  const [uniqueTags, setUniqueTags] = useState([]); // Tags hier speichern
+  const [uniqueTags, setUniqueTags] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  const sectionRef = useRef(null);
+  const filterRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -18,7 +40,6 @@ const BlogGrid = () => {
         const response = await fetch('/data/bloggrid.json');
         const data = await response.json();
 
-        // Extrahiere die eindeutigen Tags nur einmal
         const tags = [...new Set(data.flatMap(post => post.tags || []))];
         setUniqueTags(tags);
 
@@ -27,9 +48,9 @@ const BlogGrid = () => {
           const dateB = new Date(b.date);
   
           if (sortOrder === 'latest') {
-            return dateB - dateA; // Neueste zuerst
+            return dateB - dateA;
           } else {
-            return dateA - dateB; // Älteste zuerst
+            return dateA - dateB;
           }
         });
 
@@ -42,9 +63,18 @@ const BlogGrid = () => {
     };
   
     loadPosts();
-  }, [sortOrder]); // Sortierung nur nach der Änderung des sortOrder anpassen
+  }, [sortOrder]);
 
-  // Beiträge filtern anhand von Suchtext und ausgewähltem Tag
+  const handleMouseMove = (e) => {
+    if (filterRef.current) {
+      const rect = filterRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      setMousePosition({ x, y });
+    }
+  };
+
   const filteredPosts = blogPosts.filter(post => {
     const query = searchQuery.toLowerCase();
     const matchesSearch =
@@ -60,110 +90,213 @@ const BlogGrid = () => {
   });
 
   return (
-    <div className="blog-grid-container">
-      <header className="blog-grid-header">
-        <h1 className="blog-grid-title">All Blog Posts</h1>
-        <p className="blog-grid-subtitle">Grateful for Your Time: Thanks for Reading!</p>
-      </header>
+    <div ref={sectionRef} className={`blog-wrapper ${isVisible ? 'visible' : ''}`}>
+      {/* Background Elements */}
+      <div className="blog-background-grid"></div>
+      <div className="blog-floating-orb blog-orb-1"></div>
+      <div className="blog-floating-orb blog-orb-2"></div>
+      <div className="blog-floating-orb blog-orb-3"></div>
 
-     {/* Suchfeld und Filter */}
-      <div className="filters-container">
-        <div className="filters-top-row">
+      {/* Hero Header */}
+      <div className="blog-hero-section">
+        <div className="blog-hero-content">
+            <span>Latest Articles</span>
 
-        <select 
-            onChange={(e) => setSortOrder(e.target.value)} 
-            value={sortOrder}
-            className="sort-select"
-          >
-            <option value="latest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-          </select>
-
-          <input
-            type="text"
-            placeholder="Search posts..."
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
-          />
           
-        </div>
-
-        <div className="tag-filter">
-          {uniqueTags.map(tag => (
-            <button 
-              key={tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`tag-button ${selectedTag.toLowerCase() === tag.toLowerCase() ? 'active' : ''}`}
-            >
-              {tag}
-            </button>
-          ))}
-          {selectedTag && (
-            <button 
-              onClick={() => setSelectedTag('')} 
-              className="tag-button clear-tags"
-            >
-              Clear Filter
-            </button>
-          )}
+          <h1 className="blog-hero-title">
+            <span className="blog-title-line">Knowledge</span>
+            <span className="blog-title-line gradient">Sharing Hub</span>
+          </h1>
+          
+          <p className="blog-hero-description">
+            Discover insights, tutorials, and thoughts on modern development, 
+            design patterns, and cutting-edge technologies.
+          </p>
         </div>
       </div>
 
-      <div className="blog-grid">
-        {isLoading
-          ? Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="post-card skeleton">
-                <div className="skeleton-image"></div>
-                <div className="skeleton-content">
-                  <div className="skeleton-title"></div>
-                  <div className="skeleton-text"></div>
-                  <div className="skeleton-footer"></div>
+      <div className="blog-container">
+        {/* Enhanced Filter Section */}
+        <div 
+          ref={filterRef}
+          className="blog-filters-card"
+          onMouseMove={handleMouseMove}
+          style={{
+            '--mouse-x': `${mousePosition.x}px`,
+            '--mouse-y': `${mousePosition.y}px`
+          }}
+        >
+          <div className="blog-card-glow"></div>
+          
+          <div className="blog-filters-header">
+            <h3 className="blog-filters-title">Find Your Content</h3>
+            <p className="blog-filters-subtitle">Filter and search through our articles</p>
+          </div>
+
+          <div className="blog-filters-top-row">
+            <div className="blog-input-group">
+              <div className="blog-search-icon">🔍</div>
+              <input
+                type="text"
+                placeholder="Search articles, topics, or keywords..."
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="blog-search-input"
+              />
+            </div>
+
+            <div className="blog-select-group">
+              <select 
+                onChange={(e) => setSortOrder(e.target.value)} 
+                value={sortOrder}
+                className="blog-sort-select"
+              >
+                <option value="latest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="blog-tag-section">
+            <div className="blog-tag-header">
+              <span className="blog-tag-label">Filter by topic:</span>
+              {selectedTag && (
+                <button 
+                  onClick={() => setSelectedTag('')} 
+                  className="blog-clear-filter"
+                >
+                  Clear Filter ✕
+                </button>
+              )}
+            </div>
+            
+            <div className="blog-tag-filter">
+              {uniqueTags.map(tag => (
+                <button 
+                  key={tag}
+                  onClick={() => setSelectedTag(tag)}
+                  className={`blog-tag-button ${selectedTag.toLowerCase() === tag.toLowerCase() ? 'active' : ''}`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Results Counter */}
+        <div className="blog-results-info">
+          <span className="blog-results-count">
+            {isLoading ? 'Loading...' : `${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''} found`}
+          </span>
+          {selectedTag && (
+            <span className="blog-active-filter">
+              Filtered by: <strong>{selectedTag}</strong>
+            </span>
+          )}
+        </div>
+
+        {/* Blog Grid */}
+        <div className="blog-grid">
+          {isLoading
+            ? Array.from({ length: 6 }).map((_, index) => (
+                <div key={index} className="blog-post-card skeleton">
+                  <div className="blog-skeleton-image"></div>
+                  <div className="blog-skeleton-content">
+                    <div className="blog-skeleton-title"></div>
+                    <div className="blog-skeleton-text"></div>
+                    <div className="blog-skeleton-text short"></div>
+                    <div className="blog-skeleton-footer"></div>
+                  </div>
                 </div>
-              </div>
-            ))
-          : filteredPosts.map((post) => (
-              <article key={post.id} className="post-card">
-                <Link href={`/blog/${post.slug}`} className="post-card-link">
-                  <div className="post-card-image-container">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="post-card-image"
-                    />
-                  </div>
-                  <div className="post-card-content">
-                    <div className="post-card-meta">
-                      <span className="post-card-date">{post.date}</span>
-                      <span className="post-card-readtime">{post.readTime} read</span>
-                    </div>
-                    <h2 className="post-card-title">{post.title}</h2>
-                    <p className="post-card-excerpt">{post.excerpt}</p>
-                    <div className="post-card-footer">
-                      <div className="post-card-author">
-                        <img
-                          src={post.authorImage || '/assets/img/blog/author.webp'}
-                          alt={post.author}
-                          className="post-card-author-image"
-                        />
-                        <div>
-                          <p className="post-card-author-name">{post.author}</p>
-                        </div>
-                      </div>
-                      <div className="post-card-stats">
-                        <div className="post-card-stat">
-                          <EyeIcon />
-                          <span>{post.views}</span>
-                        </div>
-                        <div className="post-card-stat">
-                          <HeartIcon />
-                          <span>{post.likes}</span>
+              ))
+            : filteredPosts.map((post, index) => (
+                <article 
+                  key={post.id} 
+                  className="blog-post-card"
+                  style={{ '--animation-delay': `${index * 0.1}s` }}
+                >
+                  <Link href={`/blog/${post.slug}`} className="blog-post-link">
+                    <div className="blog-post-image-container">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="blog-post-image"
+                      />
+                      <div className="blog-post-overlay">
+                        <div className="blog-read-indicator">
+                          <span>Read Article</span>
+                          <div className="blog-arrow-icon">→</div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </article>
-            ))}
+                    
+                    <div className="blog-post-content">
+                      <div className="blog-post-meta">
+                        <span className="blog-post-date">{post.date}</span>
+                        <span className="blog-post-readtime">{post.readTime} read</span>
+                      </div>
+                      
+                      <h2 className="blog-post-title">{post.title}</h2>
+                      <p className="blog-post-excerpt">{post.excerpt}</p>
+                      
+                      {post.tags && (
+                        <div className="blog-post-tags">
+                          {post.tags.slice(0, 3).map(tag => (
+                            <span key={tag} className="blog-post-tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      
+                      <div className="blog-post-footer">
+                        <div className="blog-post-author">
+                          <img
+                            src={post.authorImage || '/assets/img/blog/author.webp'}
+                            alt={post.author}
+                            className="blog-post-author-image"
+                          />
+                          <div>
+                            <p className="blog-post-author-name">{post.author}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="blog-post-stats">
+                          <div className="blog-post-stat">
+                            <EyeIcon />
+                            <span>{post.views}</span>
+                          </div>
+                          <div className="blog-post-stat">
+                            <HeartIcon />
+                            <span>{post.likes}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+        </div>
+
+        {/* No Results State */}
+        {!isLoading && filteredPosts.length === 0 && (
+          <div className="blog-no-results">
+            <div className="blog-no-results-icon">📝</div>
+            <h3 className="blog-no-results-title">No articles found</h3>
+            <p className="blog-no-results-text">
+              Try adjusting your search terms or removing filters to see more results.
+            </p>
+            <button 
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedTag('');
+              }}
+              className="blog-reset-filters"
+            >
+              Reset All Filters
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

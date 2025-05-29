@@ -13,7 +13,35 @@
     "likes": "245"
   },
   {
+    "id": 2,
+    "slug": "best-website-designs",
+    "title": "The Best Website Designs: What Makes Them Stand Out",
+    "excerpt": "An exploration of the best web designs and the principles behind them...",
+    "image": "/assets/img/blog/blog3.webp",
+    "tags": ["Design"],
+    "author": "Gylan Salih",
+    "date": "January 11, 2025",
+    "readTime": "5 min",
+    "views": "1k",
+    "likes": "110"
+  }
+  ,
+  {
     "id": 3,
+    "slug": "best-website-designs",
+    "title": "The Best Website Designs: What Makes Them Stand Out",
+    "excerpt": "An exploration of the best web designs and the principles behind them...",
+    "image": "/assets/img/blog/blog3.webp",
+    "tags": ["Tipps & Tricks"],
+    "author": "Gylan Salih",
+    "date": "January 11, 2025",
+    "readTime": "5 min",
+    "views": "1k",
+    "likes": "110"
+  }
+  ,
+  {
+    "id": 4,
     "slug": "best-website-designs",
     "title": "The Best Website Designs: What Makes Them Stand Out",
     "excerpt": "An exploration of the best web designs and the principles behind them...",

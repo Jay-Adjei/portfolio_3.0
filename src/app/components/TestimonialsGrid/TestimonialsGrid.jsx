@@ -1,294 +1,278 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { 
+  Globe, 
+  Palette, 
+  Code, 
+  ShoppingCart, 
+  Settings,
+  Grid3X3
+} from "lucide-react";
 import './TestimonialsGrid.css';
 
-// Beispiel-Icons für jeden Filter (kannst du natürlich anpassen)
 const filterIcons = {
-  1: (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="1"
-    >
-      <circle cx="8" cy="8" r="7" />
-    </svg>
-  ),
-  2: (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-    >
-      <path d="M13.95.879a3 3 0 0 0-4.243 0L1.293 9.293a1 1 0 0 0-.274.51l-1 5a1 1 0 0 0 1.177 1.177l5-1a1 1 0 0 0 .511-.273l1.16-1.16a1 1 0 0 0-1.414-1.414l-.946.946-3.232.646.646-3.232 8.2-8.2a1 1 0 0 1 1.414 0l1.172 1.172a1 1 0 0 1 0 1.414l-.55.549a1 1 0 0 0 1.415 1.414l.55-.55a3 3 0 0 0 0-4.241L13.948.879ZM3.25 4.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Zm11.474 6.029-1.521-.752-.752-1.521c-.168-.341-.73-.341-.896 0l-.752 1.52-1.521.753a.498.498 0 0 0 0 .896l1.52.752.753 1.52a.5.5 0 0 0 .896 0l.752-1.52 1.52-.752a.498.498 0 0 0 0-.896Z" />
-    </svg>
-  ),  
-  3: (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-    >
-      <path d="M10 1 L15 19 L5 19 Z" />
-    </svg>
-  ),
-  4: (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-    >
-      <line x1="12" y1="2" x2="12" y2="22" />
-      <line x1="2" y1="12" x2="22" y2="12" />
-    </svg>
-  ),
-  5: (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 6 L12 12 L16 14" />
-    </svg>
-  ),
+  1: Grid3X3,
+  2: Palette,
+  3: Globe,
+  4: Code,
+  5: ShoppingCart,
+  6: Settings,
 };
 
-export default function Testimonials() {
-  const masonryContainer = useRef(null);
-  const [activeCategory, setActiveCategory] = useState(1);
-
-  // Masonry Positionierung
-  useEffect(() => {
-    const handleMasonry = () => {
-      if (!masonryContainer.current) return;
-
-      const visibleItems = Array.from(masonryContainer.current.children).filter(
-        (el) => !el.classList.contains("testimonial-card--inactive")
-      );
-
-      if (visibleItems.length === 0) return;
-
-      const gapSize = parseInt(
-        window.getComputedStyle(masonryContainer.current).getPropertyValue("grid-row-gap")
-      );
-
-      visibleItems.forEach((el) => {
-        if (!(el instanceof HTMLElement)) return;
-
-        el.style.marginTop = "0";
-
-        const elTop = el.offsetTop;
-        const elLeft = el.offsetLeft;
-        let prev = el.previousElementSibling;
-
-        while (prev) {
-          if (
-            prev instanceof HTMLElement &&
-            !prev.classList.contains("testimonial-card--inactive") &&
-            prev.offsetLeft === elLeft
-          ) {
-            const prevBottom = prev.offsetTop + prev.offsetHeight;
-            const marginTop = prevBottom + gapSize - elTop;
-
-            el.style.marginTop = marginTop > 0 ? marginTop + "px" : "0";
-            break;
-          }
-          prev = prev.previousElementSibling;
-        }
-      });
-    };
-
-    handleMasonry();
-    window.addEventListener("resize", handleMasonry);
-    return () => {
-      window.removeEventListener("resize", handleMasonry);
-    };
-  }, [activeCategory]);
-
-  const categories = [
-    "View All",
-    "Design & Branding",
-    "Websites",
-    "Web Applications",
-    "E-Commerce",
-    "Custom Solutions",
-  ];
-  
-
-  return (
-    <div className="testimonials">
-      <div className="testimonials__border">
-        {/* Section header */}
-        <div className="testimonials__header">
-          <h2 className="testimonials__title">Trusted to bring innovation.</h2>
-          <p className="testimonials__subtitle">
-          I provide smart, tech-focused solutions that enable professionals to foster healthier, 
-          happier workspaces from anywhere.
-          </p>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="testimonials__filters">
-          <div className="testimonials__filter-group">
-            {categories.map((categoryName, idx) => (
-              <button
-              key={idx + 1}
-              className={`testimonials__filter-btn ${
-                activeCategory === idx + 1
-                  ? "testimonials__filter-btn--active"
-                  : ""
-              }`}
-              onClick={() => setActiveCategory(idx + 1)}
-            >
-              <span className="testimonials__filter-icon">
-                {filterIcons[idx + 1] || filterIcons[1]}
-              </span>
-              <span>{categoryName}</span>
-            </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="testimonials-grid" ref={masonryContainer}>
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`testimonial-card ${
-                activeCategory !== 1 && !testimonial.categories.includes(activeCategory)
-                  ? "testimonial-card--inactive"
-                  : ""
-              }`}
-            >
-              <div className="testimonial-card__content-wrapper">
-                <img
-                  src={testimonial.clientImg}
-                  className="testimonial-card__client-logo"
-                  alt="Client logo"
-                />
-                <p className="testimonial-card__content">
-                  {testimonial.content}
-                </p>
-                <div className="testimonial-card__author">
-                  <img
-                    className="testimonial-card__author-image"
-                    src={testimonial.img}
-                    alt={testimonial.name}
-                  />
-                    <span className="testimonial-card__author-name">{testimonial.name}</span>
-                  <div className="testimonial-card__author-info">
-                    <a href="#0" className="testimonial-card__author-company">
-                      {testimonial.company}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const categories = [
+  { id: 1, name: "All Projects", icon: Grid3X3 },
+  { id: 2, name: "Design & Branding", icon: Palette },
+  { id: 3, name: "Websites", icon: Globe },
+  { id: 4, name: "Web Applications", icon: Code },
+  { id: 5, name: "E-Commerce", icon: ShoppingCart },
+  { id: 6, name: "Custom Solutions", icon: Settings },
+];
 
 const testimonials = [
   {
+    id: 1,
     img: "/assets/img/testimonial/testimonial-07.jpg",
     clientImg: "/assets/img/testimonial/client-logo-07.svg",
-    name: "Pierre-Gilles L.",
+    name: "Pierre-Gilles Laurent",
     company: "Binance",
-    content:
-      "I was blown away by how easy it was to create my content using this tool! Within a few hours, I had a professional-looking platform up and running, and my client could not believe it.",
+    role: "Senior Product Manager",
+    content: "The attention to detail and technical expertise delivered exceeded our expectations. Within just a few hours, we had a professional platform that impressed our entire team and stakeholders.",
     categories: [1, 3],
+    rating: 5
   },
   {
+    id: 2,
     img: "/assets/img/testimonial/testimonial-02.jpg",
     clientImg: "/assets/img/testimonial/client-logo-02.svg",
-    name: "Andrew K.",
+    name: "Andrew Kim",
     company: "Samsung",
-    content:
-      "I've tried several content generation tools, but this AI-driven tool is by far the best. It understands my brand's voice and consistently produces content that resonates with my audience!",
-    categories: [2],
+    role: "Design Director",
+    content: "Outstanding work that perfectly captured our brand vision. The solution is not only visually stunning but also incredibly functional. Truly world-class quality.",
+    categories: [1, 2],
+    rating: 5
   },
   {
+    id: 3,
     img: "/assets/img/testimonial/testimonial-05.jpg",
     clientImg: "/assets/img/testimonial/client-logo-05.svg",
-    name: "Miriam E.",
+    name: "Miriam Evans",
     company: "Cadbury",
-    content:
-      "The AI-driven content tool has been a lifesaver for my marketing agency. We can now produce high-quality content for multiple clients quickly and efficiently. It's an invaluable asset to our team.",
-    categories: [3],
+    role: "Marketing Lead",
+    content: "This has been a game-changer for our marketing operations. The efficiency and quality delivered has transformed how we approach digital campaigns across multiple markets.",
+    categories: [1, 3, 6],
+    rating: 5
   },
   {
+    id: 4,
     img: "/assets/img/testimonial/testimonial-01.jpg",
     clientImg: "/assets/img/testimonial/client-logo-01.svg",
-    name: "MaKayla P.",
+    name: "MaKayla Parker",
     company: "Disney",
-    content:
-      "As a content creator, I was always on the lookout for a tool that could help me keep up with the demand. The AI-driven content tool has been a game-changer. It generates high-quality content in a fraction of the time it used to take me.",
-    categories: [1, 3, 5],
+    role: "Creative Producer",
+    content: "Exceptional creativity combined with technical precision. The deliverables not only met our high standards but elevated our entire digital presence. Truly impressive work.",
+    categories: [1, 2, 4],
+    rating: 5
   },
   {
+    id: 5,
     img: "/assets/img/testimonial/testimonial-09.jpg",
     clientImg: "/assets/img/testimonial/client-logo-09.svg",
-    name: "Mary P.",
-    company: "Ray Ban",
-    content:
-      "I've never been one for coding, so finding an AI tool that doesn't require any technical skills was a dream come true. This tool exceeded my expectations, and I'm proud to show off my new stuff to friends.",
-    categories: [3, 5],
+    name: "Mary Peterson",
+    company: "Ray-Ban",
+    role: "Digital Strategy Lead",
+    content: "Perfect balance of innovation and usability. The solution requires no technical expertise to manage, yet delivers enterprise-level functionality. Couldn't be happier.",
+    categories: [1, 3, 5],
+    rating: 5
   },
   {
+    id: 6,
     img: "/assets/img/testimonial/testimonial-04.jpg",
     clientImg: "/assets/img/testimonial/client-logo-04.svg",
-    name: "Pavel M.",
+    name: "Pavel Martinez",
     company: "Canon",
-    content:
-      "The quality of the content generated by this AI tool is outstanding. It has taken our content marketing to new heights, allowing us to publish more frequently without compromising on quality. Highly recommended for anyone.",
-    categories: [4, 5],
+    role: "Product Development Manager",
+    content: "Outstanding technical execution that has elevated our digital marketing capabilities. The quality and attention to detail is evident in every aspect of the final product.",
+    categories: [1, 4, 6],
+    rating: 5
   },
   {
+    id: 7,
     img: "/assets/img/testimonial/testimonial-06.jpg",
     clientImg: "/assets/img/testimonial/client-logo-06.svg",
-    name: "Eloise V.",
+    name: "Eloise Vance",
     company: "Maffell",
-    content:
-      "I'm amazed at how well this AI-driven content tool performs. It's incredibly versatile and can generate content for blogs, social media, and even product descriptions effortlessly. It's fantastic!",
-    categories: [1, 4],
+    role: "Operations Director",
+    content: "Incredibly versatile solution that adapts to our diverse needs. From content management to user engagement, everything works seamlessly. Highly recommended.",
+    categories: [1, 4, 6],
+    rating: 5
   },
   {
+    id: 8,
     img: "/assets/img/testimonial/testimonial-08.jpg",
     clientImg: "/assets/img/testimonial/client-logo-08.svg",
-    name: "Danielle K.",
+    name: "Danielle Knox",
     company: "Forbes Inc.",
-    content:
-      "I've never been a fan of complicated website AI tools, which is why Open PRO is perfect for me. Its minimalist design and simple functionality make staying organized feel like second nature.",
-    categories: [2, 4],
+    role: "Technology Editor",
+    content: "Elegant simplicity that doesn't compromise on functionality. The minimalist approach combined with powerful features makes this solution stand out in the market.",
+    categories: [1, 2, 4],
+    rating: 5
   },
   {
+    id: 9,
     img: "/assets/img/testimonial/testimonial-03.jpg",
     clientImg: "/assets/img/testimonial/client-logo-03.svg",
-    name: "Lucy D.",
+    name: "Lucy Davis",
     company: "Rio",
-    content:
-      "Content creation used to be a bottleneck in our workflow, but not anymore. This AI tool is intuitive and produces top-notch content every time. It's like having an extra team member who never sleeps! Definitely recommend.",
-    categories: [1, 2],
+    role: "Creative Director",
+    content: "Transformed our entire workflow and creative process. The intuitive design and robust functionality feels like having an additional team member who never rests. Exceptional.",
+    categories: [1, 2, 3],
+    rating: 5
   },
 ];
+
+export default function Testimonials() {
+  const [activeCategory, setActiveCategory] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const gridRef = useRef(null);
+
+  const handleCategoryChange = (categoryId) => {
+    if (categoryId === activeCategory || isAnimating) return;
+    
+    setIsAnimating(true);
+    setActiveCategory(categoryId);
+    
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 400);
+  };
+
+  const filteredTestimonials = activeCategory === 1 
+    ? testimonials 
+    : testimonials.filter(testimonial => 
+        testimonial.categories.includes(activeCategory)
+      );
+
+  const renderStars = (rating) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <span 
+        key={i} 
+        className={`testimonial-card__star ${i < rating ? 'testimonial-card__star--filled' : ''}`}
+      >
+        ★
+      </span>
+    ));
+  };
+
+  return (
+    <section className="testimonials" aria-label="Client Testimonials">
+      <div className="testimonials__container">
+        
+        {/* Header Section */}
+        <header className="testimonials__header">
+          <h2 className="testimonials__title">
+            Trusted to Deliver Excellence
+          </h2>
+          <p className="testimonials__subtitle">
+            Empowering businesses with innovative solutions that drive growth, 
+            enhance user experience, and create lasting digital impact across industries.
+          </p>
+        </header>
+
+        {/* Filter Navigation */}
+        <nav className="testimonials__filters" aria-label="Project Categories">
+          <div className="testimonials__filter-wrapper">
+            {categories.map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <button
+                  key={category.id}
+                  className={`testimonials__filter-btn ${
+                    activeCategory === category.id ? 'testimonials__filter-btn--active' : ''
+                  }`}
+                  onClick={() => handleCategoryChange(category.id)}
+                  aria-pressed={activeCategory === category.id}
+                  disabled={isAnimating}
+                >
+                  <IconComponent className="testimonials__filter-icon" size={18} />
+                  <span className="testimonials__filter-text">{category.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </nav>
+
+        {/* Testimonials Grid */}
+        <div 
+          className={`testimonials__grid ${isAnimating ? 'testimonials__grid--animating' : ''}`}
+          ref={gridRef}
+        >
+          {filteredTestimonials.map((testimonial, index) => (
+            <article 
+              key={testimonial.id}
+              className="testimonial-card"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="testimonial-card__inner">
+                
+                {/* Client Logo */}
+                <div className="testimonial-card__logo-wrapper">
+                  <img
+                    src={testimonial.clientImg}
+                    alt={`${testimonial.company} logo`}
+                    className="testimonial-card__logo"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Rating */}
+                <div className="testimonial-card__rating">
+                  {renderStars(testimonial.rating)}
+                </div>
+
+                {/* Content */}
+                <blockquote className="testimonial-card__content">
+                  {testimonial.content}
+                </blockquote>
+
+                {/* Author Info */}
+                <footer className="testimonial-card__author">
+                  <img
+                    src={testimonial.img}
+                    alt={testimonial.name}
+                    className="testimonial-card__avatar"
+                    loading="lazy"
+                  />
+                  <div className="testimonial-card__author-info">
+                    <cite className="testimonial-card__name">
+                      {testimonial.name}
+                    </cite>
+                    <span className="testimonial-card__role">
+                      {testimonial.role}
+                    </span>
+                    <a 
+                      href="#" 
+                      className="testimonial-card__company"
+                      aria-label={`Visit ${testimonial.company} website`}
+                    >
+                      {testimonial.company}
+                    </a>
+                  </div>
+                </footer>
+
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Results Counter */}
+        <div className="testimonials__counter">
+          <span className="testimonials__counter-text">
+            Showing {filteredTestimonials.length} of {testimonials.length} testimonials
+          </span>
+        </div>
+
+      </div>
+    </section>
+  );
+}

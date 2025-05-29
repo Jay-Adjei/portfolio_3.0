@@ -1,18 +1,27 @@
-// AudioIndicator.js
 import React, { useRef, useState, useEffect } from 'react';
-import style from './AudioIndicator.css'
+import style from './AudioIndicator.css';
 
 const AudioIndicator = ({ isAudioPlaying, toggleAudioIndicator }) => {
   const audioElementRef = useRef(null);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted || !audioElementRef.current) return;
+
     if (isAudioPlaying) {
-      audioElementRef.current.play();
+      audioElementRef.current.play().catch((err) => {
+        console.error("Audio play failed:", err);
+      });
     } else {
       audioElementRef.current.pause();
     }
-  }, [isAudioPlaying]);
+  }, [isAudioPlaying, hasMounted]);
+
+  if (!hasMounted) return null; // vermeidet Hydration-Mismatch
 
   return (
     <div className="sound-wrapper">
@@ -27,7 +36,7 @@ const AudioIndicator = ({ isAudioPlaying, toggleAudioIndicator }) => {
           {[1, 2, 3, 4].map((bar) => (
             <div
               key={bar}
-              className={`bar ${isIndicatorActive ? 'active' : ''}`}
+              className={`bar ${isAudioPlaying ? 'active' : ''}`}
               style={{
                 animationDelay: `${bar * 0.1}s`,
                 animationDuration: `${(bar + 1) * 150}ms`,

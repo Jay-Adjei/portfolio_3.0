@@ -144,7 +144,7 @@ const SingleCard = () => {
       </div>
 
 
-<div className='pattern'>
+<div className='patternpost'>
 
 
       {/* Informationen / Steckbrief über das Projekt */}
@@ -218,7 +218,7 @@ const SingleCard = () => {
       {/* Beschreibungsabschnitt */}
       <section className="portfolio-section">
         <div className="portfolio-content-block">
-          <h2 className="portfolio-subheading">ABOUT THE PROJECT</h2>
+          <h2 className="portfolio-subheading">About The Project</h2>
           <div className="portfolio-description">
             <p className="portfolio-fulltext">{projectData.projectTexts.description}</p>
           </div>
@@ -295,7 +295,7 @@ const SingleCard = () => {
 
       {/* Tech-Stack Abschnitt */}
       <section className="portfolio-gallery-section">
-              <h5 className="portfolio-Gallery-title">MEDIA</h5>
+              <h5 className="portfolio-Gallery-title">Media</h5>
       </section>
 
 

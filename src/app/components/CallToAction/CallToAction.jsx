@@ -1,73 +1,143 @@
 'use client';
-
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './CallToAction.css';
+import { 
+    Coffee,
+    Link,
+    Frame,
+} from 'lucide-react';
 
 const CallToAction = () => {
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const frameRequestRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (e) => {
-    if (frameRequestRef.current) cancelAnimationFrame(frameRequestRef.current);
-  
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-  
-    frameRequestRef.current = requestAnimationFrame(() => {
-      const tiltX = ((rect.height / 2) - y) / 30; // Maus oben → positiv
-      const tiltY = (x - rect.width / 2) / 30;    // Maus rechts → positiv
-      setTilt({ x: tiltX, y: tiltY });
-    });
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      setMousePosition({ x, y });
+    }
   };
-  
-  
 
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
+  const handleGitHubClick = () => {
+    window.open('https://github.com', '_blank');
+  };
+
+  const handleDemoClick = () => {
+    window.open('#projects', '_self');
+  };
+
+  const handleContactClick = () => {
+    window.open('mailto:your-email@example.com', '_blank');
   };
 
   return (
-    <section className="cta-section">
+    <section 
+      ref={sectionRef} 
+      className={`cta-section ${isVisible ? 'visible' : ''}`}
+    >
+      {/* Background Elements */}
+      <div className="background-grid"></div>
+      <div className="floating-orb orb-1"></div>
+      <div className="floating-orb orb-2"></div>
+      <div className="floating-orb orb-3"></div>
+
       <div className="cta-container">
-        <div className="cta-content">
+        {/* Main Content Card */}
+        <div 
+          ref={cardRef}
+          className="main-card"
+          onMouseMove={handleMouseMove}
+          style={{
+            '--mouse-x': `${mousePosition.x}px`,
+            '--mouse-y': `${mousePosition.y}px`
+          }}
+        >
+          <div className="card-glow"></div>
+          
+          {/* Header */}
           <div className="cta-header">
-            <h2 className="cta-title">
-              <span className="cta-gradient-part">Crafting Digital</span>
-              <span className="cta-cyber-part">EXCELLENCE</span>
-            </h2>
-            <p className="cta-subtitle">
-              Let's engineer your vision with pixel perfection
+            <div className="status-indicator">
+              <Coffee size={20} />
+              <span>Available for hire</span>
+            </div>
+            
+            <h1 className="cta-title">
+              <span className="title-line">Let's Build</span>
+              <span className="title-line gradient">Something Amazing</span>
+              <span className="title-line">Together</span>
+            </h1>
+            
+            <p className="cta-description">
+              Passionate developer crafting exceptional digital experiences 
+              with modern technologies and pixel-perfect design.
             </p>
           </div>
 
-          <div className="cta-visual">
-            <div
-              className="hologram-frame"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              style={{
-                transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-              }}
-            >
-              <img
-                src="/assets/img/LandingBG/OniBoy1.webp"
-                alt="Code Interface"
-                className="hologram-image"
-              />
-              <div className="scanline-overlay"></div>
+          {/* Action Buttons */}
+          <div className="cta-actions">
+            <button className="primary-button" onClick={handleContactClick}>
+              <span className="button-text">Start a Project</span>
+              <div className="button-shine"></div>
+            </button>
+            
+            <div className="secondary-actions">
+              <button className="secondary-button" onClick={handleDemoClick}>
+                <Frame size={20} />
+                <span>View Work</span>
+              </button>
+              
+              <button className="secondary-button" onClick={handleGitHubClick}>
+                <Link size={20} />
+                <span>GitHub</span>
+              </button>
             </div>
+          </div>
 
-            <div className="cta-buttons">
-              <button className="neo-button" onClick={() => window.open("#")}>
-                <span className="button-label">Live Demos</span>
-                <span className="button-aura"></span>
-              </button>
-              <button className="neo-button secondary" onClick={() => window.open("#")}>
-                <span className="button-label">GitHub Hub</span>
-                <span className="button-aura"></span>
-              </button>
-            </div>
+          {/* Skills Preview */}
+          <div className="skills-preview">
+            <div className="skill-tag">React</div>
+            <div className="skill-tag">TypeScript</div>
+            <div className="skill-tag">Next.js</div>
+            <div className="skill-tag">Node.js</div>
+            <div className="skill-tag">Design</div>
+          </div>
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="stats-row">
+          <div className="stat-item">
+            <div className="stat-number">50+</div>
+            <div className="stat-label">Projects</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">3+</div>
+            <div className="stat-label">Years</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">100%</div>
+            <div className="stat-label">Satisfaction</div>
           </div>
         </div>
       </div>

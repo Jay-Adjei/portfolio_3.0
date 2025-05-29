@@ -37,3 +37,30 @@
   background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
   z-index: 1;
 }
+
+
+
+
+@media screen and (max-width: 480px) {
+  .ProjectGrid {
+    height: auto; /* Passt sich dem Bild an */
+    position: relative; /* Kein absolutes Positionieren auf kleinen Geräten */
+  }
+
+  .ProjectHeroImg {
+    width: 100%;
+    height: auto; /* Verhindert abgeschnittene Bilder */
+    object-fit: cover;
+    margin-top: 0px;
+  }
+
+  .ProjectOverlay::after {
+    height: 180px; /* Weniger Gradient-Höhe für kleine Displays */
+    background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+  }
+
+  .dark-mode .ProjectOverlay::after {
+    height: 180px;
+    background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
+  }
+}

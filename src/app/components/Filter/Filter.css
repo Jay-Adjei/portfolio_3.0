@@ -1,314 +1,452 @@
-/* -----------------------------------------------------------
-General Layout
------------------------------------------------------------ */
-#filter-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Filter Section - Professional Design */
+.filter-section {
   width: 100%;
-  padding: 10px; /* Etwas Polsterung für bessere Benutzererfahrung */
-}
-
-.filter-container {
-  display: flex;
-  z-index: 10;
-  justify-content: center; /* Zentriert den Inhalt */
-  align-items: center;
-  flex-wrap: wrap; /* Ermöglicht Umbruch bei kleinerer Bildschirmbreite */
-  width: 100%;
-  max-width: 1080px;
-  padding-top: 230px;
-  gap: 20px;
-}
-
-#grid-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-#view-section {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px; /* Buttons näher zusammen */
-  max-width: 200px;
-  margin-top: 20px;
-}
-
-.filtering,
-.PNL_options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Einheitlicher Abstand */
-}
-
-/* -----------------------------------------------------------
-Buttons
------------------------------------------------------------ */
-/* -----------------------------------------------------------
-General Styles
------------------------------------------------------------ */
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Section: Project Header Container */
-.section_project_header {
-  padding-bottom: 38px;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 2rem 0;
   position: relative;
-  background-color: #ffffff;
-  transition: background-color 0.3s ease; /* Schnelle Transition */
 }
 
-.dark-mode .section_project_header {
-  background-color: #000000;
-}
-
-/* Section: Project Hero Image */
-.project-hero1 {
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  overflow: hidden; /* Verhindert, dass das Bild außerhalb des Containers sichtbar wird */
-  z-index: 1;
-}
-
-/* Section: Overlay */
-.overlay {
+.filter-section::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff);
-  z-index: 999;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%);
   pointer-events: none;
-  transition: background 0.3s ease; /* Schnelle Transition für Hintergrund */
 }
 
-/* Section: Overlay Dark Mode */
-.dark-mode .overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000);
-  transition: background 0.3s ease; /* Sicherstellen, dass die Transition synchron ist */
+.filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Erzwingen des anfänglichen Zustands */
-body:not(.dark-mode) .overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff) !important;
-}
-
-body.dark-mode .overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #000000) !important;
-}
-
-/* -----------------------------------------------------------
-Button Styles
------------------------------------------------------------ */
-.example-button {
-  background-color: #ffffff;
-  border: none; /* Keine unnötige Umrandung */
-  color: #f9f9f9;
-  width: 48px;
-  height: 48px;
+/* Header */
+.filter-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-header-icon {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.filter-header-icon svg {
+  color: white;
+}
+
+.filter-header-content {
+  flex: 1;
+}
+
+.filter-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.filter-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Filter Controls */
+.filter-controls {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  align-items: start;
+  padding-top: 131px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Category Buttons MIT S!! */
+.category-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid #000000;
+  border-radius: 12px;
+  color: #111827;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
-}
-
-.example-button img {
-  max-width: 26px; /* Größeres Icon */
-  max-height: 26px;
-}
-
-.example-button:hover {
-  background-color: #000000;
-  transform: scale(1.1); 
-}
-
-.example-button.active {
-  background-color: #000000;
-  transform: scale(1.1);
-}
-
-/* Dark Mode Styles for Buttons */
-.dark-mode .example-button {
-  background-color: #000000; /* Schwarzer Hintergrund */
-  color: #ffffff; /* Weiße Schrift */
-}
-
-.dark-mode .example-button:hover {
-  background-color: #ffffff; /* Weißer Hintergrund bei Hover */
-  color: #000000; /* Schwarze Schrift bei Hover */
-}
-
-.dark-mode .example-button.active {
-  background-color: #ffffff; /* Weißer Hintergrund für aktive Buttons */
-  color: #000000; /* Schwarze Schrift für aktive Buttons */
-}
-
-
-/* -----------------------------------------------------------
-Filter Options // Titel der Dropdown boxen
------------------------------------------------------------ */
-label {
-  font-size: 14px;
-  color: #000000;
-  font-family: "RedHat";
-}
-
-.dark-mode label {
-  color: #ffffff; /* Weiße Schriftfarbe im Dark Mode */
-}
-
-/* -----------------------------------------------------------
-Formularelemente
------------------------------------------------------------ */
-select, input, textarea {
-  font-family: "RedHat", sans-serif; /* Schriftart setzen */
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 6px;
-  border: 1px solid #ffffff; /* Weißer Rand */
-  background-color: #000000; /* Schwarzer Hintergrund */
-  color: #ffffff; /* Weißer Text */
-  width: 100%;
-  transition: border-color 0.2s ease;
-}
-
-select:focus, input:focus, textarea:focus {
-  border-color: #ffffff; /* Weißer Rand beim Fokus */
-  outline: none;
-  font-family: "RedHat", Arial;
-}
-
-select {
-  -webkit-appearance: none; /* Entfernt natives Styling auf Webkit-Browsern */
-  -moz-appearance: none; /* Entfernt natives Styling auf Firefox */
-  appearance: none; /* Entfernt natives Styling allgemein */
-  font-family: "RedHat", Arial; /* Schriftart für den gesamten select-Tag */
-  background-color: #000000; /* Schwarzer Hintergrund für das Dropdown */
-  color: #ffffff; /* Weißer Text */
-  border-color: #ffffff; /* Weißer Rand */
-}
-
-select option {
-  font-family: "RedHat", Arial; /* Schriftart auf Optionen anwenden */
-  background-color: #000000; /* Schwarzer Hintergrund für Optionen */
-  color: #ffffff; /* Weißer Text für Optionen */
-  border-color: #ffffff; /* Weißer Rand */
-}
-
-select::-webkit-search-cancel-button {
-  -webkit-appearance: none; /* Entfernt das Standard-Such-Icon bei Webkit-Browsern */
-}
-
-
-/* -----------------------------------------------------------
-Card Grid Layout Filter Setting
------------------------------------------------------------ */
-
-
-
-/* -------------------- CARDS GRID CSS BEGINNT AB HIER ----------- */
-.main-grid {
-  max-width: 100%;
-  padding: 29px;
-  z-index: 6;
+  transition: all 0.2s ease;
   position: relative;
-  margin: 0px 0 450px;
-  background-color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
-.dark-mode .main-grid{
-  max-width: 100%;
-  padding: 29px;
-  z-index: 6;
-  position: relative;
-  margin: 0px 0 450px;
-  background-color: rgb(0, 0, 0);
-}
-/* Mobile View (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  .main-grid {
-    max-width: 100%;
-    padding: 0px;
-  }
-}
-
-/* Card-grid container */
-.card-grid {
-display: grid;
-grid-column-gap: 14px;
-grid-row-gap: 14px;
-margin: auto;
-gap: 16px;
-margin-top: 20px;
-border-radius: 12px;
-padding: 16px;
-}
-
-
-.card-grid.layout-1 {
-  grid-template-columns: repeat(4, 1fr);
-  width: 65%;
+.category-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
   height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s;
 }
 
-.card-grid.layout-2 {
-  grid-template-columns: repeat(5, 1fr);
-  width: 80%;
+.category-button:hover::before {
+  left: 125%;
 }
 
-.card-grid.layout-3 {
-  grid-template-columns: repeat(8, 1fr);
+.category-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.1);
+}
+
+
+.category-button.active {
+  background: linear-gradient(135deg, #111827 0%, #000000 100%);
+  border-color: #111827;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.category-button.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.category-label {
+  white-space: nowrap;
+}
+
+/* Layout Buttons */
+.layout-buttons {
+  display: flex;
+  gap: 0.25rem;
+  background: #f1f5f9;
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.layout-button {
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-button:hover {
+  background: white;
+  color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.layout-button.active {
+  background: white;
+  color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Rarity Dropdown */
+.rarity-dropdown {
+  position: relative;
+  min-width: 200px;
+}
+
+.rarity-trigger {
   width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  color: #374151;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tablet View (max-width: 1024px) */
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-  .card-grid.layout-1 {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 25px;
-  }
+.rarity-trigger:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
 
-  .card-grid.layout-2 {
-    grid-template-columns: repeat(6, 1fr);
-    padding: 25px;
-  }
+.rarity-trigger.open {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
 
-  .card-grid.layout-3 {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 85%;
-    padding: 25px;
+.chevron {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.rarity-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  max-height: 300px;
+  overflow-y: auto;
+  animation: dropdownSlide 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Handy View (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  .card-grid.layout-1 {
-    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
-    width: 100%;
-    position: relative;
+.rarity-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.rarity-option:last-child {
+  border-bottom: none;
+}
+
+.rarity-option:hover {
+  background: #f8fafc;
+}
+
+.rarity-option.selected {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.rarity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.rarity-name {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.rarity-option.selected .rarity-name {
+  color: #3b82f6;
+}
+
+.rarity-description {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+
+  .filter-title {
+    color: #f1f5f9;
   }
 
-  .card-grid.layout-2 {
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
-    width: 100%;
-    position: relative;
+  .filter-subtitle {
+    color: #94a3b8;
   }
 
-  .card-grid.layout-3 {
-    grid-template-columns: repeat(1, 1fr);
-    width: 100%;
-    min-height: 139px; /* Höhe für Layout 3 */
+
+  .layout-buttons {
+    background: #1e293b;
+  }
+
+  .layout-button {
+    color: #94a3b8;
+  }
+
+  .layout-button:hover,
+  .layout-button.active {
+    background: #334155;
+    color: #60a5fa;
+  }
+
+  .rarity-trigger {
+    background: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+  }
+
+  .rarity-dropdown-menu {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .rarity-option {
+    border-bottom-color: #334155;
+  }
+
+  .rarity-option:hover {
+    background: #334155;
+  }
+
+  .rarity-option.selected {
+    background: #1e3a8a;
+  }
+
+  .rarity-name {
+    color: #cbd5e1;
+  }
+
+  .rarity-option.selected .rarity-name {
+    color: #60a5fa;
+  }
+
+  .rarity-description {
+    color: #94a3b8;
+  }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filter-controls {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .category-buttons {
+    justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .filter-section {
+    padding: 1.5rem 0;
+  }
+
+  .filter-container {
+    padding: 0 1rem;
+  }
+
+  .filter-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-title {
+    font-size: 1.25rem;
+  }
+
+  .category-buttons {
+    gap: 0.375rem;
+  }
+
+  .category-button {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .category-label {
+    display: none;
+  }
+
+  .layout-buttons {
+    align-self: center;
+  }
+
+  .rarity-dropdown {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .filter-header-icon {
+    align-self: center;
+  }
+
+  .filter-header-content {
+    text-align: center;
+    width: 100%;
+  }
+
+  .category-buttons {
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .category-button {
+    padding: 0.5rem;
+  }
+}
+
 
 
 /* -----------------------------------------------------------
@@ -320,7 +458,7 @@ Load more Button Filter.jsx
   background-color: #1a1a1a; /* dunkler Hintergrund, passend zum Style */
   color: #fff;
   cursor: pointer;
-  font-family: "RedHat", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 0.95rem;
   border: 2px solid transparent;
   border-radius: 10px;
@@ -342,71 +480,3 @@ Load more Button Filter.jsx
   border-color: #3ECF8E;
 }
 
-
-
-/* -----------------------------------------------------------
-Mobile Responsive Anpassungen
------------------------------------------------------------ */
-
-@media (max-width: 768px) {
-  .filter-container {
-    flex-direction: column;
-    padding-top: 130px;
-    gap: 15px;
-    width: 100%;
-  }
-
-  #view-section {
-    flex-direction: initial; /* Buttons untereinander auf kleinen Bildschirmen */
-    gap: 10px;
-    max-width: 100%; /* Die Buttons nutzen den gesamten Platz */
-  }
-
-  /* Anpassen der Größe der Buttons auf mobilen Geräten */
-  .example-button {
-    width: 40px;
-    height: 40px;
-    font-size: 20px; /* Größeres Icon */
-  }
-
-  .filtering, .PNL_options {
-    gap: 8px; /* Weniger Abstand zwischen den Formularfeldern */
-  }
-
-  /* Anpassung der Größe der Eingabefelder */
-  select, input, textarea {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  /* Hero-Bild anpassen, um es gut in kleinere Bildschirme zu integrieren */
-  .project-hero1 {
-    height: 350px; /* Das Bild wird auf mobilen Geräten kleiner */
-  }
-
-  /* Overlay für mobile Geräte anpassen */
-  .overlay {
-    background: linear-gradient(rgba(0, 0, 0, 0.3) 30%, #ffffff);
-    height: 350px; /* Höhe des Overlays an das Hero-Bild anpassen */
-  }
-
-  /* Allgemeine Verbesserung der Darstellung */
-  .section_project_header {
-    padding-bottom: 20px; /* Weniger Padding */
-  }
-
-  /* Verbesserung der Darstellung der Filter-Optionen */
-  label {
-    font-size: 16px; /* Kleinere Schrift für Labels */
-  }
-
-  select {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: auto; /* Hero-Image auf kleinen Geräten flexibel machen */
-  }
-}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiDribbble, FiMail } from 'react-icons/fi';
-import './Footer.css'; // Importiere das CSS-File
+import { Github, Linkedin, Dribbble, Mail } from 'lucide-react';
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -12,22 +12,24 @@ const Footer = () => {
               © Gylan Salih
             </span>
             <span className="footer-legal">
-              <a href="https://github.com/GylanSalih/NextJS-Portify/tree/main">If you like the website, feel free to visit the open-source repository!</a>
+              <a href="https://github.com/GylanSalih/NextJS-Portify/tree/main" target="_blank" rel="noopener noreferrer">
+                If you like the website, feel free to visit the open-source repository!
+              </a>
             </span>
           </div>
 
           <div className="footer-socials">
             <a href="https://github.com/GylanSalih/" target="_blank" rel="noopener noreferrer">
-              <FiGithub className="footer-icon" />
+              <Github className="footer-icon" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FiLinkedin className="footer-icon" />
+              <Linkedin className="footer-icon" />
             </a>
             <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">
-              <FiDribbble className="footer-icon" />
+              <Dribbble className="footer-icon" />
             </a>
             <a href="mailto:hello@portfolio.com">
-              <FiMail className="footer-icon" />
+              <Mail className="footer-icon" />
             </a>
           </div>
         </div>

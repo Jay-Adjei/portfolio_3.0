@@ -84,8 +84,11 @@
   width: 100%;
   object-fit: cover;
   position: relative;
-  min-height: 500px;  /* Standardhöhe */
-  object-position: center; /* Bild wird zentriert */
+  min-height: 550px;
+  min-height: 550px;
+  max-width: 550px;
+  max-height: 550px;
+  object-position: center;
 }
 
 

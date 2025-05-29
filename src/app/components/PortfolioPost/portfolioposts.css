@@ -12,6 +12,7 @@
   font-size: 60px;
   font-style: normal;
   font-family: "BlenderProBold";
+  text-transform: uppercase;
   text-align: center;
   color: #ffffff;
   margin-bottom: 3rem;
@@ -238,6 +239,7 @@ Profile-Information-(Steckbrief)
 color: #fff;
   font-size: 60px;
   font-style: normal;
+  text-transform: uppercase;
   font-family: "BlenderProBold";
 }
 
@@ -411,21 +413,16 @@ color: #fff;
 
 
 
-.content {
-  position: relative;
-  z-index: 1; /* höher als der Background */
-}
 
 
 
 
-
-.pattern {
+.patternpost {
   position: relative; /* damit ::after relativ dazu positioniert */
   overflow: hidden;    /* damit das Overlay bei Overflow clipped */
 }
 
-.pattern::after {
+.patternpost::after {
   z-index: -10;
   content: "";
   position: absolute;

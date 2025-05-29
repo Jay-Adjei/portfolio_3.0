@@ -25,8 +25,14 @@ Updates / Fixes:
 
 
 0.0.22 - Latest Updates
-• Cleaned some stuff
-• Worked on the Project single page 
+• Added and improved portfolio page buttons
+• Enhanced blog grid layout, cleaner and easier to browse
+• Refined the call-to-action section, now more modern and elegant
+• Improved testimonial layout and style
+• Started working on the skills component
+• Cleaned up various parts of the codebase
+• Continued work on the single project page
+• Added Lucide React icon library is way cleaner and super useful
 • Restarted the project to improve it and add new features. Currently, managing everything is challenging due to school and life commitments.
 • Testimonials have been updated for a cleaner look but are still not fully functional.
 • Project single page view updated: like and view counters improved and a better information list added.

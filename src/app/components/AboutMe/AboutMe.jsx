@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FiGithub, FiLinkedin, FiDribbble, FiMail } from 'react-icons/fi';
+import { Github, Linkedin, Dribbble, Mail } from 'lucide-react';
 import Link from 'next/link';
 import './AboutMe.css';
 
@@ -45,16 +45,16 @@ const AboutMe = () => {
         <div className="about-me-social-links">
     <div className="about-me-socials">
       <a href="https://github.com/GylanSalih/" target="_blank" rel="noopener noreferrer">
-        <FiGithub className="about-me-icon" />
+        <Github className="about-me-icon" />
       </a>
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-        <FiLinkedin className="about-me-icon" />
+        <Linkedin className="about-me-icon" />
       </a>
       <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">
-        <FiDribbble className="about-me-icon" />
+        <Dribbble className="about-me-icon" />
       </a>
       <a href="mailto:hello@portfolio.com">
-        <FiMail className="about-me-icon" />
+        <Mail className="about-me-icon" />
       </a>
     </div>
   </div>
