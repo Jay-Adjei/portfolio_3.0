@@ -18,6 +18,7 @@ Note and Todos for myself:
 [X] Clean the Assets folder
 [X] Oranize Css files + add Comments and split it in logical parts
 [X] Find better Color Palette
+[X] Check out HeroUI maybe useful ?
 --------------------------
 
 Lookbook:

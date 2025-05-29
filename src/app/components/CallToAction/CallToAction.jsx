@@ -84,7 +84,7 @@ const CallToAction = () => {
             </div>
             
             <h1 className="cta-title">
-              <span className="title-line">Let's Build</span>
+              <span className="title-line">Let&apos;s Build</span>
               <span className="title-line gradient">Something Amazing</span>
               <span className="title-line">Together</span>
             </h1>

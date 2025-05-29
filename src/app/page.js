@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="page home-page">
 
-      <Carousel />
-      <Features />
+      {/* <Carousel />
+      <Features /> */}
       {/* <CompanyCarousel /> */}
       <FeaturesInteractive/>
-      <TestimonialsGrid/>
-      <CallToAction />
+      {/* <TestimonialsGrid/>
+      <CallToAction /> */}
     </div>
   );
 };
