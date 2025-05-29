@@ -26,6 +26,7 @@ Updates / Fixes:
 
 
 0.0.22 - Latest Updates
+• Changed every Component in Home / layout.js
 • Added and improved portfolio page buttons
 • Enhanced blog grid layout, cleaner and easier to browse
 • Refined the call-to-action section, now more modern and elegant

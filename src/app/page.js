@@ -1,6 +1,6 @@
 // src/Pages/Home/Home.jsx
 import React from 'react';
-import Carousel from './components/Carousel/Carousel'; 
+import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel'; 
 import Skills from "./components/Skills/Skills";
 import CallToAction from './components/CallToAction/CallToAction';
 import AboutMe from "./components/AboutMe/AboutMe";
@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="page home-page">
 
-      {/* <Carousel />
-      <Features /> */}
+      <PortfolioCarousel />
+      <Features />
       {/* <CompanyCarousel /> */}
       <FeaturesInteractive/>
-      {/* <TestimonialsGrid/>
-      <CallToAction /> */}
+      <TestimonialsGrid/>
+      <CallToAction />
     </div>
   );
 };

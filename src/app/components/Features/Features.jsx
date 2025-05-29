@@ -1,135 +1,178 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import './Features.css';
 
 const Card = ({ src, title, description, className, buttonHref, isGif }) => {
-  const handleMouseEnter = (event) => {
-    const wrapper = event.currentTarget;
-    const video = wrapper.querySelector('video');
-    if (video) {
+  const wrapperRef = useRef(null);
+  const videoRef = useRef(null);
+
+  // Mouse tracking for glow effect
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    const handleMouseMove = (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      wrapper.style.setProperty('--mouse-x', `${x}%`);
+      wrapper.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    wrapper.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      wrapper.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    const video = videoRef.current;
+    if (video && !isGif) {
       video.play().catch((e) => {
         console.error('Error playing video:', e);
       });
     }
-    wrapper.style.transform = 'scale(0.95)';
   };
 
-  const handleMouseLeave = (event) => {
-    const wrapper = event.currentTarget;
-    const video = wrapper.querySelector('video');
-    if (video) {
+  const handleMouseLeave = () => {
+    const video = videoRef.current;
+    if (video && !isGif) {
       video.pause();
       video.currentTime = 0;
     }
-    wrapper.style.transform = '';
   };
 
   return (
-    <div 
-      className={`card-wrapper ${className}`} 
+    <div
+      ref={wrapperRef}
+      className={`card-home-features-wrapper ${className}`} 
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave}
     >
       {isGif ? (
-        <img src={src} alt={title} className="card-video" />
+        <img 
+          src={src} 
+          alt={title} 
+          className="card-home-features-video" 
+        />
       ) : (
         <video
+          ref={videoRef}
           src={src}
           loop
           muted
-          className="card-video"
+          className="card-home-features-video"
           onError={(e) => console.error('Error loading video:', e)}
         />
       )}
-      <div className="card-content">
-        <h1 className="card-title">{title}</h1>
-        {description && <p className="card-description">{description}</p>}
+      
+      <div className="card-home-features-content">
+        <div>
+          <h3 className="card-home-features-title">{title}</h3>
+          {description && (
+            <p className="card-home-features-description">{description}</p>
+          )}
+        </div>
         
-        {/* Custom SVG Button */}
-        <a href={buttonHref} className="custombutton1">
-          <svg
-            id="Ebene_3"
-            data-name="Ebene 3"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 50"
-            width="160"
-            height="50"
-          >
-            <polygon className="cls-1" points="12.12 .2 0 12.32 0 49.5 187.88 49.5 200 37.38 200 .2 12.12 .2"/>
-            <circle className="cls-2" cx="196.48" cy="3.98" r=".9"/>
-            <circle className="cls-2" cx="196.48" cy="7.52" r=".9"/>
-            <circle className="cls-2" cx="193.06" cy="3.98" r=".9"/>
-            <circle className="cls-2" cx="4.1" cy="45.87" r=".9"/>
-            <circle className="cls-2" cx="4.1" cy="42.28" r=".9"/>
-            <text className="custombutton1-text" x="50%" y="50%" dy="0.35em" textAnchor="middle" alignmentBaseline="middle">
+        <a 
+          href={buttonHref} 
+          className="card-home-features-button"
+          aria-label={`View ${title} project`}
+        >
           View Project
-          </text>
-          </svg>
+          <ArrowUpRight 
+            className="card-home-features-button-icon" 
+            size={16} 
+          />
         </a>
       </div>
     </div>
   );
 };
 
+const CardHomeFeatures = () => {
+  return (
+    <section className="card-home-features-section">
+      {/* Floating Background Elements */}
+      <div className="card-home-features-orb card-home-features-orb-1"></div>
+      <div className="card-home-features-orb card-home-features-orb-2"></div>
+      
+      <div className="card-home-features-container">
+        
+        {/* Header Section */}
+        <header className="card-home-features-intro" id="ScrollToFeatures">
+          <h2 className="card-home-features-intro-text">
+            Featured Projects
+          </h2>
+          <p className="card-home-features-intro-description">
+            Discover our latest work showcasing innovative solutions, 
+            cutting-edge design, and exceptional craftsmanship across various industries.
+          </p>
+        </header>
 
-const Features = () => {
-    return (
-        <section className="features-section">
-            <div className="featurecontainer">
-                <div className="grid-largecontainer">
-                    <Card
-                        src="/assets/videos/drift.mp4"
-                        title="Raijin"
-                        description="Offer personalized workout plans with video tutorials and AI form correction."
-                        className="card-large"
-                        buttonHref="/project1"
-                    />
-                </div>
-                <div className="grid-featurecontainer">
-                    <Card
-                        src="/assets/videos/Video3.mp4"
-                        title="Nyx"
-                        description="Recommend songs based on the user&lsquo;s mood using AI and sentiment analysis."
-                        className="card-long"
-                        buttonHref="/project2"
-                    />
-                    <Card
-                        src="/assets/videos/Video2.mp4"
-                        title="Kitsune"
-                        description="Develop a branching narrative game where choices affect the outcome."
-                        className="card-medium"
-                        buttonHref="/portfolio"
-                    />
-                    <Card
-                        src="/assets/videos/redfire.mp4"
-                        title="Oblivion"
-                        description="Let users try products in AR before purchasing, such as furniture or clothes."
-                        className="card-small"
-                        buttonHref="/project4"
-                    />
-                </div>
-                <div className="grid-special-container">
-                    <Card
-                        src="/assets/videos/Video2.mp4"
-                        title="Anubis"
-                        description="Offer personalized workout plans with video tutorials and AI form correction."
-                        className="card-xsmall"
-                        buttonHref="/project5"
-                    />
-                    <Card
-                        src="/assets/videos/Video2.mp4"
-                        title="Arcadia"
-                        description="Your Description"
-                        className="card-xsmall2"
-                        buttonHref="/project1"
-                        // isGif={true}
-                    />
-                </div>
+        {/* Large Featured Card */}
+        <div className="card-home-features-grid-large">
+          <Card
+            src="/assets/videos/drift.mp4"
+            title="Raijin"
+            description="Offer personalized workout plans with video tutorials and AI form correction for optimal fitness results."
+            className="card-home-features-large"
+            buttonHref="/project1"
+          />
+        </div>
 
-            </div>
-        </section>
-    );
+        {/* Main Feature Grid */}
+        <div className="card-home-features-grid-feature">
+          <Card
+            src="/assets/videos/Video3.mp4"
+            title="Nyx"
+            description="Recommend songs based on the user's mood using AI and sentiment analysis for the perfect soundtrack."
+            className="card-home-features-long"
+            buttonHref="/project2"
+          />
+          <Card
+            src="/assets/videos/Video2.mp4"
+            title="Kitsune"
+            description="Develop a branching narrative game where choices affect the outcome and create unique storytelling experiences."
+            className="card-home-features-medium"
+            buttonHref="/portfolio"
+          />
+          <Card
+            src="/assets/videos/redfire.mp4"
+            title="Oblivion"
+            description="Let users try products in AR before purchasing, such as furniture or clothes, for confident decision-making."
+            className="card-home-features-small"
+            buttonHref="/project4"
+          />
+        </div>
+
+        {/* Special Grid Section */}
+        <div className="card-home-features-grid-special">
+          <Card
+            src="/assets/img/Gifs/Ringsblack.gif"
+            title="Arcadia"
+            description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact!"
+            className="card-home-features-xsmall2"
+            buttonHref="/project6"
+            isGif={true}  // ← wichtig!
+          />
+          <Card
+            src="/assets/img/LandingBG/OniBoy1.webp"
+            title="Arcadia"
+            description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact."
+            className="card-home-features-xsmall2"
+            buttonHref="/project6"
+            isGif={true}
+          />
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
-export default Features;
+export default CardHomeFeatures;

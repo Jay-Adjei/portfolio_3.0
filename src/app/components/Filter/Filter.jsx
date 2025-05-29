@@ -99,7 +99,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
         </div>
         <h3 className="no-content-title">No {selectedCategory} Projects Yet</h3>
         <p className="no-content-description">
-          We're currently working on some amazing {selectedCategory.toLowerCase()} projects. 
+          We&apos;re currently working on some amazing {selectedCategory.toLowerCase()} projects. 
           Check back soon to see our latest work!
         </p>
         <button 

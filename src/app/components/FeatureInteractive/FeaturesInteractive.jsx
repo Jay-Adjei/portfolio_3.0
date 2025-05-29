@@ -26,6 +26,7 @@ const FeatureCard = ({
     const [isHovered, setIsHovered] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const cardRef = useRef(null);
+    const [matrixLines, setMatrixLines] = useState([]);
 
     const handleMouseMove = (e) => {
         if (cardRef.current) {
@@ -36,6 +37,15 @@ const FeatureCard = ({
             });
         }
     };
+
+    useEffect(() => {
+        if (variant === 'matrix') {
+            const lines = Array.from({ length: 12 }, () =>
+                Array.from({ length: 8 }, () => (Math.random() > 0.5 ? '1' : '0')).join('')
+            );
+            setMatrixLines(lines);
+        }
+    }, [variant]);
 
     return (
         <div
@@ -60,8 +70,6 @@ const FeatureCard = ({
 
             {/* Content */}
             <div className="card-content">
-
-
                 <h3 className="feature-title">
                     <span className="title-text">{title}</span>
                     <span className="title-highlight">{highlight}</span>
@@ -88,9 +96,9 @@ const FeatureCard = ({
 
                 {variant === 'matrix' && (
                     <div className="matrix-rain">
-                        {[...Array(12)].map((_, i) => (
+                        {matrixLines.map((line, i) => (
                             <div key={i} className={`matrix-line line-${i + 1}`}>
-                                {Array.from({length: 8}, () => Math.random() > 0.5 ? '1' : '0').join('')}
+                                {line}
                             </div>
                         ))}
                     </div>
@@ -188,7 +196,7 @@ const FeaturesInteractive = () => {
     ];
 
     return (
-        <section 
+        <section
             ref={sectionRef}
             className={`features-section ${sectionVisible ? 'visible' : ''}`}
         >
