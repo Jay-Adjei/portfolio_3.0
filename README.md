@@ -110,6 +110,10 @@ I'll be adding more in the near future. Potential updates include:
 
 <p align="center">Here are some images showcasing the project:</p>
 
+| 29.05.25                                                   | 29.05.25                                                     |  29.05.25                                                    |
+| ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![Bild 1](file:///C:/Users/Kyrai-Zero/Downloads/Home_neu_Vergleich.png) | ![Bild 2](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Blog_neu_Vrgleich.png?raw=true) | ![Bild 3](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png?raw=true) |
+
 
 | Animated & Beautiful Grid                                    | Filters                                                      | Dark-Mode                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
