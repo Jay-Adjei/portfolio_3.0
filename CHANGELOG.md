@@ -26,6 +26,7 @@ Updates / Fixes:
 
 
 0.0.22 - Latest Updates
+• hank God GitHub exists, I deleted my repo and had a panic attack haha
 • Changed every Component in Home / layout.js
 • Added and improved portfolio page buttons
 • Enhanced blog grid layout, cleaner and easier to browse
