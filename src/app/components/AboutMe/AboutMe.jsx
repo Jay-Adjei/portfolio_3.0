@@ -7,27 +7,6 @@ import './AboutMe.css';
 
 
 const AboutMe = () => {
-  const [relatedPosts, setRelatedPosts] = useState([]);
-
-  useEffect(() => {
-    const loadRelatedPosts = async () => {
-      try {
-        const response = await fetch('/data/bloggrid.json');
-        const allPosts = await response.json();
-        
-        const filteredPosts = allPosts.filter((p) => 
-          p.tags.includes('Retro')
-        );
-
-        setRelatedPosts(filteredPosts.slice(0, 3));
-      } catch (error) {
-        console.error('Error loading related posts:', error);
-      }
-    };
-
-    loadRelatedPosts();
-  }, []);
-
 
 
   return (
@@ -226,47 +205,6 @@ const AboutMe = () => {
       </div>
 
       
-
-        {/* You might also like Section */}
-        {relatedPosts.length > 0 && (
-          <section className="about-me-related-posts">
-            <div className="about-me-content">
-              {/* Text-Inhalt auf der linken Seite */}
-              <div className="about-me-text-container">
-                <h2 className="about-me-related-heading">You might also like</h2>
-                <div className="about-me-description">
-                  {/* Hier kommt die Beschreibung des Textes */}
-                  <p>Here are some posts you might find interesting based on your reading history!</p>
-                </div>
-              </div>
-
-              {/* Kacheln auf der rechten Seite */}
-              <div className="about-me-related-grid">
-                {relatedPosts.map((post) => (
-                  <article key={post.id} className="about-me-related-card">
-                    <Link href={`/blog/${post.slug}`} className="about-me-related-link">
-                      <div className="about-me-related-content">
-                        <div className="about-me-related-meta">
-                          <div className="post-card-stats">
-                            <div className="post-card-stat">
-                              <span>{post.views}</span>
-                            </div>
-                            <div className="post-card-stat">
-                              <span>{post.likes}</span>
-                            </div>
-                          </div>
-                        </div>
-                        <h3 className="about-me-related-title">{post.title}</h3>
-                        <p className="about-me-related-excerpt">{post.excerpt}</p>
-                      </div>
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
 
 
 

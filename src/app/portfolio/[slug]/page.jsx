@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function PostPage({ params }) {
+export default async function PostPage({ params }) {
   const { slug } = params;
   return <PortfolioPost slug={slug} />;
 }

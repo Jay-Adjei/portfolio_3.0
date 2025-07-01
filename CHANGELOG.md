@@ -24,8 +24,13 @@ Note and Todos for myself:
 Lookbook:
 Updates / Fixes:
 
+0.0.23 - Latest Updates
+• Supabase database set up with one table used for blog and portfolio to track likes and views counters, which are now working.
+• Created a You Might Like component that shows either matching blog posts based on tags or random posts if no matches are found.
+• Portfolio view and like counters are working properly.
+• Blog grid, blog post, and blog You Might Also Like view and like counters all use the same database table and are functioning correctly.
 
-0.0.22 - Latest Updates
+0.0.22 - Previous Updates
 • hank God GitHub exists, I deleted my repo and had a panic attack haha
 • Changed every Component in Home / layout.js
 • Added and improved portfolio page buttons
