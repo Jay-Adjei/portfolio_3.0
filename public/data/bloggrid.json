@@ -20,24 +20,11 @@
     "author": "Gylan Salih",
     "date": "January 11, 2025",
     "readTime": "5 min"
-  }
-  ,
+  },
   {
     "id": 3,
-    "slug": "best-website-designs",
-    "title": "The Best Website Designs: What Makes Them Stand Out",
-    "excerpt": "An exploration of the best web designs and the principles behind them...",
-    "image": "/assets/img/blog/blog3.webp",
-    "tags": ["Tipps & Tricks"],
-    "author": "Gylan Salih",
-    "date": "January 11, 2025",
-    "readTime": "5 min"
-  }
-  ,
-  {
-    "id": 4,
-    "slug": "best-website-designs",
-    "title": "The Best Website Designs: What Makes Them Stand Out",
+    "slug": "Neues-Test-Projekt-blog-post",
+    "title": "Neues-Test-Projekt-blog-post",
     "excerpt": "An exploration of the best web designs and the principles behind them...",
     "image": "/assets/img/blog/blog3.webp",
     "tags": ["Design"],
@@ -46,14 +33,25 @@
     "readTime": "5 min"
   },
   {
-    "id": 5,
-    "slug": "Neues-Test-Projekt-blog-post",
-    "title": "Neues-Test-Projekt-blog-post",
+    "id": 4,
+    "slug": "projekt4",
+    "title": "projekt4",
     "excerpt": "An exploration of the best web designs and the principles behind them...",
-    "image": "/assets/img/blog/blog3.webp",
+    "image": "/assets/img/blog/blog2.webp",
     "tags": ["Design"],
     "author": "Gylan Salih",
     "date": "January 11, 2025",
+    "readTime": "5 min"
+  },
+  {
+    "id": 5,
+    "slug": "projekt5",
+    "title": "projekt5",
+    "excerpt": "An exploration of the best web designs and the principles behind them...",
+    "image": "/assets/img/blog/blog2.webp",
+    "tags": ["Design"],
+    "author": "Gylan Salih",
+    "date": "March 11, 2025",
     "readTime": "5 min"
   }
 ]

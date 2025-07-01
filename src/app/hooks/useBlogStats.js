@@ -16,6 +16,7 @@ export const useBlogStats = (slug) => {
 
   const loadStats = async () => {
     try {
+      const now = new Date().toISOString();
       let { data, error } = await supabase
         .from('blog_stats')
         .select('views, likes')

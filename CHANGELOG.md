@@ -29,6 +29,8 @@ Updates / Fixes:
 • Created a You Might Like component that shows either matching blog posts based on tags or random posts if no matches are found.
 • Portfolio view and like counters are working properly.
 • Blog grid, blog post, and blog You Might Also Like view and like counters all use the same database table and are functioning correctly.
+• blog You Might Also Like added Tag matching System
+
 
 0.0.22 - Previous Updates
 • hank God GitHub exists, I deleted my repo and had a panic attack haha

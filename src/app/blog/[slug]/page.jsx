@@ -1,20 +1,20 @@
 // app/blog/[slug]/page.js (Server Component)
-import BlogPost from '../../components/BlogPost/BlogPost';
+import blogPosts from '../../../../public/data/blogpost.json'; // lade die blogpost json details 
+import BlogPost from '../../components/BlogPost/BlogPost'; // lade die blogpost single componente
 
-// Statische Generierung
 export async function generateStaticParams() {
-  return [
-    { slug: 'clean-code-nextjs-react-css' },
-    { slug: 'ui-ux-design-trends-2025' },
-    { slug: 'best-website-designs' },
-    { slug: 'mastering-tailwind-css' },
-    { slug: 'nextjs-performance-optimization' },
-    { slug: 'dark-mode-ui-design' },
-    // Weitere slugs...
-  ];
+  return blogPosts.map(post => ({
+    slug: post.slug
+  }));
 }
 
 export default async function PostPage({ params }) {
   const { slug } = params;
-  return <BlogPost slug={slug} />;
+  const post = blogPosts.find(p => p.slug === slug);
+
+  if (!post) {
+    return <p>❌ Blogbeitrag nicht gefunden</p>;
+  }
+
+  return <BlogPost data={post} />;
 }

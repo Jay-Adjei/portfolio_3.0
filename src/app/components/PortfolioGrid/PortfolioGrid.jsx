@@ -13,7 +13,7 @@ const Portfolio = () => {
   const [visibleCardsCount, setVisibleCardsCount] = useState(4);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Laden der Portfolio-Daten
+  // Laden der Portfolio-Daten-JSON
   useEffect(() => {
     const loadPortfolio = async () => {
       try {

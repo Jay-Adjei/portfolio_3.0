@@ -117,9 +117,13 @@ const BlogPost = () => {
         const allPosts = await response.json();
   
         if (!post) return;
+
+        console.log('Current post:', post.title);
+        console.log('Current post tags:', post.tags);
   
         // Filtere aktuellen Post aus
         const otherPosts = allPosts.filter((p) => p.slug !== slug);
+        console.log('Other posts count:', otherPosts.length);
         
         let relatedByTags = [];
         let randomPosts = [];
@@ -127,7 +131,14 @@ const BlogPost = () => {
         // Wenn der aktuelle Post Tags hat, suche ähnliche Posts
         if (post.tags && post.tags.length > 0) {
           relatedByTags = otherPosts
-            .filter((p) => p.tags && p.tags.some((tag) => post.tags.includes(tag)))
+            .filter((p) => {
+              if (!p.tags || !Array.isArray(p.tags)) return false;
+              const hasCommonTag = p.tags.some((tag) => post.tags.includes(tag));
+              if (hasCommonTag) {
+                console.log(`Found related post: ${p.title} with tags:`, p.tags);
+              }
+              return hasCommonTag;
+            })
             .sort((a, b) => {
               // Sortiere nach Anzahl gemeinsamer Tags (absteigend)
               const aCommonTags = a.tags.filter(tag => post.tags.includes(tag)).length;
@@ -135,6 +146,8 @@ const BlogPost = () => {
               return bCommonTags - aCommonTags;
             });
         }
+        
+        console.log('Related posts by tags:', relatedByTags.length);
         
         // Fülle mit zufälligen Posts auf, falls nicht genug ähnliche Posts vorhanden
         const remainingPosts = otherPosts.filter(p => !relatedByTags.includes(p));
@@ -145,6 +158,7 @@ const BlogPost = () => {
         // Kombiniere ähnliche und zufällige Posts (max. 4)
         const finalRelatedPosts = [...relatedByTags, ...randomPosts].slice(0, 4);
         
+        console.log('Final related posts:', finalRelatedPosts.map(p => p.title));
         setRelatedPosts(finalRelatedPosts);
       } catch (error) {
         console.error('Error loading related posts:', error);
@@ -271,7 +285,12 @@ const BlogPost = () => {
         </aside>
       </div>
 
-      <BlogMightLike relatedPosts={relatedPosts} />
+      {/* WICHTIG: Hier übergeben wir jetzt die currentPostTags und currentPostSlug */}
+      <BlogMightLike 
+        relatedPosts={relatedPosts} 
+        currentPostTags={post.tags || []}
+        currentPostSlug={post.slug}
+      />
     </div>
   );
 };
