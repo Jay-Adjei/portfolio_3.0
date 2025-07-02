@@ -78,6 +78,7 @@
   background: #0a0a0a;
   min-height: 100vh;
   overflow: hidden;
+  overflow: visible;
 }
 
 /* Background Grid like CallToAction */
@@ -124,6 +125,8 @@
 .testimonials__container {
   position: relative;
   z-index: 10;
+  overflow: visible;
+  margin-bottom: 25px;
 }
 
 /* ===================================
@@ -238,7 +241,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  padding: 2rem;
+  overflow: visible;
 }
 
 .testimonials__grid--animating {
@@ -438,7 +442,6 @@
 .testimonials__counter {
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-xl);
 }
 
 .testimonials__counter-text {
@@ -473,6 +476,7 @@
   .testimonials__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
+    padding: 2.5rem;
   }
   
   .testimonials__title {
@@ -488,6 +492,7 @@
   .testimonials__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding: 3rem;
   }
   
   .testimonials__title {

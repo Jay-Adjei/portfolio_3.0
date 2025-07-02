@@ -1,16 +1,15 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { 
-    Zap, 
-    Palette, 
-    Code2, 
-    Smartphone, 
-    Globe,
-    Brain,
-    Layers,
+    Code, 
+    MonitorSmartphone, 
+    Paintbrush2, 
+    Wand2, 
+    LayoutTemplate, 
     Sparkles,
-    Shield,
-    Rocket
+    CodeXml,
+    FolderHeart,
+    Activity,
 } from 'lucide-react';
 import './FeaturesInteractive.css';
 
@@ -18,15 +17,12 @@ const FeatureCard = ({
     title, 
     description, 
     icon: Icon, 
-    className, 
-    variant,
-    metrics,
+    className,
     highlight
 }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const cardRef = useRef(null);
-    const [matrixLines, setMatrixLines] = useState([]);
 
     const handleMouseMove = (e) => {
         if (cardRef.current) {
@@ -38,19 +34,12 @@ const FeatureCard = ({
         }
     };
 
-    useEffect(() => {
-        if (variant === 'matrix') {
-            const lines = Array.from({ length: 12 }, () =>
-                Array.from({ length: 8 }, () => (Math.random() > 0.5 ? '1' : '0')).join('')
-            );
-            setMatrixLines(lines);
-        }
-    }, [variant]);
+
 
     return (
         <div
             ref={cardRef}
-            className={`feature-card ${className} ${variant} ${isHovered ? 'hovered' : ''}`}
+            className={`feature-card ${className} ${isHovered ? 'hovered' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
@@ -77,32 +66,11 @@ const FeatureCard = ({
 
                 <p className="feature-description">{description}</p>
 
-                {/* Interactive Elements per Variant */}
-                {variant === 'lightning' && (
-                    <div className="lightning-effect">
-                        <div className="bolt bolt-1"></div>
-                        <div className="bolt bolt-2"></div>
-                        <div className="bolt bolt-3"></div>
-                    </div>
-                )}
-
-                {variant === 'morphing' && (
-                    <div className="morphing-shapes">
-                        <div className="shape shape-1"></div>
-                        <div className="shape shape-2"></div>
-                        <div className="shape shape-3"></div>
-                    </div>
-                )}
-
-                {variant === 'matrix' && (
-                    <div className="matrix-rain">
-                        {matrixLines.map((line, i) => (
-                            <div key={i} className={`matrix-line line-${i + 1}`}>
-                                {line}
-                            </div>
-                        ))}
-                    </div>
-                )}
+            {/* Icon - in der Box */}
+            <div className="feature-icon">
+                <Icon size={32} />
+            </div>
+               
             </div>
 
             {/* Border Effects */}
@@ -138,69 +106,63 @@ const FeaturesInteractive = () => {
         return () => observer.disconnect();
     }, []);
 
-    const features = [
-        {
-            title: "Lightning Fast",
-            highlight: "Performance",
-            description: "Optimized for speed with millisecond response times and seamless user experiences across all devices.",
-            icon: Zap,
-            className: "card-1",
-            variant: "lightning",
-            metrics: "< 100ms"
-        },
-        {
-            title: "Pixel Perfect",
-            highlight: "Design",
-            description: "Crafted with attention to every detail, ensuring your brand shines through beautiful, modern interfaces.",
-            icon: Palette,
-            className: "card-2", 
-            variant: "morphing",
-            metrics: "100% Accurate"
-        },
-        {
-            title: "Clean Code",
-            highlight: "Architecture",
-            description: "Scalable, maintainable code following best practices and industry standards for long-term success.",
-            icon: Code2,
-            className: "card-3",
-            variant: "matrix",
-            metrics: "AAA Grade"
-        },
-        {
-            title: "Mobile First",
-            highlight: "Responsive",
-            description: "Seamlessly adapts to any screen size, delivering consistent experiences across all devices and platforms.",
-            icon: Smartphone,
-            className: "card-4",
-            variant: "pulse",
-            metrics: "All Devices"
-        },
-        {
-            title: "Global Ready",
-            highlight: "Deployment",
-            description: "Built for scale with CDN optimization and worldwide accessibility for your growing user base.",
-            icon: Globe,
-            className: "card-5",
-            variant: "orbit",
-            metrics: "Worldwide"
-        },
-        {
-            title: "AI Powered",
-            highlight: "Intelligence",
-            description: "Integrated smart features and automation to enhance user engagement and streamline workflows.",
-            icon: Brain,
-            className: "card-6",
-            variant: "neural",
-            metrics: "Smart AI"
-        }
-    ];
+ const features = [
+  {
+    title: "Clean Code",
+    highlight: "Best Practices",
+    description:
+      "Well-structured, readable code that is easy to maintain and built to last. I follow modern standards and focus on quality.",
+    icon: Code,
+    className: "card-1",
+  },
+  {
+    title: "Responsive Design",
+    highlight: "Mobile First",
+    description:
+      "I create layouts that adapt perfectly to any device. From mobile to desktop, the experience stays consistent and intuitive.",
+    icon: MonitorSmartphone,
+    className: "card-2",
+  },
+  {
+    title: "Custom UI/UX",
+    highlight: "Design Focused",
+    description:
+      "I build thoughtful wireframes in Figma before coding anything. My goal is always to meet client expectations and ensure smooth, user-friendly interfaces.",
+    icon: Paintbrush2,
+    className: "card-3",
+  },
+  {
+    title: "Smart Features",
+    highlight: "Modern Frontend",
+    description:
+      "Interactive logic and dynamic components enhance the experience and make your site stand out. Built with clean, modern JavaScript.",
+    icon: Wand2,
+    className: "card-4",
+  },
+  {
+    title: "Website Planning",
+    highlight: "Structure",
+    description:
+      "Every project starts with structure. I focus on clear layouts and logical flow, from the first idea to the final result.",
+    icon: LayoutTemplate,
+    className: "card-5",
+  },
+  {
+    title: "Reliable & Professional",
+    highlight: "Work Ethic",
+    description:
+      "I communicate clearly, deliver on time, and stay solution-oriented. My goal is to create results that clients are proud of.",
+    icon: Sparkles,
+    className: "card-6",
+  }
+];
 
     return (
         <section
             ref={sectionRef}
             className={`features-section ${sectionVisible ? 'visible' : ''}`}
         >
-            {/* Background Elements */}
+            {/* Background Elements Blue Circle */}
             <div className="section-background">
                 <div className="bg-grid"></div>
                 <div className="floating-elements">
@@ -214,11 +176,11 @@ const FeaturesInteractive = () => {
                 {/* Header */}
                 <div className="section-header">
                     <h2 className="section-title">
-                        <span className="title-main">Why Choose</span>
-                        <span className="title-accent">Excellence</span>
+                        <span className="title-main">Why Hire</span>
+                        <span className="title-accent">Me?</span>
                     </h2>
                     <p className="section-subtitle">
-                        Cutting-edge solutions crafted with passion and precision
+                        Every detail matters: I create visually stunning and intuitive interfaces that reflect your brand&apos;s personality.
                     </p>
                 </div>
 
@@ -236,16 +198,16 @@ const FeaturesInteractive = () => {
                 {/* Bottom Stats */}
                 <div className="features-stats">
                     <div className="stat-group">
-                        <Shield size={20} />
-                        <span>99.9% Uptime</span>
+                    <CodeXml size={20} />
+                    <span>Trusted, Secure Code</span>
                     </div>
                     <div className="stat-group">
-                        <Rocket size={20} />
-                        <span>10x Faster</span>
+                    <FolderHeart size={20} />
+                    <span>Ongoing Partnership</span>
                     </div>
                     <div className="stat-group">
-                        <Layers size={20} />
-                        <span>Enterprise Grade</span>
+                    <Activity size={20} />
+                    <span>Crafting with Care and Passion</span>
                     </div>
                 </div>
             </div>

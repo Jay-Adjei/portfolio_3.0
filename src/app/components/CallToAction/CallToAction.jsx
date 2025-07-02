@@ -41,15 +41,15 @@ const CallToAction = () => {
   };
 
   const handleGitHubClick = () => {
-    window.open('https://github.com', '_blank');
+    window.open('https://github.com/GylanSalih', '_blank');
   };
 
   const handleDemoClick = () => {
-    window.open('#projects', '_self');
+    window.open('portfolio', '_self');
   };
 
   const handleContactClick = () => {
-    window.open('mailto:your-email@example.com', '_blank');
+    window.open('mailto:gylan.salih@outlook.de', '_blank');
   };
 
   return (
@@ -85,13 +85,12 @@ const CallToAction = () => {
             
             <h1 className="cta-title">
               <span className="title-line">Let&apos;s Build</span>
-              <span className="title-line gradient">Something Amazing</span>
+              <span className="title-line gradient">Something meaningful</span>
               <span className="title-line">Together</span>
             </h1>
             
             <p className="cta-description">
-              Passionate developer crafting exceptional digital experiences 
-              with modern technologies and pixel-perfect design.
+              Good ideas. Honest work. Real results..
             </p>
           </div>
 
@@ -117,27 +116,28 @@ const CallToAction = () => {
 
           {/* Skills Preview */}
           <div className="skills-preview">
-            <div className="skill-tag">React</div>
-            <div className="skill-tag">TypeScript</div>
-            <div className="skill-tag">Next.js</div>
-            <div className="skill-tag">Node.js</div>
-            <div className="skill-tag">Design</div>
+            <div className="skill-tag">Clear Communication</div>
+            <div className="skill-tag">Design Meets Logic</div>
+            <div className="skill-tag">Built with Care</div>
+            <div className="skill-tag">You First</div>
+            <div className="skill-tag">Detail-Oriented</div>
+            <div className="skill-tag">Human-Centered</div>
           </div>
         </div>
 
         {/* Bottom Stats */}
         <div className="stats-row">
           <div className="stat-item">
-            <div className="stat-number">50+</div>
+            <div className="stat-number">5+</div>
             <div className="stat-label">Projects</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">3+</div>
-            <div className="stat-label">Years</div>
+            <div className="stat-number">2+</div>
+            <div className="stat-label">years doing what I love</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">100%</div>
-            <div className="stat-label">Satisfaction</div>
+            <div className="stat-number">50+</div>
+            <div className="stat-label">late nights well spent</div>
           </div>
         </div>
       </div>

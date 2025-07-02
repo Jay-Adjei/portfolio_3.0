@@ -11,50 +11,90 @@ const PortfolioCarousel = () => {
   const [progress, setProgress] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  const [isClient, setIsClient] = useState(false);
+
+useEffect(() => {
+  setIsClient(true);
+}, []);
+
+// konstante für maus tracking
+const handleCTAMouseMove = (e) => {
+  const button = e.currentTarget;
+  const rect = button.getBoundingClientRect();
+  
+  // Berechne absolute Position der Maus relativ zum Button
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  
+  // Setze die Glanz-Position direkt auf die Mausposition
+  button.style.setProperty('--mouse-x', `${x}px`);
+  button.style.setProperty('--mouse-y', `${y}px`);
+};
+
+const handleCTAMouseEnter = (e) => {
+  const button = e.currentTarget;
+  // Initialisiere Position beim ersten Hover
+  const rect = button.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  
+  button.style.setProperty('--mouse-x', `${x}px`);
+  button.style.setProperty('--mouse-y', `${y}px`);
+};
+
+const handleCTAMouseLeave = (e) => {
+  const button = e.currentTarget;
+  // Verstecke den Glanz außerhalb des Buttons
+  button.style.setProperty('--mouse-x', '-100px');
+  button.style.setProperty('--mouse-y', '-100px');
+};
+
+
   // Professional Portfolio Slides
   const slides = [
-    {
-      id: 1,
-      type: 'video',
-      src: '/assets/videos/sea.mp4',
-      title: "Full-Stack Developer",
-      subtitle: "Willkommen zu meinem Portfolio",
-      description: "Ich entwickle moderne Webanwendungen mit React, Next.js und Node.js. Leidenschaftlich für sauberen Code und intuitive Benutzererfahrungen.",
-      cta: {
-        text: "Projekte ansehen",
-        action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }),
-        secondary: false
-      }
+  {
+    id: 1,
+    type: "video",
+    src: "/assets/videos/sea.mp4",
+    title: "Welcome to My Corner",
+    subtitle: "Tips, Tricks & Real Talk",
+    description: "No fluff, just useful insights and honest advice to help you level up your skills and projects.",
+    cta: {
+      text: "Dive Into the Blog",
+      action: () => document.getElementById("blog")?.scrollIntoView({ behavior: "smooth" }),
+      secondary: false,
     },
-    {
-      id: 2,
-      type: 'image',
-      src: '/assets/img/LandingBG/OniBoy1.webp',
-      title: "Innovative Technologien",
-      subtitle: "Moderne Web-Entwicklung",
-      description: "Von responsiven Frontend-Designs bis zu skalierbaren Backend-Lösungen - ich bringe Ihre digitalen Visionen zum Leben.",
-      cta: {
-        text: "Kontakt aufnehmen",
-        icon: Mail,
-        action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }),
-        secondary: true
-      }
+  },
+  {
+    id: 2,
+    type: "image",
+    src: "/assets/img/LandingBG/OniBoy1.webp",
+    title: "Projects That Speak",
+    subtitle: "What I've Built, What I've Learned",
+    description: "A collection of real work, experiments, and passion projects — each with a story behind it.",
+    cta: {
+      text: "Check Them Out",
+      icon: Mail,
+      action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
+      secondary: true,
     },
-    {
-      id: 3,
-      type: 'video',
-      src: '/assets/videos/tech.mp4',
-      title: "Bereit für neue Herausforderungen",
-      subtitle: "Ihr nächster Entwickler",
-      description: "Suchen Sie einen engagierten Developer? Lassen Sie uns gemeinsam außergewöhnliche digitale Erlebnisse schaffen.",
-      cta: {
-        text: "GitHub ansehen",
-        icon: Github,
-        action: () => window.open('https://github.com/yourusername', '_blank'),
-        secondary: false
-      }
-    }
-  ];
+  },
+  {
+    id: 3,
+    type: "video",
+    src: "/assets/videos/tech.mp4",
+    title: "Looking for the Next Challenge",
+    subtitle: "Let's Create Something Together",
+    description: "If you're looking for someone who cares as much as you do, let's chat and see how we can collaborate.",
+    cta: {
+      text: "Get in Touch",
+      icon: Github,
+      action: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }),
+      secondary: false,
+    },
+  },
+];
+
 
   const AUTOPLAY_INTERVAL = 6000;
   const PROGRESS_INTERVAL = 50;
@@ -178,24 +218,25 @@ useEffect(() => {
               >
                 {/* Media Content */}
                 <div className="landing-carousel__media">
-                  {slide.type === 'video' ? (
-                    <video
-                      className="landing-carousel__video"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src={slide.src} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <img
-                      className="landing-carousel__image"
-                      src={slide.src}
-                      alt={slide.title}
-                      loading={index === activeSlide ? 'eager' : 'lazy'}
-                    />
-                  )}
+                  {slide.type === 'video' && isClient ? (
+  <video
+    className="landing-carousel__video"
+    autoPlay
+    loop
+    muted
+    playsInline
+  >
+    <source src={slide.src} type="video/mp4" />
+  </video>
+) : slide.type === 'image' ? (
+  <img
+    className="landing-carousel__image"
+    src={slide.src}
+    alt={slide.title}
+    loading={index === activeSlide ? 'eager' : 'lazy'}
+  />
+) : null}
+
                   
                   {/* Overlay Gradient */}
                   <div className="landing-carousel__overlay"></div>
@@ -208,12 +249,15 @@ useEffect(() => {
                     <h1 className="landing-carousel__title">{slide.title}</h1>
                     <p className="landing-carousel__description">{slide.description}</p>
                     
-                    {/* Call to Action */}
+                    {/* Call to Action button */}
                     <button
                       className={`landing-carousel__cta ${
                         slide.cta.secondary ? 'landing-carousel__cta--secondary' : ''
                       }`}
                       onClick={slide.cta.action}
+                      onMouseMove={handleCTAMouseMove}
+                      onMouseEnter={handleCTAMouseEnter}
+                      onMouseLeave={handleCTAMouseLeave}
                     >
                       {slide.cta.icon && <slide.cta.icon size={20} />}
                       <span>{slide.cta.text}</span>

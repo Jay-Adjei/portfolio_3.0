@@ -197,6 +197,10 @@
     animation-delay: calc(var(--index) * 0.1s);
     opacity: 0;
     transform: translateY(50px);
+    /* FIX: Hardware acceleration ohne blur/unschärfe */
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 @keyframes card-appear {
@@ -209,69 +213,6 @@
 .feature-card:hover {
     transform: translateY(-12px) scale(1.02);
     border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* ===========================================
-   CARD BACKGROUNDS & EFFECTS
-   =========================================== */
-.card-background {
-    position: absolute;
-    inset: 0;
-    opacity: 0.05;
-    transition: opacity var(--transition-smooth);
-}
-
-.hover-gradient {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-        600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(59, 130, 246, 0.1),
-        transparent 40%
-    );
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.feature-card:hover .hover-gradient {
-    opacity: 1;
-}
-
-.particle-field {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: rgba(59, 130, 246, 0.6);
-    border-radius: 50%;
-    opacity: 0;
-    transition: all var(--transition-smooth);
-}
-
-.feature-card:hover .particle {
-    opacity: 1;
-    animation: particle-float 2s ease-in-out infinite;
-}
-
-/* Particle positions */
-.p-1 { top: 15%; left: 10%; animation-delay: 0s; }
-.p-2 { top: 25%; right: 15%; animation-delay: 0.3s; }
-.p-3 { top: 45%; left: 20%; animation-delay: 0.6s; }
-.p-4 { bottom: 30%; right: 25%; animation-delay: 0.9s; }
-.p-5 { bottom: 20%; left: 15%; animation-delay: 1.2s; }
-.p-6 { top: 60%; right: 10%; animation-delay: 1.5s; }
-.p-7 { top: 35%; left: 50%; animation-delay: 1.8s; }
-.p-8 { bottom: 40%; right: 50%; animation-delay: 2.1s; }
-
-@keyframes particle-float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(180deg); }
 }
 
 /* ===========================================
@@ -311,367 +252,122 @@
     font-size: 1.05rem;
 }
 
+
 /* ===========================================
-   SPECIAL VARIANT EFFECTS
+   FEATURE ICONS - left corner cards
    =========================================== */
+.feature-icon {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: var(--primary-blue);
+    transition: all var(--transition-smooth);
+    z-index: 4;
+    /* FIX: Schärfe für Icons */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+    /* Pixelgenaue Positionierung */
+    transform: translateZ(0);
+}
 
-/* Lightning Effect */
-.lightning-effect {
+
+
+/* Icon animation - FIXED */
+.feature-icon svg {
+    transition: all var(--transition-smooth);
+    /* FIX: Entferne translateZ(0) um Unschärfe zu vermeiden */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.feature-card:hover .feature-icon svg {
+    /* FIX: Entferne translateZ(0) - das verursacht die Unschärfe */
+    transform: scale(1.1);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-icon {
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+    }
+    
+    .feature-icon::before {
+        border-radius: 14px;
+    }
+    
+    .feature-icon::after {
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-icon {
+        top: -0.5rem;
+        left: -0.5rem;
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+    }
+    
+    .feature-icon::before {
+        border-radius: 12px;
+    }
+    
+    .feature-icon::after {
+        border-radius: 10px;
+    }
+    
+    .feature-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+/* ===========================================
+   CARD BACKGROUNDS & MOUSE EFFECTS
+   =========================================== */
+.card-background {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.lightning:hover .lightning-effect {
-    opacity: 1;
-}
-
-.bolt {
-    position: absolute;
-    width: 2px;
-    background: linear-gradient(180deg, var(--primary-blue), transparent);
-    animation: lightning-strike 1.5s ease-in-out infinite;
-}
-
-.bolt-1 { height: 60px; top: 20%; left: 15%; animation-delay: 0s; }
-.bolt-2 { height: 80px; top: 30%; right: 20%; animation-delay: 0.3s; }
-.bolt-3 { height: 50px; bottom: 25%; left: 60%; animation-delay: 0.6s; }
-
-@keyframes lightning-strike {
-    0%, 90%, 100% { opacity: 0; transform: scaleY(0); }
-    5%, 85% { opacity: 1; transform: scaleY(1); }
-}
-
-/* Morphing Shapes */
-.morphing-shapes {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.morphing:hover .morphing-shapes {
-    opacity: 1;
-}
-
-.shape {
-    position: absolute;
-    background: rgba(139, 92, 246, 0.3);
-    border-radius: 50%;
-    animation: morph-transform 3s ease-in-out infinite;
-}
-
-.shape-1 {
-    width: 30px;
-    height: 30px;
-    top: 20%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.shape-2 {
-    width: 40px;
-    height: 40px;
-    bottom: 30%;
-    right: 25%;
-    animation-delay: 1s;
-}
-
-.shape-3 {
-    width: 25px;
-    height: 25px;
-    top: 60%;
-    left: 70%;
-    animation-delay: 2s;
-}
-
-@keyframes morph-transform {
-    0%, 100% { 
-        border-radius: 50%; 
-        transform: rotate(0deg) scale(1);
-    }
-    25% { 
-        border-radius: 0%; 
-        transform: rotate(90deg) scale(1.2);
-    }
-    50% { 
-        border-radius: 20%; 
-        transform: rotate(180deg) scale(0.8);
-    }
-    75% { 
-        border-radius: 50% 0% 50% 0%; 
-        transform: rotate(270deg) scale(1.1);
-    }
-}
-
-/* Matrix Rain */
-.matrix-rain {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    overflow: hidden;
-}
-
-.matrix:hover .matrix-rain {
-    opacity: 1;
-}
-
-.matrix-line {
-    position: absolute;
-    color: var(--accent-green);
-    white-space: nowrap;
-    animation: matrix-fall 2s linear infinite;
-}
-
-.line-1 { left: 5%; animation-delay: 0s; }
-.line-2 { left: 15%; animation-delay: 0.2s; }
-.line-3 { left: 25%; animation-delay: 0.4s; }
-.line-4 { left: 35%; animation-delay: 0.6s; }
-.line-5 { left: 45%; animation-delay: 0.8s; }
-.line-6 { left: 55%; animation-delay: 1s; }
-.line-7 { left: 65%; animation-delay: 1.2s; }
-.line-8 { left: 75%; animation-delay: 1.4s; }
-.line-9 { left: 85%; animation-delay: 1.6s; }
-.line-10 { left: 95%; animation-delay: 1.8s; }
-
-@keyframes matrix-fall {
-    0% { 
-        top: -20px; 
-        opacity: 1; 
-    }
-    100% { 
-        top: 100%; 
-        opacity: 0; 
-    }
-}
-
-/* Pulse Effect */
-.pulse-effect {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.pulse:hover .pulse-effect {
-    opacity: 1;
-}
-
-.pulse-ring {
-    position: absolute;
-    border: 2px solid var(--primary-pink);
-    border-radius: 50%;
-    animation: pulse-expand 2s ease-out infinite;
-}
-
-.ring-1 {
-    width: 60px;
-    height: 60px;
-    top: 30%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.ring-2 {
-    width: 80px;
-    height: 80px;
-    bottom: 40%;
-    right: 30%;
-    animation-delay: 0.5s;
-}
-
-.ring-3 {
-    width: 40px;
-    height: 40px;
-    top: 60%;
-    left: 60%;
-    animation-delay: 1s;
-}
-
-@keyframes pulse-expand {
-    0% {
-        transform: scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-/* Orbit Effect */
-.orbit-effect {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.orbit:hover .orbit-effect {
-    opacity: 1;
-}
-
-.orbit-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    background: var(--primary-blue);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.orbit-path {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.orbit-1 {
-    width: 80px;
-    height: 80px;
-    animation: orbit-rotate 3s linear infinite;
-}
-
-.orbit-2 {
-    width: 120px;
-    height: 120px;
-    animation: orbit-rotate 4s linear infinite reverse;
-}
-
-.orbit-satellite {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--primary-purple);
-    border-radius: 50%;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@keyframes orbit-rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Neural Network Effect */
-.neural-effect {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-
-.neural:hover .neural-effect {
-    opacity: 1;
-}
-
-.neural-node {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--accent-green);
-    border-radius: 50%;
-    animation: neural-pulse 2s ease-in-out infinite;
-}
-
-.node-1 { top: 20%; left: 15%; animation-delay: 0s; }
-.node-2 { top: 30%; right: 20%; animation-delay: 0.3s; }
-.node-3 { bottom: 35%; left: 25%; animation-delay: 0.6s; }
-.node-4 { bottom: 25%; right: 30%; animation-delay: 0.9s; }
-.node-5 { top: 50%; left: 50%; animation-delay: 1.2s; }
-
-.neural-connection {
-    position: absolute;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(16, 185, 129, 0.6), 
-        transparent
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        #0f101a,
+        transparent 40%
     );
-    animation: neural-flow 1.5s linear infinite;
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
 }
 
-.connection-1 {
-    top: 25%;
-    left: 18%;
-    width: 60%;
-    transform: rotate(15deg);
-    animation-delay: 0s;
+.feature-card:hover .card-background {
+    opacity: 1;
 }
 
-.connection-2 {
-    bottom: 30%;
-    left: 28%;
-    width: 45%;
-    transform: rotate(-25deg);
-    animation-delay: 0.5s;
-}
-
-@keyframes neural-pulse {
-    0%, 100% { 
-        opacity: 0.5; 
-        transform: scale(1); 
-        box-shadow: 0 0 5px var(--accent-green);
-    }
-    50% { 
-        opacity: 1; 
-        transform: scale(1.5); 
-        box-shadow: 0 0 15px var(--accent-green);
-    }
-}
-
-@keyframes neural-flow {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* ===========================================
-   BORDER EFFECTS
-   =========================================== */
-.animated-border {
+.mouse-glow {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(45deg, 
-        transparent, 
-        rgba(59, 130, 246, 0.5), 
-        transparent, 
-        rgba(139, 92, 246, 0.5), 
-        transparent
+    background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        #0f101a,
+        transparent 40%
     );
-    background-size: 400% 400%;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
     opacity: 0;
     transition: opacity var(--transition-smooth);
-    animation: border-flow 3s ease-in-out infinite;
 }
 
-.feature-card:hover .animated-border {
+.feature-card:hover .mouse-glow {
     opacity: 1;
-}
-
-@keyframes border-flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
 }
 
 .corner-highlights {
@@ -687,6 +383,10 @@
     border: 2px solid var(--primary-blue);
     opacity: 0;
     transition: all var(--transition-smooth);
+    /* FIX: Schärfe für Border Corners */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
 }
 
 .corner.top-left {
@@ -723,7 +423,8 @@
 
 .feature-card:hover .corner {
     opacity: 0.8;
-    transform: scale(1.2);
+    /* FIX: Verwende translate3d statt scale für bessere Performance */
+    transform: translate3d(0, 0, 0) scale(1.2);
 }
 
 /* ===========================================
@@ -826,7 +527,7 @@
     }
     
     .feature-card {
-        padding: 1.5rem;
+        padding: 22px;
         border-radius: 20px;
     }
     
@@ -855,9 +556,7 @@
     
     /* Disable some effects on mobile for performance */
     .particle-field,
-    .lightning-effect,
     .morphing-shapes,
-    .matrix-rain,
     .pulse-effect,
     .orbit-effect,
     .neural-effect {

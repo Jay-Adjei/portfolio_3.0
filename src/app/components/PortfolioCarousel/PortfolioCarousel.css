@@ -239,32 +239,136 @@
 }
 
 /* ===================================
-   Call to Action Button
+   Premium Glass Button mit Award-Winning Maus-Follower-Effekt
    =================================== */
+
 .landing-carousel__cta {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: 15px;
-  background: var(--glass-bg);
-  border: 2px solid var(--glass-border);
-  border-radius: 50px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   color: white;
   font-size: var(--font-size-base);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0;
   transform: translateY(20px);
   animation: slideInUp 1s ease-out 1.2s forwards;
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* Hauptglanz-Effekt (Spotlight) */
 .landing-carousel__cta::before {
   content: '';
+  position: absolute;
+  top: var(--mouse-y, -200px);
+  left: var(--mouse-x, -200px);
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.15) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.02) 75%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(2px);
+}
+
+/* Sekundärer Glanz-Ring */
+.landing-carousel__cta::after {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, -200px);
+  left: var(--mouse-x, -200px);
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(59, 130, 246, 0.1) 40%,
+    rgba(139, 92, 246, 0.08) 60%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(3px);
+}
+
+/* Hover-Zustand */
+.landing-carousel__cta:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+.landing-carousel__cta:hover::before {
+  opacity: 1;
+}
+
+.landing-carousel__cta:hover::after {
+  opacity: 1;
+}
+
+/* Active/Pressed State */
+.landing-carousel__cta:active {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    0 4px 16px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Animation */
+.landing-carousel__cta-icon {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 2;
+  position: relative;
+}
+
+.landing-carousel__cta:hover .landing-carousel__cta-icon {
+  transform: translateX(6px) rotate(5deg);
+}
+
+/* Text und Icons über dem Glanz-Effekt */
+.landing-carousel__cta > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Zusätzlicher Shimmer-Effekt für Extra-Glamour */
+.landing-carousel__cta-shimmer {
   position: absolute;
   top: 0;
   left: -100%;
@@ -272,42 +376,53 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
   );
-  transition: left 0.5s;
+  transform: skewX(-20deg);
+  transition: left 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
 }
 
-.landing-carousel__cta:hover::before {
+.landing-carousel__cta:hover .landing-carousel__cta-shimmer {
   left: 100%;
 }
 
-.landing-carousel__cta:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .landing-carousel__cta {
+    padding: 14px 20px;
+    font-size: var(--font-size-sm);
+    border-radius: 12px;
+  }
+  
+  .landing-carousel__cta::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .landing-carousel__cta::after {
+    width: 180px;
+    height: 180px;
+  }
 }
 
-.landing-carousel__cta--secondary {
-  background: rgba(60, 162, 250, 0.1);
-  border-color: rgba(60, 162, 250, 0.3);
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .landing-carousel__cta {
+    transition: none;
+  }
+  
+  .landing-carousel__cta::before,
+  .landing-carousel__cta::after {
+    transition: opacity 0.2s ease;
+  }
+  
+  .landing-carousel__cta:hover .landing-carousel__cta-icon {
+    transform: translateX(4px);
+  }
 }
-
-.landing-carousel__cta--secondary:hover {
-  background: rgba(60, 162, 250, 0.2);
-  border-color: rgba(60, 162, 250, 0.5);
-}
-
-.landing-carousel__cta-icon {
-  transition: transform 0.3s ease;
-}
-
-.landing-carousel__cta:hover .landing-carousel__cta-icon {
-  transform: translateX(4px);
-}
-
 /* ===================================
    Navigation
    =================================== */

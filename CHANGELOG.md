@@ -19,18 +19,21 @@ Note and Todos for myself:
 [X] Oranize Css files + add Comments and split it in logical parts
 [X] Find better Color Palette
 [X] Check out HeroUI maybe useful ?
+[X] Improve Mobile Menu and Header alignment
 --------------------------
 
 Lookbook:
 Updates / Fixes:
 
 0.0.23 - Latest Updates
-• Supabase database set up with one table used for blog and portfolio to track likes and views counters, which are now working.
-• Created a You Might Like component that shows either matching blog posts based on tags or random posts if no matches are found.
-• Portfolio view and like counters are working properly.
-• Blog grid, blog post, and blog You Might Also Like view and like counters all use the same database table and are functioning correctly.
-• blog You Might Also Like added Tag matching System
-
+• Supabase database set up with separate tables: one for portfolio items and one shared table for blog posts and the "You Might Like" section to track likes and views.
+• Created a "You Might Like" component that shows related blog posts based on shared tags, or random posts if no matches are found.
+• View and like counters are fully functional across portfolio items, blog grid, individual blog posts, and the "You Might Like" section, each connected to the appropriate table.
+• Updated the homepage text content
+• Improved the glass effect on the landing carousel mouse button, still a work in progress
+• Set testimonials section to overflow visible so the blue light shadows in the background are no longer cut off by border size
+• Cleaned up the interactive features component by removing unnecessary animations and effects that were too distracting
+• improved the portfolio post page and added portfoliopost.json default structure
 
 0.0.22 - Previous Updates
 • hank God GitHub exists, I deleted my repo and had a panic attack haha

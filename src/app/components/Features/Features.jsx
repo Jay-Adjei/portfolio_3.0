@@ -1,12 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import './Features.css';
 
 const Card = ({ src, title, description, className, buttonHref, isGif }) => {
+  const [isClient, setIsClient] = useState(false);
   const wrapperRef = useRef(null);
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    setIsClient(true);  // Clientseitig einschalten
+  }, []);
+
 
   // Mouse tracking for glow effect
   useEffect(() => {
@@ -46,7 +52,7 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
     }
   };
 
-  return (
+return (
     <div
       ref={wrapperRef}
       className={`card-home-features-wrapper ${className}`} 
@@ -60,16 +66,20 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
           className="card-home-features-video" 
         />
       ) : (
-        <video
-          ref={videoRef}
-          src={src}
-          loop
-          muted
-          className="card-home-features-video"
-          onError={(e) => console.error('Error loading video:', e)}
-        />
+        // Nur clientseitig das Video rendern, sonst null (kein Server-Video)
+        isClient ? (
+          <video
+            ref={videoRef}
+            src={src}
+            loop
+            muted
+            className="card-home-features-video"
+            onError={(e) => console.error('Error loading video:', e)}
+          />
+        ) : null
       )}
-      
+
+      {/* Content bleibt gleich */}
       <div className="card-home-features-content">
         <div>
           <h3 className="card-home-features-title">{title}</h3>
