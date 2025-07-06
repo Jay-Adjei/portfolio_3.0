@@ -4,6 +4,16 @@ import Link from 'next/link';
 import { useAllBlogStats } from '../../hooks/useBlogStats';
 import './bloggrid.css';
 
+
+// titel, description shortener js vanilla
+function blogShortExcerpt(text, maxLength = 100) {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  } else {
+    return text;
+  }
+}
+
 const BlogGrid = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -244,8 +254,8 @@ const BlogGrid = () => {
                           <span className="blog-post-readtime">{post.readTime} read</span>
                         </div>
                        
-                        <h2 className="blog-post-title">{post.title}</h2>
-                        <p className="blog-post-excerpt">{post.excerpt}</p>
+                        <h2 className="blog-post-title">{blogShortExcerpt(post.title, 50)}</h2>
+                        <p className="blog-post-excerpt">{blogShortExcerpt(post.excerpt, 100)}</p>
                        
                         {post.tags && (
                           <div className="blog-post-tags">

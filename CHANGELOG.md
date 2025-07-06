@@ -20,6 +20,7 @@ Note and Todos for myself:
 [X] Find better Color Palette
 [X] Check out HeroUI maybe useful ?
 [X] Improve Mobile Menu and Header alignment
+[X] SSR Component pieces
 --------------------------
 
 Lookbook:
@@ -34,6 +35,7 @@ Updates / Fixes:
 • Set testimonials section to overflow visible so the blue light shadows in the background are no longer cut off by border size
 • Cleaned up the interactive features component by removing unnecessary animations and effects that were too distracting
 • improved the portfolio post page and added portfoliopost.json default structure
+• Blog title and description shortener #alex
 
 0.0.22 - Previous Updates
 • hank God GitHub exists, I deleted my repo and had a panic attack haha
