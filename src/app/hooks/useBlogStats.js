@@ -17,13 +17,13 @@ export const useBlogStats = (slug) => {
   const loadStats = async () => {
     try {
       const now = new Date().toISOString();
-      const { data, error } = await supabase
+      const { data: initialData, error: initialError } = await supabase
         .from('blog_stats')
         .select('views, likes')
         .eq('slug', slug)
         .single();
 
-      if (error && error.code === 'PGRST116') {
+      if (initialError && initialError.code === 'PGRST116') {
         // Post existiert noch nicht, erstelle ihn mit 0 Werten
         const { data: newData, error: insertError } = await supabase
           .from('blog_stats')
@@ -43,15 +43,15 @@ export const useBlogStats = (slug) => {
           setLoading(false);
           return;
         }
-        const updatedData = newData;
-      } else if (error) {
-        console.error('Error loading blog stats:', error);
+        setStats(newData || { views: 0, likes: 0 });
+      } else if (initialError) {
+        console.error('Error loading blog stats:', initialError);
         setStats({ views: 0, likes: 0 });
         setLoading(false);
         return;
+      } else {
+        setStats(initialData || { views: 0, likes: 0 });
       }
-
-      setStats(updatedData || data || { views: 0, likes: 0 });
     } catch (error) {
       console.error('Error in loadStats:', error);
       setStats({ views: 0, likes: 0 });
