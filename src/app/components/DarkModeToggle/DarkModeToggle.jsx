@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring'; // React Spring für Animationen
+import { useDarkMode } from '../../contexts/DarkModeContext';
 import styles from './DarkModeToggle.css'; // Importiert die Styles
 
-const DarkModeToggle = ({ toggleDarkMode, isDarkMode }) => {
+const DarkModeToggle = () => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [initialRender, setInitialRender] = useState(true);
 
   // Initialisierung der Animationseinstellungen

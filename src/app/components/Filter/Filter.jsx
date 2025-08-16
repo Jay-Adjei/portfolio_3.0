@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { Grid3X3, Grid2X2, LayoutGrid, ChevronDown, Filter as FilterIcon, Sparkles, Code, TrendingUp } from "lucide-react";
+import { Grid3X3, Grid2X2, LayoutGrid, ChevronDown, Filter as FilterIcon, Sparkles, Code, TrendingUp, X, Settings } from "lucide-react";
 import './Filter.css';
 
 const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent = true, isLoading = false, onLoadMore, showLoadMore = false }) => {
@@ -8,6 +8,8 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
   const [selectedRarity, setSelectedRarity] = useState("normal");
   const [activeLayout, setActiveLayout] = useState(1);
   const [isRarityDropdownOpen, setIsRarityDropdownOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("categories");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     onCategoryChange(selectedCategory);
@@ -41,6 +43,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
     { value: "ShineBlitz", label: "Spotlight", description: "Featured work" },
     { value: "ShineBlitz2", label: "Spotlight Pro", description: "Premium featured" },
     { value: "radiant", label: "Radiant", description: "Glowing effects" },
+    { value: "yugioh ghost", label: "Yugioh Ghost", description: "Yugioh Ghost" },
     { value: "rare holo", label: "Holographic", description: "3D elements" },
     { value: "rare holo vmax", label: "Holo Max", description: "Maximum impact" },
     { value: "rare rainbow", label: "Rainbow", description: "Colorful design" },
@@ -140,95 +143,156 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
     <>
       <section className="filter-section">
         <div className="filter-container">
-          <div className="filter-controls">
-            {/* Categories */}
-            <div className="filter-group">
-              <label className="filter-label">Categories</label>
-              <div className="category-buttons">
-                {categories.map((category) => {
-                  const IconComponent = category.icon;
-                  return (
-                    <button
-                      key={category.value}
-                      type="button"
-                      className={`category-button ${selectedCategory === category.value ? 'active' : ''}`}
-                      onClick={() => setSelectedCategory(category.value)}
-                      title={category.description}
-                    >
-                      <IconComponent size={18} />
-                      <span className="category-label">{category.label}</span>
-                    </button>
-                  );
-                })}
-              </div>
+          {/* Mobile Filter Toggle */}
+          <div className="mobile-filter-toggle">
+            <button
+              className="mobile-filter-button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <FilterIcon size={20} />
+              <span>Filters</span>
+              <ChevronDown 
+                size={16} 
+                className={`mobile-chevron ${isMobileMenuOpen ? 'rotated' : ''}`}
+              />
+            </button>
+          </div>
+
+          {/* Desktop Filter */}
+          <div className={`filter-content ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+            {/* Filter Tabs */}
+            <div className="filter-tabs">
+              <button
+                className={`filter-tab ${activeTab === 'categories' ? 'active' : ''}`}
+                onClick={() => setActiveTab('categories')}
+              >
+                <LayoutGrid size={18} />
+                Categories
+              </button>
+              <button
+                className={`filter-tab ${activeTab === 'layout' ? 'active' : ''}`}
+                onClick={() => setActiveTab('layout')}
+              >
+                <Grid3X3 size={18} />
+                Layout
+              </button>
+              <button
+                className={`filter-tab ${activeTab === 'style' ? 'active' : ''}`}
+                onClick={() => setActiveTab('style')}
+              >
+                <Sparkles size={18} />
+                Style
+              </button>
             </div>
 
-            {/* Layout Options */}
-            <div className="filter-group">
-              <label className="filter-label">Layout</label>
-              <div className="layout-buttons">
-                {layoutOptions.map((layout) => {
-                  const IconComponent = layout.icon;
-                  return (
-                    <button
-                      key={layout.id}
-                      type="button"
-                      className={`layout-button ${activeLayout === layout.id ? 'active' : ''}`}
-                      onClick={() => setActiveLayout(layout.id)}
-                      title={layout.label}
-                    >
-                      <IconComponent size={20} />
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Rarity Dropdown */}
-            <div className="filter-group">
-              <label className="filter-label">Style Variant</label>
-              <div className="rarity-dropdown">
-                <button
-                  type="button"
-                  className={`rarity-trigger ${isRarityDropdownOpen ? 'open' : ''}`}
-                  onClick={() => setIsRarityDropdownOpen(!isRarityDropdownOpen)}
-                >
-                  <span className="rarity-selected">
-                    {getSelectedRarity().label}
-                  </span>
-                  <ChevronDown 
-                    size={16} 
-                    className={`chevron ${isRarityDropdownOpen ? 'rotated' : ''}`}
-                  />
-                </button>
-                
-                {isRarityDropdownOpen && (
-                  <div className="rarity-dropdown-menu">
-                    {rarities.map((rarity) => (
-                      <button
-                        key={rarity.value}
-                        type="button"
-                        className={`rarity-option ${selectedRarity === rarity.value ? 'selected' : ''}`}
-                        onClick={() => handleRaritySelect(rarity)}
-                      >
-                        <div className="rarity-info">
-                          <span className="rarity-name">{rarity.label}</span>
-                          <span className="rarity-description">{rarity.description}</span>
-                        </div>
-                      </button>
-                    ))}
+            {/* Tab Content */}
+            <div className="tab-content">
+              {/* Categories Tab */}
+              {activeTab === 'categories' && (
+                <div className="tab-panel">
+                  <div className="filter-group">
+                    <label className="filter-label">Project Categories</label>
+                    <div className="category-grid">
+                      {categories.map((category) => {
+                        const IconComponent = category.icon;
+                        return (
+                          <button
+                            key={category.value}
+                            type="button"
+                            className={`category-card ${selectedCategory === category.value ? 'active' : ''}`}
+                            onClick={() => setSelectedCategory(category.value)}
+                          >
+                            <div className="category-icon">
+                              <IconComponent size={20} />
+                            </div>
+                            <div className="category-content">
+                              <span className="category-name">{category.label}</span>
+                              <span className="category-description">{category.description}</span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
+
+              {/* Layout Tab */}
+              {activeTab === 'layout' && (
+                <div className="tab-panel">
+                  <div className="filter-group">
+                    <label className="filter-label">Display Layout</label>
+                    <div className="layout-options">
+                      {layoutOptions.map((layout) => {
+                        const IconComponent = layout.icon;
+                        return (
+                          <button
+                            key={layout.id}
+                            type="button"
+                            className={`layout-option ${activeLayout === layout.id ? 'active' : ''}`}
+                            onClick={() => setActiveLayout(layout.id)}
+                          >
+                            <IconComponent size={20} />
+                            <span>{layout.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Style Tab */}
+              {activeTab === 'style' && (
+                <div className="tab-panel">
+                  <div className="filter-group">
+                    <label className="filter-label">Style Variant</label>
+                    <div className="rarity-dropdown">
+                      <button
+                        type="button"
+                        className={`rarity-trigger ${isRarityDropdownOpen ? 'open' : ''}`}
+                        onClick={() => setIsRarityDropdownOpen(!isRarityDropdownOpen)}
+                      >
+                        <div className="rarity-selected">
+                          <span className="rarity-label">{getSelectedRarity().label}</span>
+                          <span className="rarity-subtitle">{getSelectedRarity().description}</span>
+                        </div>
+                        <ChevronDown 
+                          size={16} 
+                          className={`chevron ${isRarityDropdownOpen ? 'rotated' : ''}`}
+                        />
+                      </button>
+                      
+                      {isRarityDropdownOpen && (
+                        <div className="rarity-dropdown-menu">
+                          {rarities.map((rarity) => (
+                            <button
+                              key={rarity.value}
+                              type="button"
+                              className={`rarity-option ${selectedRarity === rarity.value ? 'selected' : ''}`}
+                              onClick={() => handleRaritySelect(rarity)}
+                            >
+                              <div className="rarity-info">
+                                <span className="rarity-name">{rarity.label}</span>
+                                <span className="rarity-description">{rarity.description}</span>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* No Content Section - wird angezeigt wenn kein Inhalt da ist */}
+      {/* No Content Section */}
       {!hasContent && <NoContentSection />}
 
-      {/* Load More Section - wird nach den Projekten angezeigt */}
+      {/* Load More Section */}
       <LoadMoreSection />
     </>
   );

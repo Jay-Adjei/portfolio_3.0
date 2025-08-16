@@ -29,11 +29,11 @@
 
 
 /* Stile für die Überschrift */
-.dark-mode .guestbook-title {
+html.dark-mode .guestbook-title {
     color: var(--dark-mode); 
   }
   
   /* Stile für den Text */
-  .dark-mode .guestbook-description {
+html.dark-mode .guestbook-description {
     color: var(--dark-mode);
 }

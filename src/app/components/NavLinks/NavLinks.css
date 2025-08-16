@@ -100,7 +100,7 @@
 }
 
 /* Dark Mode Link Colors */
-.dark-mode .nav-links li a {
+html.dark-mode .nav-links li a {
   color: #ffffff; /* Weiße Schrift für Links im Dark Mode */
 }
 
@@ -110,20 +110,20 @@
 }
 
 /* Dark Mode Hover Effects */
-.navbar.dark-mode .nav-links li a:hover {
+html.dark-mode .navbar .nav-links li a:hover {
   background-color: #555;  /* Dunkelgrauer Hover-Effekt im Dunkelmodus */
 }
 
 /* Dark Mode Styles */
-.navbar.dark-mode {
+html.dark-mode .navbar {
   background-color: #000000; /* Dunkler Hintergrund */
 }
 
-.navbar.dark-mode .darkmode-toggle button {
+html.dark-mode .navbar .darkmode-toggle button {
   color: #fff; /* Weiße Schrift für den Button */
 }
 
-.navbar.dark-mode .darkmode-toggle button:hover {
+html.dark-mode .navbar .darkmode-toggle button:hover {
   background-color: #555;  /* Dunkelgrauer Hover-Effekt im Dunkelmodus */
 }
 /* General Navbar Styles */
@@ -198,7 +198,7 @@
 }
 
 /* Dark Mode Link Colors */
-.dark-mode .nav-links li a {
+html.dark-mode .nav-links li a {
   color: #ffffff;
 }
 
@@ -208,12 +208,12 @@
 }
 
 /* Dark Mode Hover Effects */
-.navbar.dark-mode .nav-links li a:hover {
+html.dark-mode .navbar .nav-links li a:hover {
   background-color: #555;
 }
 
 /* Dark Mode Styles */
-.navbar.dark-mode {
+html.dark-mode .navbar {
   background-color: #000000;
 }
 

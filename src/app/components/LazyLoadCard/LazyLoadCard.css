@@ -29,4 +29,35 @@
     justify-content: center;
     align-items: center;
   }
+
+.lazy-load-card {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load-card.loading {
+  opacity: 0.6;
+}
+
+.lazy-load-card.loaded {
+  opacity: 1;
+}
+
+.lazy-load-card .placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.dark .lazy-load-card .placeholder {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
   

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './skill.css';
 
 const skillsData = {
@@ -36,6 +36,33 @@ const skillsData = {
 const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [activeTab, setActiveTab] = useState('coding');
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Alle Bilder vorab laden
+  useEffect(() => {
+    const preloadImages = async () => {
+      const allImages = Object.values(skillsData).flat().map(skill => skill.icon);
+      
+      try {
+        await Promise.all(
+          allImages.map(src => {
+            return new Promise((resolve, reject) => {
+              const img = new Image();
+              img.onload = resolve;
+              img.onerror = reject;
+              img.src = src;
+            });
+          })
+        );
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true); // Trotzdem als geladen markieren
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   return (
     <section className="skills-section">
@@ -55,29 +82,39 @@ const Skills = () => {
         </div>
 
         <div className="skills-grid">
-          {skillsData[activeTab].map((skill, index) => (
-            <div 
-              key={index}
-              className="skill-item"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(-1)}
-            >
-              {/* Füge diesen Div hinzu */}
-              <div className="gradient-border"></div>
-              
-              <img
-                src={skill.icon}
-                alt={skill.title}
-                className="skill-icon"
-                style={{
-                  transform: hoveredIndex === index 
-                    ? 'scale(1.15) rotateZ(0deg)' 
-                    : 'scale(1) rotateZ(0deg)'
-                }}
-              />
-              <p className="skill-title">{skill.title}</p>
+          {!imagesLoaded ? (
+            // Loading-Zustand
+            <div className="skills-loading">
+              <div className="loading-spinner"></div>
+              <p>Loading skills...</p>
             </div>
-          ))}
+          ) : (
+            // Skills anzeigen, wenn alle Bilder geladen sind
+            skillsData[activeTab].map((skill, index) => (
+              <div 
+                key={index}
+                className="skill-item"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(-1)}
+              >
+                {/* Füge diesen Div hinzu */}
+                <div className="gradient-border"></div>
+                
+                <img
+                  src={skill.icon}
+                  alt={skill.title}
+                  className="skill-icon"
+                  style={{
+                    transform: hoveredIndex === index 
+                      ? 'scale(1.15) rotateZ(0deg)' 
+                      : 'scale(1) rotateZ(0deg)'
+                  }}
+                  loading="eager" // Wichtig: Sofort laden
+                />
+                <p className="skill-title">{skill.title}</p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </section>

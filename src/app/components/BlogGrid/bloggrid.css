@@ -6,16 +6,15 @@
 .blog-wrapper {
   position: relative;
   min-height: 100vh;
-  background: #0a0a0a;
+  background: #0a0a0a; /* Ursprünglicher Hintergrund wiederhergestellt */
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1; /* Wichtig für Sichtbarkeit */
+  visibility: visible; /* Wichtig für Sichtbarkeit */
 }
 
 .blog-wrapper.visible {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
 }
 
 /* Background Elements */
@@ -364,6 +363,8 @@
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  opacity: 1; /* Wichtig für Sichtbarkeit */
+  visibility: visible; /* Wichtig für Sichtbarkeit */
 }
 
 /* Blog Post Cards */
@@ -374,19 +375,16 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: blog-card-fade-in 0.6s ease forwards;
-  animation-delay: var(--animation-delay, 0s);
+  opacity: 1; /* Geändert von 0 zu 1 */
+  transform: translateY(0); /* Geändert von translateY(30px) zu translateY(0) */
+  /* Animation entfernt, da sie Probleme verursacht */
+  visibility: visible; /* Wichtig für Sichtbarkeit */
+  display: block; /* Wichtig für Sichtbarkeit */
+  position: relative; /* Wichtig für Z-Index */
+  z-index: 1; /* Wichtig für Z-Index */
 }
 
-@keyframes blog-card-fade-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Animation nur für den Hover-Effekt */
 .blog-post-card:hover {
   transform: translateY(-8px);
   box-shadow: 

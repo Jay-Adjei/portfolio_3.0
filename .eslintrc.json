@@ -1,5 +1,19 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
   "rules": {
+    "react/jsx-filename-extension": "off",
+    "import/extensions": "off",
+    "no-unused-vars": "warn",
+    "prefer-const": "error",
+    "no-var": "error",
+    "@next/next/no-img-element": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
   }
 }

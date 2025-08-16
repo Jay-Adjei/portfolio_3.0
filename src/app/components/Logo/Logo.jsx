@@ -2,10 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useDarkMode } from '../../contexts/DarkModeContext';
 import './Logo.css'; // Instead of 'style from './logo.css''
 
-
-const Logo = ({ isDarkMode }) => {
+const Logo = () => {
+  const { isDarkMode } = useDarkMode();
   const logo = isDarkMode ? '/assets/img/logo/logo_white.png' : '/assets/img/logo/logo_black.png';
 
   return (

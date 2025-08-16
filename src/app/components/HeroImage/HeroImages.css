@@ -26,7 +26,7 @@
   z-index: 1;
 }
 
-.dark-mode .ProjectOverlay::after {
+html.dark-mode .ProjectOverlay::after {
   content: "";
   position: absolute;
   left: 0;
@@ -59,7 +59,7 @@
     background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
   }
 
-  .dark-mode .ProjectOverlay::after {
+  html.dark-mode .ProjectOverlay::after {
     height: 180px;
     background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
   }

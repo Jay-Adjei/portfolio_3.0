@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { useDarkMode } from '../../contexts/DarkModeContext';
 import styles from './NavLinks.css';
 
-const NavLinks = ({ isDarkMode }) => {
+const NavLinks = () => {
+  const { isDarkMode } = useDarkMode();
+  
   return (
     <nav className={`nav-links ${isDarkMode ? 'dark-mode' : ''}`}>
       <ul>

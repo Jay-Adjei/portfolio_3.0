@@ -51,7 +51,7 @@ const Portfolio = () => {
 
   return (
     <div className='PatternPortfolioGrid'>
-      {/* Hero Section mit Hintergrundbild und darüber liegendem Filter */}
+      {/* Hero Section mit Hintergrundbild */}
       <div className="HeroSection">
         <div className="ProjectGrid">
           <div className="ProjectOverlay">
@@ -65,15 +65,15 @@ const Portfolio = () => {
         
         {/* Tiger Deko-Element */}
         <div className="TigerDecoration" />
-        
-        {/* Filter über dem Hintergrundbild */}
-        <div className='FiltersPortfolioGrid'>
-          <Filter
-            onCategoryChange={setCategory}
-            onCardTypeChange={setCardType}
-            onLayoutChange={setActiveLayout}
-          />
-        </div>
+      </div>
+
+      {/* Filter in eigenem Container - außerhalb des Hero-Bereichs */}
+      <div className='FiltersPortfolioGrid'>
+        <Filter
+          onCategoryChange={setCategory}
+          onCardTypeChange={setCardType}
+          onLayoutChange={setActiveLayout}
+        />
       </div>
 
       {/* Portfolio Grid - separater Bereich */}

@@ -146,12 +146,7 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-lg);
-  background: var(--gradient-text);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-shift 3s ease-in-out infinite;
+  color: #ffffff;
 }
 
 .testimonials__subtitle {
@@ -453,10 +448,7 @@
 /* ===================================
    Animations
    =================================== */
-@keyframes gradient-shift {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(90deg); }
-}
+
 
 @keyframes slideUp {
   to {
@@ -522,7 +514,6 @@
   
   .testimonials__title {
     animation: none;
-    background: rgba(255, 255, 255, 0.95);
     -webkit-background-clip: initial;
     background-clip: initial;
     color: rgba(255, 255, 255, 0.95);

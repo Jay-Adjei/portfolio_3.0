@@ -2,15 +2,19 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useWindowScroll } from 'react-use';
+import { useDarkMode } from '../../contexts/DarkModeContext';
 import NavLinks from '../NavLinks/NavLinks';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import gsap from "gsap";
 import Logo from '../Logo/Logo'; 
 import AudioIndicator from '../AudioIndicator/AudioIndicator';
-import styles from './Navbar.css';
+import { debounce } from '../../lib/utils';
+import { ANIMATION_DURATIONS } from '../../lib/constants';
 
-const Navbar = ({ toggleDarkMode, isDarkMode }) => {
+const Navbar = () => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  
   // Zustand für Sticky-Navigation und Scroll-Position
   const [isSticky, setIsSticky] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -25,51 +29,49 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   
   // Scroll-Logik, um Navbar bei Scroll zu animieren
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       if (currentScrollY <= transparencyThreshold) {
         gsap.to(navContainerRef.current, {
           y: 0,
           opacity: 1,
-          backgroundColor: "transparent", // Navbar wird transparent
+          backgroundColor: "transparent",
           backdropFilter: "blur(0px)", 
-          duration: 0.3,
+          duration: ANIMATION_DURATIONS.NORMAL / 1000,
           ease: "power3.inOut",
         });
       } else {
         if (currentScrollY > lastScrollY) {
           gsap.to(navContainerRef.current, {
-            y: -80, // Versteckt die Navbar nach unten beim Scrollen
+            y: -80,
             opacity: 0,
             backdropFilter: "blur(0px)",
-            backgroundColor: isDarkMode ? "black" : "white", // Hintergrundfarbe basierend auf Dark Mode
-            duration: 0.3, 
+            backgroundColor: isDarkMode ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
+            duration: ANIMATION_DURATIONS.NORMAL / 1000, 
             ease: "power2.out",
           });
         } else {
-          // Beim hochscrollen wird die Navbar wieder sichtbar
           gsap.to(navContainerRef.current, {
-            y: 0, // Zurück zur ursprünglichen Position
-            opacity: 1, // Navbar wird sichtbar
-            backdropFilter: "blur(0px)",
-            backgroundColor: isDarkMode ? "black" : "white", // Hintergrundfarbe für Dark Mode
-            duration: 0.3,
+            y: 0,
+            opacity: 1,
+            backdropFilter: "blur(10px)",
+            backgroundColor: isDarkMode ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
+            duration: ANIMATION_DURATIONS.NORMAL / 1000,
             ease: "power2.inOut",
           });
         }
       }
   
-      setLastScrollY(currentScrollY); // Update der Scroll-Position
-    };
+      setLastScrollY(currentScrollY);
+    }, 16); // 60fps optimiert
   
-    handleScroll(); // Initialisiere den Scroll-Effekt
+    handleScroll();
 
-    // Event Listener für Scroll-Ereignisse
     window.addEventListener('scroll', handleScroll);
   
     return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup bei Unmount
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [currentScrollY, isDarkMode]); // Der Effekt hängt von der Scroll-Position und Dark Mode ab
+  }, [currentScrollY, isDarkMode, lastScrollY]);
   
   // Funktion zum Umschalten des Audio-Indikators (Play/Pause)
   const toggleAudioIndicator = () => {

@@ -17,7 +17,7 @@ export const useBlogStats = (slug) => {
   const loadStats = async () => {
     try {
       const now = new Date().toISOString();
-      let { data, error } = await supabase
+      const { data, error } = await supabase
         .from('blog_stats')
         .select('views, likes')
         .eq('slug', slug)
@@ -43,7 +43,7 @@ export const useBlogStats = (slug) => {
           setLoading(false);
           return;
         }
-        data = newData;
+        const updatedData = newData;
       } else if (error) {
         console.error('Error loading blog stats:', error);
         setStats({ views: 0, likes: 0 });
@@ -51,7 +51,7 @@ export const useBlogStats = (slug) => {
         return;
       }
 
-      setStats(data || { views: 0, likes: 0 });
+      setStats(updatedData || data || { views: 0, likes: 0 });
     } catch (error) {
       console.error('Error in loadStats:', error);
       setStats({ views: 0, likes: 0 });

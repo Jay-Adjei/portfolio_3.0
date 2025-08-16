@@ -16,7 +16,7 @@ export const usePortfolioStats = (slug) => {
 
   const loadStats = async () => {
     try {
-      let { data, error } = await supabase
+      const { data, error } = await supabase
         .from('portfolio_stats')
         .select('views, likes')
         .eq('slug', slug)
@@ -30,8 +30,8 @@ export const usePortfolioStats = (slug) => {
             slug,
             views: 0,
             likes: 0,
-            created_at: now,
-            updated_at: now
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
           }])
           .select('views, likes')
           .single();
@@ -42,7 +42,7 @@ export const usePortfolioStats = (slug) => {
           setLoading(false);
           return;
         }
-        data = newData;
+        const updatedData = newData;
       } else if (error) {
         console.error('Error loading portfolio stats:', error);
         setStats({ views: 0, likes: 0 });
@@ -50,7 +50,7 @@ export const usePortfolioStats = (slug) => {
         return;
       }
 
-      setStats(data || { views: 0, likes: 0 });
+      setStats(updatedData || data || { views: 0, likes: 0 });
     } catch (error) {
       console.error('Error in loadStats:', error);
       setStats({ views: 0, likes: 0 });

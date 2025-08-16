@@ -77,6 +77,17 @@ body {
 
 
 /* Dark Mode */
+html.dark-mode {
+  background-color: #0a0a0a; /* Hintergrund für Dark Mode */
+  color: #f1f1f1; /* Textfarbe für Dark Mode */
+}
+
+html.dark-mode body {
+  background-color: #0a0a0a; /* Hintergrund für Dark Mode */
+  color: #f1f1f1; /* Textfarbe für Dark Mode */
+}
+
+/* Fallback für body.dark-mode (falls noch irgendwo verwendet) */
 body.dark-mode {
   background-color: #0a0a0a; /* Hintergrund für Dark Mode */
   color: #f1f1f1; /* Textfarbe für Dark Mode */
