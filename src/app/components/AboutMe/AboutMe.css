@@ -1,7 +1,5 @@
 /* src/app/components/AboutMe/AboutMe.css */
 
-
-
 /* -----------------------------------------------------------
 Blog Retro Tags
 ---------------------------------------------------------- */
@@ -14,8 +12,8 @@ Blog Retro Tags
 
 .about-me-related-heading {
   font-size: 2.5rem;
-  font-family: "RedHat", sans-serif;
-  background: linear-gradient(45deg, #3ECF8E, #3B82F6);
+  font-family: 'RedHat', sans-serif;
+  background: linear-gradient(45deg, #3ecf8e, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
@@ -29,9 +27,9 @@ Blog Retro Tags
 }
 
 .about-me-related-grid {
-	width: 65%;
-	gap: 25px;
-	display: grid;
+  width: 65%;
+  gap: 25px;
+  display: grid;
   max-width: 700px;
 }
 
@@ -46,8 +44,12 @@ Blog Retro Tags
 
 .about-me-related-card:hover {
   transform: translateY(-5px);
-  border-color: #3ECF8E;
-  background: linear-gradient(45deg, rgba(62, 207, 142, 0.05), rgba(59, 130, 246, 0.05));
+  border-color: #3ecf8e;
+  background: linear-gradient(
+    45deg,
+    rgba(62, 207, 142, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
 }
 
 .about-me-related-content {
@@ -70,13 +72,13 @@ Blog Retro Tags
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #3ECF8E;
+  color: #3ecf8e;
   font-size: 0.9rem;
 }
 
 .about-me-related-title {
   color: #fff;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 12px;
 }
@@ -96,7 +98,7 @@ Blog Retro Tags
 
 .about-me-related-tag {
   background: rgba(62, 207, 142, 0.1);
-  color: #3ECF8E;
+  color: #3ecf8e;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -108,12 +110,12 @@ Blog Retro Tags
   .about-me-content {
     flex-direction: column;
   }
-  
+
   .about-me-text-container,
   .about-me-related-grid {
     width: 100%;
   }
-  
+
   .about-me-related-heading {
     font-size: 2rem;
   }
@@ -123,28 +125,18 @@ Blog Retro Tags
   .about-me-related-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .about-me-related-card {
     margin-bottom: 15px;
   }
 }
 
-
-
 /* =========================== */
-
 
 .about-me-content {
   width: 100%;
   justify-content: center;
 }
-
-
-
-
-
-
-
 
 /* =========================== */
 /* =========================== */
@@ -163,9 +155,9 @@ Profile-Information-(Steckbrief)
 }
 
 .about-me-profile-informations h3 {
-  color: #3ECF8E;
+  color: #3ecf8e;
   font-size: 1.5rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -184,7 +176,7 @@ Profile-Information-(Steckbrief)
 .about-me-profile-informations li.profile-item {
   position: relative;
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.6;
   padding: 20px 15px 12px;
   border-radius: 8px;
@@ -198,7 +190,7 @@ Profile-Information-(Steckbrief)
 
 /* Hover Effect */
 .about-me-profile-informations li.profile-item:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
@@ -210,8 +202,8 @@ Profile-Information-(Steckbrief)
   left: 20px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
-  color: #3ECF8E;
-  font-family: "RedHat", sans-serif;
+  color: #3ecf8e;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   white-space: nowrap;
 }
@@ -221,11 +213,9 @@ Profile-Information-(Steckbrief)
   display: block;
 }
 
-
 /* -----------------------------------------------------------
 About Me socials Styles
 ---------------------------------------------------------- */
-
 
 /* Social Icons Anpassungen */
 .about-me-socials {
@@ -246,7 +236,7 @@ About Me socials Styles
 }
 
 .about-me-socials a:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
 }
 
@@ -258,7 +248,7 @@ About Me socials Styles
 }
 
 .about-me-socials a:hover .about-me-icon {
-  color: #3ECF8E;
+  color: #3ecf8e;
 }
 
 /* Responsive Anpassungen */
@@ -267,16 +257,16 @@ About Me socials Styles
     margin-top: 30px;
     padding: 20px;
   }
-  
+
   .about-me-profile-informations h3 {
     font-size: 1.3rem;
   }
-  
+
   .about-me-profile-informations li {
     font-size: 0.9rem;
     padding: 10px;
   }
-  
+
   .about-me-profile-informations li strong {
     min-width: 100px;
     display: block;
@@ -284,9 +274,7 @@ About Me socials Styles
   }
 }
 
-
 /* =========================== */
-
 
 /* Base Styles */
 .about-me-section {
@@ -303,11 +291,10 @@ About Me socials Styles
   color: #ffffff;
 }
 
-
 .about-me-container {
-	max-width: 1250px;
-	margin: 0 auto;
-	padding: 0px 20px;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0px 20px;
 }
 
 /* Header Section */
@@ -320,22 +307,22 @@ About Me socials Styles
 
 .about-me-preheading {
   font-size: 14px;
-  font-family: "RedHat", sans-serif;
-  color: #3ECF8E;
+  font-family: 'RedHat', sans-serif;
+  color: #3ecf8e;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .about-me-heading {
   font-size: 55px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.2;
   margin: 0;
   font-weight: 700;
 }
 
 .about-me-gradient {
-  background: linear-gradient(45deg, #3ECF8E, #3B82F6);
+  background: linear-gradient(45deg, #3ecf8e, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -408,7 +395,7 @@ About Me socials Styles
 
 .about-me-intro {
   font-size: 18px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.7;
   color: #94a3b8;
   margin: 0;
@@ -424,7 +411,7 @@ About Me socials Styles
 
 .about-me-tech-item {
   font-size: 18px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -437,18 +424,16 @@ About Me socials Styles
   max-height: 55px;
 }
 
-
 .about-me-tech-item:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
 
-
 .about-me-tech-icon {
   width: 35px;
   height: 35px;
-  stroke: #3ECF8E;
+  stroke: #3ecf8e;
   display: block;
   margin-left: 0;
   margin-right: 10px;
@@ -459,7 +444,6 @@ About Me socials Styles
   flex: 1;
   font-size: 16px;
 }
-
 
 /* -----------------------------------------------------------
 Timeline // Work, Achievements
@@ -484,7 +468,7 @@ Timeline // Work, Achievements
   top: 24px;
   width: 12px;
   height: 12px;
-  background: #3ECF8E;
+  background: #3ecf8e;
   border-radius: 50%;
 }
 
@@ -518,21 +502,21 @@ Timeline // Work, Achievements
 
 .about-me-timeline-year {
   font-family: monospace;
-  color: #3ECF8E;
+  color: #3ecf8e;
   font-size: 14px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
 }
 
 .about-me-timeline-company {
   color: #94a3b8;
   font-size: 14px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
 }
 
 .about-me-timeline-title {
   margin: 0 0 8px;
   font-size: 18px;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
 }
 
 .about-me-timeline-description {
@@ -554,23 +538,23 @@ Open Source Section
 }
 
 .about-me-opensource-badge {
-	display: inline-block;
-	padding: 6px 12px;
-	background: rgba(62, 207, 142, 0.1);
-	color: #3ECF8E;
-	/* border-radius: 20px; */
-	font-size: 12px;
-	margin-bottom: 16px;
-	font-weight: bold;
-	position: absolute;
-	top: -12px;
-	left: 20px;
-	background: rgba(255, 255, 255, 0.03);
-	padding: 0 10px;
-	color: #3ECF8E;
-	font-family: "RedHat", sans-serif;
-	font-size: 0.95rem;
-	white-space: nowrap;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(62, 207, 142, 0.1);
+  color: #3ecf8e;
+  /* border-radius: 20px; */
+  font-size: 12px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 10px;
+  color: #3ecf8e;
+  font-family: 'RedHat', sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .about-me-opensource-title {
@@ -586,29 +570,28 @@ Open Source Section
   font-size: 16px;
 }
 
-.opensource-wrapper{
-padding-top: 35px;
+.opensource-wrapper {
+  padding-top: 35px;
 }
 
 /* -----------------------------------------------------------
 Responsive Styles
 ---------------------------------------------------------- */
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-me-content-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .about-me-heading {
     font-size: 36px;
   }
-  
+
   .about-me-timeline-item {
     padding-left: 20px;
   }
-  
+
   .about-me-timeline-item:before {
     width: 8px;
     height: 8px;

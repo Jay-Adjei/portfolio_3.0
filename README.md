@@ -11,6 +11,7 @@
 </div>
 
 <!-- Badges Shields -->
+
 [contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/NextJS-Portify?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
 [forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/NextJS-Portify?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
 [stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/NextJS-Portify?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
@@ -18,12 +19,12 @@
 [license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/NextJS-Portify?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
 
 <!-- Badges Links -->
+
 [contributors-url]: https://github.com/GylanSalih/NextJS-Portify/graphs/contributors
 [forks-url]: https://github.com/GylanSalih/NextJS-Portify/network/members
 [stars-url]: https://github.com/GylanSalih/NextJS-Portify/stargazers
 [issues-url]: https://github.com/GylanSalih/NextJS-Portify/issues
 [license-url]: https://github.com/GylanSalih/NextJS-Portify/blob/main/LICENSE
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -31,7 +32,6 @@
   <a href="https://github.com/GylanSalih/Website-Portfolio/">
     <img src="https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/PortfolioGithubShowcase.png" alt="Logo">
   </a>
-
 
 <h3 align="center">
  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Cat%20with%20Heart-Eyes.png" alt="Smiling Cat with Heart-Eyes" width="25" height="25" /> Portify Portfolio Made with Love
@@ -67,7 +67,6 @@
   </ol>
 </details>
 
-
 <h2 id="about-the-project"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> About The Project</span></h2>
 
 <span>
@@ -75,9 +74,10 @@
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
 Mission: Award-Winning Responsive Portfolio. My self-coded and crafted website, made with passion for the #OpenSource community. Free to use and customize. It's still under development—Don’t miss out—updates are made daily!
 
-&nbsp;  <!-- Leerraum zwischen den Abschnitten -->
+&nbsp; <!-- Leerraum zwischen den Abschnitten -->
 
 ### Key Features
+
 - **Innovative Card Designs**  
   Showcases your work with visually striking card designs, each offering a unique perspective and style.
 
@@ -98,10 +98,12 @@ Mission: Award-Winning Responsive Portfolio. My self-coded and crafted website, 
 
 &nbsp;
 
-### Future Plans  
-I'll be adding more in the near future. Potential updates include:  
-- Advanced animations and effects.  
-- More customization options.  
+### Future Plans
+
+I'll be adding more in the near future. Potential updates include:
+
+- Advanced animations and effects.
+- More customization options.
 - Additional themes for better personalization.
 
 &nbsp;
@@ -110,13 +112,12 @@ I'll be adding more in the near future. Potential updates include:
 
 <p align="center">Here are some images showcasing the project:</p>
 
-| 29.05.25                                                   | 29.05.25                                                     |  29.05.25                                                    |
-| ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 29.05.25                                                                                                                 | 29.05.25                                                                                                                            | 29.05.25                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Bild 4](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png) | ![Bild 5](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Blog_neu_Vrgleich.png?raw=true) | <img src="https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Home_neu_Vergleich.png?raw=true" alt="Bild 6" width="400"> |
 
-
-| Animated & Beautiful Grid                                    | Filters                                                      | Dark-Mode                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Animated & Beautiful Grid                                                                                            | Filters                                                                                                                   | Dark-Mode                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/Showcase1.png) | ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/02.08_Showcase.png) | ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/Single_Card%20-%20Kopie.png) |
 
 <p align="right">
@@ -144,7 +145,6 @@ Here are the key technologies, languages, and tools used in this project:
     <img alt="CSS3 Badge" title="CSS3" src="https://custom-icon-badges.demolab.com/badge/-CSS3%20CSS-000000?style=for-the-badge&logo=css3&logoColor=ffffff&labelColor=FF0000">
   </li>
 </ul>
-
 
 <p align="right">
   <a href="#readme-top">
@@ -179,16 +179,14 @@ Here are the key technologies, languages, and tools used in this project:
 > **Note**
 > If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use node from the command prompt.
 
-
 <p align="right">
   <a href="#readme-top">
 <img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
   </a>
 </p>
 
-
-
 <!-- Contributing -->
+
 ## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
 
 We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, improving documentation, or adding new features, your help is always appreciated.
@@ -198,27 +196,31 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 1. **Fork the Repository**  
    Click on the `Fork` button at the top-right corner of this repository to create your copy.
 
-2. **Clone Your Fork**  
+2. **Clone Your Fork**
+
    ```bash
    git clone https://github.com/<your-username>/NextJS-Portify.git
    cd NextJS-Portify
    ```
 
 3. **Create a Branch**  
-   Create a new branch for your feature or bug fix.  
+   Create a new branch for your feature or bug fix.
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 4. **Make Changes**  
-   Implement your changes and commit them with a descriptive message.  
+   Implement your changes and commit them with a descriptive message.
+
    ```bash
    git add .
    git commit -m "Add: Description of the changes"
    ```
 
 5. **Push Changes**  
-   Push your changes to your forked repository.  
+   Push your changes to your forked repository.
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -226,14 +228,13 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
 6. **Open a Pull Request**  
    Go to the original repository and click on `New Pull Request`. Ensure your pull request has a detailed description of your changes.
 
-
 <details>
   <summary>Contribution Guidelines</summary>
 
-- **Follow the Code Style:** Ensure your code follows the repository’s style guide.  
-- **Write Clear Commit Messages:** Use concise and descriptive commit messages.  
-- **Test Your Changes:** Verify that your changes work as expected.  
-- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.  
+- **Follow the Code Style:** Ensure your code follows the repository’s style guide.
+- **Write Clear Commit Messages:** Use concise and descriptive commit messages.
+- **Test Your Changes:** Verify that your changes work as expected.
+- **Be Respectful:** When reviewing or discussing code, always be respectful and considerate of others.
 
 </details>
 
@@ -250,8 +251,6 @@ We welcome contributions to **NextJS-Portify**! 🎉 Whether it's fixing bugs, i
   </a>
 </p>
 
-
-
 <!-- Changelog.md & Roadmap -->
 <h2 id="changelogmd--roadmap"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Changelog.md & Roadmap</span></h2>
 
@@ -265,7 +264,6 @@ For a comprehensive list of changes and updates, please refer to the [CHANGELOG.
   </a>
 </p>
 
-
 <!-- LICENSE -->
 <h2 id="license"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span></h2>
 
@@ -277,17 +275,13 @@ Distributed under the MIT license. See LICENSE.txt for more information.
   </a>
 </p>
 
-
-
-
 <!-- ACKNOWLEDGMENTS -->
 <h2 id="acknowledgments"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Acknowledgments</span></h2>
 
 I would like to acknowledge and give credit to the following resources that have been instrumental in the development of this project. Special thanks to the creators of these tools and libraries:
 
-* [Simeydotme Pokemon Card CSS](https://github.com/simeydotme/pokemon-cards-css)
-* [CodeGrid Youtube Channel](https://www.youtube.com/@codegrid)
-
+- [Simeydotme Pokemon Card CSS](https://github.com/simeydotme/pokemon-cards-css)
+- [CodeGrid Youtube Channel](https://www.youtube.com/@codegrid)
 
 <p align="right">
   <a href="#readme-top">
@@ -310,12 +304,10 @@ I would like to acknowledge and give credit to the following resources that have
   <br><br>
 </div>
 
-
   <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat%20with%20Smiling%20Eyes.png" alt="Grinning Cat with Smiling Eyes" width="25" height="25" /></p>
   <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
   </a>
 </div>
-
 
 <p align="right">
   <a href="#readme-top">

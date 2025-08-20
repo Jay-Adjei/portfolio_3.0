@@ -20,7 +20,7 @@ const OptimizedImage = ({
 
   if (hasError) {
     return (
-      <div 
+      <div
         className={`flex items-center justify-center bg-gray-200 dark:bg-gray-700 ${className}`}
         style={{ width, height }}
       >
@@ -47,7 +47,7 @@ const OptimizedImage = ({
         {...props}
       />
       {isLoading && (
-        <div 
+        <div
           className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse"
           style={{ width, height }}
         />

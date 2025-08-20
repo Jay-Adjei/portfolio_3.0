@@ -7,21 +7,23 @@ import './styles/globals.css';
 
 export const metadata = {
   title: 'Portify - Portfolio & Blog',
-  description: 'Professional portfolio and blog showcasing modern development skills',
+  description:
+    'Professional portfolio and blog showcasing modern development skills',
   keywords: 'portfolio, blog, development, web design, coding',
   authors: [{ name: 'Portify' }],
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'Portify - Portfolio & Blog',
-    description: 'Professional portfolio and blog showcasing modern development skills',
+    description:
+      'Professional portfolio and blog showcasing modern development skills',
     type: 'website',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="de">
+    <html lang="de" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,9 +32,7 @@ export default function RootLayout({ children }) {
       <body>
         <DarkModeProvider>
           <ErrorBoundary>
-            <ClientLayout>
-              {children}
-            </ClientLayout>
+            <ClientLayout>{children}</ClientLayout>
           </ErrorBoundary>
         </DarkModeProvider>
         <Footer />

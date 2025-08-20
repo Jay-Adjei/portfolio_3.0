@@ -1,17 +1,19 @@
-***********************
-*                     *
-*    P O R T I F Y    *
-*                     *
-***********************
+---
+
+-                     *
+- P O R T I F Y \*
+-                     *
+
+---
 
 # Changelog & Documentation
+
 Beta / Still in Work
 
 Current Problems:
 [X] The challenge is integrating PostgreSQL to store and manage like and view counts, while ensuring data security and preventing multiple likes from the same user by utilizing a unique session ID. I'm currently learning APIs and PostgreSQL but am using JSON for now until I'm more experienced. I also have two folders, one called "backend." for this stuff :/
 [ ]
 [ ]
-
 
 Note and Todos for myself:
 [X] git commit -m "Add backend folder to .gitignore"
@@ -21,12 +23,25 @@ Note and Todos for myself:
 [X] Check out HeroUI maybe useful ?
 [X] Improve Mobile Menu and Header alignment
 [X] SSR Component pieces
---------------------------
+
+---
 
 Lookbook:
 Updates / Fixes:
 
-0.0.23 - Latest Updates
+0.0.24 - Newest Updates
+• Added Progress Page
+• Completely redesigned BlogPost layout with clean shadcn UI styling - removed Table of Contents feature, centered content layout with perfect spacing from header
+• Added 3 comprehensive new blog posts: "JavaScript ES2025 Features Guide" (Pipeline Operator, Records/Tuples), "CSS Grid and Flexbox Mastery" (Modern layout techniques), and "Building Scalable Node.js Applications" (Architecture patterns, performance optimization)
+• Implemented elegant pagination system for BlogGrid displaying 6 posts per page with smart navigation, page numbers, Previous/Next buttons, and responsive design
+• Fixed BlogGrid CSS Grid layout issue where single or few cards would stretch to full width - cards now maintain consistent 380-420px width regardless of result count
+• Enhanced useBlogStats hook with robust error handling and localStorage fallback when Supabase is unavailable, preventing console errors and maintaining functionality
+• Improved blog data structure by removing unused 'sections' metadata from JSON files for cleaner architecture
+• Added automatic page reset when filters or search terms change, with smooth scrolling to blog section
+• Implemented comprehensive responsive pagination design optimized for mobile, tablet, and desktop devices
+• Enhanced blog search and filtering experience with proper pagination integration and result counting
+
+0.0.23 - Previous Updates
 • Supabase database set up with separate tables: one for portfolio items and one shared table for blog posts and the "You Might Like" section to track likes and views.
 • Created a "You Might Like" component that shows related blog posts based on shared tags, or random posts if no matches are found.
 • View and like counters are fully functional across portfolio items, blog grid, individual blog posts, and the "You Might Like" section, each connected to the appropriate table.
@@ -52,7 +67,6 @@ Updates / Fixes:
 • Testimonials have been updated for a cleaner look but are still not fully functional.
 • Project single page view updated: like and view counters improved and a better information list added.
 
-
 0.0.21 - Previous Updates
 • Improved the Skills section design
 • Added a new Testimonials design
@@ -61,7 +75,6 @@ Updates / Fixes:
 • Added Related Posts in the single blog view.
 • Updated filter design and added an option to order blog posts by newest or oldest.
 • Created a better AboutMe Page
-
 
 0.0.20 - Previous Updates
 • Portfolio projects are now dynamically loaded based on the slug from the URL, eliminating the need for separate static pages. The data is centrally stored in a portfolio.json file, simplifying maintenance and expansion. With client-side rendering, static generation, and improved loading states and error handling, the user experience is optimized, and performance is enhanced.
@@ -75,7 +88,6 @@ Updates / Fixes:
 • Working on an improved Single Card View
 • Added a search bar for BlogGrid and search functionality by tags (added tags in JSON). + Fixed minor BlogGrid performance issues.
 
-
 0.0.19 - Previous Updates
 
 • Holographic Card:
@@ -83,7 +95,6 @@ handleMouseMove & handleMouseLeave: Functions properly defined to control 3D eff
 GSAP Animations: Shine and glare animations with delay and linear effect for smooth movement.
 Styling: styleVars dynamically passed to the card’s style attribute to update effects.
 • Added Guestbook Via Gisco
-
 
 0.0.18 - Previous Updates
 
@@ -104,7 +115,6 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Found the syntax of Next.js familiar and enjoyable, with similarities to my experience with Unity C#—its structure and flow make it easier and more fun to work with  
 • Expect protocol updates soon, including improved performance and new features
 
-
 0.0.16 - Previous Updates
 
 • Started working on the portfolio again
@@ -113,7 +123,7 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Added slider transitions and navigation dots  
 • Disabled the previous visibility of Holo Effects  
 • Deleted the HTML acard2 ID  
-• Made the progress bar clickable, and updated the timer functionality  
+• Made the progress bar clickable, and updated the timer functionality
 
 0.0.15 - Previous Updates
 
@@ -125,27 +135,27 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Improved performance of hamburger menu (JS/CSS)  
 • Added filter bar to the portfolio page  
 • Added footer  
-• Overall code improvements  
+• Overall code improvements
 
 0.0.14 - Previous Updates
 
 • Improved project file management for cleaner organization  
 • Split style.css into multiple parts  
-• Implemented SASS (learned something new #Newbie)  
+• Implemented SASS (learned something new #Newbie)
 
 0.0.13 - Previous Updates
 
 • Updated cursor functionality: clicking, following, and circle effect  
 • Added dark-mode JSON Lottie file with switching functionality  
 • Working on updating holographic cards (coming soon)  
-• Implemented transparent header with smooth transition  
+• Implemented transparent header with smooth transition
 
 0.0.12 - Previous Updates
 
 • Improved CSS documentation  
 • New landing page slider with dark mode, responsive design, and dot navigation  
 • Implemented custom cursor with hide feature  
-• Added new GIFs to the landing page  
+• Added new GIFs to the landing page
 
 0.0.11 - Previous Updates
 
@@ -156,7 +166,7 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Updated menu text  
 • Applied CSS ascending ordering  
 • Improved code organization  
-• Implemented custom cursor  
+• Implemented custom cursor
 
 0.0.10 - Previous Updates
 
@@ -168,11 +178,11 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Fixed various bugs  
 • Fixed layout for single card  
 • Integrated JS scripts locally  
-• Added simple lightbox for gallery (single card)  
+• Added simple lightbox for gallery (single card)
 
 0.0.9 - New Single Portfolio Page
 
-• Clicking on cards opens /Pages/Cards/Card1.html for detailed information  
+• Clicking on cards opens /Pages/Cards/Card1.html for detailed information
 
 0.0.8 - Header Enhancements
 
@@ -185,39 +195,39 @@ Styling: styleVars dynamically passed to the card’s style attribute to update 
 • Logo click now navigates to home  
 • Added scale animation  
 • Added favicon  
-• Implemented sticky header  
+• Implemented sticky header
 
 0.0.7 - Header Structure / Menu Organization
 
 • Established header structure  
-• Organized the menu for intuitive navigation  
+• Organized the menu for intuitive navigation
 
 0.0.6 - Portfolio Card Design Refinement
 
-• Enhanced the design of portfolio cards for aesthetics and usability  
+• Enhanced the design of portfolio cards for aesthetics and usability
 
 0.0.5 - Local Font Integration
 
-• Integrated fonts locally for improved performance and design consistency  
+• Integrated fonts locally for improved performance and design consistency
 
 0.0.4 - Vanilla JavaScript / Pop-Up and Glare Effect
 
 • Incorporated Vanilla JavaScript for functionality  
-• Added pop-up feature and glare effect for enhanced user experience  
+• Added pop-up feature and glare effect for enhanced user experience
 
 0.0.3 - Responsive Card Design
 
 • Implemented responsive design for cards:  
-  • Mobile: 2 rows  
-  • Tablet: 3 rows  
-  • PC: 4 rows  
+ • Mobile: 2 rows  
+ • Tablet: 3 rows  
+ • PC: 4 rows
 
 0.0.2 - GitHub Integration
 
-• Installed GitHub and connected repository  
+• Installed GitHub and connected repository
 
 0.0.1 - Portfolio and Personal Website
 
 • Began the development of the Portfolio/Home section  
 • Established the foundational structure of the website and navigated through initial challenges  
-• Defined Readme.md as Updates & Logs  
+• Defined Readme.md as Updates & Logs

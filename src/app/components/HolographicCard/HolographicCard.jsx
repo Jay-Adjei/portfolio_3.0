@@ -4,7 +4,7 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import styles from './holoeffekte.css';
 
-const useHolographicEffect = (cardRef) => {
+const useHolographicEffect = cardRef => {
   const [styleVars, setStyleVars] = useState({
     '--mx': '0%',
     '--my': '0%',
@@ -24,7 +24,7 @@ const useHolographicEffect = (cardRef) => {
   const isMobileOrTablet = isClient && window.innerWidth < 1024;
 
   const handleMouseMove = useCallback(
-    (e) => {
+    e => {
       if (!isClient || isMobileOrTablet || !cardRef.current) return;
 
       const card = cardRef.current;
@@ -35,8 +35,14 @@ const useHolographicEffect = (cardRef) => {
       const mvY = e.clientY - centerY;
 
       const maxTilt = 15;
-      const Xdeg = Math.min(Math.max((-mvY / (rect.height / 2)) * maxTilt, -maxTilt), maxTilt);
-      const Ydeg = Math.min(Math.max((mvX / (rect.width / 2)) * maxTilt, -maxTilt), maxTilt);
+      const Xdeg = Math.min(
+        Math.max((-mvY / (rect.height / 2)) * maxTilt, -maxTilt),
+        maxTilt
+      );
+      const Ydeg = Math.min(
+        Math.max((mvX / (rect.width / 2)) * maxTilt, -maxTilt),
+        maxTilt
+      );
       const hyp = Math.min(Math.sqrt(mvX ** 2 + mvY ** 2) / 50, 1);
 
       setStyleVars({

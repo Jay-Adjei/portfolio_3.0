@@ -1,7 +1,15 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Github, Mail, ExternalLink, Code2, Palette, Database } from 'lucide-react';
+import {
+  ArrowRight,
+  Github,
+  Mail,
+  ExternalLink,
+  Code2,
+  Palette,
+  Database,
+} from 'lucide-react';
 import './PortfolioCarousel.css';
 
 const PortfolioCarousel = () => {
@@ -13,113 +21,122 @@ const PortfolioCarousel = () => {
 
   const [isClient, setIsClient] = useState(false);
 
-useEffect(() => {
-  setIsClient(true);
-}, []);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-// konstante für maus tracking
-const handleCTAMouseMove = (e) => {
-  const button = e.currentTarget;
-  const rect = button.getBoundingClientRect();
-  
-  // Berechne absolute Position der Maus relativ zum Button
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  
-  // Setze die Glanz-Position direkt auf die Mausposition
-  button.style.setProperty('--mouse-x', `${x}px`);
-  button.style.setProperty('--mouse-y', `${y}px`);
-};
+  // konstante für maus tracking
+  const handleCTAMouseMove = e => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
 
-const handleCTAMouseEnter = (e) => {
-  const button = e.currentTarget;
-  // Initialisiere Position beim ersten Hover
-  const rect = button.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  
-  button.style.setProperty('--mouse-x', `${x}px`);
-  button.style.setProperty('--mouse-y', `${y}px`);
-};
+    // Berechne absolute Position der Maus relativ zum Button
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-const handleCTAMouseLeave = (e) => {
-  const button = e.currentTarget;
-  // Verstecke den Glanz außerhalb des Buttons
-  button.style.setProperty('--mouse-x', '-100px');
-  button.style.setProperty('--mouse-y', '-100px');
-};
+    // Setze die Glanz-Position direkt auf die Mausposition
+    button.style.setProperty('--mouse-x', `${x}px`);
+    button.style.setProperty('--mouse-y', `${y}px`);
+  };
 
+  const handleCTAMouseEnter = e => {
+    const button = e.currentTarget;
+    // Initialisiere Position beim ersten Hover
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    button.style.setProperty('--mouse-x', `${x}px`);
+    button.style.setProperty('--mouse-y', `${y}px`);
+  };
+
+  const handleCTAMouseLeave = e => {
+    const button = e.currentTarget;
+    // Verstecke den Glanz außerhalb des Buttons
+    button.style.setProperty('--mouse-x', '-100px');
+    button.style.setProperty('--mouse-y', '-100px');
+  };
 
   // Professional Portfolio Slides
   const slides = [
-  {
-    id: 1,
-    type: "video",
-    src: "/assets/videos/sea.mp4",
-    title: "Welcome to My Corner",
-    subtitle: "Tips, Tricks & Real Talk",
-    description: "No fluff, just useful insights and honest advice to help you level up your skills and projects.",
-    cta: {
-      text: "Dive Into the Blog",
-      action: () => document.getElementById("blog")?.scrollIntoView({ behavior: "smooth" }),
-      secondary: false,
+    {
+      id: 1,
+      type: 'video',
+      src: '/assets/videos/sea.mp4',
+      title: 'Welcome to My Corner',
+      subtitle: 'Tips, Tricks & Real Talk',
+      description:
+        'No fluff, just useful insights and honest advice to help you level up your skills and projects.',
+      cta: {
+        text: 'Dive Into the Blog',
+        action: () =>
+          document
+            .getElementById('blog')
+            ?.scrollIntoView({ behavior: 'smooth' }),
+        secondary: false,
+      },
     },
-  },
-  {
-    id: 2,
-    type: "image",
-    src: "/assets/img/LandingBG/OniBoy1.webp",
-    title: "Projects That Speak",
-    subtitle: "What I've Built, What I've Learned",
-    description: "A collection of real work, experiments, and passion projects — each with a story behind it.",
-    cta: {
-      text: "Check Them Out",
-      icon: Mail,
-      action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
-      secondary: true,
+    {
+      id: 2,
+      type: 'image',
+      src: '/assets/images/landing/OniBoy1.webp',
+      title: 'Projects That Speak',
+      subtitle: "What I've Built, What I've Learned",
+      description:
+        'A collection of real work, experiments, and passion projects — each with a story behind it.',
+      cta: {
+        text: 'Check Them Out',
+        icon: Mail,
+        action: () =>
+          document
+            .getElementById('projects')
+            ?.scrollIntoView({ behavior: 'smooth' }),
+        secondary: true,
+      },
     },
-  },
-  {
-    id: 3,
-    type: "video",
-    src: "/assets/videos/tech.mp4",
-    title: "Looking for the Next Challenge",
-    subtitle: "Let's Create Something Together",
-    description: "If you're looking for someone who cares as much as you do, let's chat and see how we can collaborate.",
-    cta: {
-      text: "Get in Touch",
-      icon: Github,
-      action: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }),
-      secondary: false,
+    {
+      id: 3,
+      type: 'video',
+      src: '/assets/videos/tech.mp4',
+      title: 'Looking for the Next Challenge',
+      subtitle: "Let's Create Something Together",
+      description:
+        "If you're looking for someone who cares as much as you do, let's chat and see how we can collaborate.",
+      cta: {
+        text: 'Get in Touch',
+        icon: Github,
+        action: () =>
+          document
+            .getElementById('contact')
+            ?.scrollIntoView({ behavior: 'smooth' }),
+        secondary: false,
+      },
     },
-  },
-];
-
+  ];
 
   const AUTOPLAY_INTERVAL = 6000;
   const PROGRESS_INTERVAL = 50;
 
   // Auto-play functionality
-const startAutoplay = () => {
-  if (!isAutoPlaying) return;
+  const startAutoplay = () => {
+    if (!isAutoPlaying) return;
 
-  // WICHTIG: Vorher stoppen
-  clearInterval(progressTimer.current);
-  
-  let currentProgress = 0;
-  setProgress(0);
-  
-  progressTimer.current = setInterval(() => {
-    currentProgress += (PROGRESS_INTERVAL / AUTOPLAY_INTERVAL) * 100;
-    setProgress(currentProgress);
-    
-    if (currentProgress >= 100) {
-      clearInterval(progressTimer.current);
-      nextSlide();
-    }
-  }, PROGRESS_INTERVAL);
-};
+    // WICHTIG: Vorher stoppen
+    clearInterval(progressTimer.current);
 
+    let currentProgress = 0;
+    setProgress(0);
+
+    progressTimer.current = setInterval(() => {
+      currentProgress += (PROGRESS_INTERVAL / AUTOPLAY_INTERVAL) * 100;
+      setProgress(currentProgress);
+
+      if (currentProgress >= 100) {
+        clearInterval(progressTimer.current);
+        nextSlide();
+      }
+    }, PROGRESS_INTERVAL);
+  };
 
   const stopAutoplay = () => {
     clearInterval(autoplayTimer.current);
@@ -131,7 +148,7 @@ const startAutoplay = () => {
     setActiveSlide(prev => (prev + 1) % slides.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = index => {
     setActiveSlide(index);
     stopAutoplay();
     setTimeout(startAutoplay, 100);
@@ -140,27 +157,27 @@ const startAutoplay = () => {
   // Touch/Swipe handling
   const [touchStart, setTouchStart] = useState({ x: 0, y: 0 });
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = e => {
     const touch = e.touches ? e.touches[0] : e;
     setTouchStart({ x: touch.clientX, y: touch.clientY });
     setIsAutoPlaying(false);
     stopAutoplay();
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = e => {
     const touch = e.changedTouches ? e.changedTouches[0] : e;
-    
+
     const deltaX = touchStart.x - touch.clientX;
     const deltaY = Math.abs(touchStart.y - touch.clientY);
-    
+
     if (Math.abs(deltaX) > 50 && deltaY < 100) {
       if (deltaX > 0) {
         nextSlide();
       } else {
-        setActiveSlide(prev => prev === 0 ? slides.length - 1 : prev - 1);
+        setActiveSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1));
       }
     }
-    
+
     setTimeout(() => {
       setIsAutoPlaying(true);
       startAutoplay();
@@ -168,13 +185,12 @@ const startAutoplay = () => {
   };
 
   // Initialize autoplay
-useEffect(() => {
-  if (isAutoPlaying) {
-    startAutoplay();
-    return () => stopAutoplay();
-  }
-}, [isAutoPlaying]);
-
+  useEffect(() => {
+    if (isAutoPlaying) {
+      startAutoplay();
+      return () => stopAutoplay();
+    }
+  }, [isAutoPlaying]);
 
   // Pause on visibility change
   useEffect(() => {
@@ -189,7 +205,8 @@ useEffect(() => {
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    return () =>
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
   return (
@@ -198,9 +215,9 @@ useEffect(() => {
         {/* Background Elements */}
         <div className="landing-carousel__bg-orb landing-carousel__bg-orb--1"></div>
         <div className="landing-carousel__bg-orb landing-carousel__bg-orb--2"></div>
-        
+
         {/* Main Carousel Container */}
-        <div 
+        <div
           className="landing-carousel__container"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
@@ -219,25 +236,24 @@ useEffect(() => {
                 {/* Media Content */}
                 <div className="landing-carousel__media">
                   {slide.type === 'video' && isClient ? (
-  <video
-    className="landing-carousel__video"
-    autoPlay
-    loop
-    muted
-    playsInline
-  >
-    <source src={slide.src} type="video/mp4" />
-  </video>
-) : slide.type === 'image' ? (
-  <img
-    className="landing-carousel__image"
-    src={slide.src}
-    alt={slide.title}
-    loading={index === activeSlide ? 'eager' : 'lazy'}
-  />
-) : null}
+                    <video
+                      className="landing-carousel__video"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    >
+                      <source src={slide.src} type="video/mp4" />
+                    </video>
+                  ) : slide.type === 'image' ? (
+                    <img
+                      className="landing-carousel__image"
+                      src={slide.src}
+                      alt={slide.title}
+                      loading={index === activeSlide ? 'eager' : 'lazy'}
+                    />
+                  ) : null}
 
-                  
                   {/* Overlay Gradient */}
                   <div className="landing-carousel__overlay"></div>
                 </div>
@@ -245,14 +261,20 @@ useEffect(() => {
                 {/* Content */}
                 <div className="landing-carousel__content">
                   <div className="landing-carousel__text">
-                    <p className="landing-carousel__subtitle">{slide.subtitle}</p>
+                    <p className="landing-carousel__subtitle">
+                      {slide.subtitle}
+                    </p>
                     <h1 className="landing-carousel__title">{slide.title}</h1>
-                    <p className="landing-carousel__description">{slide.description}</p>
-                    
+                    <p className="landing-carousel__description">
+                      {slide.description}
+                    </p>
+
                     {/* Call to Action button */}
                     <button
                       className={`landing-carousel__cta ${
-                        slide.cta.secondary ? 'landing-carousel__cta--secondary' : ''
+                        slide.cta.secondary
+                          ? 'landing-carousel__cta--secondary'
+                          : ''
                       }`}
                       onClick={slide.cta.action}
                       onMouseMove={handleCTAMouseMove}
@@ -261,7 +283,10 @@ useEffect(() => {
                     >
                       {slide.cta.icon && <slide.cta.icon size={20} />}
                       <span>{slide.cta.text}</span>
-                      <ArrowRight className="landing-carousel__cta-icon" size={16} />
+                      <ArrowRight
+                        className="landing-carousel__cta-icon"
+                        size={16}
+                      />
                     </button>
                   </div>
                 </div>
@@ -276,13 +301,15 @@ useEffect(() => {
                 <button
                   key={index}
                   className={`landing-carousel__nav-dot ${
-                    index === activeSlide ? 'landing-carousel__nav-dot--active' : ''
+                    index === activeSlide
+                      ? 'landing-carousel__nav-dot--active'
+                      : ''
                   }`}
                   onClick={() => goToSlide(index)}
                   aria-label={`Zu Slide ${index + 1}`}
                 >
                   {index === activeSlide && (
-                    <div 
+                    <div
                       className="landing-carousel__nav-progress"
                       style={{ width: `${progress}%` }}
                     ></div>
@@ -290,7 +317,7 @@ useEffect(() => {
                 </button>
               ))}
             </div>
-            
+
             {/* Slide Counter */}
             <div className="landing-carousel__counter">
               <span className="landing-carousel__counter-current">
@@ -306,13 +333,19 @@ useEffect(() => {
 
         {/* Scroll Indicator */}
         <div className="scroll-indicator">
-          <div className="scroll-arrow" onClick={() => document.getElementById('ScrollToFeatures')?.scrollIntoView({ behavior: 'smooth' })}>
+          <div
+            className="scroll-arrow"
+            onClick={() =>
+              document
+                .getElementById('ScrollToFeatures')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
             <ArrowRight className="scroll-arrow-icon" size={24} />
           </div>
           <span className="scroll-text">Scrollen für mehr</span>
         </div>
       </section>
-
     </>
   );
 };

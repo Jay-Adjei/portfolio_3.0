@@ -21,7 +21,7 @@ About Me socials Styles
 }
 
 .about-me-socials a:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: rgba(62, 207, 142, 0.1);
 }
 
@@ -33,7 +33,7 @@ About Me socials Styles
 }
 
 .about-me-socials a:hover .about-me-icon {
-  color: #3ECF8E;
+  color: #3ecf8e;
 }
 
 /* Footer Styles mit Social Icons */
@@ -95,7 +95,6 @@ About Me socials Styles
   transition: color 0.3s ease;
 }
 
-
 .footer-socials {
   display: flex;
   gap: 1.5rem;
@@ -113,7 +112,7 @@ About Me socials Styles
 }
 
 .footer-socials a:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: rgba(62, 207, 142, 0.1);
 }
 
@@ -125,7 +124,7 @@ About Me socials Styles
 }
 
 .footer-socials a:hover .footer-icon {
-  color: #3ECF8E;
+  color: #3ecf8e;
 }
 
 /* Responsive Design */

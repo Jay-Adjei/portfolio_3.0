@@ -6,13 +6,13 @@ import './CompanyCarousel.css';
 
 const CompanyCarousel = () => {
   const images = [
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
-    '/assets/img/logo/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
+    '/assets/images/logo_white.png',
   ];
 
   const trackRef = useRef(null);
@@ -25,14 +25,14 @@ const CompanyCarousel = () => {
 
     const ctx = gsap.context(() => {
       const totalWidth = track.scrollWidth / 4;
-      
+
       tl.current = gsap.timeline({ repeat: -1 }).to(track, {
         x: -totalWidth,
         duration: 20,
         ease: 'none',
         modifiers: {
-          x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-        }
+          x: gsap.utils.unitize(x => parseFloat(x) % totalWidth),
+        },
       });
     }, track);
 
@@ -43,10 +43,7 @@ const CompanyCarousel = () => {
     <div className="infinite-carousel-container">
       <div className="infinite-carousel-track" ref={trackRef}>
         {slides.map((img, index) => (
-          <div 
-            key={index}
-            className="infinite-carousel-slide"
-          >
+          <div key={index} className="infinite-carousel-slide">
             <img
               src={img}
               alt={`Partner ${index}`}

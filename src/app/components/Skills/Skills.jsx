@@ -1,36 +1,36 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from 'react';
 import './skill.css';
 
 const skillsData = {
   coding: [
-    { title: "HTML5", icon: "/assets/img/skills/html.webp" },
-    { title: "CSS3", icon: "/assets/img/skills/css.webp" },
-    { title: "SASS", icon: "/assets/img/skills/sass.webp" },
-    { title: "JavaScript", icon: "/assets/img/skills/js.webp" },
-    { title: "React", icon: "/assets/img/skills/react.webp" },
-    { title: "Next.js", icon: "/assets/img/skills/nextjs.svg" },
+    { title: 'HTML5', icon: '/assets/images/about/html.webp' },
+    { title: 'CSS3', icon: '/assets/images/about/css.webp' },
+    { title: 'SASS', icon: '/assets/images/about/sass.webp' },
+    { title: 'JavaScript', icon: '/assets/images/about/js.webp' },
+    { title: 'React', icon: '/assets/images/about/react.webp' },
+    { title: 'Next.js', icon: '/assets/images/about/nextjs.svg' },
   ],
   software: [
-    { title: "Apache", icon: "/assets/img/skills/apache.webp" },
-    { title: "Linux (SSH, VPS)", icon: "/assets/img/skills/Linux.webp" },
-    { title: "Git", icon: "/assets/img/skills/Git.webp" },
-    { title: "GitHub", icon: "/assets/img/skills/Github.webp" },
+    { title: 'Apache', icon: '/assets/images/about/apache.webp' },
+    { title: 'Linux (SSH, VPS)', icon: '/assets/images/about/Linux.webp' },
+    { title: 'Git', icon: '/assets/images/about/Git.webp' },
+    { title: 'GitHub', icon: '/assets/images/about/Github.webp' },
   ],
   tools: [
-    { title: "Visual Studio Code", icon: "/assets/img/skills/VSC.webp" },
-    { title: "Figma", icon: "/assets/img/skills/Figma.svg" },
-    { title: "Adobe Photoshop", icon: "/assets/img/skills/css.webp" },
-    { title: "DaVinci Resolve", icon: "/assets/img/skills/js.webp" },
+    { title: 'Visual Studio Code', icon: '/assets/images/about/VSC.webp' },
+    { title: 'Figma', icon: '/assets/images/about/Figma.svg' },
+    { title: 'Adobe Photoshop', icon: '/assets/images/about/css.webp' },
+    { title: 'DaVinci Resolve', icon: '/assets/images/about/js.webp' },
   ],
   Design: [
-    { title: "Blender", icon: "/assets/img/skills/Blenders.webp" },
-    { title: "WordPress", icon: "/assets/img/skills/wordpress.webp" },
-    { title: "Shopify", icon: "/assets/img/skills/Shopify.png" },
-    { title: "OBS Studio", icon: "/assets/img/skills/js.webp" },
-    { title: "Audacity", icon: "/assets/img/skills/Audacity.webp" },
-  ]
+    { title: 'Blender', icon: '/assets/images/about/Blenders.webp' },
+    { title: 'WordPress', icon: '/assets/images/about/wordpress.webp' },
+    { title: 'Shopify', icon: '/assets/images/about/Shopify.png' },
+    { title: 'OBS Studio', icon: '/assets/images/about/js.webp' },
+    { title: 'Audacity', icon: '/assets/images/about/Audacity.webp' },
+  ],
 };
 
 const Skills = () => {
@@ -41,8 +41,10 @@ const Skills = () => {
   // Alle Bilder vorab laden
   useEffect(() => {
     const preloadImages = async () => {
-      const allImages = Object.values(skillsData).flat().map(skill => skill.icon);
-      
+      const allImages = Object.values(skillsData)
+        .flat()
+        .map(skill => skill.icon);
+
       try {
         await Promise.all(
           allImages.map(src => {
@@ -68,9 +70,9 @@ const Skills = () => {
     <section className="skills-section">
       <div className="skills-container">
         <h2 className="skills-title">My Skills</h2>
-        
+
         <div className="category-tabs">
-          {Object.keys(skillsData).map((category) => (
+          {Object.keys(skillsData).map(category => (
             <button
               key={category}
               className={`tab-button ${activeTab === category ? 'active' : ''}`}
@@ -91,7 +93,7 @@ const Skills = () => {
           ) : (
             // Skills anzeigen, wenn alle Bilder geladen sind
             skillsData[activeTab].map((skill, index) => (
-              <div 
+              <div
                 key={index}
                 className="skill-item"
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -99,15 +101,16 @@ const Skills = () => {
               >
                 {/* Füge diesen Div hinzu */}
                 <div className="gradient-border"></div>
-                
+
                 <img
                   src={skill.icon}
                   alt={skill.title}
                   className="skill-icon"
                   style={{
-                    transform: hoveredIndex === index 
-                      ? 'scale(1.15) rotateZ(0deg)' 
-                      : 'scale(1) rotateZ(0deg)'
+                    transform:
+                      hoveredIndex === index
+                        ? 'scale(1.15) rotateZ(0deg)'
+                        : 'scale(1) rotateZ(0deg)',
                   }}
                   loading="eager" // Wichtig: Sofort laden
                 />

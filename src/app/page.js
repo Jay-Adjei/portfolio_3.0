@@ -1,9 +1,9 @@
 // src/Pages/Home/Home.jsx
 import React from 'react';
-import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel'; 
-import Skills from "./components/Skills/Skills";
+import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel';
+import Skills from './components/Skills/Skills';
 import CallToAction from './components/CallToAction/CallToAction';
-import AboutMe from "./components/AboutMe/AboutMe";
+import AboutMe from './components/AboutMe/AboutMe';
 import Features from './components/Features/Features';
 import CompanyCarousel from './components/CompanyCarousel/CompanyCarousel.jsx';
 import TextCarousel from './components/TextCarousel/TextCarousel';
@@ -15,12 +15,11 @@ import TestimonialsGrid from './components/TestimonialsGrid/TestimonialsGrid';
 const Home = () => {
   return (
     <div className="page home-page">
-
       <PortfolioCarousel />
       <Features />
       {/* <CompanyCarousel /> */}
-      <FeaturesInteractive/>
-      <TestimonialsGrid/>
+      <FeaturesInteractive />
+      <TestimonialsGrid />
       <CallToAction />
     </div>
   );

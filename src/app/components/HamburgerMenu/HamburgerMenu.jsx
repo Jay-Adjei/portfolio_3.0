@@ -1,109 +1,279 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import './HamburgerMenu.css';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useDarkMode } from '../../contexts/DarkModeContext';
+import {
+  Home,
+  User,
+  Briefcase,
+  PenTool,
+  MessageSquare,
+  X,
+  Sun,
+  Moon,
+  Github,
+  Linkedin,
+  Twitter,
+} from 'lucide-react';
 import Link from 'next/link';
+import './HamburgerMenu.css';
 
-const HamburgerMenu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const HamburgerMenu = ({ isOpen, onClose }) => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const menuRef = useRef(null);
   const overlayRef = useRef(null);
-  const navLinksRef = useRef([]);
 
+  const menuItems = [
+    {
+      href: '/',
+      label: 'Home',
+      icon: Home,
+      description: 'Welcome to my digital space',
+    },
+    {
+      href: '/about',
+      label: 'About',
+      icon: User,
+      description: 'Learn more about me',
+    },
+    {
+      href: '/portfolio',
+      label: 'Portfolio',
+      icon: Briefcase,
+      description: 'Explore my work',
+    },
+    {
+      href: '/blog',
+      label: 'Blog',
+      icon: PenTool,
+      description: 'Thoughts & insights',
+    },
+    {
+      href: '/guestbook',
+      label: 'Guestbook',
+      icon: MessageSquare,
+      description: 'Leave a message',
+    },
+  ];
+
+  const socialLinks = [
+    { href: 'https://github.com', label: 'GitHub', icon: Github },
+    { href: 'https://linkedin.com', label: 'LinkedIn', icon: Linkedin },
+    { href: 'https://twitter.com', label: 'Twitter', icon: Twitter },
+  ];
+
+  // Close menu on escape key
   useEffect(() => {
-    // Initialisiere das Menü und Overlay außerhalb des Bildschirms
-    gsap.set(menuRef.current, { x: '-100%' });
-    gsap.set(overlayRef.current, { opacity: 0 });
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  // Close menu on route change
+  useEffect(() => {
+    onClose();
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  
-    if (!isMenuOpen) {
-      // Menü und Overlay anzeigen
-      gsap.set(navLinksRef.current, { opacity: 0, y: 20 }); // Setze Startwerte sicherheitshalber
-      gsap.to(menuRef.current, {
-        duration: 0.8,
-        x: 0,
-        ease: 'power3.out',
-      });
-      gsap.to(overlayRef.current, {
-        duration: 0.5,
-        opacity: 1,
-        pointerEvents: 'auto',
-      });
-  
-      // Navigationslinks nacheinander anzeigen
-      gsap.fromTo(
-        navLinksRef.current,
-        { opacity: 0, y: 20 }, // Startwerte explizit definieren
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.1,
-          delay: 0.3,
-          duration: 0.5,
-          ease: 'power3.out',
-        }
-      );
-    } else {
-      // Menü und Overlay ausblenden
-      gsap.to(menuRef.current, {
-        duration: 0.8,
-        x: '-100%',
-        ease: 'power3.in',
-      });
-      gsap.to(overlayRef.current, {
-        duration: 0.5,
-        opacity: 0,
-        pointerEvents: 'none',
-      });
-    }
+  const handleLinkClick = () => {
+    onClose();
   };
 
-  const handleLinkClick = () => {
-    // Menü schließen, wenn ein Link angeklickt wird
-    if (isMenuOpen) {
-      toggleMenu();
-    }
+  const menuVariants = {
+    closed: {
+      x: '100%',
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+    open: {
+      x: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+  };
+
+  const overlayVariants = {
+    closed: {
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    open: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, x: 20 },
+    open: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.3,
+        ease: 'easeOut',
+      },
+    }),
   };
 
   return (
-    <>
-      {/* Halbtransparentes Overlay */}
-      <div ref={overlayRef} className="hamburger-overlay" onClick={toggleMenu}></div>
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop Overlay */}
+          <motion.div
+            ref={overlayRef}
+            className="hamburger-overlay"
+            variants={overlayVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            onClick={onClose}
+          />
 
-      <div className="hamburger-menu-container">
-        <div className="hamburger-icon" onClick={toggleMenu}>
-          <div className={`hamburger-line ${isMenuOpen ? 'active' : ''}`} />
-          <div className={`hamburger-line ${isMenuOpen ? 'active' : ''}`} />
-          <div className={`hamburger-line ${isMenuOpen ? 'active' : ''}`} />
-        </div>
-        
-        <div ref={menuRef} className="menu">
-          <nav>
-            <ul>
-              <li ref={(el) => (navLinksRef.current[0] = el)}>
-                <Link href="/" onClick={handleLinkClick}>Home</Link>
-              </li>
-              <li ref={(el) => (navLinksRef.current[1] = el)}>
-                <Link href="/blog" onClick={handleLinkClick}>Blog</Link>
-              </li>
-              <li ref={(el) => (navLinksRef.current[2] = el)}>
-                <Link href="/portfolio" onClick={handleLinkClick}>Portfolio</Link>
-              </li>
-              <li ref={(el) => (navLinksRef.current[3] = el)}>
-                <Link href="/about" onClick={handleLinkClick}>About</Link>
-              </li>
-              <li ref={(el) => (navLinksRef.current[4] = el)}>
-                <Link href="/guestbook" onClick={handleLinkClick}>Guestbook</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </>
+          {/* Mobile Menu Panel */}
+          <motion.div
+            ref={menuRef}
+            className={`hamburger-menu-panel ${isDarkMode ? 'dark' : 'light'}`}
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            {/* Menu Header */}
+            <div className="menu-header">
+              <motion.h2 
+                className="menu-title"
+                custom={0}
+                variants={itemVariants}
+                initial="closed"
+                animate="open"
+              >
+                Navigation
+              </motion.h2>
+              <motion.p 
+                className="menu-subtitle"
+                custom={1}
+                variants={itemVariants}
+                initial="closed"
+                animate="open"
+              >
+                Explore my digital world
+              </motion.p>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="menu-nav">
+              <ul className="menu-list">
+                {menuItems.map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <motion.li
+                      key={item.href}
+                      className="menu-item"
+                      custom={index + 2}
+                      variants={itemVariants}
+                      initial="closed"
+                      animate="open"
+                    >
+                      <Link
+                        href={item.href}
+                        className="menu-link"
+                        onClick={handleLinkClick}
+                      >
+                        <div className="menu-link-content">
+                          <div className="menu-link-icon">
+                            <IconComponent size={24} />
+                          </div>
+                          <div className="menu-link-text">
+                            <span className="menu-link-label">{item.label}</span>
+                            <span className="menu-link-description">
+                              {item.description}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            {/* Social Links */}
+            <div className="menu-social">
+              <motion.h3 
+                className="menu-social-title"
+                custom={7}
+                variants={itemVariants}
+                initial="closed"
+                animate="open"
+              >
+                Connect
+              </motion.h3>
+              <div className="menu-social-links">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.a
+                      key={social.href}
+                      href={social.href}
+                      className="menu-social-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleLinkClick}
+                      custom={index + 8}
+                      variants={itemVariants}
+                      initial="closed"
+                      animate="open"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <IconComponent size={20} />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <motion.button
+              className="menu-close-btn"
+              onClick={onClose}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              custom={10}
+              variants={itemVariants}
+              initial="closed"
+              animate="open"
+            >
+              <X size={24} />
+            </motion.button>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
 

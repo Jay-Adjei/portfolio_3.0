@@ -5,7 +5,7 @@
 /* Dark Mode Toggle Styles */
 .dark-mode-toggle {
   cursor: pointer; /* Standard-Cursor */
-  font-family: "RedHat", sans-serif; /* Einheitliche Schriftart */
+  font-family: 'RedHat', sans-serif; /* Einheitliche Schriftart */
   position: fixed;
   right: 125px;
   text-align: center;
@@ -24,8 +24,10 @@
   font-size: 16px;
   border: none;
   text-transform: uppercase;
-  font-family: "RedHat", sans-serif;
-  transition: background-color 0.3s, color 0.3s; /* Übergangseffekte für Hover */
+  font-family: 'RedHat', sans-serif;
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Übergangseffekte für Hover */
 }
 
 .darkmode-toggle button:hover {
@@ -66,7 +68,8 @@
   align-items: center;
 }
 
-#lottieLight, #lottieDark {
+#lottieLight,
+#lottieDark {
   width: 30px; /* Setze eine feste Breite */
   height: 30px; /* Setze eine feste Höhe */
   transition: opacity 0.3s ease;
@@ -93,7 +96,8 @@
 }
 
 @media screen and (max-width: 991px) {
-  #lottieLight, #lottieDark {
+  #lottieLight,
+  #lottieDark {
     width: 37px;
     height: 54px;
   }
@@ -102,5 +106,3 @@
 /*------------------------------------------------------------*/
 /* Dark Mode und Light Mode Schriftarten und Layout-Änderungen */
 /*------------------------------------------------------------*/
-
-

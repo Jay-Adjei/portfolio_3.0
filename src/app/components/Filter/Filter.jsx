@@ -1,14 +1,33 @@
 'use client';
-import React, { useState, useEffect } from "react";
-import { Grid3X3, Grid2X2, LayoutGrid, ChevronDown, Filter as FilterIcon, Sparkles, Code, TrendingUp, X, Settings } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import {
+  Grid3X3,
+  Grid2X2,
+  LayoutGrid,
+  ChevronDown,
+  Filter as FilterIcon,
+  Sparkles,
+  Code,
+  TrendingUp,
+  X,
+  Settings,
+} from 'lucide-react';
 import './Filter.css';
 
-const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent = true, isLoading = false, onLoadMore, showLoadMore = false }) => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedRarity, setSelectedRarity] = useState("normal");
+const Filter = ({
+  onCategoryChange,
+  onCardTypeChange,
+  onLayoutChange,
+  hasContent = true,
+  isLoading = false,
+  onLoadMore,
+  showLoadMore = false,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedRarity, setSelectedRarity] = useState('normal');
   const [activeLayout, setActiveLayout] = useState(1);
   const [isRarityDropdownOpen, setIsRarityDropdownOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("categories");
+  const [activeTab, setActiveTab] = useState('categories');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -25,7 +44,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (!event.target.closest('.rarity-dropdown')) {
         setIsRarityDropdownOpen(false);
       }
@@ -38,58 +57,74 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
   }, []);
 
   const rarities = [
-    { value: "normal", label: "Standard", description: "Regular projects" },
-    { value: "rare ultra", label: "Premium", description: "Enhanced features" },
-    { value: "ShineBlitz", label: "Spotlight", description: "Featured work" },
-    { value: "ShineBlitz2", label: "Spotlight Pro", description: "Premium featured" },
-    { value: "radiant", label: "Radiant", description: "Glowing effects" },
-    { value: "yugioh ghost", label: "Yugioh Ghost", description: "Yugioh Ghost" },
-    { value: "rare holo", label: "Holographic", description: "3D elements" },
-    { value: "rare holo vmax", label: "Holo Max", description: "Maximum impact" },
-    { value: "rare rainbow", label: "Rainbow", description: "Colorful design" },
-    { value: "rare secret", label: "Secret", description: "Hidden gems" },
-    { value: "rare holo v1", label: "Holo V1", description: "Version 1.0" },
-    { value: "rare holo vstar", label: "Holo Star", description: "Star quality" },
+    { value: 'normal', label: 'Standard', description: 'Regular projects' },
+    { value: 'rare ultra', label: 'Premium', description: 'Enhanced features' },
+    { value: 'ShineBlitz', label: 'Spotlight', description: 'Featured work' },
+    {
+      value: 'ShineBlitz2',
+      label: 'Spotlight Pro',
+      description: 'Premium featured',
+    },
+    { value: 'radiant', label: 'Radiant', description: 'Glowing effects' },
+    {
+      value: 'yugioh ghost',
+      label: 'Yugioh Ghost',
+      description: 'Yugioh Ghost',
+    },
+    { value: 'rare holo', label: 'Holographic', description: '3D elements' },
+    {
+      value: 'rare holo vmax',
+      label: 'Holo Max',
+      description: 'Maximum impact',
+    },
+    { value: 'rare rainbow', label: 'Rainbow', description: 'Colorful design' },
+    { value: 'rare secret', label: 'Secret', description: 'Hidden gems' },
+    { value: 'rare holo v1', label: 'Holo V1', description: 'Version 1.0' },
+    {
+      value: 'rare holo vstar',
+      label: 'Holo Star',
+      description: 'Star quality',
+    },
   ];
 
   const categories = [
-    { 
-      value: "all", 
-      label: "All Projects", 
+    {
+      value: 'all',
+      label: 'All Projects',
       icon: LayoutGrid,
-      description: "View everything"
+      description: 'View everything',
     },
-    { 
-      value: "Design", 
-      label: "Design", 
+    {
+      value: 'Design',
+      label: 'Design',
       icon: Sparkles,
-      description: "UI/UX & Visual"
+      description: 'UI/UX & Visual',
     },
-    { 
-      value: "Coding", 
-      label: "Development", 
+    {
+      value: 'Coding',
+      label: 'Development',
       icon: Code,
-      description: "Web & Mobile Apps"
+      description: 'Web & Mobile Apps',
     },
-    { 
-      value: "Marketing", 
-      label: "Marketing", 
+    {
+      value: 'Marketing',
+      label: 'Marketing',
       icon: TrendingUp,
-      description: "Campaigns & Strategy"
-    }
+      description: 'Campaigns & Strategy',
+    },
   ];
 
   const layoutOptions = [
-    { id: 1, icon: LayoutGrid, label: "Grid" },
-    { id: 2, icon: Grid2X2, label: "Cards" },
-    { id: 3, icon: Grid3X3, label: "List" }
+    { id: 1, icon: LayoutGrid, label: 'Grid' },
+    { id: 2, icon: Grid2X2, label: 'Cards' },
+    { id: 3, icon: Grid3X3, label: 'List' },
   ];
 
   const getSelectedRarity = () => {
     return rarities.find(r => r.value === selectedRarity) || rarities[0];
   };
 
-  const handleRaritySelect = (rarity) => {
+  const handleRaritySelect = rarity => {
     setSelectedRarity(rarity.value);
     setIsRarityDropdownOpen(false);
   };
@@ -102,12 +137,13 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
         </div>
         <h3 className="no-content-title">No {selectedCategory} Projects Yet</h3>
         <p className="no-content-description">
-          We&apos;re currently working on some amazing {selectedCategory.toLowerCase()} projects. 
-          Check back soon to see our latest work!
+          We&apos;re currently working on some amazing{' '}
+          {selectedCategory.toLowerCase()} projects. Check back soon to see our
+          latest work!
         </p>
-        <button 
+        <button
           className="no-content-button"
-          onClick={() => setSelectedCategory("all")}
+          onClick={() => setSelectedCategory('all')}
         >
           View All Projects
         </button>
@@ -115,10 +151,10 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
     </div>
   );
 
-  const LoadMoreSection = () => (
+  const LoadMoreSection = () =>
     showLoadMore && (
       <div className="load-more-section">
-        <button 
+        <button
           className="load-more-button"
           onClick={onLoadMore}
           disabled={isLoading}
@@ -136,8 +172,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
           )}
         </button>
       </div>
-    )
-  );
+    );
 
   return (
     <>
@@ -151,15 +186,17 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
             >
               <FilterIcon size={20} />
               <span>Filters</span>
-              <ChevronDown 
-                size={16} 
+              <ChevronDown
+                size={16}
                 className={`mobile-chevron ${isMobileMenuOpen ? 'rotated' : ''}`}
               />
             </button>
           </div>
 
           {/* Desktop Filter */}
-          <div className={`filter-content ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <div
+            className={`filter-content ${isMobileMenuOpen ? 'mobile-open' : ''}`}
+          >
             {/* Filter Tabs */}
             <div className="filter-tabs">
               <button
@@ -193,7 +230,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
                   <div className="filter-group">
                     <label className="filter-label">Project Categories</label>
                     <div className="category-grid">
-                      {categories.map((category) => {
+                      {categories.map(category => {
                         const IconComponent = category.icon;
                         return (
                           <button
@@ -206,8 +243,12 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
                               <IconComponent size={20} />
                             </div>
                             <div className="category-content">
-                              <span className="category-name">{category.label}</span>
-                              <span className="category-description">{category.description}</span>
+                              <span className="category-name">
+                                {category.label}
+                              </span>
+                              <span className="category-description">
+                                {category.description}
+                              </span>
                             </div>
                           </button>
                         );
@@ -223,7 +264,7 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
                   <div className="filter-group">
                     <label className="filter-label">Display Layout</label>
                     <div className="layout-options">
-                      {layoutOptions.map((layout) => {
+                      {layoutOptions.map(layout => {
                         const IconComponent = layout.icon;
                         return (
                           <button
@@ -251,21 +292,27 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
                       <button
                         type="button"
                         className={`rarity-trigger ${isRarityDropdownOpen ? 'open' : ''}`}
-                        onClick={() => setIsRarityDropdownOpen(!isRarityDropdownOpen)}
+                        onClick={() =>
+                          setIsRarityDropdownOpen(!isRarityDropdownOpen)
+                        }
                       >
                         <div className="rarity-selected">
-                          <span className="rarity-label">{getSelectedRarity().label}</span>
-                          <span className="rarity-subtitle">{getSelectedRarity().description}</span>
+                          <span className="rarity-label">
+                            {getSelectedRarity().label}
+                          </span>
+                          <span className="rarity-subtitle">
+                            {getSelectedRarity().description}
+                          </span>
                         </div>
-                        <ChevronDown 
-                          size={16} 
+                        <ChevronDown
+                          size={16}
                           className={`chevron ${isRarityDropdownOpen ? 'rotated' : ''}`}
                         />
                       </button>
-                      
+
                       {isRarityDropdownOpen && (
                         <div className="rarity-dropdown-menu">
-                          {rarities.map((rarity) => (
+                          {rarities.map(rarity => (
                             <button
                               key={rarity.value}
                               type="button"
@@ -273,8 +320,12 @@ const Filter = ({ onCategoryChange, onCardTypeChange, onLayoutChange, hasContent
                               onClick={() => handleRaritySelect(rarity)}
                             >
                               <div className="rarity-info">
-                                <span className="rarity-name">{rarity.label}</span>
-                                <span className="rarity-description">{rarity.description}</span>
+                                <span className="rarity-name">
+                                  {rarity.label}
+                                </span>
+                                <span className="rarity-description">
+                                  {rarity.description}
+                                </span>
                               </div>
                             </button>
                           ))}

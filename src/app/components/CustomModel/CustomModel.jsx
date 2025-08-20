@@ -12,16 +12,18 @@ export default function CustomModel() {
   }, []);
 
   return (
-    <div style={{
-      width: '100vw',
-      height: '85vh',
-      position: 'relative',
-      left: '50%',
-      right: '50%',
-      marginLeft: '-50vw',
-      marginRight: '-50vw',
-      overflow: 'hidden'
-    }}>
+    <div
+      style={{
+        width: '100vw',
+        height: '85vh',
+        position: 'relative',
+        left: '50%',
+        right: '50%',
+        marginLeft: '-50vw',
+        marginRight: '-50vw',
+        overflow: 'hidden',
+      }}
+    >
       <Canvas
         camera={{
           position: [0, 0, 5],
@@ -29,7 +31,7 @@ export default function CustomModel() {
         }}
         gl={{
           preserveDrawingBuffer: true,
-          toneMapping: THREE.NoToneMapping
+          toneMapping: THREE.NoToneMapping,
         }}
         onCreated={({ gl, scene }) => {
           gl.outputEncoding = THREE.LinearEncoding;
@@ -41,7 +43,7 @@ export default function CustomModel() {
         }}
         style={{
           width: '100%',
-          height: '100%'
+          height: '100%',
         }}
       >
         {/* Lighting */}
@@ -59,7 +61,7 @@ export default function CustomModel() {
           shadow-camera-top={15}
           shadow-camera-bottom={-15}
         />
-        
+
         <Model />
         {isClient && <OrbitControls />}
       </Canvas>

@@ -11,7 +11,7 @@
 .portfolio-subheading {
   font-size: 60px;
   font-style: normal;
-  font-family: "BlenderProBold";
+  font-family: 'BlenderProBold';
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
@@ -27,9 +27,6 @@
   text-align: center;
 }
 
-
-
-
 .slider_single-project_header {
   position: relative;
   padding: 8rem 0 6rem;
@@ -44,12 +41,12 @@
   padding-left: 4rem; /* etwas Abstand vom linken Rand */
 }
 
-
 /* Stärkerer Schatten von links nach rechts */
 .slider_single-project_header::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent 100%);
@@ -57,7 +54,7 @@
 
 /* Gradient Effekt vom slider zum Content */
 .slider_single-project_header::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -71,7 +68,7 @@
 /* Aber da muss eine transition hin */
 /* Gradient Effekt vom slider zum Content // darkmode */
 .dark-mode .slider_single-project_header::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -81,7 +78,6 @@
   background: linear-gradient(180deg, transparent 0%, #0a0a0a 100%);
   z-index: 1;
 }
-
 
 .project-hero_container {
   position: relative;
@@ -113,14 +109,14 @@
 }
 
 .portfolio-title {
-	font-size: 120px;
-	font-style: normal;
-	font-family: "BlenderProBold";
-	text-align: left;
-	color: #ffffff;
-	margin-bottom: 3rem;
-	display: block;
-	width: 100%;
+  font-size: 120px;
+  font-style: normal;
+  font-family: 'BlenderProBold';
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  display: block;
+  width: 100%;
 }
 
 .portfolio-excerpt {
@@ -136,17 +132,19 @@
     background:
       linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
       linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 10%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.6) 100%);
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6) 0%,
+        transparent 5%,
+        transparent 95%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
   }
-  
 
   .project-hero_container {
     flex-direction: column;
   }
 }
-
-
-
 
 /* -----------------------------------------------------------
 Profile-Information-(Steckbrief)
@@ -173,7 +171,7 @@ Profile-Information-(Steckbrief)
 .project-info-item {
   position: relative;
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.6;
   padding: 20px 15px 12px;
   border-radius: 8px;
@@ -186,7 +184,7 @@ Profile-Information-(Steckbrief)
 }
 
 .project-info-item:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
@@ -198,8 +196,8 @@ Profile-Information-(Steckbrief)
   left: 20px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
-  color: #3ECF8E;
-  font-family: "RedHat", sans-serif;
+  color: #3ecf8e;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   white-space: nowrap;
 }
@@ -218,14 +216,12 @@ Profile-Information-(Steckbrief)
 .project-info-icon {
   width: 24px;
   height: 24px;
-  stroke: #3ECF8E;
+  stroke: #3ecf8e;
   display: block;
   flex-shrink: 0;
   margin-right: 0px;
   margin-left: 0px;
 }
-
-
 
 /* Gallery Text Area */
 /*----------------------------------------------------------*/
@@ -236,19 +232,16 @@ Profile-Information-(Steckbrief)
 }
 
 .portfolio-Gallery-title {
-color: #fff;
+  color: #fff;
   font-size: 60px;
   font-style: normal;
   text-transform: uppercase;
-  font-family: "BlenderProBold";
+  font-family: 'BlenderProBold';
 }
 
 .portfolio-Paragraph {
   color: #fff;
 }
-
-
-
 
 /* Learning Process Grid */
 /*----------------------------------------------------------*/
@@ -284,9 +277,13 @@ color: #fff;
   border-radius: 12px;
   padding: 2px;
   background: linear-gradient(45deg, #00ff88, #61dafb);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -295,18 +292,12 @@ color: #fff;
 
 .portfolio-learning-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-learning-card:hover::before {
   opacity: 1;
 }
-
-
-
-
-
-
 
 /*----------------------------------------------------------*/
 /* Like & View Counter Styles */
@@ -322,7 +313,7 @@ color: #fff;
 .counter-item {
   position: relative;
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.6;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.02);
@@ -335,7 +326,7 @@ color: #fff;
 }
 
 .counter-item:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
@@ -347,8 +338,8 @@ color: #fff;
   left: 10px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
-  color: #3ECF8E;
-  font-family: "RedHat", sans-serif;
+  color: #3ecf8e;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   white-space: nowrap;
 }
@@ -360,7 +351,7 @@ color: #fff;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -369,7 +360,7 @@ color: #fff;
 
 .btn-like:hover,
 .btn-view:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   transform: translateY(-3px);
 }
 
@@ -384,90 +375,57 @@ color: #fff;
 .icon-like {
   width: 24px;
   height: 24px;
-  color: #3ECF8E; /* Herz grün */
+  color: #3ecf8e; /* Herz grün */
   flex-shrink: 0;
 }
 
 .icon-view {
   width: 24px;
   height: 24px;
-  color: #3ECF8E; /* Views grün */
+  color: #3ecf8e; /* Views grün */
   flex-shrink: 0;
 }
 
 /* Counter Text */
 .counter-text {
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .patternpost {
   position: relative; /* damit ::after relativ dazu positioniert */
-  overflow: hidden;    /* damit das Overlay bei Overflow clipped */
+  overflow: hidden; /* damit das Overlay bei Overflow clipped */
 }
 
 .patternpost::after {
   z-index: -10;
-  content: "";
+  content: '';
   position: absolute;
-  top: 50px; left: 0;
+  top: 50px;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: initial;
-  background-image: url('/assets/img/pattern/cross.svg');
-  background-position: top left .9%;
+  background-image: url('/assets/icons/ui/cross.svg');
+  background-position: top left 0.9%;
   background-size: 5rem auto;
-  opacity: .3;
+  opacity: 0.3;
   pointer-events: none;
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .ive-demo-content {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 
-  justify-content: center;  /* horizontal zentrieren */
+  justify-content: center; /* horizontal zentrieren */
 }
-
 
 .ive-demo-item {
   position: relative;
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   line-height: 1.6;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.02);
@@ -480,7 +438,7 @@ color: #fff;
 }
 
 .ive-demo-item:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   background: #3ecf8e1a;
   transform: translateY(-3px);
 }
@@ -491,8 +449,8 @@ color: #fff;
   left: 8px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
-  color: #3ECF8E;
-  font-family: "RedHat", sans-serif;
+  color: #3ecf8e;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   white-space: nowrap;
 }
@@ -504,7 +462,7 @@ color: #fff;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -513,7 +471,7 @@ color: #fff;
 
 .btn-live-demo:hover,
 .btn-github-repo:hover {
-  border-color: #3ECF8E;
+  border-color: #3ecf8e;
   transform: translateY(-3px);
 }
 
@@ -529,35 +487,15 @@ color: #fff;
 .icon-github-repo {
   width: 24px;
   height: 24px;
-  color: #3ECF8E; /* grüner Farbton */
+  color: #3ecf8e; /* grüner Farbton */
   flex-shrink: 0;
 }
 
 /* Counter Text */
 .ive-demo-text {
   font-size: 0.95rem;
-  font-family: "RedHat", sans-serif;
+  font-family: 'RedHat', sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Gallery Styles */
 /*----------------------------------------------------------*/
@@ -576,7 +514,7 @@ color: #fff;
 
 .portfolio-media-thumbnail:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
@@ -591,7 +529,7 @@ color: #fff;
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .portfolio-learning-grid {
     grid-template-columns: 1fr;
   }
@@ -602,7 +540,6 @@ color: #fff;
     grid-template-columns: 1fr;
   }
 }
-
 
 /*------------------------------------------------------------*/
 /* Lightbox Fancybox2 Settings - START                         */
@@ -617,10 +554,10 @@ color: #fff;
 }
 
 .gallery img {
-  display: block; 
+  display: block;
   width: 100%;
   height: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border-radius: 15px;
   object-fit: cover;
 }
@@ -644,7 +581,7 @@ color: #fff;
     max-width: 100%;
     justify-content: center;
   }
-  
+
   .dark-mode .gallery a {
     width: 100%;
     height: auto;
@@ -704,14 +641,17 @@ color: #fff;
 /* Dark Mode Toolbar */
 .dark-mode .fancybox__toolbar {
   color: #ffffff;
-  text-shadow: var(--fancybox-toolbar-text-shadow, 1px 1px 1px rgba(255, 255, 255, 0.192));
+  text-shadow: var(
+    --fancybox-toolbar-text-shadow,
+    1px 1px 1px rgba(255, 255, 255, 0.192)
+  );
   pointer-events: none;
 }
 
 /* Hide navigation buttons on horizontal layouts */
-.is-horizontal .f-carousel__nav .f-button.is-prev, 
-.is-horizontal .f-carousel__nav .f-button.is-next, 
-.is-horizontal .fancybox__nav .f-button.is-prev, 
+.is-horizontal .f-carousel__nav .f-button.is-prev,
+.is-horizontal .f-carousel__nav .f-button.is-next,
+.is-horizontal .fancybox__nav .f-button.is-prev,
 .is-horizontal .fancybox__nav .f-button.is-next {
   top: 50%;
   transform: translateY(-50%);

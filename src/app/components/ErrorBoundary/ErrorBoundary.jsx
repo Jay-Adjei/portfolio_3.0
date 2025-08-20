@@ -18,7 +18,7 @@ class ErrorBoundary extends Component {
       error: error,
       errorInfo: errorInfo,
     });
-    
+
     // Hier könntest du den Fehler an einen Service loggen
     console.error('Error caught by boundary:', error, errorInfo);
   }

@@ -26,7 +26,10 @@ const LazyLoadCard = ({ children, threshold = 0.1, placeholder = null }) => {
 
   if (!isInView) {
     return (
-      <div ref={ref} className="min-h-[200px] animate-pulse bg-gray-200 rounded-lg">
+      <div
+        ref={ref}
+        className="min-h-[200px] animate-pulse bg-gray-200 rounded-lg"
+      >
         {placeholder}
       </div>
     );

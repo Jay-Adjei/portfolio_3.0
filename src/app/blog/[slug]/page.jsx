@@ -1,10 +1,10 @@
 // app/blog/[slug]/page.js (Server Component)
-import blogPosts from '../../../../public/data/blogpost.json'; // lade die blogpost json details 
+import blogPosts from '../../../../public/data/blogpost.json'; // lade die blogpost json details
 import BlogPost from '../../components/BlogPost/BlogPost'; // lade die blogpost single componente
 
 export async function generateStaticParams() {
   return blogPosts.map(post => ({
-    slug: post.slug
+    slug: post.slug,
   }));
 }
 

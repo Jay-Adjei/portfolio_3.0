@@ -20,46 +20,50 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*------------------------------------------------------------*/
 /* Skills CSS                                                */
 /*----------------------------------------------------------*/
-  
-  .skills-section {
-    padding: 6rem 0;
-    background: var(--dark-mode);
-  }
-  
-  .dark-mode .skills-section {
-    padding: 6rem 0;
-    background: var(--light-mode);
-  }
-  
-  .skills-container {
-    max-width: 1275px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  .skills-title {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #00ff88;
-    margin-bottom: 4rem;
-    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-  }
-  
-  /* 4 Icons in a row */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    position: relative;
-  }
-  
+
+.skills-section {
+  padding: 6rem 0;
+  background: var(--dark-mode);
+}
+
+.dark-mode .skills-section {
+  padding: 6rem 0;
+  background: var(--light-mode);
+}
+
+.skills-container {
+  max-width: 1275px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #00ff88;
+  margin-bottom: 4rem;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* 4 Icons in a row */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  position: relative;
+}
+
 /* skills.css */
 
 .skill-item {
@@ -84,8 +88,8 @@
   border-radius: inherit;
   padding: 2px;
   background: linear-gradient(45deg, #00ff88, #61dafb);
-  mask: 
-    linear-gradient(#000 0 0) content-box, 
+  mask:
+    linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   mask-composite: exclude;
   opacity: 0;
@@ -99,20 +103,10 @@
 
 .skill-item:hover {
   transform: translateY(-8px);
-  box-shadow: 
-    0 12px 24px rgba(0,0,0,0.3),
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(96, 218, 251, 0.1);
 }
-
-
-
-
-
-
-
-
-
-
 
 .skill-icon {
   height: 90px;
@@ -141,8 +135,6 @@
   text-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 1280px) {
   .skills-grid {
@@ -160,32 +152,20 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skill-item {
     padding: 1.5rem;
   }
-  
+
   .skill-icon {
     height: 70px;
     width: 70px;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-  /*------------------------------------------------------------*/
-  /* Tabs for the Skills Section                               */
-  /*----------------------------------------------------------*/
-  
+/*------------------------------------------------------------*/
+/* Tabs for the Skills Section                               */
+/*----------------------------------------------------------*/
 
 .category-tabs {
   display: flex;
@@ -203,7 +183,10 @@
   color: #fff;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.15s ease,
+    box-shadow 0.3s ease;
   position: relative;
 }
 
@@ -222,7 +205,9 @@
   color: #0a0a0a;
   border-color: #00ff88;
   box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-  transition: background 0.3s ease, box-shadow 0.3s ease; /* Sorgt für flüssige Übergänge bei Aktivierung */
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease; /* Sorgt für flüssige Übergänge bei Aktivierung */
   padding: 0.9rem 2.1rem; /* Kann leicht angepasst werden für einen "aktiveren" Eindruck */
 }
 
@@ -233,11 +218,11 @@
   border-radius: 8px;
   padding: 2px;
   background: linear-gradient(45deg, #00ff88, #61dafb);
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
-  mask: 
-    linear-gradient(#000 0 0) content-box, 
+  mask:
+    linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: exclude;
   mask-composite: exclude;

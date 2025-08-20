@@ -26,14 +26,14 @@ const TextCarousel = () => {
 
     const ctx = gsap.context(() => {
       const totalWidth = track.scrollWidth / 4;
-      
+
       tl.current = gsap.timeline({ repeat: -1 }).to(track, {
         x: -totalWidth,
         duration: 20,
         ease: 'none',
         modifiers: {
-          x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-        }
+          x: gsap.utils.unitize(x => parseFloat(x) % totalWidth),
+        },
       });
     }, track);
 
@@ -44,13 +44,8 @@ const TextCarousel = () => {
     <div className="TextCarousel-container">
       <div className="TextCarousel-track" ref={trackRef}>
         {slides.map((text, index) => (
-          <div 
-            key={index}
-            className="TextCarousel-slide"
-          >
-            <div className="TextCarousel-text">
-              {text}
-            </div>
+          <div key={index} className="TextCarousel-slide">
+            <div className="TextCarousel-text">{text}</div>
           </div>
         ))}
       </div>

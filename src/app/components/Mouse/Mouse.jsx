@@ -1,6 +1,6 @@
-'use client';  // Direktive, um diese Datei nur auf der Client-Seite auszuführen
+'use client'; // Direktive, um diese Datei nur auf der Client-Seite auszuführen
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import './Mouse.css';
 
 const Mouse = () => {
@@ -13,7 +13,7 @@ const Mouse = () => {
 
     // Update Cursor und Follower Position
     const updateCursorPosition = () => {
-      setFollowerPosition((prev) => ({
+      setFollowerPosition(prev => ({
         x: prev.x + (mousePosition.x - prev.x) / 9,
         y: prev.y + (mousePosition.y - prev.y) / 9,
       }));
@@ -23,13 +23,13 @@ const Mouse = () => {
     };
 
     // Mausbewegungs-Event-Listener
-    const updateMousePosition = (e) => {
+    const updateMousePosition = e => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mousedown", () => setIsMouseDown(true));
-    window.addEventListener("mouseup", () => setIsMouseDown(false));
+    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousedown', () => setIsMouseDown(true));
+    window.addEventListener('mouseup', () => setIsMouseDown(false));
 
     // Starte die Cursor-Bewegung
     animationFrameId = requestAnimationFrame(updateCursorPosition);
@@ -37,21 +37,21 @@ const Mouse = () => {
     // Aufräumen beim Verlassen des Effekts
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("mousemove", updateMousePosition);
+      window.removeEventListener('mousemove', updateMousePosition);
     };
   }, [mousePosition]);
 
   return (
     <>
       <div
-        className={`cursor ${isMouseDown ? "active" : ""}`}
+        className={`cursor ${isMouseDown ? 'active' : ''}`}
         style={{
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
         }}
       ></div>
       <div
-        className={`cursor-follower ${isMouseDown ? "active" : ""}`}
+        className={`cursor-follower ${isMouseDown ? 'active' : ''}`}
         style={{
           left: `${followerPosition.x}px`,
           top: `${followerPosition.y}px`,

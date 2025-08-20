@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
@@ -10,26 +10,25 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    setIsClient(true);  // Clientseitig einschalten
+    setIsClient(true); // Clientseitig einschalten
   }, []);
-
 
   // Mouse tracking for glow effect
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = e => {
       const rect = wrapper.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
-      
+
       wrapper.style.setProperty('--mouse-x', `${x}%`);
       wrapper.style.setProperty('--mouse-y', `${y}%`);
     };
 
     wrapper.addEventListener('mousemove', handleMouseMove);
-    
+
     return () => {
       wrapper.removeEventListener('mousemove', handleMouseMove);
     };
@@ -38,7 +37,7 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
   const handleMouseEnter = () => {
     const video = videoRef.current;
     if (video && !isGif) {
-      video.play().catch((e) => {
+      video.play().catch(e => {
         console.error('Error playing video:', e);
       });
     }
@@ -52,32 +51,26 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
     }
   };
 
-return (
+  return (
     <div
       ref={wrapperRef}
-      className={`card-home-features-wrapper ${className}`} 
-      onMouseEnter={handleMouseEnter} 
+      className={`card-home-features-wrapper ${className}`}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {isGif ? (
-        <img 
-          src={src} 
-          alt={title} 
-          className="card-home-features-video" 
+        <img src={src} alt={title} className="card-home-features-video" />
+      ) : // Nur clientseitig das Video rendern, sonst null (kein Server-Video)
+      isClient ? (
+        <video
+          ref={videoRef}
+          src={src}
+          loop
+          muted
+          className="card-home-features-video"
+          onError={e => console.error('Error loading video:', e)}
         />
-      ) : (
-        // Nur clientseitig das Video rendern, sonst null (kein Server-Video)
-        isClient ? (
-          <video
-            ref={videoRef}
-            src={src}
-            loop
-            muted
-            className="card-home-features-video"
-            onError={(e) => console.error('Error loading video:', e)}
-          />
-        ) : null
-      )}
+      ) : null}
 
       {/* Content bleibt gleich */}
       <div className="card-home-features-content">
@@ -87,17 +80,14 @@ return (
             <p className="card-home-features-description">{description}</p>
           )}
         </div>
-        
-        <a 
-          href={buttonHref} 
+
+        <a
+          href={buttonHref}
           className="card-home-features-button"
           aria-label={`View ${title} project`}
         >
           View Project
-          <ArrowUpRight 
-            className="card-home-features-button-icon" 
-            size={16} 
-          />
+          <ArrowUpRight className="card-home-features-button-icon" size={16} />
         </a>
       </div>
     </div>
@@ -110,17 +100,15 @@ const CardHomeFeatures = () => {
       {/* Floating Background Elements */}
       <div className="card-home-features-orb card-home-features-orb-1"></div>
       <div className="card-home-features-orb card-home-features-orb-2"></div>
-      
+
       <div className="card-home-features-container">
-        
         {/* Header Section */}
         <header className="card-home-features-intro" id="ScrollToFeatures">
-          <h2 className="card-home-features-intro-text">
-            Featured Projects
-          </h2>
+          <h2 className="card-home-features-intro-text">Featured Projects</h2>
           <p className="card-home-features-intro-description">
-            Discover our latest work showcasing innovative solutions, 
-            cutting-edge design, and exceptional craftsmanship across various industries.
+            Discover our latest work showcasing innovative solutions,
+            cutting-edge design, and exceptional craftsmanship across various
+            industries.
           </p>
         </header>
 
@@ -163,15 +151,15 @@ const CardHomeFeatures = () => {
         {/* Special Grid Section */}
         <div className="card-home-features-grid-special">
           <Card
-            src="/assets/img/Gifs/Ringsblack.gif"
+            src="/assets/animations/gifs/Ringsblack.gif"
             title="Arcadia"
             description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact!"
             className="card-home-features-xsmall2"
             buttonHref="/project6"
-            isGif={true}  // ← wichtig!
+            isGif={true} // ← wichtig!
           />
           <Card
-            src="/assets/img/LandingBG/OniBoy1.webp"
+            src="/assets/images/landing/OniBoy1.webp"
             title="Arcadia"
             description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact."
             className="card-home-features-xsmall2"
@@ -179,7 +167,6 @@ const CardHomeFeatures = () => {
             isGif={true}
           />
         </div>
-
       </div>
     </section>
   );

@@ -1,14 +1,14 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
-import Link from "next/link";
-import Filter from "../../components/Filter/Filter";
-import HolographicCard from "../../components/HolographicCard/HolographicCard";
+import Link from 'next/link';
+import Filter from '../../components/Filter/Filter';
+import HolographicCard from '../../components/HolographicCard/HolographicCard';
 import './PortfolioGrid.css';
 
 const Portfolio = () => {
   const [cardsData, setCardsData] = useState([]);
-  const [category, setCategory] = useState("all");
-  const [cardType, setCardType] = useState("normal");
+  const [category, setCategory] = useState('all');
+  const [cardType, setCardType] = useState('normal');
   const [activeLayout, setActiveLayout] = useState(1);
   const [visibleCardsCount, setVisibleCardsCount] = useState(4);
   const [isLoading, setIsLoading] = useState(false);
@@ -29,14 +29,15 @@ const Portfolio = () => {
 
   const filteredCards = useMemo(() => {
     return cardsData
-      .filter((card) => {
-        const matchesCategory = category === "all" || card.category === category;
+      .filter(card => {
+        const matchesCategory =
+          category === 'all' || card.category === category;
         return matchesCategory;
       })
-      .map((card) => {
+      .map(card => {
         return {
           ...card,
-          rarity: cardType !== "normal" ? cardType : card.rarity,
+          rarity: cardType !== 'normal' ? cardType : card.rarity,
         };
       });
   }, [category, cardType, cardsData]);
@@ -44,31 +45,31 @@ const Portfolio = () => {
   const handleLoadMore = () => {
     setIsLoading(true);
     setTimeout(() => {
-      setVisibleCardsCount((prevCount) => prevCount + 4);
+      setVisibleCardsCount(prevCount => prevCount + 4);
       setIsLoading(false);
     }, 500);
   };
 
   return (
-    <div className='PatternPortfolioGrid'>
+    <div className="PatternPortfolioGrid">
       {/* Hero Section mit Hintergrundbild */}
       <div className="HeroSection">
         <div className="ProjectGrid">
           <div className="ProjectOverlay">
             <img
-              src="/assets/img/LandingBG/OniGirl7.webp"
+              src="/assets/images/landing/OniGirl7.webp"
               alt="Oni Girl Background"
               className="ProjectHeroImg"
             />
           </div>
         </div>
-        
+
         {/* Tiger Deko-Element */}
         <div className="TigerDecoration" />
       </div>
 
       {/* Filter in eigenem Container - außerhalb des Hero-Bereichs */}
-      <div className='FiltersPortfolioGrid'>
+      <div className="FiltersPortfolioGrid">
         <Filter
           onCategoryChange={setCategory}
           onCardTypeChange={setCardType}
@@ -80,7 +81,10 @@ const Portfolio = () => {
       <div className="PortfolioContent">
         <div className={`card-grid layout-${activeLayout}`}>
           {filteredCards.slice(0, visibleCardsCount).map((card, index) => (
-            <div key={index} className={`holographic__section ${index < visibleCardsCount ? "loaded" : ""}`}>
+            <div
+              key={index}
+              className={`holographic__section ${index < visibleCardsCount ? 'loaded' : ''}`}
+            >
               <Link href={`/portfolio/${card.slug}`}>
                 <HolographicCard
                   imgSrc={card.imgSrc}
@@ -93,8 +97,12 @@ const Portfolio = () => {
         </div>
 
         {filteredCards.length > visibleCardsCount && (
-          <button onClick={handleLoadMore} className="load-more-btn" disabled={isLoading}>
-            {isLoading ? "Loading..." : "Load More"}
+          <button
+            onClick={handleLoadMore}
+            className="load-more-btn"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Loading...' : 'Load More'}
           </button>
         )}
       </div>

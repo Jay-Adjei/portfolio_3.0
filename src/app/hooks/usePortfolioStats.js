@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
-export const usePortfolioStats = (slug) => {
+export const usePortfolioStats = slug => {
   const [stats, setStats] = useState({ views: 0, likes: 0 });
   const [loading, setLoading] = useState(true);
 
@@ -26,13 +26,15 @@ export const usePortfolioStats = (slug) => {
         // Post existiert noch nicht, erstelle ihn mit 0 Werten
         const { data: newData, error: insertError } = await supabase
           .from('portfolio_stats')
-          .insert([{
-            slug,
-            views: 0,
-            likes: 0,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString()
-          }])
+          .insert([
+            {
+              slug,
+              views: 0,
+              likes: 0,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            },
+          ])
           .select('views, likes')
           .single();
 
@@ -62,7 +64,7 @@ export const usePortfolioStats = (slug) => {
   const incrementViews = async () => {
     try {
       console.log('Incrementing views for portfolio slug:', slug);
-      
+
       // Verwende direkte Upsert-Methode statt RPC für bessere Zuverlässigkeit
       const { data: currentData, error: selectError } = await supabase
         .from('portfolio_stats')
@@ -81,15 +83,18 @@ export const usePortfolioStats = (slug) => {
       // Upsert: Update wenn existiert, Insert wenn nicht
       const { data: upsertData, error: upsertError } = await supabase
         .from('portfolio_stats')
-        .upsert({
-          slug: slug,
-          views: newViews,
-          likes: currentLikes,
-          updated_at: new Date().toISOString()
-        }, {
-          onConflict: 'slug',
-          ignoreDuplicates: false
-        })
+        .upsert(
+          {
+            slug: slug,
+            views: newViews,
+            likes: currentLikes,
+            updated_at: new Date().toISOString(),
+          },
+          {
+            onConflict: 'slug',
+            ignoreDuplicates: false,
+          }
+        )
         .select('views, likes')
         .single();
 
@@ -100,7 +105,6 @@ export const usePortfolioStats = (slug) => {
 
       console.log('Portfolio views incremented successfully:', upsertData);
       setStats(upsertData);
-
     } catch (error) {
       console.error('Error in incrementViews:', error);
       await incrementViewsRPC();
@@ -111,7 +115,7 @@ export const usePortfolioStats = (slug) => {
   const incrementViewsRPC = async () => {
     try {
       const { data, error } = await supabase.rpc('increment_portfolio_views', {
-        post_slug: slug
+        post_slug: slug,
       });
 
       if (error) {
@@ -123,12 +127,12 @@ export const usePortfolioStats = (slug) => {
       if (data && Array.isArray(data) && data.length > 0) {
         setStats({
           views: data[0].views,
-          likes: data[0].likes
+          likes: data[0].likes,
         });
       } else if (data && !Array.isArray(data)) {
         setStats({
           views: data.views,
-          likes: data.likes
+          likes: data.likes,
         });
       } else {
         await loadStats();
@@ -142,7 +146,7 @@ export const usePortfolioStats = (slug) => {
   const incrementLikes = async () => {
     try {
       console.log('Incrementing likes for portfolio slug:', slug);
-      
+
       // Verwende direkte Upsert-Methode
       const { data: currentData, error: selectError } = await supabase
         .from('portfolio_stats')
@@ -160,15 +164,18 @@ export const usePortfolioStats = (slug) => {
 
       const { data: upsertData, error: upsertError } = await supabase
         .from('portfolio_stats')
-        .upsert({
-          slug: slug,
-          views: currentViews,
-          likes: newLikes,
-          updated_at: new Date().toISOString()
-        }, {
-          onConflict: 'slug',
-          ignoreDuplicates: false
-        })
+        .upsert(
+          {
+            slug: slug,
+            views: currentViews,
+            likes: newLikes,
+            updated_at: new Date().toISOString(),
+          },
+          {
+            onConflict: 'slug',
+            ignoreDuplicates: false,
+          }
+        )
         .select('views, likes')
         .single();
 
@@ -179,7 +186,6 @@ export const usePortfolioStats = (slug) => {
 
       console.log('Portfolio likes incremented successfully:', upsertData);
       setStats(upsertData);
-
     } catch (error) {
       console.error('Error in incrementLikes:', error);
       await incrementLikesRPC();
@@ -190,7 +196,7 @@ export const usePortfolioStats = (slug) => {
   const incrementLikesRPC = async () => {
     try {
       const { data, error } = await supabase.rpc('increment_portfolio_likes', {
-        post_slug: slug
+        post_slug: slug,
       });
 
       if (error) {
@@ -202,12 +208,12 @@ export const usePortfolioStats = (slug) => {
       if (data && Array.isArray(data) && data.length > 0) {
         setStats({
           views: data[0].views,
-          likes: data[0].likes
+          likes: data[0].likes,
         });
       } else if (data && !Array.isArray(data)) {
         setStats({
           views: data.views,
-          likes: data.likes
+          likes: data.likes,
         });
       } else {
         await loadStats();
@@ -223,6 +229,6 @@ export const usePortfolioStats = (slug) => {
     loading,
     incrementViews,
     incrementLikes,
-    refreshStats: loadStats
+    refreshStats: loadStats,
   };
 };

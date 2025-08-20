@@ -20,7 +20,7 @@ export { default as HolographicCard } from './HolographicCard/HolographicCard';
 export { default as LazyLoadCard } from './LazyLoadCard/LazyLoadCard';
 export { default as LikeButton } from './LikeButton/LikeButton';
 export { default as Loading } from './Loading/Loading';
-export { default as Logo } from './Logo/Logo';
+
 export { default as Mouse } from './Mouse/Mouse';
 export { default as Navbar } from './Navbar/Navbar';
 export { default as NavLinks } from './NavLinks/NavLinks';
@@ -29,6 +29,7 @@ export { default as PortfolioCarousel } from './PortfolioCarousel/PortfolioCarou
 export { default as PortfolioGrid } from './PortfolioGrid/PortfolioGrid';
 export { default as PortfolioPost } from './PortfolioPost/PortfolioPost';
 export { default as Preload } from './Preload/Preload';
+export { default as ProgressTimeline } from './ProgressTimeline/ProgressTimeline';
 export { default as Skills } from './Skills/Skills';
 export { default as TestimonialsGrid } from './TestimonialsGrid/TestimonialsGrid';
 export { default as TextCarousel } from './TextCarousel/TextCarousel';

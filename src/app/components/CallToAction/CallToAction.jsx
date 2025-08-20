@@ -1,11 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import './CallToAction.css';
-import { 
-    Coffee,
-    Link,
-    Frame,
-} from 'lucide-react';
+import { Coffee, Link, Frame } from 'lucide-react';
 
 const CallToAction = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -30,12 +26,12 @@ const CallToAction = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = e => {
     if (cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       setMousePosition({ x, y });
     }
   };
@@ -53,8 +49,8 @@ const CallToAction = () => {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className={`cta-section ${isVisible ? 'visible' : ''}`}
     >
       {/* Background Elements */}
@@ -65,30 +61,30 @@ const CallToAction = () => {
 
       <div className="cta-container">
         {/* Main Content Card */}
-        <div 
+        <div
           ref={cardRef}
           className="main-card"
           onMouseMove={handleMouseMove}
           style={{
             '--mouse-x': `${mousePosition.x}px`,
-            '--mouse-y': `${mousePosition.y}px`
+            '--mouse-y': `${mousePosition.y}px`,
           }}
         >
           <div className="card-glow"></div>
-          
+
           {/* Header */}
           <div className="cta-header">
             <div className="status-indicator">
               <Coffee size={20} />
               <span>Available for hire</span>
             </div>
-            
+
             <h1 className="cta-title">
               <span className="title-line">Let&apos;s Build</span>
               <span className="title-line gradient">Something meaningful</span>
               <span className="title-line">Together</span>
             </h1>
-            
+
             <p className="cta-description">
               Good ideas. Honest work. Real results..
             </p>
@@ -100,13 +96,13 @@ const CallToAction = () => {
               <span className="button-text">Start a Project</span>
               <div className="button-shine"></div>
             </button>
-            
+
             <div className="secondary-actions">
               <button className="secondary-button" onClick={handleDemoClick}>
                 <Frame size={20} />
                 <span>View Work</span>
               </button>
-              
+
               <button className="secondary-button" onClick={handleGitHubClick}>
                 <Link size={20} />
                 <span>GitHub</span>

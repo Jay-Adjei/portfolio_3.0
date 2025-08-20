@@ -34,13 +34,13 @@ export const DarkModeProvider = ({ children }) => {
   }, []);
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prev) => {
+    setIsDarkMode(prev => {
       const newState = !prev;
 
       // Store the updated dark mode value in localStorage
       if (typeof window !== 'undefined') {
         localStorage.setItem('darkMode', newState.toString());
-        
+
         // Add or remove the dark-mode class from the root element
         if (newState) {
           document.documentElement.classList.add('dark-mode');
@@ -55,7 +55,7 @@ export const DarkModeProvider = ({ children }) => {
   const value = {
     isDarkMode,
     toggleDarkMode,
-    isInitialized
+    isInitialized,
   };
 
   return (
