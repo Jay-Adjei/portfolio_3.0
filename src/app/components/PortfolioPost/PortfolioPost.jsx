@@ -149,8 +149,6 @@ const SingleCard = () => {
     return num.toString();
   };
 
-
-
   if (!projectData) return <div>Loading...</div>;
 
   return (

@@ -31,8 +31,9 @@ export default function PokeCardPage() {
           </h1>
 
           <p className="pokecard-hero-description">
-            Eine interaktive Sammlung von Pokémon-Karten mit modernem Design und 
-            spannenden Animationen. Wir arbeiten daran, diese Seite bald für dich zu veröffentlichen.
+            Eine interaktive Sammlung von Pokémon-Karten mit modernem Design und
+            spannenden Animationen. Wir arbeiten daran, diese Seite bald für
+            dich zu veröffentlichen.
           </p>
         </div>
       </div>
@@ -44,7 +45,7 @@ export default function PokeCardPage() {
             <div className="pokecard-feature-icon">🎴</div>
             <h3 className="pokecard-feature-title">Interaktive Karten</h3>
             <p className="pokecard-feature-description">
-              Sammle und interagiere mit verschiedenen Pokémon-Karten in einem 
+              Sammle und interagiere mit verschiedenen Pokémon-Karten in einem
               modernen, responsiven Interface.
             </p>
           </div>
@@ -53,7 +54,7 @@ export default function PokeCardPage() {
             <div className="pokecard-feature-icon">✨</div>
             <h3 className="pokecard-feature-title">Animationen</h3>
             <p className="pokecard-feature-description">
-              Smooth Animationen und Hover-Effekte für ein immersives 
+              Smooth Animationen und Hover-Effekte für ein immersives
               Sammelerlebnis.
             </p>
           </div>
@@ -71,7 +72,10 @@ export default function PokeCardPage() {
         <div className="pokecard-progress-section">
           <h2 className="pokecard-progress-title">Entwicklungsfortschritt</h2>
           <div className="pokecard-progress-bar">
-            <div className="pokecard-progress-fill" style={{ width: '35%' }}></div>
+            <div
+              className="pokecard-progress-fill"
+              style={{ width: '35%' }}
+            ></div>
           </div>
           <p className="pokecard-progress-text">35% abgeschlossen</p>
         </div>
@@ -80,11 +84,12 @@ export default function PokeCardPage() {
         <div className="pokecard-demo-section">
           <h2 className="pokecard-demo-title">Demo: Pokemon-Karten</h2>
           <p className="pokecard-demo-description">
-            Hier siehst du eine Vorschau der Pokemon-Karten, an denen wir arbeiten:
+            Hier siehst du eine Vorschau der Pokemon-Karten, an denen wir
+            arbeiten:
           </p>
-          
+
           <div className="pokecard-demo-grid">
-            <PokeCard 
+            <PokeCard
               pokemon={{
                 id: 25,
                 name: 'Pikachu',
@@ -93,11 +98,12 @@ export default function PokeCardPage() {
                 attack: 55,
                 defense: 40,
                 speed: 90,
-                description: 'Ein süßes, gelbes Pokémon, das Elektrizität speichern kann.'
+                description:
+                  'Ein süßes, gelbes Pokémon, das Elektrizität speichern kann.',
               }}
             />
-            
-            <PokeCard 
+
+            <PokeCard
               pokemon={{
                 id: 6,
                 name: 'Charizard',
@@ -106,11 +112,12 @@ export default function PokeCardPage() {
                 attack: 84,
                 defense: 78,
                 speed: 100,
-                description: 'Ein mächtiges Feuer-Pokémon mit beeindruckenden Flügeln.'
+                description:
+                  'Ein mächtiges Feuer-Pokémon mit beeindruckenden Flügeln.',
               }}
             />
-            
-            <PokeCard 
+
+            <PokeCard
               pokemon={{
                 id: 9,
                 name: 'Blastoise',
@@ -119,7 +126,7 @@ export default function PokeCardPage() {
                 attack: 83,
                 defense: 100,
                 speed: 78,
-                description: 'Ein robustes Wasser-Pokémon mit starken Panzern.'
+                description: 'Ein robustes Wasser-Pokémon mit starken Panzern.',
               }}
             />
           </div>
@@ -130,8 +137,8 @@ export default function PokeCardPage() {
           <div className="pokecard-coming-soon-icon">🚀</div>
           <h3 className="pokecard-coming-soon-title">Bald verfügbar!</h3>
           <p className="pokecard-coming-soon-text">
-            Wir arbeiten hart daran, die PokeCard-Collection für dich zu entwickeln. 
-            Bleib dran für Updates und den offiziellen Launch!
+            Wir arbeiten hart daran, die PokeCard-Collection für dich zu
+            entwickeln. Bleib dran für Updates und den offiziellen Launch!
           </p>
         </div>
       </div>

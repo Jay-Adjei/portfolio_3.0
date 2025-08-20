@@ -4,10 +4,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useBlogStats } from '../../hooks/useBlogStats';
-import { 
+import {
   formatNumber,
   processBlogPostData,
-  processMultipleBlogPosts
+  processMultipleBlogPosts,
 } from '../../lib/blogUtils';
 import BlogMightLike from '../BlogMightLike/blogmightlike';
 import { Clock, Eye, Heart } from 'lucide-react';
@@ -22,7 +22,12 @@ const BlogPost = () => {
   const [viewProcessed, setViewProcessed] = useState(false);
 
   // Supabase Stats Hook
-  const { stats, loading: statsLoading, incrementViews, incrementLikes } = useBlogStats(slug);
+  const {
+    stats,
+    loading: statsLoading,
+    incrementViews,
+    incrementLikes,
+  } = useBlogStats(slug);
 
   // Lade Aktuelle Blog-Posts aus blogpost.json
   useEffect(() => {
@@ -30,11 +35,14 @@ const BlogPost = () => {
       try {
         const response = await fetch('/data/blogpost.json');
         const posts = await response.json();
-        const selectedPost = posts.find((post) => post.slug === slug);
-        
+        const selectedPost = posts.find(post => post.slug === slug);
+
         if (selectedPost) {
           // Verwende die neue Utility-Funktion
-          const postWithProcessedContent = await processBlogPostData(selectedPost, posts);
+          const postWithProcessedContent = await processBlogPostData(
+            selectedPost,
+            posts
+          );
           setPost(postWithProcessedContent);
         } else {
           setPost(posts[0]);
@@ -53,7 +61,7 @@ const BlogPost = () => {
 
     const sessionKey = `blog_viewed_${slug}`;
     let hasViewedInSession = false;
-    
+
     try {
       if (typeof window !== 'undefined' && window.sessionStorage) {
         hasViewedInSession = sessionStorage.getItem(sessionKey) === 'true';
@@ -62,26 +70,28 @@ const BlogPost = () => {
       console.warn('SessionStorage not available, using in-memory tracking');
       hasViewedInSession = window.__viewedPosts?.includes(slug) || false;
     }
-    
+
     if (!hasViewedInSession) {
       console.log('Incrementing view for post:', post.slug);
       setViewProcessed(true);
-      
-      incrementViews().then(() => {
-        try {
-          if (typeof window !== 'undefined' && window.sessionStorage) {
-            sessionStorage.setItem(sessionKey, 'true');
-          } else {
-            if (!window.__viewedPosts) window.__viewedPosts = [];
-            window.__viewedPosts.push(slug);
+
+      incrementViews()
+        .then(() => {
+          try {
+            if (typeof window !== 'undefined' && window.sessionStorage) {
+              sessionStorage.setItem(sessionKey, 'true');
+            } else {
+              if (!window.__viewedPosts) window.__viewedPosts = [];
+              window.__viewedPosts.push(slug);
+            }
+          } catch (error) {
+            console.warn('Could not save view state:', error);
           }
-        } catch (error) {
-          console.warn('Could not save view state:', error);
-        }
-      }).catch(error => {
-        console.error('Error incrementing views:', error);
-        setViewProcessed(false);
-      });
+        })
+        .catch(error => {
+          console.error('Error incrementing views:', error);
+          setViewProcessed(false);
+        });
     } else {
       setViewProcessed(true);
     }
@@ -90,15 +100,17 @@ const BlogPost = () => {
   // Like Handler mit verbesserter Error Handling
   const handleLike = async () => {
     if (hasLiked) return;
-    
+
     try {
       await incrementLikes();
       setHasLiked(true);
-      
+
       // Speichere in localStorage
       if (typeof window !== 'undefined' && window.localStorage) {
         try {
-          const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '[]');
+          const likedPosts = JSON.parse(
+            localStorage.getItem('likedPosts') || '[]'
+          );
           if (!likedPosts.includes(slug)) {
             likedPosts.push(slug);
             localStorage.setItem('likedPosts', JSON.stringify(likedPosts));
@@ -116,7 +128,9 @@ const BlogPost = () => {
   useEffect(() => {
     try {
       if (typeof window !== 'undefined' && window.localStorage) {
-        const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '[]');
+        const likedPosts = JSON.parse(
+          localStorage.getItem('likedPosts') || '[]'
+        );
         setHasLiked(likedPosts.includes(slug));
       }
     } catch (error) {
@@ -131,69 +145,90 @@ const BlogPost = () => {
       try {
         const response = await fetch('/data/bloggrid.json');
         const allPosts = await response.json();
-        
+
         if (!post) return;
 
         console.log('Current post:', post.title);
         console.log('Current post tags:', post.tags);
-  
+
         // Filtere aktuellen Post aus
-        const otherPosts = allPosts.filter((p) => p.slug !== slug);
+        const otherPosts = allPosts.filter(p => p.slug !== slug);
         console.log('Other posts count:', otherPosts.length);
-        
+
         let relatedByTags = [];
         let randomPosts = [];
-        
+
         // Wenn der aktuelle Post Tags hat, suche ähnliche Posts
         if (post.tags && post.tags.length > 0) {
           relatedByTags = otherPosts
-            .filter((p) => {
+            .filter(p => {
               if (!p.tags || !Array.isArray(p.tags)) return false;
-              const hasCommonTag = p.tags.some((tag) => post.tags.includes(tag));
+              const hasCommonTag = p.tags.some(tag => post.tags.includes(tag));
               if (hasCommonTag) {
-                console.log(`Found related post: ${p.title} with tags:`, p.tags);
+                console.log(
+                  `Found related post: ${p.title} with tags:`,
+                  p.tags
+                );
               }
               return hasCommonTag;
             })
             .sort((a, b) => {
               // Sortiere nach Anzahl gemeinsamer Tags (absteigend)
-              const aCommonTags = a.tags.filter(tag => post.tags.includes(tag)).length;
-              const bCommonTags = b.tags.filter(tag => post.tags.includes(tag)).length;
+              const aCommonTags = a.tags.filter(tag =>
+                post.tags.includes(tag)
+              ).length;
+              const bCommonTags = b.tags.filter(tag =>
+                post.tags.includes(tag)
+              ).length;
               return bCommonTags - aCommonTags;
             });
         }
-        
+
         console.log('Related posts by tags:', relatedByTags.length);
-        
+
         // Fülle mit zufälligen Posts auf, falls nicht genug ähnliche Posts vorhanden
-        const remainingPosts = otherPosts.filter(p => !relatedByTags.includes(p));
+        const remainingPosts = otherPosts.filter(
+          p => !relatedByTags.includes(p)
+        );
         randomPosts = remainingPosts
           .sort(() => Math.random() - 0.5) // Zufällige Sortierung
           .slice(0, 4 - relatedByTags.length);
-        
+
         // Kombiniere ähnliche und zufällige Posts (max. 4)
-        const finalRelatedPosts = [...relatedByTags, ...randomPosts].slice(0, 4);
-        
+        const finalRelatedPosts = [...relatedByTags, ...randomPosts].slice(
+          0,
+          4
+        );
+
         // Verwende die neue Utility-Funktion für mehrere Posts
-        const postsWithProcessedContent = await processMultipleBlogPosts(finalRelatedPosts);
-        
-        console.log('Final related posts with processed content:', postsWithProcessedContent.map(p => ({ title: p.title, readTime: p.readTime, excerpt: p.excerpt })));
+        const postsWithProcessedContent =
+          await processMultipleBlogPosts(finalRelatedPosts);
+
+        console.log(
+          'Final related posts with processed content:',
+          postsWithProcessedContent.map(p => ({
+            title: p.title,
+            readTime: p.readTime,
+            excerpt: p.excerpt,
+          }))
+        );
         setRelatedPosts(postsWithProcessedContent);
       } catch (error) {
         console.error('Error loading related posts:', error);
       }
     };
-  
+
     if (post) {
       loadRelatedPosts();
     }
   }, [post, slug]);
 
-  if (!post) return (
-    <div className="loading-container">
-      <div className="loading-spinner">Lade...</div>
-    </div>
-  );
+  if (!post)
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner">Lade...</div>
+      </div>
+    );
 
   return (
     <div className="blog-post-clean">
@@ -207,17 +242,19 @@ const BlogPost = () => {
             </div>
             <div className="meta-item">
               <Eye className="meta-icon" />
-              <span>{statsLoading ? '0' : formatNumber(stats.views)} Aufrufe</span>
+              <span>
+                {statsLoading ? '0' : formatNumber(stats.views)} Aufrufe
+              </span>
             </div>
             <div className="meta-item">
               <Heart className="meta-icon" />
-              <span>{statsLoading ? '0' : formatNumber(stats.likes)} Likes</span>
+              <span>
+                {statsLoading ? '0' : formatNumber(stats.likes)} Likes
+              </span>
             </div>
           </div>
           <h1 className="hero-title">{post.title}</h1>
-          {post.excerpt && (
-            <p className="hero-subtitle">{post.excerpt}</p>
-          )}
+          {post.excerpt && <p className="hero-subtitle">{post.excerpt}</p>}
         </div>
       </header>
 
@@ -238,7 +275,7 @@ const BlogPost = () => {
           <footer className="article-footer">
             {/* Like Section */}
             <div className="like-section">
-              <button 
+              <button
                 onClick={handleLike}
                 disabled={hasLiked || statsLoading}
                 className={`like-button-clean ${hasLiked ? 'liked' : ''}`}
@@ -283,8 +320,9 @@ const BlogPost = () => {
               <div className="author-info">
                 <h4 className="author-name">{post.author}</h4>
                 <p className="author-bio">
-                  Full-Stack Developer und UI/UX Designer mit Leidenschaft für schöne, 
-                  funktionale digitale Erlebnisse mit modernen Web-Technologien.
+                  Full-Stack Developer und UI/UX Designer mit Leidenschaft für
+                  schöne, funktionale digitale Erlebnisse mit modernen
+                  Web-Technologien.
                 </p>
               </div>
             </div>
@@ -293,8 +331,8 @@ const BlogPost = () => {
       </div>
 
       {/* Related Posts */}
-      <BlogMightLike 
-        relatedPosts={relatedPosts} 
+      <BlogMightLike
+        relatedPosts={relatedPosts}
         currentPostTags={post.tags || []}
         currentPostSlug={post.slug}
       />

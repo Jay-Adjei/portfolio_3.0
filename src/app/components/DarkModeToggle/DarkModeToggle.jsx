@@ -15,24 +15,24 @@ const DarkModeToggle = ({ className = '' }) => {
 
   const iconVariants = {
     initial: { rotate: 0, scale: 1 },
-    animate: { 
-      rotate: isDarkMode ? 180 : 0, 
+    animate: {
+      rotate: isDarkMode ? 180 : 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    exit: { 
-      rotate: isDarkMode ? 0 : -180, 
+    exit: {
+      rotate: isDarkMode ? 0 : -180,
       scale: 0.9,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   };
 
   return (
@@ -45,9 +45,9 @@ const DarkModeToggle = ({ className = '' }) => {
       whileHover="hover"
       whileTap="tap"
       transition={{
-        type: "spring",
+        type: 'spring',
         stiffness: 400,
-        damping: 10
+        damping: 10,
       }}
     >
       <motion.div
@@ -67,10 +67,7 @@ const DarkModeToggle = ({ className = '' }) => {
               transition={{ duration: 0.2 }}
               className="icon-wrapper"
             >
-              <Sun 
-                size={18} 
-                className="text-gray-600 dark:text-gray-300"
-              />
+              <Sun size={18} className="text-gray-600 dark:text-gray-300" />
             </motion.div>
           ) : (
             <motion.div
@@ -81,10 +78,7 @@ const DarkModeToggle = ({ className = '' }) => {
               transition={{ duration: 0.2 }}
               className="icon-wrapper"
             >
-              <Moon 
-                size={18} 
-                className="text-gray-600 dark:text-gray-300"
-              />
+              <Moon size={18} className="text-gray-600 dark:text-gray-300" />
             </motion.div>
           )}
         </AnimatePresence>

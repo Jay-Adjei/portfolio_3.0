@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import './PokeCard.css';
 
-const PokeCard = ({ 
+const PokeCard = ({
   pokemon = {
     id: 1,
     name: 'Pikachu',
@@ -13,10 +13,10 @@ const PokeCard = ({
     defense: 40,
     speed: 90,
     image: '/assets/images/pokemon/pikachu.jpg',
-    description: 'Ein süßes, gelbes Pokémon, das Elektrizität speichern kann.'
+    description: 'Ein süßes, gelbes Pokémon, das Elektrizität speichern kann.',
   },
   isFlipped = false,
-  onClick = null
+  onClick = null,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -27,7 +27,7 @@ const PokeCard = ({
   };
 
   return (
-    <div 
+    <div
       className={`pokemon-card ${isFlipped ? 'flipped' : ''} ${isHovered ? 'hovered' : ''}`}
       onClick={handleCardClick}
       onMouseEnter={() => setIsHovered(true)}
@@ -37,21 +37,23 @@ const PokeCard = ({
         {/* Front of the card */}
         <div className="card-front">
           <div className="card-header">
-            <div className="pokemon-id">#{pokemon.id.toString().padStart(3, '0')}</div>
+            <div className="pokemon-id">
+              #{pokemon.id.toString().padStart(3, '0')}
+            </div>
             <div className="pokemon-type">{pokemon.type}</div>
           </div>
-          
+
           <div className="pokemon-image-container">
             <div className="pokemon-image-placeholder">
               <span className="pokemon-emoji">⚡</span>
             </div>
           </div>
-          
+
           <div className="pokemon-info">
             <h3 className="pokemon-name">{pokemon.name}</h3>
             <p className="pokemon-description">{pokemon.description}</p>
           </div>
-          
+
           <div className="card-footer">
             <div className="pokemon-stats">
               <div className="stat">

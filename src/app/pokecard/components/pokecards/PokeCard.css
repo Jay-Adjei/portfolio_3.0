@@ -42,7 +42,7 @@
   border: 2px solid #dee2e6;
   border-radius: 15px;
   padding: 1rem;
-  box-shadow: 
+  box-shadow:
     0 10px 20px rgba(0, 0, 0, 0.1),
     0 6px 6px rgba(0, 0, 0, 0.06);
   display: flex;
@@ -166,7 +166,7 @@
   border: 2px solid #6c757d;
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 
+  box-shadow:
     0 10px 20px rgba(0, 0, 0, 0.2),
     0 6px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -201,41 +201,41 @@
 }
 
 /* Type-specific colors */
-.pokemon-card[data-type="Electric"] .pokemon-type {
+.pokemon-card[data-type='Electric'] .pokemon-type {
   background: #ffc107;
 }
 
-.pokemon-card[data-type="Fire"] .pokemon-type {
+.pokemon-card[data-type='Fire'] .pokemon-type {
   background: #dc3545;
 }
 
-.pokemon-card[data-type="Water"] .pokemon-type {
+.pokemon-card[data-type='Water'] .pokemon-type {
   background: #17a2b8;
 }
 
-.pokemon-card[data-type="Grass"] .pokemon-type {
+.pokemon-card[data-type='Grass'] .pokemon-type {
   background: #28a745;
 }
 
-.pokemon-card[data-type="Psychic"] .pokemon-type {
+.pokemon-card[data-type='Psychic'] .pokemon-type {
   background: #e83e8c;
 }
 
-.pokemon-card[data-type="Fighting"] .pokemon-type {
+.pokemon-card[data-type='Fighting'] .pokemon-type {
   background: #fd7e14;
 }
 
-.pokemon-card[data-type="Dark"] .pokemon-type {
+.pokemon-card[data-type='Dark'] .pokemon-type {
   background: #6f42c1;
 }
 
-.pokemon-card[data-type="Fairy"] .pokemon-type {
+.pokemon-card[data-type='Fairy'] .pokemon-type {
   background: #ff69b4;
 }
 
 /* Hover Effects */
 .pokemon-card:hover .card-front {
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.15),
     0 12px 12px rgba(0, 0, 0, 0.1);
 }

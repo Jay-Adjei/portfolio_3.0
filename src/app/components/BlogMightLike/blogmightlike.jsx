@@ -145,7 +145,8 @@ const BlogMightLike = ({
           </h1>
 
           <p className="blog-hero-description">
-            Discover more articles that might interest you based on your current reading.
+            Discover more articles that might interest you based on your current
+            reading.
           </p>
         </div>
       </div>
@@ -154,14 +155,17 @@ const BlogMightLike = ({
         {/* Blog Grid - genau wie BlogGrid */}
         <div className="blog-grid">
           {shownPosts.map((related, index) => {
-            const currentStats = allStats[related.slug] || { views: 0, likes: 0 };
+            const currentStats = allStats[related.slug] || {
+              views: 0,
+              likes: 0,
+            };
 
             // Erstelle ein Post-Objekt mit allen notwendigen Daten für BlogCard
             const postData = {
               ...related,
               views: currentStats.views,
               likes: currentStats.likes,
-              statsLoading: statsLoading
+              statsLoading: statsLoading,
             };
 
             return (
@@ -182,7 +186,5 @@ const BlogMightLike = ({
     </div>
   );
 };
-
-
 
 export default BlogMightLike;

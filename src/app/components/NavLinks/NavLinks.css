@@ -95,7 +95,7 @@
   .nav-links {
     display: none;
   }
-  
+
   .nav-links-mobile {
     display: block;
   }
@@ -133,7 +133,7 @@
   .nav-links a {
     transition: none;
   }
-  
+
   .nav-links a:hover {
     transform: none;
   }

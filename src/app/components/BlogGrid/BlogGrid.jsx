@@ -1,14 +1,14 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import { useAllBlogStats, useBlogSearch } from '../../hooks/useBlogStats';
-import { 
-  blogShortExcerpt, 
+import {
+  blogShortExcerpt,
   formatNumber,
   processMultipleBlogPosts,
   filterPostsByTags,
   sortBlogPosts,
   extractUniqueTags,
-  calculateBlogStats
+  calculateBlogStats,
 } from '../../lib/blogUtils';
 import BlogCard from '../BlogCard';
 import './bloggrid.css';
@@ -29,9 +29,10 @@ const BlogGrid = () => {
 
   // Supabase Stats Hook
   const { allStats, loading: statsLoading } = useAllBlogStats();
-  
+
   // Neuer Search Hook
-  const { searchQuery, setSearchQuery, searchResults, isSearching } = useBlogSearch(blogPosts);
+  const { searchQuery, setSearchQuery, searchResults, isSearching } =
+    useBlogSearch(blogPosts);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,13 +55,13 @@ const BlogGrid = () => {
         // Lade Blog-Posts aus bloggrid.json
         const response = await fetch('/data/bloggrid.json');
         const data = await response.json();
-        
+
         // Verarbeite alle Posts mit den neuen Utils
         const postsWithProcessedContent = await processMultipleBlogPosts(data);
-        
+
         const tags = extractUniqueTags(postsWithProcessedContent);
         setUniqueTags(tags);
-        
+
         const sortedPosts = sortBlogPosts(postsWithProcessedContent, sortOrder);
         setBlogPosts(sortedPosts);
       } catch (error) {
@@ -84,8 +85,9 @@ const BlogGrid = () => {
   };
 
   // Kombinierte Filterung mit den neuen Utils
-  const filteredPosts = searchResults
-    .filter(post => filterPostsByTags([post], selectedTag).length > 0);
+  const filteredPosts = searchResults.filter(
+    post => filterPostsByTags([post], selectedTag).length > 0
+  );
 
   // Pagination Logic
   const totalPosts = filteredPosts.length;
@@ -100,7 +102,7 @@ const BlogGrid = () => {
   }, [selectedTag, searchQuery]);
 
   // Pagination handlers
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = pageNumber => {
     setCurrentPage(pageNumber);
     // Scroll to top of blog grid
     if (sectionRef.current) {
@@ -126,10 +128,23 @@ const BlogGrid = () => {
   // Echte Statistiken aus Supabase berechnen für den stats overview in der BlogGrid
   const realBlogStats = {
     totalPosts: blogPosts.length,
-    totalViews: Object.values(allStats).reduce((sum, stats) => sum + (stats.views || 0), 0),
-    totalLikes: Object.values(allStats).reduce((sum, stats) => sum + (stats.likes || 0), 0),
-    engagementRate: blogPosts.length > 0 ? 
-      (Object.values(allStats).reduce((sum, stats) => sum + (stats.likes || 0), 0) / blogPosts.length).toFixed(1) : '0.0'
+    totalViews: Object.values(allStats).reduce(
+      (sum, stats) => sum + (stats.views || 0),
+      0
+    ),
+    totalLikes: Object.values(allStats).reduce(
+      (sum, stats) => sum + (stats.likes || 0),
+      0
+    ),
+    engagementRate:
+      blogPosts.length > 0
+        ? (
+            Object.values(allStats).reduce(
+              (sum, stats) => sum + (stats.likes || 0),
+              0
+            ) / blogPosts.length
+          ).toFixed(1)
+        : '0.0',
   };
 
   return (
@@ -245,7 +260,8 @@ const BlogGrid = () => {
               : `${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''} found`}
             {!isLoading && totalPages > 1 && (
               <span className="blog-page-info">
-                {' '}• Page {currentPage} of {totalPages}
+                {' '}
+                • Page {currentPage} of {totalPages}
               </span>
             )}
           </span>
@@ -261,15 +277,21 @@ const BlogGrid = () => {
           <div className="blog-stats-overview">
             <div className="blog-stat-item">
               <span className="blog-stat-label">Total Posts</span>
-              <span className="blog-stat-value">{realBlogStats.totalPosts}</span>
+              <span className="blog-stat-value">
+                {realBlogStats.totalPosts}
+              </span>
             </div>
             <div className="blog-stat-item">
               <span className="blog-stat-label">Total Views</span>
-              <span className="blog-stat-value">{formatNumber(realBlogStats.totalViews)}</span>
+              <span className="blog-stat-value">
+                {formatNumber(realBlogStats.totalViews)}
+              </span>
             </div>
             <div className="blog-stat-item">
               <span className="blog-stat-label">Total Likes</span>
-              <span className="blog-stat-value">{formatNumber(realBlogStats.totalLikes)}</span>
+              <span className="blog-stat-value">
+                {formatNumber(realBlogStats.totalLikes)}
+              </span>
             </div>
             <div className="blog-stat-item">
               <span className="blog-stat-label">Coming Soon</span>
@@ -304,7 +326,7 @@ const BlogGrid = () => {
                   ...post,
                   views: currentStats.views,
                   likes: currentStats.likes,
-                  statsLoading: statsLoading
+                  statsLoading: statsLoading,
                 };
 
                 return (
@@ -325,7 +347,7 @@ const BlogGrid = () => {
         {/* Pagination */}
         {!isLoading && totalPages > 1 && filteredPosts.length > 0 && (
           <div className="blog-pagination">
-            <button 
+            <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
               className="blog-pagination-btn blog-pagination-prev"
@@ -333,42 +355,48 @@ const BlogGrid = () => {
             >
               ← Previous
             </button>
-            
+
             <div className="blog-pagination-numbers">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => {
-                // Show first page, last page, current page, and pages around current
-                if (
-                  pageNumber === 1 ||
-                  pageNumber === totalPages ||
-                  (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-                ) {
-                  return (
-                    <button
-                      key={pageNumber}
-                      onClick={() => handlePageChange(pageNumber)}
-                      className={`blog-pagination-btn blog-pagination-number ${
-                        currentPage === pageNumber ? 'active' : ''
-                      }`}
-                      aria-label={`Go to page ${pageNumber}`}
-                    >
-                      {pageNumber}
-                    </button>
-                  );
-                } else if (
-                  pageNumber === currentPage - 2 ||
-                  pageNumber === currentPage + 2
-                ) {
-                  return (
-                    <span key={pageNumber} className="blog-pagination-ellipsis">
-                      ...
-                    </span>
-                  );
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                pageNumber => {
+                  // Show first page, last page, current page, and pages around current
+                  if (
+                    pageNumber === 1 ||
+                    pageNumber === totalPages ||
+                    (pageNumber >= currentPage - 1 &&
+                      pageNumber <= currentPage + 1)
+                  ) {
+                    return (
+                      <button
+                        key={pageNumber}
+                        onClick={() => handlePageChange(pageNumber)}
+                        className={`blog-pagination-btn blog-pagination-number ${
+                          currentPage === pageNumber ? 'active' : ''
+                        }`}
+                        aria-label={`Go to page ${pageNumber}`}
+                      >
+                        {pageNumber}
+                      </button>
+                    );
+                  } else if (
+                    pageNumber === currentPage - 2 ||
+                    pageNumber === currentPage + 2
+                  ) {
+                    return (
+                      <span
+                        key={pageNumber}
+                        className="blog-pagination-ellipsis"
+                      >
+                        ...
+                      </span>
+                    );
+                  }
+                  return null;
                 }
-                return null;
-              })}
+              )}
             </div>
-            
-            <button 
+
+            <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
               className="blog-pagination-btn blog-pagination-next"

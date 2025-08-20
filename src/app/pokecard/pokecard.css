@@ -31,7 +31,8 @@
 }
 
 @keyframes pokecard-grid-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   50% {
@@ -87,7 +88,8 @@
 }
 
 @keyframes pokecard-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   33% {
@@ -296,7 +298,11 @@
 .pokecard-coming-soon {
   text-align: center;
   padding: 3rem;
-  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.1),
+    rgba(255, 152, 0, 0.05)
+  );
   border: 1px solid rgba(255, 193, 7, 0.2);
   border-radius: 1rem;
   backdrop-filter: blur(10px);

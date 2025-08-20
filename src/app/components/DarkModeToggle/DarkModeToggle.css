@@ -31,13 +31,13 @@
 
 /* Dark mode styles */
 .darkmode-toggle.dark-mode,
-[data-theme="dark"] .darkmode-toggle {
+[data-theme='dark'] .darkmode-toggle {
   background: rgba(0, 0, 0, 0.2);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 .darkmode-toggle.dark-mode:hover,
-[data-theme="dark"] .darkmode-toggle:hover {
+[data-theme='dark'] .darkmode-toggle:hover {
   background: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.15);
 }
@@ -84,7 +84,7 @@
   .darkmode-toggle {
     border: 2px solid currentColor;
   }
-  
+
   .darkmode-toggle:hover {
     border-color: #6b7280;
   }
@@ -97,7 +97,7 @@
   .icon-wrapper {
     transition: none;
   }
-  
+
   .darkmode-toggle:hover {
     transform: none;
   }
@@ -140,26 +140,26 @@
 .darkmode-toggle.neumorphism {
   background: linear-gradient(145deg, #f8fafc, #e2e8f0);
   border: none;
-  box-shadow: 
+  box-shadow:
     2px 2px 4px #cbd5e1,
     -2px -2px 4px #ffffff;
 }
 
 .darkmode-toggle.neumorphism:hover {
-  box-shadow: 
+  box-shadow:
     3px 3px 6px #cbd5e1,
     -3px -3px 6px #ffffff;
 }
 
-[data-theme="dark"] .darkmode-toggle.neumorphism {
+[data-theme='dark'] .darkmode-toggle.neumorphism {
   background: linear-gradient(145deg, #1e293b, #0f172a);
-  box-shadow: 
+  box-shadow:
     2px 2px 4px #0f172a,
     -2px -2px 4px #334155;
 }
 
-[data-theme="dark"] .darkmode-toggle.neumorphism:hover {
-  box-shadow: 
+[data-theme='dark'] .darkmode-toggle.neumorphism:hover {
+  box-shadow:
     3px 3px 6px #0f172a,
     -3px -3px 6px #334155;
 }

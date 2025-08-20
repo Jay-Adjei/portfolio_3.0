@@ -46,20 +46,20 @@ const Navbar = () => {
     { href: '/guestbook', label: 'Guestbook' },
     { href: '/about', label: 'About' },
     { href: '/testing', label: 'Testing' },
-    { href: '/pokecard', label: 'PokeCard' }
+    { href: '/pokecard', label: 'PokeCard' },
   ];
 
   const navbarVariants = {
     hidden: { y: -100, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 100,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   };
 
   return (
@@ -73,18 +73,24 @@ const Navbar = () => {
         animate="visible"
       >
         <div className={styles.container}>
-          <div className={`${styles.navbarContent} ${
-            isScrolled ? styles.scrolled : styles.notScrolled
-          }`}>
+          <div
+            className={`${styles.navbarContent} ${
+              isScrolled ? styles.scrolled : styles.notScrolled
+            }`}
+          >
             {/* Logo */}
             <motion.div
               className={styles.logo}
               whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
               <Link href="/" className={styles.logoLink}>
                 <Image
-                  src={isDarkMode ? '/assets/images/logo_white.png' : '/assets/images/logo_black.png'}
+                  src={
+                    isDarkMode
+                      ? '/assets/images/logo_white.png'
+                      : '/assets/images/logo_black.png'
+                  }
                   alt="Portify Logo"
                   width={isScrolled ? 48 : 48}
                   height={isScrolled ? 48 : 48}
@@ -96,7 +102,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className={styles.desktopNav}>
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <div key={item.href} className={styles.navItem}>
                   <Link
                     href={item.href}
@@ -138,11 +144,15 @@ const Navbar = () => {
             <motion.div
               className={styles.mobileLogo}
               whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
               <Link href="/" className={styles.logoLink}>
                 <Image
-                  src={isDarkMode ? '/assets/images/logo_white.png' : '/assets/images/logo_black.png'}
+                  src={
+                    isDarkMode
+                      ? '/assets/images/logo_white.png'
+                      : '/assets/images/logo_black.png'
+                  }
                   alt="Portify Logo"
                   width={62}
                   height={62}
@@ -163,7 +173,9 @@ const Navbar = () => {
               />
               <motion.button
                 className={`${styles.mobileMenuButton} ${
-                  isDarkMode ? styles.mobileMenuButtonDark : styles.mobileMenuButtonLight
+                  isDarkMode
+                    ? styles.mobileMenuButtonDark
+                    : styles.mobileMenuButtonLight
                 }`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileTap={{ scale: 0.95 }}
@@ -200,9 +212,9 @@ const Navbar = () => {
       </motion.header>
 
       {/* Hamburger Menu */}
-      <HamburgerMenu 
-        isOpen={isMobileMenuOpen} 
-        onClose={() => setIsMobileMenuOpen(false)} 
+      <HamburgerMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
       />
     </>
   );

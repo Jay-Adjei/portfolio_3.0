@@ -32,7 +32,10 @@ export const useBlogStats = slug => {
         .maybeSingle();
 
       if (testError) {
-        console.warn('Supabase connection test failed, using localStorage:', testError.message);
+        console.warn(
+          'Supabase connection test failed, using localStorage:',
+          testError.message
+        );
         loadLocalStats();
         return;
       }
@@ -61,20 +64,29 @@ export const useBlogStats = slug => {
           .single();
 
         if (insertError) {
-          console.warn('Error creating blog stats, falling back to localStorage:', insertError.message || 'Unknown error');
+          console.warn(
+            'Error creating blog stats, falling back to localStorage:',
+            insertError.message || 'Unknown error'
+          );
           loadLocalStats();
           return;
         }
         setStats(newData || { views: 0, likes: 0 });
       } else if (initialError) {
-        console.warn('Error loading blog stats, using localStorage fallback:', initialError.message);
+        console.warn(
+          'Error loading blog stats, using localStorage fallback:',
+          initialError.message
+        );
         loadLocalStats();
         return;
       } else {
         setStats(initialData || { views: 0, likes: 0 });
       }
     } catch (error) {
-      console.warn('Error in loadStats, using localStorage fallback:', error.message);
+      console.warn(
+        'Error in loadStats, using localStorage fallback:',
+        error.message
+      );
       loadLocalStats();
     } finally {
       setLoading(false);
@@ -97,7 +109,10 @@ export const useBlogStats = slug => {
       } else {
         setStats({ views: 0, likes: 0 });
         // Speichere initiale Stats
-        localStorage.setItem(`blog_stats_${slug}`, JSON.stringify({ views: 0, likes: 0 }));
+        localStorage.setItem(
+          `blog_stats_${slug}`,
+          JSON.stringify({ views: 0, likes: 0 })
+        );
       }
     } catch (error) {
       console.warn('Error loading localStorage stats:', error);
@@ -107,7 +122,7 @@ export const useBlogStats = slug => {
   };
 
   // Speichere Stats in localStorage
-  const saveLocalStats = (newStats) => {
+  const saveLocalStats = newStats => {
     try {
       if (typeof window !== 'undefined') {
         localStorage.setItem(`blog_stats_${slug}`, JSON.stringify(newStats));
@@ -160,14 +175,20 @@ export const useBlogStats = slug => {
         .single();
 
       if (upsertError) {
-        console.warn('Error upserting views, using localStorage:', upsertError.message);
+        console.warn(
+          'Error upserting views, using localStorage:',
+          upsertError.message
+        );
         return incrementViewsLocal();
       }
 
       console.log('Views incremented successfully:', upsertData);
       setStats(upsertData);
     } catch (error) {
-      console.warn('Error in incrementViews, using localStorage:', error.message);
+      console.warn(
+        'Error in incrementViews, using localStorage:',
+        error.message
+      );
       incrementViewsLocal();
     }
   };
@@ -178,9 +199,9 @@ export const useBlogStats = slug => {
       const currentStats = { ...stats };
       const newStats = {
         views: (currentStats.views || 0) + 1,
-        likes: currentStats.likes || 0
+        likes: currentStats.likes || 0,
       };
-      
+
       setStats(newStats);
       saveLocalStats(newStats);
       console.log('Views incremented locally:', newStats);
@@ -264,14 +285,20 @@ export const useBlogStats = slug => {
         .single();
 
       if (upsertError) {
-        console.warn('Error upserting likes, using localStorage:', upsertError.message);
+        console.warn(
+          'Error upserting likes, using localStorage:',
+          upsertError.message
+        );
         return incrementLikesLocal();
       }
 
       console.log('Likes incremented successfully:', upsertData);
       setStats(upsertData);
     } catch (error) {
-      console.warn('Error in incrementLikes, using localStorage:', error.message);
+      console.warn(
+        'Error in incrementLikes, using localStorage:',
+        error.message
+      );
       incrementLikesLocal();
     }
   };
@@ -282,9 +309,9 @@ export const useBlogStats = slug => {
       const currentStats = { ...stats };
       const newStats = {
         views: currentStats.views || 0,
-        likes: (currentStats.likes || 0) + 1
+        likes: (currentStats.likes || 0) + 1,
       };
-      
+
       setStats(newStats);
       saveLocalStats(newStats);
       console.log('Likes incremented locally:', newStats);
@@ -347,7 +374,9 @@ export const useAllBlogStats = () => {
     try {
       // Prüfe ob Supabase verfügbar ist
       if (!supabase || !supabase.from) {
-        console.warn('Supabase not available, using localStorage fallback for all stats');
+        console.warn(
+          'Supabase not available, using localStorage fallback for all stats'
+        );
         loadAllLocalStats();
         return;
       }
@@ -357,7 +386,10 @@ export const useAllBlogStats = () => {
         .select('slug, views, likes');
 
       if (error) {
-        console.warn('Error loading all blog stats, using localStorage fallback:', error.message);
+        console.warn(
+          'Error loading all blog stats, using localStorage fallback:',
+          error.message
+        );
         loadAllLocalStats();
         return;
       }
@@ -375,7 +407,10 @@ export const useAllBlogStats = () => {
 
       setAllStats(statsMap);
     } catch (error) {
-      console.warn('Error in loadAllStats, using localStorage fallback:', error.message);
+      console.warn(
+        'Error in loadAllStats, using localStorage fallback:',
+        error.message
+      );
       loadAllLocalStats();
     } finally {
       setLoading(false);
@@ -401,10 +436,13 @@ export const useAllBlogStats = () => {
             const stats = JSON.parse(localStorage.getItem(key) || '{}');
             statsMap[slug] = {
               views: stats.views || 0,
-              likes: stats.likes || 0
+              likes: stats.likes || 0,
             };
           } catch (error) {
-            console.warn(`Error parsing localStorage stats for ${slug}:`, error);
+            console.warn(
+              `Error parsing localStorage stats for ${slug}:`,
+              error
+            );
           }
         }
       }
@@ -434,7 +472,7 @@ export const useAllBlogStats = () => {
 };
 
 // Neue Hook-Funktionen für erweiterte Blog-Funktionalitäten
-export const useBlogAnalytics = (posts) => {
+export const useBlogAnalytics = posts => {
   const [analytics, setAnalytics] = useState({
     totalPosts: 0,
     totalViews: 0,
@@ -443,7 +481,7 @@ export const useBlogAnalytics = (posts) => {
     engagementRate: 0,
     topPosts: [],
     tagDistribution: {},
-    monthlyStats: {}
+    monthlyStats: {},
   });
 
   useEffect(() => {
@@ -452,14 +490,21 @@ export const useBlogAnalytics = (posts) => {
     const calculateAnalytics = () => {
       // Grundstatistiken
       const totalPosts = posts.length;
-      const totalViews = posts.reduce((sum, post) => sum + (post.views || 0), 0);
-      const totalLikes = posts.reduce((sum, post) => sum + (post.likes || 0), 0);
-      
+      const totalViews = posts.reduce(
+        (sum, post) => sum + (post.views || 0),
+        0
+      );
+      const totalLikes = posts.reduce(
+        (sum, post) => sum + (post.likes || 0),
+        0
+      );
+
       // Durchschnittliche Lesezeit
-      const averageReadTime = posts.reduce((sum, post) => {
-        const time = parseInt(post.readTime) || 3;
-        return sum + time;
-      }, 0) / totalPosts;
+      const averageReadTime =
+        posts.reduce((sum, post) => {
+          const time = parseInt(post.readTime) || 3;
+          return sum + time;
+        }, 0) / totalPosts;
 
       // Top Posts nach Views
       const topPosts = [...posts]
@@ -480,15 +525,15 @@ export const useBlogAnalytics = (posts) => {
       const monthlyStats = posts.reduce((acc, post) => {
         const date = new Date(post.date);
         const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-        
+
         if (!acc[monthKey]) {
           acc[monthKey] = { posts: 0, views: 0, likes: 0 };
         }
-        
+
         acc[monthKey].posts += 1;
         acc[monthKey].views += post.views || 0;
         acc[monthKey].likes += post.likes || 0;
-        
+
         return acc;
       }, {});
 
@@ -497,10 +542,11 @@ export const useBlogAnalytics = (posts) => {
         totalViews,
         totalLikes,
         averageReadTime: Math.round(averageReadTime),
-        engagementRate: totalPosts > 0 ? (totalLikes / totalPosts).toFixed(2) : 0,
+        engagementRate:
+          totalPosts > 0 ? (totalLikes / totalPosts).toFixed(2) : 0,
         topPosts,
         tagDistribution,
-        monthlyStats
+        monthlyStats,
       });
     };
 
@@ -516,31 +562,37 @@ export const useBlogCache = () => {
   const [cacheStats, setCacheStats] = useState({
     hits: 0,
     misses: 0,
-    size: 0
+    size: 0,
   });
 
-  const getFromCache = useCallback((key) => {
-    if (cache.has(key)) {
-      setCacheStats(prev => ({ ...prev, hits: prev.hits + 1 }));
-      return cache.get(key);
-    }
-    setCacheStats(prev => ({ ...prev, misses: prev.misses + 1 }));
-    return null;
-  }, [cache]);
+  const getFromCache = useCallback(
+    key => {
+      if (cache.has(key)) {
+        setCacheStats(prev => ({ ...prev, hits: prev.hits + 1 }));
+        return cache.get(key);
+      }
+      setCacheStats(prev => ({ ...prev, misses: prev.misses + 1 }));
+      return null;
+    },
+    [cache]
+  );
 
-  const setInCache = useCallback((key, value) => {
-    const newCache = new Map(cache);
-    newCache.set(key, value);
-    
-    // Cache-Größe begrenzen
-    if (newCache.size > 100) {
-      const firstKey = newCache.keys().next().value;
-      newCache.delete(firstKey);
-    }
-    
-    setCache(newCache);
-    setCacheStats(prev => ({ ...prev, size: newCache.size }));
-  }, [cache]);
+  const setInCache = useCallback(
+    (key, value) => {
+      const newCache = new Map(cache);
+      newCache.set(key, value);
+
+      // Cache-Größe begrenzen
+      if (newCache.size > 100) {
+        const firstKey = newCache.keys().next().value;
+        newCache.delete(firstKey);
+      }
+
+      setCache(newCache);
+      setCacheStats(prev => ({ ...prev, size: newCache.size }));
+    },
+    [cache]
+  );
 
   const clearCache = useCallback(() => {
     setCache(new Map());
@@ -552,7 +604,7 @@ export const useBlogCache = () => {
     setInCache,
     clearCache,
     cacheStats,
-    cacheSize: cache.size
+    cacheSize: cache.size,
   };
 };
 
@@ -583,6 +635,6 @@ export const useBlogSearch = (posts, delay = 300) => {
     searchQuery,
     setSearchQuery,
     searchResults,
-    isSearching
+    isSearching,
   };
 };

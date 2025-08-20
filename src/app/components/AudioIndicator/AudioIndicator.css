@@ -37,13 +37,13 @@
 
 /* Dark mode styles */
 .audio-btn.dark-mode,
-[data-theme="dark"] .audio-btn {
+[data-theme='dark'] .audio-btn {
   background: rgba(0, 0, 0, 0.2);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 .audio-btn.dark-mode:hover,
-[data-theme="dark"] .audio-btn:hover {
+[data-theme='dark'] .audio-btn:hover {
   background: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.15);
 }
@@ -112,11 +112,11 @@
   .audio-btn {
     border: 2px solid currentColor;
   }
-  
+
   .audio-btn:hover {
     border-color: #6b7280;
   }
-  
+
   .wave-bar {
     background: currentColor;
   }
@@ -129,11 +129,11 @@
   .audio-wave {
     transition: none;
   }
-  
+
   .audio-btn:hover {
     transform: none;
   }
-  
+
   .wave-bar {
     animation: none;
   }
@@ -145,12 +145,12 @@
     width: 2.25rem;
     height: 2.25rem;
   }
-  
+
   .audio-wave {
     bottom: 0.25rem;
     height: 1rem;
   }
-  
+
   .wave-bar {
     width: 0.175rem;
   }
@@ -161,12 +161,12 @@
     width: 2rem;
     height: 2rem;
   }
-  
+
   .audio-wave {
     bottom: 0.125rem;
     height: 0.875rem;
   }
-  
+
   .wave-bar {
     width: 0.15rem;
   }
@@ -194,26 +194,26 @@
 .audio-btn.neumorphism {
   background: linear-gradient(145deg, #f8fafc, #e2e8f0);
   border: none;
-  box-shadow: 
+  box-shadow:
     2px 2px 4px #cbd5e1,
     -2px -2px 4px #ffffff;
 }
 
 .audio-btn.neumorphism:hover {
-  box-shadow: 
+  box-shadow:
     3px 3px 6px #cbd5e1,
     -3px -3px 6px #ffffff;
 }
 
-[data-theme="dark"] .audio-btn.neumorphism {
+[data-theme='dark'] .audio-btn.neumorphism {
   background: linear-gradient(145deg, #1e293b, #0f172a);
-  box-shadow: 
+  box-shadow:
     2px 2px 4px #0f172a,
     -2px -2px 4px #334155;
 }
 
-[data-theme="dark"] .audio-btn.neumorphism:hover {
-  box-shadow: 
+[data-theme='dark'] .audio-btn.neumorphism:hover {
+  box-shadow:
     3px 3px 6px #0f172a,
     -3px -3px 6px #334155;
 }

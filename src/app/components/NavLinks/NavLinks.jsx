@@ -11,18 +11,18 @@ const NavLinks = ({ className = '', isMobile = false }) => {
     { href: '/about', label: 'About' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/blog', label: 'Blog' },
-    { href: '/guestbook', label: 'Guestbook' }
+    { href: '/guestbook', label: 'Guestbook' },
   ];
 
   const linkVariants = {
     hover: {
       y: -1,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 400,
-        damping: 10
-      }
-    }
+        damping: 10,
+      },
+    },
   };
 
   if (isMobile) {
@@ -39,8 +39,8 @@ const NavLinks = ({ className = '', isMobile = false }) => {
               <Link
                 href={item.href}
                 className={`block text-lg font-medium transition-all duration-300 ${
-                  isDarkMode 
-                    ? 'text-white/90 hover:text-white' 
+                  isDarkMode
+                    ? 'text-white/90 hover:text-white'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
@@ -56,17 +56,14 @@ const NavLinks = ({ className = '', isMobile = false }) => {
   return (
     <nav className={`nav-links ${className}`}>
       <ul className="flex items-center space-x-1">
-        {navItems.map((item) => (
+        {navItems.map(item => (
           <li key={item.href} className="relative">
-            <motion.div
-              variants={linkVariants}
-              whileHover="hover"
-            >
+            <motion.div variants={linkVariants} whileHover="hover">
               <Link
                 href={item.href}
                 className={`relative px-5 py-2.5 text-sm font-medium transition-all duration-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                  isDarkMode 
-                    ? 'text-white/90 hover:text-white' 
+                  isDarkMode
+                    ? 'text-white/90 hover:text-white'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >

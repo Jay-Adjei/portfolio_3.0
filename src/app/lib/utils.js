@@ -89,53 +89,54 @@ export const scrollToElement = elementId => {
 // Blog Helper Functions
 export const calculateReadTime = (content, wordsPerMinute = 200) => {
   if (!content) return '1 min';
-  
+
   // Wenn content ein Array von Objekten ist (wie in blogpost.json)
   if (Array.isArray(content)) {
-    const allText = content
-      .map(item => item.content || '')
-      .join(' ');
+    const allText = content.map(item => item.content || '').join(' ');
     return calculateReadTimeFromText(allText, wordsPerMinute);
   }
-  
+
   // Wenn content ein String ist
   if (typeof content === 'string') {
     return calculateReadTimeFromText(content, wordsPerMinute);
   }
-  
+
   return '1 min';
 };
 
 const calculateReadTimeFromText = (text, wordsPerMinute = 200) => {
   if (!text) return '1 min';
-  
+
   // HTML-Tags entfernen und nur Text extrahieren
-  const cleanText = text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-  
+  const cleanText = text
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
   // Wörter zählen
   const wordCount = cleanText.split(/\s+/).length;
-  
+
   // Lesezeit berechnen
   const minutes = Math.ceil(wordCount / wordsPerMinute);
-  
+
   // Formatierung
   if (minutes === 1) return '1 min';
   if (minutes < 60) return `${minutes} min`;
-  
+
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
-  
+
   if (remainingMinutes === 0) return `${hours}h`;
   return `${hours}h ${remainingMinutes}min`;
 };
 
-export const formatReadTime = (minutes) => {
+export const formatReadTime = minutes => {
   if (minutes < 1) return '1 min';
   if (minutes < 60) return `${Math.ceil(minutes)} min`;
-  
+
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = Math.ceil(minutes % 60);
-  
+
   if (remainingMinutes === 0) return `${hours}h`;
   return `${hours}h ${remainingMinutes}min`;
 };
@@ -143,20 +144,18 @@ export const formatReadTime = (minutes) => {
 // Blog Content Helper Functions
 export const generateExcerpt = (content, maxLength = 150) => {
   if (!content) return 'No content available...';
-  
+
   // Wenn content ein Array von Objekten ist (wie in blogpost.json)
   if (Array.isArray(content)) {
-    const allText = content
-      .map(item => item.content || '')
-      .join(' ');
+    const allText = content.map(item => item.content || '').join(' ');
     return generateExcerptFromText(allText, maxLength);
   }
-  
+
   // Wenn content ein String ist
   if (typeof content === 'string') {
     return generateExcerptFromText(content, maxLength);
   }
-  
+
   return 'No content available...';
 };
 
@@ -166,46 +165,46 @@ export const processExcerpt = (existingExcerpt, content, maxLength = 150) => {
   if (existingExcerpt && existingExcerpt.trim()) {
     return generateExcerptFromText(existingExcerpt, maxLength);
   }
-  
+
   // Ansonsten generiere ein neues aus dem Content
   return generateExcerpt(content, maxLength);
 };
 
 const generateExcerptFromText = (text, maxLength = 150) => {
   if (!text) return 'No content available...';
-  
+
   // HTML-Tags entfernen und nur Text extrahieren
-  const cleanText = text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-  
+  const cleanText = text
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
   // Wenn der Text kürzer ist als maxLength, gib ihn direkt zurück
   if (cleanText.length <= maxLength) {
     return cleanText;
   }
-  
+
   // Kürze den Text und suche nach dem letzten vollständigen Wort
   let truncated = cleanText.substring(0, maxLength);
-  
+
   // Finde den letzten Leerzeichen vor der Kürzung
   const lastSpaceIndex = truncated.lastIndexOf(' ');
-  
+
   if (lastSpaceIndex > 0) {
     // Kürze bis zum letzten vollständigen Wort
     truncated = truncated.substring(0, lastSpaceIndex);
   }
-  
+
   // Füge "..." hinzu
   return truncated + '...';
 };
 
 // Kombinierte Funktion für Blog-Posts (readTime + excerpt)
 export const processBlogContent = (content, options = {}) => {
-  const {
-    maxExcerptLength = 150,
-    wordsPerMinute = 200
-  } = options;
-  
+  const { maxExcerptLength = 150, wordsPerMinute = 200 } = options;
+
   return {
     readTime: calculateReadTime(content, wordsPerMinute),
-    excerpt: generateExcerpt(content, maxExcerptLength)
+    excerpt: generateExcerpt(content, maxExcerptLength),
   };
 };

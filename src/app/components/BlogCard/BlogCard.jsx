@@ -5,7 +5,7 @@ import { Eye, Heart, Calendar } from 'lucide-react';
 import './BlogCard.css';
 
 // Einfache formatNumber Funktion für die BlogCard
-const formatNumber = (num) => {
+const formatNumber = num => {
   if (num >= 1000000) {
     return (num / 1000000).toFixed(1) + 'M';
   }
@@ -41,34 +41,58 @@ const BlogCard = ({
     likes = 0,
     matchingTags = [],
     relevanceScore = 0,
-    statsLoading = false
+    statsLoading = false,
   } = post;
 
   // Bestimme welche Tags angezeigt werden sollen
-  const tagsToShow = showRelevanceScore && matchingTags.length > 0
-    ? tags.filter(tag => matchingTags.includes(tag.toLowerCase().trim()))
-    : tags.slice(0, variant === 'related' ? 2 : 3);
+  const tagsToShow =
+    showRelevanceScore && matchingTags.length > 0
+      ? tags.filter(tag => matchingTags.includes(tag.toLowerCase().trim()))
+      : tags.slice(0, variant === 'related' ? 2 : 3);
 
   // CSS-Klassen basierend auf Variant
   const cardClassName = `blog-card ${variant === 'related' ? 'related' : 'default'} ${className}`;
-  const imageContainerClass = variant === 'related' ? 'related-post-image-container' : 'blog-post-image-container';
-  const contentClass = variant === 'related' ? 'related-post-content' : 'blog-post-content';
-  const titleClass = variant === 'related' ? 'related-post-title' : 'blog-post-title';
-  const excerptClass = variant === 'related' ? 'related-post-excerpt' : 'blog-post-excerpt';
-  const tagsClass = variant === 'related' ? 'related-post-tags' : 'blog-post-tags';
+  const imageContainerClass =
+    variant === 'related'
+      ? 'related-post-image-container'
+      : 'blog-post-image-container';
+  const contentClass =
+    variant === 'related' ? 'related-post-content' : 'blog-post-content';
+  const titleClass =
+    variant === 'related' ? 'related-post-title' : 'blog-post-title';
+  const excerptClass =
+    variant === 'related' ? 'related-post-excerpt' : 'blog-post-excerpt';
+  const tagsClass =
+    variant === 'related' ? 'related-post-tags' : 'blog-post-tags';
   const tagClass = variant === 'related' ? 'related-post-tag' : 'blog-post-tag';
-  const metaClass = variant === 'related' ? 'related-post-meta' : 'blog-post-meta';
-  const dateClass = variant === 'related' ? 'related-post-date' : 'blog-post-date';
-  const readTimeClass = variant === 'related' ? 'related-post-readtime' : 'blog-post-readtime';
-  const footerClass = variant === 'related' ? 'related-post-footer' : 'blog-post-footer';
-  const authorClass = variant === 'related' ? 'related-post-author' : 'blog-post-author';
-  const authorImageClass = variant === 'related' ? 'related-post-author-image' : 'blog-post-author-image';
-  const authorNameClass = variant === 'related' ? 'related-post-author-name' : 'blog-post-author-name';
-  const statsClass = variant === 'related' ? 'related-post-stats' : 'blog-post-stats';
-  const statClass = variant === 'related' ? 'related-post-stat' : 'blog-post-stat';
-  const overlayClass = variant === 'related' ? 'related-post-overlay' : 'blog-post-overlay';
-  const readIndicatorClass = variant === 'related' ? 'related-read-indicator' : 'blog-read-indicator';
-  const arrowIconClass = variant === 'related' ? 'related-arrow-icon' : 'blog-arrow-icon';
+  const metaClass =
+    variant === 'related' ? 'related-post-meta' : 'blog-post-meta';
+  const dateClass =
+    variant === 'related' ? 'related-post-date' : 'blog-post-date';
+  const readTimeClass =
+    variant === 'related' ? 'related-post-readtime' : 'blog-post-readtime';
+  const footerClass =
+    variant === 'related' ? 'related-post-footer' : 'blog-post-footer';
+  const authorClass =
+    variant === 'related' ? 'related-post-author' : 'blog-post-author';
+  const authorImageClass =
+    variant === 'related'
+      ? 'related-post-author-image'
+      : 'blog-post-author-image';
+  const authorNameClass =
+    variant === 'related'
+      ? 'related-post-author-name'
+      : 'blog-post-author-name';
+  const statsClass =
+    variant === 'related' ? 'related-post-stats' : 'blog-post-stats';
+  const statClass =
+    variant === 'related' ? 'related-post-stat' : 'blog-post-stat';
+  const overlayClass =
+    variant === 'related' ? 'related-post-overlay' : 'blog-post-overlay';
+  const readIndicatorClass =
+    variant === 'related' ? 'related-read-indicator' : 'blog-read-indicator';
+  const arrowIconClass =
+    variant === 'related' ? 'related-arrow-icon' : 'blog-arrow-icon';
 
   return (
     <article
@@ -78,13 +102,17 @@ const BlogCard = ({
     >
       <Link
         href={`/blog/${slug}`}
-        className={variant === 'related' ? 'related-post-link' : 'blog-post-link'}
+        className={
+          variant === 'related' ? 'related-post-link' : 'blog-post-link'
+        }
       >
         <div className={imageContainerClass}>
           <img
             src={image}
             alt={title}
-            className={variant === 'related' ? 'related-post-image' : 'blog-post-image'}
+            className={
+              variant === 'related' ? 'related-post-image' : 'blog-post-image'
+            }
           />
           <div className={overlayClass}>
             <div className={readIndicatorClass}>
@@ -100,23 +128,23 @@ const BlogCard = ({
               <Calendar size={14} />
               {date}
             </span>
-            <span className={readTimeClass}>
-              {readTime} read
-            </span>
+            <span className={readTimeClass}>{readTime} read</span>
           </div>
 
-                                  <h3 className={titleClass}>
-                          {truncateTitle && variant === 'default' 
-                            ? title.length > 50 ? `${title.substring(0, 50)}...` : title
-                            : title
-                          }
-                        </h3>
-                        <p className={excerptClass}>
-                          {truncateExcerpt && variant === 'default'
-                            ? excerpt.length > 100 ? `${excerpt.substring(0, 100)}...` : excerpt
-                            : excerpt
-                          }
-                        </p>
+          <h3 className={titleClass}>
+            {truncateTitle && variant === 'default'
+              ? title.length > 50
+                ? `${title.substring(0, 50)}...`
+                : title
+              : title}
+          </h3>
+          <p className={excerptClass}>
+            {truncateExcerpt && variant === 'default'
+              ? excerpt.length > 100
+                ? `${excerpt.substring(0, 100)}...`
+                : excerpt
+              : excerpt}
+          </p>
 
           {tagsToShow.length > 0 && (
             <div className={tagsClass}>
@@ -124,7 +152,8 @@ const BlogCard = ({
                 <span
                   key={tag}
                   className={`${tagClass} ${
-                    showRelevanceScore && matchingTags.includes(tag.toLowerCase().trim())
+                    showRelevanceScore &&
+                    matchingTags.includes(tag.toLowerCase().trim())
                       ? 'matching-tag'
                       : ''
                   }`}
@@ -153,14 +182,26 @@ const BlogCard = ({
             </div>
 
             <div className={statsClass}>
-                                          <div className={statClass}>
-                              <Eye size={14} />
-                              <span>{statsLoading ? '0' : formatNumbers ? formatNumber(views) : views}</span>
-                            </div>
-                            <div className={statClass}>
-                              <Heart size={14} />
-                              <span>{statsLoading ? '0' : formatNumbers ? formatNumber(likes) : likes}</span>
-                            </div>
+              <div className={statClass}>
+                <Eye size={14} />
+                <span>
+                  {statsLoading
+                    ? '0'
+                    : formatNumbers
+                      ? formatNumber(views)
+                      : views}
+                </span>
+              </div>
+              <div className={statClass}>
+                <Heart size={14} />
+                <span>
+                  {statsLoading
+                    ? '0'
+                    : formatNumbers
+                      ? formatNumber(likes)
+                      : likes}
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -65,7 +65,7 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
 
   // Close menu on escape key
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = e => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
       }
@@ -127,7 +127,7 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
 
   const itemVariants = {
     closed: { opacity: 0, x: 20 },
-    open: (i) => ({
+    open: i => ({
       opacity: 1,
       x: 0,
       transition: {
@@ -164,7 +164,7 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
           >
             {/* Menu Header */}
             <div className="menu-header">
-              <motion.h2 
+              <motion.h2
                 className="menu-title"
                 custom={0}
                 variants={itemVariants}
@@ -173,7 +173,7 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
               >
                 Navigation
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="menu-subtitle"
                 custom={1}
                 variants={itemVariants}
@@ -208,7 +208,9 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
                             <IconComponent size={24} />
                           </div>
                           <div className="menu-link-text">
-                            <span className="menu-link-label">{item.label}</span>
+                            <span className="menu-link-label">
+                              {item.label}
+                            </span>
                             <span className="menu-link-description">
                               {item.description}
                             </span>
@@ -223,7 +225,7 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
 
             {/* Social Links */}
             <div className="menu-social">
-              <motion.h3 
+              <motion.h3
                 className="menu-social-title"
                 custom={7}
                 variants={itemVariants}
