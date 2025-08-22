@@ -210,9 +210,8 @@ html.dark-mode {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--spacing-md);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideInUp 1s ease-out 0.3s forwards;
+  opacity: 1;
+  transform: translateY(0);
   font-weight: 500;
   background-color: transparent;
 }
@@ -226,9 +225,8 @@ html.dark-mode {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInUp 1s ease-out 0.6s forwards;
+  opacity: 1;
+  transform: translateY(0);
   background-color: transparent;
 }
 
@@ -237,9 +235,8 @@ html.dark-mode {
   line-height: var(--line-height-relaxed);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-2xl);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideInUp 1s ease-out 0.9s forwards;
+  opacity: 1;
+  transform: translateY(0);
   font-weight: 400;
   max-width: 700px;
   margin-left: auto;

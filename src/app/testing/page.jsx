@@ -1,6 +1,6 @@
 // app/testing/page.jsx
-import ANewUpdate from '../components/ANewUpdate/ProductNav';
+import Carousel360 from '../components/360Carousel/360Carousel';
 
 export default function TestingPage() {
-  return <ANewUpdate />;
+  return <Carousel360 />;
 }

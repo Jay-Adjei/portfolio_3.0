@@ -46,7 +46,7 @@ const Navbar = () => {
     { href: '/guestbook', label: 'Guestbook' },
     { href: '/about', label: 'About' },
     { href: '/testing', label: 'Testing' },
-    { href: '/pokecard', label: 'PokeCard' },
+    { href: '/testing2', label: 'Testing2' },
   ];
 
   const navbarVariants = {

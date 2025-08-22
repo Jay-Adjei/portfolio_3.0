@@ -15,7 +15,7 @@ const preloadAssets = [
   },
   {
     type: 'component',
-    path: () => import('../../components/ANewUpdate/ProductNav.jsx'),
+    path: () => import('../../components/360Carousel/360Carousel.jsx'),
   },
   {
     type: 'component',
