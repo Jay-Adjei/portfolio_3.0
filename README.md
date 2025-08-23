@@ -128,6 +128,14 @@ I'll be adding more in the near future. Potential updates include:
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | ![Showcase 1](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase1.png) | ![Showcase 2](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase2.png) | ![Showcase 3](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase3.png) |
 
+| Latest Updates (23.08.25) - Home                                                                                      | Latest Updates (23.08.25) - Blog                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Home.png" alt="Home 23.08.25" width="500" height="500"> | <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Blog.png" alt="Blog 23.08.25" width="500" height="500"> |
+
+| Latest Updates (23.08.25) - 360° Carousel                                                                             |
+| --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_360Carousel.png" alt="360° Carousel 23.08.25" width="500" height="500"> |
+
 <p align="right">
   <a href="#readme-top">
     <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
