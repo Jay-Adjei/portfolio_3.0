@@ -116,6 +116,13 @@ I'll be adding more in the near future. Potential updates include:
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | ![Showcase 1](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Home.png) | ![Showcase 2](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Blog.png) | ![Showcase 3](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_360Carousel.png) |
 
+
+| Showcase Grid 1 | Showcase Grid 2 | Showcase Grid 3 |
+| --------------- | --------------- | --------------- |
+| <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Home.png" alt="Showcase 1" width="300" height="300" /> | <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Blog.png" alt="Showcase 2" width="300" height="300" /> | <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_360Carousel.png" alt="Showcase 3" width="300" height="300" /> |
+
+
+
 <p align="right">
   <a href="#readme-top">
     <img src="https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=white" alt="Back to top">
