@@ -29,8 +29,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/GylanSalih/Website-Portfolio/">
-    <img src="https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/PortfolioGithubShowcase.png" alt="Logo">
+  <a href="https://github.com/GylanSalih/NextJS-Portify/">
+    <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/PortfolioGithubShowcase.png" alt="Logo">
   </a>
 
 <h3 align="center">
@@ -112,13 +112,21 @@ I'll be adding more in the near future. Potential updates include:
 
 <p align="center">Here are some images showcasing the project:</p>
 
-| 29.05.25                                                                                                                 | 29.05.25                                                                                                                            | 29.05.25                                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Bild 4](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Portfolio_29.05.png) | ![Bild 5](https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Blog_neu_Vrgleich.png?raw=true) | <img src="https://github.com/GylanSalih/NextJS-Portify/blob/main/public/assets/img/Github_showcasee/Home_neu_Vergleich.png?raw=true" alt="Bild 6" width="400"> |
+| Landing Page (Dark Mode)                                                                                              | Landing Page (Light Mode)                                                                                             | Mobile Responsive                                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| ![Landing Page Dark](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Landing_Page-black.jpeg) | ![Landing Page Light](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Landing_Page-white.jpeg) | ![Mobile Responsive](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Mobile_Responsive.jpeg) |
 
-| Animated & Beautiful Grid                                                                                            | Filters                                                                                                                   | Dark-Mode                                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/Showcase1.png) | ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/02.08_Showcase.png) | ![Showcase](https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/Github_showcasee/Single_Card%20-%20Kopie.png) |
+| Portfolio Showcase                                                                                                    | Blog Page                                                                                                             | Progress Page                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| ![Portfolio Showcase](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/PortfolioGithubShowcase.png) | ![Blog Page](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/20.08.25_blogpage.png) | ![Progress Page](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/20.08.25_progresspage.png) |
+
+| Interactive Cards                                                                                                     | Navigation Menu                                                                                                       | About Me Section                                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| ![Interactive Cards](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Single_Card.png) | ![Navigation Menu](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/black-menu.jpeg) | ![About Me](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/About_Me.jpeg) |
+
+| Showcase Grid 1                                                                                                       | Showcase Grid 2                                                                                                       | Showcase Grid 3                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| ![Showcase 1](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase1.png) | ![Showcase 2](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase2.png) | ![Showcase 3](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Showcase3.png) |
 
 <p align="right">
   <a href="#readme-top">
@@ -300,12 +308,12 @@ I would like to acknowledge and give credit to the following resources that have
     <img src="https://custom-icon-badges.demolab.com/badge/Website-000000?style=for-the-badge&logo=googlechrome&logoColor=ffffff&labelColor=FF0000" alt="Website Badge">
   </a>
   <br><br>
-    <img src="https://github.com/GylanSalih/Website-Portfolio/blob/main/src/assets/img/logo.png" alt="Logo">
+    <img src="https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/logo.png" alt="Logo">
   <br><br>
 </div>
 
   <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat%20with%20Smiling%20Eyes.png" alt="Grinning Cat with Smiling Eyes" width="25" height="25" /></p>
-  <a href="https://github.com/GylanSalih/Website-Portfolio" target="_blank">
+  <a href="https://github.com/GylanSalih/NextJS-Portify" target="_blank">
   </a>
 </div>
 
