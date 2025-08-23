@@ -112,14 +112,9 @@ I'll be adding more in the near future. Potential updates include:
 
 <p align="center">Here are some images showcasing the project:</p>
 
-| Landing Page (Dark Mode)                                                                                              | Landing Page (Light Mode)                                                                                             | Mobile Responsive                                                                                                                |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| ![Landing Page Dark](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Landing_Page-black.jpeg) | ![Landing Page Light](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Landing_Page-white.jpeg) | ![Mobile Responsive](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/Mobile_Responsive.jpeg) |
-
-
 | Showcase Grid 1                                                                                                       | Showcase Grid 2                                                                                                       | Showcase Grid 3                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| ![Showcase 1](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Home.png) | ![Showcase 2](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.23.08.25_Blog.png) | ![Showcase 3](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_360Carousel.png) |
+| ![Showcase 1](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Home.png) | ![Showcase 2](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_Blog.png) | ![Showcase 3](https://raw.githubusercontent.com/GylanSalih/NextJS-Portify/main/public/assets/images/showcase/23.08.25_360Carousel.png) |
 
 <p align="right">
   <a href="#readme-top">
