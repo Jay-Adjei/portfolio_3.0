@@ -6,8 +6,6 @@ import './PortfolioCarousel.css';
 import WaterTraceBackground from './WaterTraceBackground';
 
 const PortfolioCarousel = () => {
-  
-
   return (
     <>
       <section className="landing-carousel">
@@ -21,7 +19,9 @@ const PortfolioCarousel = () => {
         <div className="landing-carousel__container">
           {/* Slides */}
           <div className="landing-carousel__slides">
-            <div className={`landing-carousel__slide landing-carousel__slide--active`}>
+            <div
+              className={`landing-carousel__slide landing-carousel__slide--active`}
+            >
               {/* Content */}
               <div className="landing-carousel__content">
                 <div className="landing-carousel__text">
