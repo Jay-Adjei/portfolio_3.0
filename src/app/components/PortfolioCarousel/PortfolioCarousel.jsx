@@ -25,9 +25,16 @@ const PortfolioCarousel = () => {
               {/* Content */}
               <div className="landing-carousel__content">
                 <div className="landing-carousel__text">
-                  <p className="landing-carousel__subtitle">Hi</p>
-                  <h1 className="landing-carousel__title">This is I</h1>
-                  <p className="landing-carousel__description">Something</p>
+                  <p className="landing-carousel__subtitle">
+                    Frontend • Backend • Web • Mobile
+                  </p>
+                  <h1 className="landing-carousel__title">
+                    I build fast, polished web experiences
+                  </h1>
+                  <p className="landing-carousel__description">
+                    I design and ship interfaces with Next.js, React, and React
+                    Native. Clean, accessible, and focused on real results.
+                  </p>
                 </div>
               </div>
             </div>

@@ -40,13 +40,9 @@ const Navbar = () => {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/projects', label: 'Projects' },
     { href: '/progress', label: 'Progress' },
-    { href: '/guestbook', label: 'Guestbook' },
-    { href: '/about', label: 'About' },
-    { href: '/testing', label: 'Testing' },
-    { href: '/testing2', label: 'Testing2' },
+    { href: '/about', label: 'About' }
   ];
 
   const navbarVariants = {
@@ -88,8 +84,8 @@ const Navbar = () => {
                 <Image
                   src={
                     isDarkMode
-                      ? '/assets/images/logo_white.png'
-                      : '/assets/images/logo_black.png'
+                      ? '/assets/images/logo_transparent.png'
+                      : '/assets/images/logo_transparent.png'
                   }
                   alt="Portify Logo"
                   width={isScrolled ? 48 : 48}
@@ -118,10 +114,6 @@ const Navbar = () => {
 
             {/* Right Side Controls */}
             <div className={styles.rightControls}>
-              <AudioIndicator
-                isAudioPlaying={isAudioPlaying}
-                toggleAudioIndicator={toggleAudioIndicator}
-              />
               <DarkModeToggle
                 toggleDarkMode={toggleDarkMode}
                 isDarkMode={isDarkMode}
@@ -150,12 +142,12 @@ const Navbar = () => {
                 <Image
                   src={
                     isDarkMode
-                      ? '/assets/images/logo_white.png'
-                      : '/assets/images/logo_black.png'
+                      ? '/assets/images/logo_transparent.png'
+                      : '/assets/images/logo_transparent.png'
                   }
                   alt="Portify Logo"
-                  width={62}
-                  height={62}
+                  width={150}
+                  height={80}
                   priority
                 />
               </Link>
@@ -163,10 +155,6 @@ const Navbar = () => {
 
             {/* Mobile Controls */}
             <div className={styles.mobileControls}>
-              <AudioIndicator
-                isAudioPlaying={isAudioPlaying}
-                toggleAudioIndicator={toggleAudioIndicator}
-              />
               <DarkModeToggle
                 toggleDarkMode={toggleDarkMode}
                 isDarkMode={isDarkMode}
