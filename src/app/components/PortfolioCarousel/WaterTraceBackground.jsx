@@ -31,7 +31,7 @@ const WaterTraceBackground = () => {
     paintBase(ctx);
   };
 
-  const paintBase = (ctx) => {
+  const paintBase = ctx => {
     const { width: w, height: h } = ctx.canvas;
     // Base gradient (dark violet)
     const g = ctx.createLinearGradient(0, 0, 0, h);
@@ -114,7 +114,10 @@ const WaterTraceBackground = () => {
       const rg = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r);
       // inner light and soft falloff
       rg.addColorStop(0.0, `rgba(180, 160, 255, ${Math.max(0, d.alpha)})`);
-      rg.addColorStop(0.4, `rgba(150, 125, 255, ${Math.max(0, d.alpha * 0.55)})`);
+      rg.addColorStop(
+        0.4,
+        `rgba(150, 125, 255, ${Math.max(0, d.alpha * 0.55)})`
+      );
       rg.addColorStop(1.0, 'rgba(0,0,0,0)');
       ctx.fillStyle = rg;
       ctx.beginPath();
@@ -129,8 +132,8 @@ const WaterTraceBackground = () => {
 
   useEffect(() => {
     resize();
-    const onMove = (e) => addDrop(e.clientX, e.clientY);
-    const onTouchMove = (e) => {
+    const onMove = e => addDrop(e.clientX, e.clientY);
+    const onTouchMove = e => {
       if (e.touches && e.touches.length > 0) {
         addDrop(e.touches[0].clientX, e.touches[0].clientY);
       }
@@ -160,11 +163,7 @@ const WaterTraceBackground = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="water-trace-canvas"
-      aria-hidden="true"
-    />
+    <canvas ref={canvasRef} className="water-trace-canvas" aria-hidden="true" />
   );
 };
 
