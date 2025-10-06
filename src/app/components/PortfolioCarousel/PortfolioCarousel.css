@@ -569,6 +569,32 @@ html.dark-mode {
   letter-spacing: 0.1em;
 }
 
+/* Water trace canvas background */
+.water-trace-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind content */
+  pointer-events: none; /* allow interactions to pass through */
+}
+
+/* Ensure the main container establishes a stacking context */
+.landing-carousel {
+  position: relative;
+  overflow: hidden; /* keep the canvas within section */
+}
+
+/* Elevate content above background */
+.landing-carousel__container,
+.landing-carousel__slides,
+.landing-carousel__content,
+.landing-carousel__nav,
+.scroll-indicator {
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes bounce {
   0%,
   20%,
