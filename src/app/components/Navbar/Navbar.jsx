@@ -146,8 +146,8 @@ const Navbar = () => {
                       : '/assets/images/logo_transparent.png'
                   }
                   alt="Portify Logo"
-                  width={150}
-                  height={80}
+                  width={62}
+                  height={62}
                   priority
                 />
               </Link>
