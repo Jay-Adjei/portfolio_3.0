@@ -11,7 +11,6 @@ export const metadata = {
     'Professional portfolio and blog showcasing modern development skills',
   keywords: 'portfolio, blog, development, web design, coding',
   authors: [{ name: 'Portify' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'Portify - Portfolio & Blog',
@@ -26,13 +25,13 @@ export default function RootLayout({ children }) {
     <html lang="de" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <DarkModeProvider>
           <ErrorBoundary>
-            <ClientLayout>{children}</ClientLayout>
+            {/* Enable the global preloader so it mounts on first load */}
+            <ClientLayout enablePreloader={true}>{children}</ClientLayout>
           </ErrorBoundary>
         </DarkModeProvider>
         <Footer />

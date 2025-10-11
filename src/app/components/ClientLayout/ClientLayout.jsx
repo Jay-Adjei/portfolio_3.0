@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import Navbar from '../Navbar/Navbar';
 import Mouse from '../Mouse/Mouse';
-import Preload from '../Preload/Preload';
+import PreLoader from '../Preloader/Preloder';
 
 export default function ClientLayout({ children, enablePreloader = false }) {
   const { isDarkMode, toggleDarkMode, isInitialized } = useDarkMode();
@@ -13,11 +13,21 @@ export default function ClientLayout({ children, enablePreloader = false }) {
   // Handle Preloader logic
   useEffect(() => {
     if (enablePreloader) {
-      setTimeout(() => setIsAppLoaded(true), 5000);
-    } else {
-      setIsAppLoaded(true); // Directly set app as loaded if no preloader
+      // Fallback: if the Preloader component doesn't call onLoaded, ensure app shows after timeout
+      const t = setTimeout(() => setIsAppLoaded(true), 10000);
+      return () => clearTimeout(t);
     }
+    setIsAppLoaded(true); // Directly set app as loaded if no preloader
   }, [enablePreloader]);
+
+  // Toggle a body class so global elements (like the footer) can be hidden until the app is ready
+  useEffect(() => {
+    if (isAppLoaded) {
+      document.body.classList.add('app-loaded');
+    } else {
+      document.body.classList.remove('app-loaded');
+    }
+  }, [isAppLoaded]);
 
   // Don't render until dark mode is initialized to prevent hydration mismatch
   if (!isInitialized) {
@@ -26,8 +36,10 @@ export default function ClientLayout({ children, enablePreloader = false }) {
 
   return (
     <>
-      {/* Show preloader if enabled and app is not loaded */}
-      {enablePreloader && <Preload enablePreloader={enablePreloader} />}
+  {/* Show preloader if enabled and app is not loaded */}
+  {enablePreloader && !isAppLoaded && (
+    <PreLoader onFinish={() => setIsAppLoaded(true)} />
+  )}
       <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <Mouse />
       <main>{children}</main>

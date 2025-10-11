@@ -41,6 +41,9 @@ About Me socials Styles
   background-color: var(--dark-mode);
   padding: 5rem 1rem 1.5rem;
   position: relative;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .dark-mode .footer {
@@ -62,6 +65,12 @@ About Me socials Styles
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Reveal footer only after the app has fully loaded (prevents flash on image load) */
+body.app-loaded .footer {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .footer-bottom {
