@@ -11,11 +11,13 @@ import TextCarousel from './components/TextCarousel/TextCarousel';
 import './styles/home-page.css'; // nur für home
 import FeaturesInteractive from './components/FeatureInteractive/FeaturesInteractive';
 import TestimonialsGrid from './components/TestimonialsGrid/TestimonialsGrid';
+import ToolsPage from './tools/page';
 
 const Home = () => {
   return (
     <div className="page home-page">
       <PortfolioCarousel />
+      <ToolsPage />
       <Features />
       {/* <CompanyCarousel /> */}
       <FeaturesInteractive />
