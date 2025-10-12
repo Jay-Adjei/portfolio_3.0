@@ -138,8 +138,8 @@ const PreLoader = ({ onFinish }) => {
             style={{
                 height: "100vh",
                 width: "100%",
-                background: "#171a4f",
-                backgroundColor: "#171a4f",
+                // match WaterTraceBackground base gradient
+                background: "linear-gradient(180deg, #0b0018 0%, #150032 100%)",
                 color: "#e5ebf2",
                 position: "fixed",
                 bottom: 0,

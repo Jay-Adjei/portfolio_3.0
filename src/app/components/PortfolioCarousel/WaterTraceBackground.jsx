@@ -43,6 +43,41 @@ const WaterTraceBackground = () => {
     ctx.fillRect(0, 0, w, h);
   };
 
+  // Create a stronger ripple burst on click/tap
+  const addRipple = (clientX, clientY) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rect = boundsRef.current;
+    if (
+      clientX < rect.left ||
+      clientX > rect.right ||
+      clientY < rect.top ||
+      clientY > rect.bottom
+    ) {
+      return;
+    }
+    const dpr = dprRef.current;
+    const x = (clientX - rect.left) * dpr;
+    const y = (clientY - rect.top) * dpr;
+
+    // Burst of concentric waves with varying growth/decay to look rippled
+    const burst = [
+      { r: 2, maxR: 240 * dpr, alpha: 0.8, decay: 0.004, growth: 1.8 },
+      { r: 10, maxR: 260 * dpr, alpha: 0.7, decay: 0.005, growth: 1.6 },
+      { r: 20, maxR: 280 * dpr, alpha: 0.55, decay: 0.006, growth: 1.4 },
+      { r: 32, maxR: 300 * dpr, alpha: 0.45, decay: 0.007, growth: 1.3 },
+      { r: 46, maxR: 320 * dpr, alpha: 0.35, decay: 0.008, growth: 1.2 },
+    ];
+
+    for (const b of burst) {
+      dropsRef.current.push({ x, y, ...b });
+    }
+    // Cap to keep perf stable when many clicks happen
+    if (dropsRef.current.length > 220) {
+      dropsRef.current.splice(0, dropsRef.current.length - 220);
+    }
+  };
+
   const addDrop = (clientX, clientY) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -133,13 +168,21 @@ const WaterTraceBackground = () => {
   useEffect(() => {
     resize();
     const onMove = e => addDrop(e.clientX, e.clientY);
+    const onClick = e => addRipple(e.clientX, e.clientY);
     const onTouchMove = e => {
       if (e.touches && e.touches.length > 0) {
         addDrop(e.touches[0].clientX, e.touches[0].clientY);
       }
     };
+    const onTouchStart = e => {
+      if (e.touches && e.touches.length > 0) {
+        addRipple(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
     window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('mousedown', onClick, { passive: true });
     window.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('resize', resize);
     const vis = () => {
       if (document.hidden) {
@@ -155,7 +198,9 @@ const WaterTraceBackground = () => {
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mousedown', onClick);
       window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('resize', resize);
       document.removeEventListener('visibilitychange', vis);
     };
