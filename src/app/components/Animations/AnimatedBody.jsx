@@ -39,7 +39,7 @@ export default function AnimatedBody({ text, className = '', delay = 0 }) {
         <motion.p
             aria-label={text}
             role="heading"
-            className={className}
+            className={`${className} font-sans-serif`}
             ref={ref}
             aria-hidden="true"
             initial="hidden"
