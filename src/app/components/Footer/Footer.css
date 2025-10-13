@@ -43,6 +43,8 @@ About Me socials Styles
   position: relative;
   opacity: 0;
   pointer-events: none;
+  /* Ensure it's not visually or interactively present before app is loaded */
+  visibility: hidden;
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
@@ -71,6 +73,15 @@ About Me socials Styles
 body.app-loaded .footer {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
+}
+
+/* While the GSAP preloader is mounted, force-hide the footer to avoid any flicker
+   even if body.app-loaded is toggled for content reveal behind the overlay. */
+body.preloading .footer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .footer-bottom {

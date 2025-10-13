@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import './Features.css';
+import AnimatedTitle from '../Animations/AnimatedTitle';
 
 const Card = ({ src, title, description, className, buttonHref, isGif }) => {
   const [isClient, setIsClient] = useState(false);
@@ -81,14 +82,34 @@ const Card = ({ src, title, description, className, buttonHref, isGif }) => {
           )}
         </div>
 
-        <a
-          href={buttonHref}
-          className="card-home-features-button"
-          aria-label={`View ${title} project`}
-        >
-          View Project
-          <ArrowUpRight className="card-home-features-button-icon" size={16} />
-        </a>
+        {!buttonHref || buttonHref === 'null' || buttonHref === '#' ? (
+          <button
+            type="button"
+            className="card-home-features-button"
+            aria-disabled="true"
+            onClick={e => e.preventDefault()}
+          >
+            View Project
+            <ArrowUpRight
+              className="card-home-features-button-icon"
+              size={16}
+            />
+          </button>
+        ) : (
+          <a
+            href={buttonHref}
+            className="card-home-features-button"
+            aria-label={`View ${title} project`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project
+            <ArrowUpRight
+              className="card-home-features-button-icon"
+              size={16}
+            />
+          </a>
+        )}
       </div>
     </div>
   );
@@ -104,67 +125,59 @@ const CardHomeFeatures = () => {
       <div className="card-home-features-container">
         {/* Header Section */}
         <header className="card-home-features-intro" id="ScrollToFeatures">
-          <h2 className="card-home-features-intro-text">Featured Projects</h2>
+          <AnimatedTitle
+            text="Featured Projects"
+            className="card-home-features-intro-text"
+            wordSpace="px-2"
+          />
           <p className="card-home-features-intro-description">
-            Discover our latest work showcasing innovative solutions,
-            cutting-edge design, and exceptional craftsmanship across various
-            industries.
+            A hand-picked collection of my best work showcasing my skills in
+            both mobile and web development.
           </p>
         </header>
-
         {/* Large Featured Card */}
         <div className="card-home-features-grid-large">
           <Card
             src="/assets/videos/drift.mp4"
-            title="Raijin"
-            description="Offer personalized workout plans with video tutorials and AI form correction for optimal fitness results."
+            title="ClassClock-Web"
+            description="Monitor and manage student attendance with geolocation and QR verification and real-time reporting."
             className="card-home-features-large"
-            buttonHref="/project1"
+            buttonHref="https://github.com/Jay-Adjei/classClock-Web"
           />
         </div>
-
         {/* Main Feature Grid */}
         <div className="card-home-features-grid-feature">
           <Card
             src="/assets/videos/Video3.mp4"
-            title="Nyx"
-            description="Recommend songs based on the user's mood using AI and sentiment analysis for the perfect soundtrack."
+            title="ClassClock-App"
+            description="Mobile attendance tracking with geolocation, QR verification, and real-time reporting for secure student check-ins."
             className="card-home-features-long"
-            buttonHref="/project2"
+            buttonHref="https://github.com/Jay-Adjei/classClock-app"
           />
           <Card
             src="/assets/videos/Video2.mp4"
-            title="Kitsune"
-            description="Develop a branching narrative game where choices affect the outcome and create unique storytelling experiences."
+            title="CDN ModuFetch"
+            description="Fetch and download your content directly from your AWS S3 bucket with simple, reliable downloads."
             className="card-home-features-medium"
-            buttonHref="/portfolio"
+            buttonHref={null}
           />
           <Card
             src="/assets/videos/redfire.mp4"
-            title="Oblivion"
-            description="Let users try products in AR before purchasing, such as furniture or clothes, for confident decision-making."
+            title="Promptopia"
+            description="AI-Powered Prompt Management Platform for Developers and Creatives."
             className="card-home-features-small"
-            buttonHref="/project4"
+            buttonHref="https://github.com/Jay-Adjei/share_prompts-web-app"
           />
         </div>
-
         {/* Special Grid Section */}
-        <div className="card-home-features-grid-special">
+        <div className="card-home-features-grid-large">
           <Card
-            src="/assets/animations/gifs/Ringsblack.gif"
-            title="Arcadia"
-            description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact!"
-            className="card-home-features-xsmall2"
-            buttonHref="/project6"
+            src="/assets/animations/gifs/eyes.gif"
+            title="Coming Soon"
+            description="Exciting projects are on the horizon. Stay tuned for updates!"
+            className="card-home-features-large"
+            buttonHref={null}
             isGif={true} // ← wichtig!
-          />
-          <Card
-            src="/assets/images/landing/OniBoy1.webp"
-            title="Arcadia"
-            description="Immersive digital experiences that blend creativity with cutting-edge technology for lasting impact."
-            className="card-home-features-xsmall2"
-            buttonHref="/project6"
-            isGif={true}
           />
         </div>
       </div>

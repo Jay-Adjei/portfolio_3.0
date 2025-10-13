@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
       <body>
         <DarkModeProvider>
           <ErrorBoundary>
-            {/* Enable the global preloader so it mounts on first load */}
-            <ClientLayout enablePreloader={true}>{children}</ClientLayout>
+            {/* Preloader is handled per-page (Home). Do not enable globally. */}
+            <ClientLayout enablePreloader={false}>{children}</ClientLayout>
           </ErrorBoundary>
         </DarkModeProvider>
         <Footer />
