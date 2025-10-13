@@ -37,7 +37,7 @@ const CallToAction = () => {
   };
 
   const handleGitHubClick = () => {
-    window.open('https://github.com/GylanSalih', '_blank');
+    window.open('https://github.com/Jay-Adjei', '_blank');
   };
 
   const handleDemoClick = () => {
@@ -45,7 +45,7 @@ const CallToAction = () => {
   };
 
   const handleContactClick = () => {
-    window.open('mailto:gylan.salih@outlook.de', '_blank');
+    window.open('mailto:mr.adjei17@gmail.com', '_blank');
   };
 
   return (
@@ -76,64 +76,48 @@ const CallToAction = () => {
           <div className="cta-header">
             <div className="status-indicator">
               <Coffee size={20} />
-              <span>Available for hire</span>
+              <span>Open to new projects</span>
             </div>
 
             <h1 className="cta-title">
-              <span className="title-line">Let&apos;s Build</span>
-              <span className="title-line gradient">Something meaningful</span>
-              <span className="title-line">Together</span>
+              <span className="title-line">Let&apos;s build</span>
+              <span className="title-line gradient">something exceptional</span>
+              <span className="title-line">together</span>
             </h1>
 
             <p className="cta-description">
-              Good ideas. Honest work. Real results..
+              Thoughtful ideas. Honest work. Real results.
             </p>
           </div>
 
           {/* Action Buttons */}
           <div className="cta-actions">
             <button className="primary-button" onClick={handleContactClick}>
-              <span className="button-text">Start a Project</span>
+              <span className="button-text">Start a project</span>
               <div className="button-shine"></div>
             </button>
 
             <div className="secondary-actions">
               <button className="secondary-button" onClick={handleDemoClick}>
                 <Frame size={20} />
-                <span>View Work</span>
+                <span>See my work</span>
               </button>
 
               <button className="secondary-button" onClick={handleGitHubClick}>
                 <Link size={20} />
-                <span>GitHub</span>
+                <span>GitHub profile</span>
               </button>
             </div>
           </div>
 
           {/* Skills Preview */}
           <div className="skills-preview">
-            <div className="skill-tag">Clear Communication</div>
-            <div className="skill-tag">Design Meets Logic</div>
-            <div className="skill-tag">Built with Care</div>
-            <div className="skill-tag">You First</div>
-            <div className="skill-tag">Detail-Oriented</div>
-            <div className="skill-tag">Human-Centered</div>
-          </div>
-        </div>
-
-        {/* Bottom Stats */}
-        <div className="stats-row">
-          <div className="stat-item">
-            <div className="stat-number">5+</div>
-            <div className="stat-label">Projects</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">2+</div>
-            <div className="stat-label">years doing what I love</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">50+</div>
-            <div className="stat-label">late nights well spent</div>
+            <div className="skill-tag">Straightforward Communication</div>
+            <div className="skill-tag">Design + Logic</div>
+            <div className="skill-tag">Crafted with Care</div>
+            <div className="skill-tag">Client-First</div>
+            <div className="skill-tag">Attention to Detail</div>
+            <div className="skill-tag">Human-Centered Design</div>
           </div>
         </div>
       </div>

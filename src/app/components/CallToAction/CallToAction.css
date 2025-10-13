@@ -200,7 +200,7 @@
 }
 
 .title-line.gradient {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #0b0018 0%, #150032 50%, #015055 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
