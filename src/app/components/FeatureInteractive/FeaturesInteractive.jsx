@@ -4,8 +4,6 @@ import {
   Code,
   MonitorSmartphone,
   Paintbrush2,
-  Wand2,
-  LayoutTemplate,
   Sparkles,
   CodeXml,
   FolderHeart,
@@ -105,52 +103,36 @@ const FeaturesInteractive = () => {
 
   const features = [
     {
-      title: 'Clean Code',
-      highlight: 'Best Practices',
+      title: 'Clean code',
+      highlight: 'Built to last',
       description:
-        'Well-structured, readable code that is easy to maintain and built to last. I follow modern standards and focus on quality.',
+        'Readable, well‑structured code that’s easy to test, maintain, and scale—written with modern standards.',
       icon: Code,
       className: 'card-1',
     },
     {
-      title: 'Responsive Design',
-      highlight: 'Mobile First',
+      title: 'Responsive design',
+      highlight: 'Mobile‑first',
       description:
-        'I create layouts that adapt perfectly to any device. From mobile to desktop, the experience stays consistent and intuitive.',
+        'Pixel‑perfect layouts that adapt smoothly from phones to desktops for a consistent, intuitive experience.',
       icon: MonitorSmartphone,
       className: 'card-2',
     },
     {
-      title: 'Custom UI/UX',
-      highlight: 'Design Focused',
+      title: 'Design‑led UI/UX',
+      highlight: 'Figma to frontend',
       description:
-        'I build thoughtful wireframes in Figma before coding anything. My goal is always to meet client expectations and ensure smooth, user-friendly interfaces.',
+        'Collaborative design process—from wireframes to polished interfaces—focused on clarity, accessibility, and flow.',
       icon: Paintbrush2,
       className: 'card-3',
     },
     {
-      title: 'Smart Features',
-      highlight: 'Modern Frontend',
+      title: 'Reliable delivery',
+      highlight: 'Clear communication',
       description:
-        'Interactive logic and dynamic components enhance the experience and make your site stand out. Built with clean, modern JavaScript.',
-      icon: Wand2,
-      className: 'card-4',
-    },
-    {
-      title: 'Website Planning',
-      highlight: 'Structure',
-      description:
-        'Every project starts with structure. I focus on clear layouts and logical flow, from the first idea to the final result.',
-      icon: LayoutTemplate,
-      className: 'card-5',
-    },
-    {
-      title: 'Reliable & Professional',
-      highlight: 'Work Ethic',
-      description:
-        'I communicate clearly, deliver on time, and stay solution-oriented. My goal is to create results that clients are proud of.',
+        'Proactive updates, realistic estimates, and on‑time delivery—with a solutions‑first mindset.',
       icon: Sparkles,
-      className: 'card-6',
+      className: 'card-4',
     },
   ];
 
@@ -173,24 +155,27 @@ const FeaturesInteractive = () => {
         {/* Header */}
         <div className="section-header">
           <h2 className="section-title">
-            <span className="title-main">Why Hire</span>
-            <span className="title-accent">Me?</span>
+            <span className="title-main">Your goals,</span>
+            <span className="title-accent">first.</span>
           </h2>
           <p className="section-subtitle">
-            Every detail matters: I create visually stunning and intuitive
-            interfaces that reflect your brand&apos;s personality.
+            I center your needs—listening, clarifying, and delivering with
+            meticulous diligence to craft intuitive, on‑brand experiences that
+            serve your users.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="features-grid">
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              {...feature}
-              style={{ '--index': index }}
-            />
-          ))}
+        <div className="max-w-[900px] mx-auto">
+          <div className="features-grid">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                {...feature}
+                style={{ '--index': index }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom Stats */}
@@ -198,10 +183,6 @@ const FeaturesInteractive = () => {
           <div className="stat-group">
             <CodeXml size={20} />
             <span>Trusted, Secure Code</span>
-          </div>
-          <div className="stat-group">
-            <FolderHeart size={20} />
-            <span>Ongoing Partnership</span>
           </div>
           <div className="stat-group">
             <Activity size={20} />
