@@ -10,6 +10,8 @@ import {
   Activity,
 } from 'lucide-react';
 import './FeaturesInteractive.css';
+import AnimatedBody from '../Animations/AnimatedBody';
+import AnimatedWords from '../Animations/AnimatedWords';
 
 const FeatureCard = ({
   title,
@@ -158,11 +160,10 @@ const FeaturesInteractive = () => {
             <span className="title-main">Your goals,</span>
             <span className="title-accent">first.</span>
           </h2>
-          <p className="section-subtitle">
-            I center your needs—listening, clarifying, and delivering with
-            meticulous diligence to craft intuitive, on‑brand experiences that
-            serve your users.
-          </p>
+          <AnimatedBody
+            text="I center your needs—listening, clarifying, and delivering with meticulous diligence to craft intuitive, on‑brand experiences that serve your users."
+            className="section-subtitle"
+          />
         </div>
 
         {/* Features Grid */}
