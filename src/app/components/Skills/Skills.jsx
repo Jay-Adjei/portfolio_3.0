@@ -7,29 +7,20 @@ const skillsData = {
   coding: [
     { title: 'HTML5', icon: '/assets/images/about/html.webp' },
     { title: 'CSS3', icon: '/assets/images/about/css.webp' },
-    { title: 'SASS', icon: '/assets/images/about/sass.webp' },
     { title: 'JavaScript', icon: '/assets/images/about/js.webp' },
     { title: 'React', icon: '/assets/images/about/react.webp' },
+    { title: 'React Native', icon: '/assets/images/about/react.webp' },
     { title: 'Next.js', icon: '/assets/images/about/nextjs.svg' },
   ],
-  software: [
-    { title: 'Apache', icon: '/assets/images/about/apache.webp' },
-    { title: 'Linux (SSH, VPS)', icon: '/assets/images/about/Linux.webp' },
+  tools: [
     { title: 'Git', icon: '/assets/images/about/Git.webp' },
     { title: 'GitHub', icon: '/assets/images/about/Github.webp' },
-  ],
-  tools: [
     { title: 'Visual Studio Code', icon: '/assets/images/about/VSC.webp' },
+  ],
+  Design: [
     { title: 'Figma', icon: '/assets/images/about/Figma.svg' },
     { title: 'Adobe Photoshop', icon: '/assets/images/about/css.webp' },
     { title: 'DaVinci Resolve', icon: '/assets/images/about/js.webp' },
-  ],
-  Design: [
-    { title: 'Blender', icon: '/assets/images/about/Blenders.webp' },
-    { title: 'WordPress', icon: '/assets/images/about/wordpress.webp' },
-    { title: 'Shopify', icon: '/assets/images/about/Shopify.png' },
-    { title: 'OBS Studio', icon: '/assets/images/about/js.webp' },
-    { title: 'Audacity', icon: '/assets/images/about/Audacity.webp' },
   ],
 };
 
