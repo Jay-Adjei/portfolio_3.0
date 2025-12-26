@@ -155,7 +155,7 @@ Profile-Information-(Steckbrief)
 }
 
 .about-me-profile-informations h3 {
-  color: #3ecf8e;
+  color: #433ecf;
   font-size: 1.5rem;
   font-family: 'RedHat', sans-serif;
   margin-bottom: 20px;
@@ -190,8 +190,8 @@ Profile-Information-(Steckbrief)
 
 /* Hover Effect */
 .about-me-profile-informations li.profile-item:hover {
-  border-color: #3ecf8e;
-  background: #3ecf8e1a;
+  border-color: #433ecf;
+  background: #433ecf36;
   transform: translateY(-3px);
 }
 
@@ -202,7 +202,7 @@ Profile-Information-(Steckbrief)
   left: 20px;
   background: rgba(255, 255, 255, 0.03);
   padding: 0 10px;
-  color: #3ecf8e;
+  color: #433ecf;
   font-family: 'RedHat', sans-serif;
   font-size: 0.95rem;
   white-space: nowrap;
@@ -308,7 +308,7 @@ About Me socials Styles
 .about-me-preheading {
   font-size: 14px;
   font-family: 'RedHat', sans-serif;
-  color: #3ecf8e;
+  color: #433ecf;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
@@ -322,7 +322,7 @@ About Me socials Styles
 }
 
 .about-me-gradient {
-  background: linear-gradient(45deg, #3ecf8e, #3b82f6);
+  background: linear-gradient(45deg, #433ecf, #570978);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -425,8 +425,8 @@ About Me socials Styles
 }
 
 .about-me-tech-item:hover {
-  border-color: #3ecf8e;
-  background: #3ecf8e1a;
+  border-color: #433ecf;
+  background: #433ecf36;
   transform: translateY(-3px);
 }
 
@@ -468,7 +468,7 @@ Timeline // Work, Achievements
   top: 24px;
   width: 12px;
   height: 12px;
-  background: #3ecf8e;
+  background: #433ecf;
   border-radius: 50%;
 }
 
@@ -502,7 +502,7 @@ Timeline // Work, Achievements
 
 .about-me-timeline-year {
   font-family: monospace;
-  color: #3ecf8e;
+  color: #433ecf;
   font-size: 14px;
   font-family: 'RedHat', sans-serif;
 }
