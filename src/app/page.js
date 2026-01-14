@@ -37,7 +37,9 @@ const Home = () => {
   const handlePreloaderFinish = () => {
     try {
       sessionStorage.setItem('homePreloaderSeen', '1');
-    } catch (e) {}
+    } catch (e) {
+      // Ignore sessionStorage errors (e.g., in private browsing mode)
+    }
     document.body.classList.add('app-loaded');
     document.body.classList.remove('preloading');
     setShowPreloader(false);

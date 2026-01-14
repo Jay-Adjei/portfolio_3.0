@@ -18,13 +18,19 @@ const SingleCard = () => {
   const [hasViewed, setHasViewed] = useState(false);
   const [viewProcessed, setViewProcessed] = useState(false);
 
-  // Portfolio Stats Hook
-  const {
-    stats,
-    loading: statsLoading,
-    incrementViews,
-    incrementLikes,
-  } = usePortfolioStats(slug);
+  // Portfolio Stats Hook - TODO: Implement usePortfolioStats hook
+  // const {
+  //   stats,
+  //   loading: statsLoading,
+  //   incrementViews,
+  //   incrementLikes,
+  // } = usePortfolioStats(slug);
+
+  // Temporary placeholders
+  const stats = { views: 0, likes: 0 };
+  const statsLoading = false;
+  const incrementViews = () => {};
+  const incrementLikes = () => {};
 
   useEffect(() => {
     Fancybox.bind('[data-fancybox]', {

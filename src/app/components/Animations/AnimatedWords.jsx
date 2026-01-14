@@ -59,6 +59,6 @@ function AnimatedWords({ title, style }) {
             </motion.span>
         </h1>
     );
-};
+}
 
 export default AnimatedWords;

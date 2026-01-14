@@ -143,7 +143,7 @@ const AboutMe = () => {
                     I completed my secondary education at Suhum Secondary
                     Technical. Where i offered Science IT. Passionate about
                     debates, i lead my school to a debate competion and snagged
-                    "Best Debator.
+                    &quot;Best Debator.
                   </p>
                 </div>
               </div>
