@@ -8,10 +8,8 @@ const NavLinks = ({ className = '', isMobile = false }) => {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/guestbook', label: 'Guestbook' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/about', label: 'About' }
   ];
 
   const linkVariants = {
