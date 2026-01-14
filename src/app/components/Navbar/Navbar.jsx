@@ -7,7 +7,6 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
-import AudioIndicator from '../AudioIndicator/AudioIndicator';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import styles from './Navbar.module.scss';
 
