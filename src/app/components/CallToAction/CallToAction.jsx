@@ -41,7 +41,7 @@ const CallToAction = () => {
   };
 
   const handleDemoClick = () => {
-    window.open('portfolio', '_self');
+    window.open('projects', '_self');
   };
 
   const handleContactClick = () => {
