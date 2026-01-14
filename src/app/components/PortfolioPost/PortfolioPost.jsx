@@ -8,8 +8,6 @@ import '@fancyapps/ui/dist/carousel/carousel.css';
 import '@fancyapps/ui/dist/carousel/carousel.thumbs.css';
 import HolographicCard from '../../components/HolographicCard/HolographicCard';
 import HeroImage from '../../components/HeroImage/HeroImage';
-import LikeButton from '../../components/LikeButton/LikeButton';
-import { usePortfolioStats } from '../../hooks/usePortfolioStats';
 import './portfolioposts.css';
 
 const SingleCard = () => {
