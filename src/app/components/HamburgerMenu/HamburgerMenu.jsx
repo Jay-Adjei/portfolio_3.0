@@ -15,6 +15,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Instagram
 } from 'lucide-react';
 import Link from 'next/link';
 import './HamburgerMenu.css';
@@ -32,35 +33,23 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
       description: 'Welcome to my digital space',
     },
     {
+      href: '/projects',
+      label: 'Projects',
+      icon: Briefcase,
+      description: 'Explore my work',
+    },
+    {
       href: '/about',
       label: 'About',
       icon: User,
       description: 'Learn more about me',
     },
-    {
-      href: '/portfolio',
-      label: 'Portfolio',
-      icon: Briefcase,
-      description: 'Explore my work',
-    },
-    {
-      href: '/blog',
-      label: 'Blog',
-      icon: PenTool,
-      description: 'Thoughts & insights',
-    },
-    {
-      href: '/guestbook',
-      label: 'Guestbook',
-      icon: MessageSquare,
-      description: 'Leave a message',
-    },
   ];
 
   const socialLinks = [
-    { href: 'https://github.com', label: 'GitHub', icon: Github },
-    { href: 'https://linkedin.com', label: 'LinkedIn', icon: Linkedin },
-    { href: 'https://twitter.com', label: 'Twitter', icon: Twitter },
+    { href: 'https://github.com/Jay-Adjei', label: 'GitHub', icon: Github },
+    { href: 'https://www.linkedin.com/in/japhet-adofo-adjei-347706256/', label: 'LinkedIn', icon: Linkedin },
+    { href: 'https://www.instagram.com/_.mr.adjei/', label: 'Instagram', icon: Instagram },
   ];
 
   // Close menu on escape key
