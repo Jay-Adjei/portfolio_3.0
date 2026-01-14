@@ -1,0 +1,35 @@
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768402638667,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout returning NULL (not initialized)","data":{"isInitialized":false},"timestamp":1768402638671,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768402638670,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768402729193,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768402729196,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout returning NULL (not initialized)","data":{"isInitialized":false},"timestamp":1768402729197,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768402801721,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768402801721,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout returning NULL (not initialized)","data":{"isInitialized":false},"timestamp":1768402801722,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768402936920,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768402936923,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout rendering loading state (not initialized)","data":{"isInitialized":false},"timestamp":1768402936924,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768402978876,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768402978877,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout rendering loading state (not initialized)","data":{"isInitialized":false},"timestamp":1768402978877,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:15","message":"DarkModeProvider RENDER","data":{},"timestamp":1768403054322,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:18","message":"After useState","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768403054323,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768403054341,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":false,"isInitialized":false},"timestamp":1768403054342,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:33","message":"ClientLayout rendering loading state (not initialized)","data":{"isInitialized":false},"timestamp":1768403054343,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:15","message":"DarkModeProvider RENDER","data":{"hasWindow":false},"timestamp":1768403135402,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:25","message":"After useState (sync init)","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403135403,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768403135420,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403135421,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:122","message":"ClientLayout rendering (isInitialized check removed)","data":{"isInitialized":false,"isDarkMode":true},"timestamp":1768403135421,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:15","message":"DarkModeProvider RENDER","data":{"hasWindow":false},"timestamp":1768403201183,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:25","message":"After useState (sync init)","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403201183,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768403201184,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403201184,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:122","message":"ClientLayout rendering (isInitialized check removed)","data":{"isInitialized":false,"isDarkMode":true},"timestamp":1768403201185,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:15","message":"DarkModeProvider RENDER","data":{"hasWindow":false},"timestamp":1768403254600,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"DarkModeContext.js:25","message":"After useState (sync init)","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403254600,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:9","message":"ClientLayout RENDER","data":{"enablePreloader":false},"timestamp":1768403254601,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:12","message":"After useDarkMode hook","data":{"isDarkMode":true,"isInitialized":false},"timestamp":1768403254601,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
+{"location":"ClientLayout.jsx:122","message":"ClientLayout rendering (isInitialized check removed)","data":{"isInitialized":false,"isDarkMode":true},"timestamp":1768403254601,"sessionId":"debug-session","runId":"run1","hypothesisId":"B"}
