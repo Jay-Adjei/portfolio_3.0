@@ -31,7 +31,7 @@ export const Timeline = ({ data }) => {
             Project <span className="project-gradient">Progress</span> Journey
           </h2>
           <p className="project-subheading mx-auto">
-            I&apos;ve been working on Aceternity for the past 2 years.
+            I&apos;ve been working to improve my skills and build projects.
             Here&apos;s a timeline of my journey.
           </p>
         </div>
