@@ -6,15 +6,72 @@ import './fonts/fonts.css';
 import './styles/globals.css';
 
 export const metadata = {
-  title: "Japhet's Portfolio",
-  description: 'Professional portfolio showcasing modern development skills',
-  keywords: 'portfolio, development, web design, coding',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  ),
+  title: {
+    default: "Japhet's Portfolio",
+    template: "%s | Japhet's Portfolio",
+  },
+  description:
+    'Professional portfolio showcasing modern development skills, web design, and coding projects by Japhet Adofo-Adjei',
+  keywords: [
+    'portfolio',
+    'development',
+    'web design',
+    'coding',
+    'frontend',
+    'react',
+    'next.js',
+    'javascript',
+  ],
   authors: [{ name: 'Japhet Adofo-Adjei' }],
-  robots: 'index, follow',
+  creator: 'Japhet Adofo-Adjei',
+  publisher: 'Japhet Adofo-Adjei',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: "Japhet's Portfolio",
-    description: 'Professional portfolio showcasing modern development skills',
     type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: "Japhet's Portfolio",
+    title: "Japhet's Portfolio - Modern Web Development & Design",
+    description:
+      'Professional portfolio showcasing modern development skills, web design, and coding projects. Explore my work in React, Next.js, and modern web technologies.',
+    images: [
+      {
+        url: '/assets/images/og-image.png', // You'll need to create this image (1200x630px recommended)
+        width: 1200,
+        height: 630,
+        alt: "Japhet's Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Japhet's Portfolio - Modern Web Development & Design",
+    description:
+      'Professional portfolio showcasing modern development skills, web design, and coding projects.',
+    images: ['/assets/images/og-image.png'],
+    creator: '@Adjei_Japhet', // Replace with your Twitter handle if you have one
+  },
+  alternates: {
+    canonical: '/',
+  },
+  verification: {
+    // Add your verification codes if you have them
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+    // yahoo: 'your-yahoo-verification-code',
   },
 };
 
