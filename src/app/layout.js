@@ -6,16 +6,14 @@ import './fonts/fonts.css';
 import './styles/globals.css';
 
 export const metadata = {
-  title: 'Portify - Portfolio & Blog',
-  description:
-    'Professional portfolio and blog showcasing modern development skills',
-  keywords: 'portfolio, blog, development, web design, coding',
-  authors: [{ name: 'Portify' }],
+  title: "Japhet's Portfolio",
+  description: 'Professional portfolio showcasing modern development skills',
+  keywords: 'portfolio, development, web design, coding',
+  authors: [{ name: 'Japhet Adofo-Adjei' }],
   robots: 'index, follow',
   openGraph: {
-    title: 'Portify - Portfolio & Blog',
-    description:
-      'Professional portfolio and blog showcasing modern development skills',
+    title: "Japhet's Portfolio",
+    description: 'Professional portfolio showcasing modern development skills',
     type: 'website',
   },
 };
