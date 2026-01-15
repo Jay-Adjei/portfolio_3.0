@@ -443,7 +443,7 @@ html.dark-mode .card-home-features-wrapper {
 .card-home-features-title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  color: rgba(10, 10, 10, 0.95);
+  color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin-bottom: var(--spacing-md);
@@ -462,7 +462,7 @@ html.dark-mode .card-home-features-title {
 }
 
 .card-home-features-wrapper:hover .card-home-features-title {
-  color: rgba(10, 10, 10, 1);
+  color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
@@ -472,7 +472,7 @@ html.dark-mode .card-home-features-wrapper:hover .card-home-features-title {
 }
 
 .card-home-features-description {
-  color: rgba(10, 10, 10, 0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   margin-bottom: auto;
@@ -488,7 +488,7 @@ html.dark-mode .card-home-features-description {
 }
 
 .card-home-features-wrapper:hover .card-home-features-description {
-  color: rgba(10, 10, 10, 0.9);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 html.dark-mode .card-home-features-wrapper:hover .card-home-features-description {
