@@ -64,18 +64,18 @@ export default function ToolsPage() {
         text="My Tech Stack"
         wordSpace="px-1"
         delay={0.5}
-        className="font-bold text-[44px] font-sans-serif"
+        className="font-bold text-[44px] font-sans-serif text-[#0a0a0a] dark:text-[#f1f1f1]"
       />
       <div className="m-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {toolInfo.map((tool, index) => (
             <motion.div
               key={index}
-              className={`group relative overflow-hidden rounded-xl w-full sm:max-w-sm mx-auto ${tool.className || ''}`}
+              className={`group relative overflow-hidden rounded-xl w-full sm:max-w-sm mx-auto bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border border-black/10 dark:border-white/10 ${tool.className || ''}`}
             >
               {/* blurred background image layer */}
               <div
-                className="absolute inset-0 bg-[url('/assets/images/stack.jpg')] bg-cover bg-center filter blur-sm scale-105 opacity-40 transition-transform duration-700 ease-out group-hover:scale-125"
+                className="absolute inset-0 bg-[url('/assets/images/stack.jpg')] bg-cover bg-center filter blur-sm scale-105 opacity-40 dark:opacity-40 transition-transform duration-700 ease-out group-hover:scale-125"
                 aria-hidden="true"
                 style={{
                   WebkitMaskImage:
@@ -90,13 +90,13 @@ export default function ToolsPage() {
               <div className="relative z-10 grid grid-rows-2 p-4 border border-transparent">
                 <AnimatedBody
                   text={tool.title}
-                  className="font-semibold text-2xl"
+                  className="font-semibold text-2xl text-[#0a0a0a] dark:text-[#f1f1f1]"
                 />
                 <div className="-space-x-2 justify-center flex">
                   {tool.icons.map((icon, iconIndex) => (
                     <AnimatedTools
                       key={iconIndex}
-                      className={`text-2xl inline-block`}
+                      className={`text-2xl inline-block text-[#0a0a0a] dark:text-[#f1f1f1]`}
                     >
                       {icon}
                     </AnimatedTools>

@@ -9,12 +9,12 @@
   --primary-purple: #8b5cf6;
   --primary-pink: #ec4899;
   --accent-green: #10b981;
-  --bg-dark: #0a0a0a;
-  --bg-card: rgba(10, 10, 10, 0.8);
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --text-muted: rgba(255, 255, 255, 0.5);
-  --border-subtle: rgba(255, 255, 255, 0.1);
+  --bg-dark: #f1f1f1;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-primary: #0a0a0a;
+  --text-secondary: rgba(10, 10, 10, 0.7);
+  --text-muted: rgba(10, 10, 10, 0.5);
+  --border-subtle: rgba(0, 0, 0, 0.1);
 
   /* Gradients */
   --gradient-primary: linear-gradient(
@@ -36,6 +36,15 @@
   /* Transitions */
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+html.dark-mode {
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(10, 10, 10, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
 /* ===========================================
@@ -68,11 +77,17 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 80px 80px;
   opacity: 0.6;
   animation: grid-drift 25s ease-in-out infinite;
+}
+
+html.dark-mode .bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 @keyframes grid-drift {
@@ -257,6 +272,10 @@
 
 .feature-card:hover {
   transform: translateY(-12px) scale(1.02);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .feature-card:hover {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -381,11 +400,19 @@
   inset: 0;
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    #0f101a,
+    rgba(0, 0, 0, 0.05),
     transparent 40%
   );
   opacity: 0;
   transition: opacity var(--transition-smooth);
+}
+
+html.dark-mode .card-background {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    #0f101a,
+    transparent 40%
+  );
 }
 
 .feature-card:hover .card-background {

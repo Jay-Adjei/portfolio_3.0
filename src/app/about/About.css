@@ -1,9 +1,10 @@
 .aboutcssPage {
-  background-color: var(--dark-mode);
+  background-color: #f1f1f1;
   padding-top: 150px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
-.dark-mode .aboutcssPage {
-  background-color: var(--light-mode);
-  padding-top: 150px;
+html.dark-mode .aboutcssPage {
+  background-color: #0a0a0a;
 }

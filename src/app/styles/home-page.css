@@ -3,12 +3,13 @@
   width: 100vw; /* Stellt sicher, dass die Seite die volle Bildschirmbreite einnimmt */
   max-width: none; /* Hebt mögliche Einschränkungen auf */
   margin: 0 auto;
-  background-color: var(--dark-mode);
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
 }
 
 /* Home Page Styles */
-.dark-mode .page.home-page {
-  background-color: var(--light-mode);
+html.dark-mode .page.home-page {
+  background-color: #0a0a0a;
 }
 .home-header {
   text-align: center;

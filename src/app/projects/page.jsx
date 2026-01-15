@@ -8,7 +8,7 @@ export function TimelineDemo() {
       title: 'Late 2025',
       content: (
         <div>
-          <p className="mb-6 text-sm md:text-base text-[#94a3b8] dark:text-[#94a3b8] font-['RedHat'] leading-relaxed">
+          <p className="mb-6 text-sm md:text-base text-[#64748b] dark:text-[#94a3b8] font-['RedHat'] leading-relaxed">
             Built and deployed an offline tool to download folders from aws s3
             bucket and automatically populate an LMS database.
           </p>
@@ -40,14 +40,14 @@ export function TimelineDemo() {
               alt="hero template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/cdn-modufetch-2.png"
               alt="feature template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -57,7 +57,7 @@ export function TimelineDemo() {
       title: '2025',
       content: (
         <div>
-          <p className="mb-6 text-sm md:text-base text-[#94a3b8] dark:text-[#94a3b8] font-['RedHat'] leading-relaxed">
+          <p className="mb-6 text-sm md:text-base text-[#64748b] dark:text-[#94a3b8] font-['RedHat'] leading-relaxed">
             Built and deployed a website and a mobile app to track and take
             attendance for my school.
           </p>
@@ -67,28 +67,28 @@ export function TimelineDemo() {
               alt="startup template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-2.png"
               alt="startup template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-3.png"
               alt="startup template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-4.png"
               alt="startup template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ export function TimelineDemo() {
               alt="hero template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover border border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
           </div>
         </div>
