@@ -58,7 +58,7 @@ export const Timeline = ({ data }) => {
               <h3 className="md:hidden block text-xl md:text-2xl mb-4 md:mb-6 text-left font-bold project-gradient">
                 {item.title}
               </h3>
-              <div className="relative rounded-xl md:rounded-2xl bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(255,255,255,0.03)] border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] p-4 md:p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-[rgba(255,255,255,0.7)] dark:hover:bg-[rgba(255,255,255,0.05)] hover:border-[rgba(67,62,207,0.3)] hover:shadow-lg hover:shadow-[#433ecf]/10 hover:-translate-y-1">
+              <div className="relative rounded-xl md:rounded-2xl bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] p-4 md:p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-[rgba(255,255,255,0.03)] dark:hover:bg-[rgba(10,10,10,0.8)] hover:border-[rgba(67,62,207,0.3)] hover:shadow-lg hover:shadow-[#433ecf]/10 hover:-translate-y-1">
                 {item.content}
               </div>
             </div>
