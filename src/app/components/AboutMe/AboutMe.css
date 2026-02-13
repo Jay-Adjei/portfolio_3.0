@@ -424,6 +424,7 @@ About Me socials Styles
   max-height: 55px;
 }
 
+
 .about-me-tech-item:hover {
   border-color: #433ecf;
   background: #433ecf36;
@@ -443,6 +444,12 @@ About Me socials Styles
   text-align: center;
   flex: 1;
   font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-me-tech-text {
+    font-size: 13px;
+  }
 }
 
 /* -----------------------------------------------------------

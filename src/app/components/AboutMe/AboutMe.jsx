@@ -103,7 +103,7 @@ const AboutMe = () => {
                   alt="Communication"
                 />
                 <span className="about-me-tech-text">
-                  Fast Learner and Collaborative
+                  Fast Learner & Collaborator
                 </span>
               </div>
             </div>
