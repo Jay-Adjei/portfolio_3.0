@@ -5,25 +5,28 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import './fonts/fonts.css';
 import './styles/globals.css';
 
+const SITE_URL = 'https://japhets-realm.vercel.app';
+
 export const metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    process.env.NEXT_PUBLIC_SITE_URL || SITE_URL
   ),
   title: {
-    default: "Japhet's Portfolio",
-    template: "%s | Japhet's Portfolio",
+    default: 'Japhet Adofo-Adjei | Software Developer Portfolio',
+    template: '%s | Japhet Adofo-Adjei',
   },
   description:
-    'Professional portfolio showcasing modern development skills, web design, and coding projects by Japhet Adofo-Adjei',
+    'Japhet Adofo-Adjei is a Software Developer specializing in React, Node.js, and JavaScript. Explore projects in modern web development, frontend, and full-stack applications.',
   keywords: [
+    'Japhet Adofo-Adjei',
+    'Software Developer',
     'portfolio',
-    'development',
-    'web design',
-    'coding',
+    'React',
+    'Node.js',
+    'JavaScript',
+    'web development',
     'frontend',
-    'react',
-    'next.js',
-    'javascript',
+    'Next.js',
   ],
   authors: [{ name: 'Japhet Adofo-Adjei' }],
   creator: 'Japhet Adofo-Adjei',
@@ -42,30 +45,31 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '/',
-    siteName: "Japhet's Portfolio",
-    title: "Japhet's Portfolio - Modern Web Development & Design",
+    url: SITE_URL,
+    siteName: 'Japhet Adofo-Adjei | Software Developer',
+    title: 'Japhet Adofo-Adjei | Software Developer',
     description:
-      'Professional portfolio showcasing modern development skills, web design, and coding projects. Explore my work in React, Next.js, and modern web technologies.',
+      'Japhet Adofo-Adjei is a Software Developer specializing in React, Node.js, and JavaScript. Explore projects and experience in modern web development.',
     images: [
       {
-        url: '/assets/images/og-image.png', // You'll need to create this image (1200x630px recommended)
+        // Add a 1200×630px image at public/assets/images/og-image.png for social previews
+        url: `${SITE_URL}/assets/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Japhet's Portfolio",
+        alt: 'Japhet Adofo-Adjei | Software Developer Portfolio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Japhet's Portfolio - Modern Web Development & Design",
+    title: 'Japhet Adofo-Adjei | Software Developer',
     description:
-      'Professional portfolio showcasing modern development skills, web design, and coding projects.',
-    images: ['/assets/images/og-image.png'],
-    creator: '@Adjei_Japhet', // Replace with your Twitter handle if you have one
+      'Japhet Adofo-Adjei is a Software Developer specializing in React, Node.js, and JavaScript.',
+    images: [`${SITE_URL}/assets/images/og-image.png`],
+    creator: '@Adjei_Japhet',
   },
   alternates: {
-    canonical: '/',
+    canonical: SITE_URL,
   },
   verification: {
     // Add your verification codes if you have them

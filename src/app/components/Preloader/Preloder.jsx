@@ -221,7 +221,7 @@ const PreLoader = ({ onFinish }) => {
         {/* logo image, hidden initially; path: public/images/logo_transparent.png */}
         <img
           src="/assets/images/logo_transparent.png"
-          alt="logo"
+          alt="Japhet Adofo-Adjei portfolio logo"
           className="loader-logo absolute opacity-0"
           style={{
             width: 80,

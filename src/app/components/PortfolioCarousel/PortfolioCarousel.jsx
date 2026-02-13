@@ -29,11 +29,12 @@ const PortfolioCarousel = () => {
                     Frontend • Backend • Web • Mobile
                   </p>
                   <h1 className="landing-carousel__title">
-                    I build fast, polished web experiences
+                    Japhet Adofo-Adjei | Software Developer
                   </h1>
                   <p className="landing-carousel__description">
-                    I design and ship interfaces with Next.js, React, and React
-                    Native. Clean, accessible, and focused on real results.
+                    I build fast, polished web experiences with Next.js, React,
+                    and React Native. Clean, accessible, and focused on real
+                    results.
                   </p>
                 </div>
               </div>

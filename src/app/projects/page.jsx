@@ -37,14 +37,14 @@ export function TimelineDemo() {
           <div className="grid grid-cols-2 gap-4">
             <img
               src="/assets/images/projects/cdn-modufetch-1.png"
-              alt="hero template"
+              alt="CDN Modufetch S3 tool interface screenshot"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/cdn-modufetch-2.png"
-              alt="feature template"
+              alt="CDN Modufetch S3 tool feature screenshot"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
@@ -64,28 +64,28 @@ export function TimelineDemo() {
           <div className="grid grid-cols-2 gap-4">
             <img
               src="/assets/images/projects/classclock-1.png"
-              alt="startup template"
+              alt="ClassClock attendance web-app home page"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-2.png"
-              alt="startup template"
+              alt="ClassClock attendance web-app data upload page"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-3.png"
-              alt="startup template"
+              alt="ClassClock attendance web-app dashboard page"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
             />
             <img
               src="/assets/images/projects/classclock-4.png"
-              alt="startup template"
+              alt="ClassClock attendance app screenshot 4"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"
@@ -105,7 +105,7 @@ export function TimelineDemo() {
           <div className="grid grid-cols-2 gap-4">
             <img
               src="/assets/images/projects/promptopia.png"
-              alt="hero template"
+              alt="Promptopia AI prompts for developers website screenshot"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-lg transition-all duration-300 hover:scale-105 hover:border-[rgba(67,62,207,0.3)] hover:shadow-[#433ecf]/20 md:h-44 lg:h-60"

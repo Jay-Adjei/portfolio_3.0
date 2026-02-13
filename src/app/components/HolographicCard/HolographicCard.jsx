@@ -162,7 +162,7 @@ const HolographicCard = ({ imgSrc, category, rarity }) => {
         }}
       >
         <div className="card__effects">
-          <img src={imgSrc} alt="Card" className="card_images" />
+          <img src={imgSrc} alt={category ? `${category} project card` : 'Project card image'} className="card_images" />
           <div className="card__shine"></div>
           <div className="card__glare"></div>
         </div>

@@ -6,9 +6,9 @@ import styles from './About.css'; // Optional für allgemeine Stile
 
 export default function About() {
   return (
-    <div className="aboutcssPage">
+    <section className="aboutcssPage" aria-label="About Japhet Adofo-Adjei">
       <AboutMe />
       <Skills />
-    </div>
+    </section>
   );
 }

@@ -79,11 +79,11 @@ const CallToAction = () => {
               <span>Open to new projects</span>
             </div>
 
-            <h1 className="cta-title">
+            <h2 className="cta-title">
               <span className="title-line">Let&apos;s build</span>
               <span className="title-line gradient">something exceptional</span>
               <span className="title-line">together</span>
-            </h1>
+            </h2>
 
             <p className="cta-description">
               Thoughtful ideas. Honest work. Real results.

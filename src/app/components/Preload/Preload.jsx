@@ -123,7 +123,7 @@ const Preload = ({ onLoaded }) => {
             <img
               src="/assets/images/logo_white.png"
               className="hologram-gif"
-              alt="loading"
+              alt="Portfolio loading animation"
             />
           </div>
         </div>

@@ -270,7 +270,7 @@ const SingleCard = () => {
               <div className="project-info-row">
                 <img
                   src="/assets/images/about/code.svg"
-                  alt="Icon"
+                  alt="Theme category icon"
                   className="project-info-icon"
                 />
                 <span className="project-info-text">
@@ -286,7 +286,7 @@ const SingleCard = () => {
               <div className="project-info-row">
                 <img
                   src="/assets/images/about/code.svg"
-                  alt="Icon"
+                  alt="Inspiration icon"
                   className="project-info-icon"
                 />
                 <span className="project-info-text">
@@ -300,7 +300,7 @@ const SingleCard = () => {
               <div className="project-info-row">
                 <img
                   src="/assets/images/about/code.svg"
-                  alt="Icon"
+                  alt="Tags icon"
                   className="project-info-icon"
                 />
                 <span className="project-info-text">
@@ -316,7 +316,7 @@ const SingleCard = () => {
               <div className="project-info-row">
                 <img
                   src="/assets/images/about/code.svg"
-                  alt="Icon"
+                  alt="Date icon"
                   className="project-info-icon"
                 />
                 <span className="project-info-text">
@@ -472,7 +472,7 @@ const SingleCard = () => {
               >
                 <img
                   src={`/assets/images/portfolio/${image}`}
-                  alt={`Projektvorschau ${index + 1}`}
+                  alt={`${projectData.title} project screenshot ${index + 1}`}
                   loading="lazy"
                   className="portfolio-media-image"
                 />
