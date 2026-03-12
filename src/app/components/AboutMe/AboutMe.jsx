@@ -21,7 +21,7 @@ const AboutMe = () => {
           <div className="about-me-profile-column">
             <div className="about-me-image-wrapper">
               <img
-                src="/assets/images/about/profile-pic.jpg"
+                src="/assets/images/about/profile-pic.webp"
                 alt="Profile"
                 className="about-me-profile-image"
               />
