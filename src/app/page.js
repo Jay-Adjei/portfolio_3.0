@@ -1,6 +1,6 @@
 // src/Pages/Home/Home.jsx
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel';
 import Skills from './components/Skills/Skills';
 import CallToAction from './components/CallToAction/CallToAction';
@@ -14,19 +14,20 @@ import PreLoader from './components/Preloader/Preloder';
 import ToolsPage from './tools/page';
 
 const Home = () => {
-  const [showPreloader, setShowPreloader] = useState(false);
+  // Default true so first paint shows preloader (no flash of hero); useLayoutEffect runs before paint to skip for return visitors
+  const [showPreloader, setShowPreloader] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const hasSeen =
       typeof window !== 'undefined' &&
       sessionStorage.getItem('homePreloaderSeen');
-    if (!hasSeen) {
-      document.body.classList.remove('app-loaded');
-      document.body.classList.add('preloading');
-      setShowPreloader(true);
-    } else {
+    if (hasSeen) {
       document.body.classList.remove('preloading');
       document.body.classList.add('app-loaded');
+      setShowPreloader(false);
+    } else {
+      document.body.classList.remove('app-loaded');
+      document.body.classList.add('preloading');
     }
   }, []);
 
