@@ -16,9 +16,9 @@ const PreLoader = ({ onFinish }) => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
-      // compute durations for the staggered spans so the box can move for the same total time
-      const spanDuration = 1.5;
-      const spanStagger = 0.25;
+      // ~2–2.5s total; hero is rendered behind overlay so LCP still fires on main content
+      const spanDuration = 0.7;
+      const spanStagger = 0.12;
       const textSpansCount =
         pre && pre.querySelectorAll
           ? pre.querySelectorAll('.texts-container span:not(.box)').length
@@ -49,7 +49,7 @@ const PreLoader = ({ onFinish }) => {
       })
         .from('.texts-container span', {
           duration: spanDuration,
-          delay: 0.4,
+          delay: 0.35,
           y: 70,
           skewY: 20,
           stagger: spanStagger,
@@ -65,36 +65,32 @@ const PreLoader = ({ onFinish }) => {
           },
           '<'
         )
-        // small follow-up horizontal nudge for the name spans (exclude the box)
         .to('.texts-container span:not(.box)', {
-          duration: 1,
+          duration: 0.45,
           x: 400,
         })
-        // collapse the full name spans into a single initials element (JAA)
         .to(
           '.texts-container .name',
           {
-            duration: 0.5,
+            duration: 0.3,
             opacity: 0,
             y: -10,
             stagger: 0.05,
             ease: 'power1.inOut',
           },
-          '+=0.2'
+          '+=0.12'
         )
-        // reveal initials in the same spot
         .to(
           '.initials',
           {
-            duration: 0.6,
+            duration: 0.35,
             opacity: 1,
             scale: 1,
             ease: 'back.out(1.2)',
           },
           '<'
         )
-        // hold initials briefly then crossfade to logo
-        .to({}, { duration: 0.6 })
+        .to({}, { duration: 0.35 })
         .to(
           '.initials',
           {
@@ -108,7 +104,7 @@ const PreLoader = ({ onFinish }) => {
         .to(
           '.loader-logo',
           {
-            duration: 0.6,
+            duration: 0.35,
             opacity: 1,
             scale: 1,
             ease: 'power3.out',
@@ -117,36 +113,25 @@ const PreLoader = ({ onFinish }) => {
         )
         .to(
           '.initials',
-          { duration: 0.4, opacity: 0, ease: 'power1.inOut' },
+          { duration: 0.25, opacity: 0, ease: 'power1.inOut' },
           '<'
         )
-        // .to(".texts-container span", {
-        //     duration: 1,
-        //     y: 70,
-        //     skewY: -20,
-        //     stagger: 0.2,
-        //     ease: "power3.out",
-        // })
         .from('.sub', {
-          duration: 1,
+          duration: 0.45,
           opacity: 0,
           y: 80,
           ease: 'expo.out',
-        })
-        // Determine target element for exit animation (prefer ref, fallback to selector)
-        .call(() => {
-          // no-op placeholder so we can decide target below
         })
         .add(() => {
           const target = pre || document.querySelector('.gsap-preloader');
           if (target) {
             gsap.to(target, {
-              duration: 0.9,
+              duration: 0.6,
               yPercent: -100,
               ease: 'power3.inOut',
             });
           }
-        }, '-=1.0')
+        }, '-=0.4')
         // After the timeline finishes, restore scroll, mark app loaded and unmount via React state
         .call(() => {
           document.body.style.overflowY = prevOverflow || '';

@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Github, Linkedin, Dribbble, Mail, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import './AboutMe.css';
 
 const AboutMe = () => {
@@ -20,10 +21,14 @@ const AboutMe = () => {
         <div className="about-me-content-grid">
           <div className="about-me-profile-column">
             <div className="about-me-image-wrapper">
-              <img
+              <Image
                 src="/assets/images/about/profile-pic.webp"
-                alt="Profile"
+                alt="Japhet Adofo-Adjei profile"
                 className="about-me-profile-image"
+                width={400}
+                height={400}
+                sizes="(max-width: 768px) 100vw, 400px"
+                priority={false}
               />
               <div className="about-me-image-overlay"></div>
             </div>

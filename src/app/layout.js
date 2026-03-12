@@ -52,7 +52,7 @@ export const metadata = {
       'Japhet Adofo-Adjei is a Software Developer specializing in React, Node.js, and JavaScript. Explore projects and experience in modern web development.',
     images: [
       {
-        // Add a 1200×630px image at public/assets/images/og-image.png for social previews
+        // Use 1200×630; compress to <200 KB (e.g. WebP) for faster social/crawler loads — see docs/LCP-TTFB-REPORT.md
         url: `${SITE_URL}/assets/images/og-image.png`,
         width: 1200,
         height: 630,
@@ -81,7 +81,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" className="dark-mode" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />

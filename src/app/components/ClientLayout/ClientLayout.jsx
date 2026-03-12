@@ -29,18 +29,15 @@ export default function ClientLayout({ children, enablePreloader = false }) {
     }
   }, [isAppLoaded]);
 
-  // Don't render until dark mode is initialized to prevent hydration mismatch
-  if (!isInitialized) {
-    return null;
-  }
+  // Render immediately with default dark theme so FCP/LCP aren't blocked; theme updates after localStorage read
+  const isDarkModeResolved = isInitialized ? isDarkMode : true;
 
   return (
     <>
-      {/* Show preloader if enabled and app is not loaded */}
       {enablePreloader && !isAppLoaded && (
         <PreLoader onFinish={() => setIsAppLoaded(true)} />
       )}
-      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkModeResolved} />
       <Mouse />
       <main>{children}</main>
     </>

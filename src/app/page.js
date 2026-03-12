@@ -15,10 +15,8 @@ import ToolsPage from './tools/page';
 
 const Home = () => {
   const [showPreloader, setShowPreloader] = useState(false);
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // Only show preloader on first visit to the home page per session
     const hasSeen =
       typeof window !== 'undefined' &&
       sessionStorage.getItem('homePreloaderSeen');
@@ -29,7 +27,6 @@ const Home = () => {
     } else {
       document.body.classList.remove('preloading');
       document.body.classList.add('app-loaded');
-      setReady(true);
     }
   }, []);
 
@@ -42,22 +39,19 @@ const Home = () => {
     document.body.classList.add('app-loaded');
     document.body.classList.remove('preloading');
     setShowPreloader(false);
-    setReady(true);
   };
 
+  // Always render main content so hero is in DOM (enables LCP); preloader overlays on top when shown
   return (
     <div className="page home-page">
       {showPreloader && <PreLoader onFinish={handlePreloaderFinish} />}
-      {(ready || !showPreloader) && (
-        <>
-          <PortfolioCarousel />
-          <ToolsPage />
-          <Features />
-          {/* <CompanyCarousel /> */}
-          <FeaturesInteractive />
-          <CallToAction />
-        </>
-      )}
+      <>
+        <PortfolioCarousel />
+        <ToolsPage />
+        <Features />
+        <FeaturesInteractive />
+        <CallToAction />
+      </>
     </div>
   );
 };
