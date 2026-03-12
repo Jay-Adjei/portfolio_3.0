@@ -198,7 +198,7 @@ const ProgressTimeline = () => {
             <span className="timeline-title-line gradient">Progress</span>
           </h1>
           <p className="timeline-hero-description">
-            Journey through the evolution of Portify - from initial concepts to
+            Journey through the evolution of Portfolio - from initial concepts to
             the modern, feature-rich portfolio you see today.
           </p>
         </div>

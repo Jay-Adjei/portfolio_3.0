@@ -85,7 +85,7 @@ const Navbar = () => {
                       ? '/assets/images/logo_transparent.webp'
                       : '/assets/images/logo_transparent.webp'
                   }
-                  alt="Portify Logo"
+                  alt="Portfolio Logo"
                   width={isScrolled ? 48 : 48}
                   height={isScrolled ? 48 : 48}
                   className={styles.logoImage}
@@ -143,7 +143,7 @@ const Navbar = () => {
                       ? '/assets/images/logo_transparent.webp'
                       : '/assets/images/logo_transparent.webp'
                   }
-                  alt="Portify Logo"
+                  alt="Portfolio Logo"
                   width={62}
                   height={62}
                   priority
