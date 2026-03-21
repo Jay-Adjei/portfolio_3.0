@@ -84,6 +84,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark-mode" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
+        <meta name="google-site-verification" content="6XDYGJ_Osm2AW2lXr_mFIVYJKCz0YUSzDlLwCbtoN4A" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
