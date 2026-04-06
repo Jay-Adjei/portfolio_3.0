@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://japhets-realm.vercel.app/sitemap.xml
+Sitemap: https://japhet.is-a.dev/sitemap.xml
