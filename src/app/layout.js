@@ -69,7 +69,7 @@ export const metadata = {
     creator: '@Adjei_Japhet',
   },
   alternates: {
-    canonical: SITE_URL,
+    canonical: '/',
   },
   verification: {
     // Add your verification codes if you have them

@@ -2,6 +2,14 @@ import React from 'react';
 import { Timeline } from '@/components/ui/timeline';
 import '../../app/styles/globals.css';
 
+export const metadata = {
+  title: 'Projects | Japhet Adofo-Adjei',
+  description: 'Explore projects built by Japhet Adofo-Adjei.',
+  alternates: {
+    canonical: '/projects',
+  },
+};
+
 export function TimelineDemo() {
   const data = [
     {
