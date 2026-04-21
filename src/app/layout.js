@@ -5,7 +5,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import './fonts/fonts.css';
 import './styles/globals.css';
 
-const SITE_URL = 'https://japhets-realm.vercel.app';
+const SITE_URL = 'https://japhet.is-a.dev';
 
 export const metadata = {
   metadataBase: new URL(
