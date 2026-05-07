@@ -56,8 +56,9 @@ const Animated= ({
                 return (
                     <motion.div
                         key={index}
-                        whileHover={{ scale: 1.1, color: "#2196f3" }} // Modify the color when hovering
+                        whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
+                        className="transition-colors duration-200 hover:text-[#2196f3]"
                         style={{ width: iconSize, height: iconSize }}
                         data-blobity
                         data-blobity-radius={15}
