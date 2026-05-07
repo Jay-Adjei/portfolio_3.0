@@ -130,7 +130,7 @@ const AboutMe = () => {
                   <p className="about-me-timeline-description">
                     I recently completed my degree program in Computer Science
                     at the Kwame Nkrumah Unoversity of Science and
-                    Tecknology.{' '}
+                    Technology.{' '}
                   </p>
                 </div>
               </div>
@@ -148,7 +148,7 @@ const AboutMe = () => {
                     I completed my secondary education at Suhum Secondary
                     Technical. Where i offered Science IT. Passionate about
                     debates, i lead my school to a debate competion and snagged
-                    &quot;Best Debator.
+                    &quot;Best Debator&quot;.
                   </p>
                 </div>
               </div>
