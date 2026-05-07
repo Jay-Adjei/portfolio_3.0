@@ -24,11 +24,13 @@ export const DarkModeProvider = ({ children }) => {
       setIsDarkMode(darkMode);
       setIsInitialized(true);
 
-      // Apply dark mode class to the root element
+      // Keep both classes in sync: custom CSS uses "dark-mode", Tailwind uses "dark"
       if (darkMode) {
         document.documentElement.classList.add('dark-mode');
+        document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark-mode');
+        document.documentElement.classList.remove('dark');
       }
     }
   }, []);
@@ -41,11 +43,13 @@ export const DarkModeProvider = ({ children }) => {
       if (typeof window !== 'undefined') {
         localStorage.setItem('darkMode', newState.toString());
 
-        // Add or remove the dark-mode class from the root element
+        // Keep both classes in sync: custom CSS uses "dark-mode", Tailwind uses "dark"
         if (newState) {
           document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.add('dark');
         } else {
           document.documentElement.classList.remove('dark-mode');
+          document.documentElement.classList.remove('dark');
         }
       }
       return newState;

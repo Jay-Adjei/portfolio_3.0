@@ -81,7 +81,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark-mode" suppressHydrationWarning={true}>
+    <html lang="en" className="dark dark-mode" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
         <meta name="google-site-verification" content="1BLjyjziL-ihZvMgnnCi8ELV62ChZbGDNeeIisZgkkw" />

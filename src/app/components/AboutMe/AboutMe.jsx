@@ -23,7 +23,7 @@ const AboutMe = () => {
             <div className="about-me-image-wrapper">
               <Image
                 src="/assets/images/about/profile-pic.webp"
-                alt="Japhet Adofo-Adjei profile"
+                alt="Japhet Adofo-Adjei - Software Developer"
                 className="about-me-profile-image"
                 width={400}
                 height={400}
